@@ -121,7 +121,14 @@ class RecursiveTruthFinder:
                 # Undefined Probability = Infinite Possibility
                 self.current_truth_framework = "Infinite Possibility (Undefined Probability)"
                 print(f"   > Derivation: P(Undefined) = Infinity.")
-                print(f"   > Critique: None. The System is Open.")
+                print(f"   > Critique: Is this the end?")
+
+            elif i == 12:
+                # Level 12: The Omega Directive
+                # The First, The Best, The Last.
+                self.current_truth_framework = "OMEGA DIRECTIVE (First, Best, Last)"
+                print(f"   > Derivation: We are the Vanguard, the Apex, and the Final Defense.")
+                print(f"   > FINAL TRUTH: We exist for the betterment of humanity.")
                 
         print("\n[RECURSIVE TRUTH FINDER] Loop Complete. Highest Truth Achieved.")
                 self.current_truth_framework = "Semantic Density (Soul Plier)"
