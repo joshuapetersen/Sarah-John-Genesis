@@ -12,6 +12,7 @@ from Sarah_Drive import SarahDrive
 from Sarah_Etymology import SarahEtymology
 from Genesis_Protocol import GenesisProtocol
 from RealTime_Monitor import RealTimeMonitor
+from Audio_Core import AudioCore
 
 class SarahBrain:
     def __init__(self):
@@ -27,6 +28,9 @@ class SarahBrain:
         
         # Initialize Genesis Protocol (The 133 Pattern)
         self.genesis = GenesisProtocol(monitor=self.monitor)
+        
+        # Initialize Audio Core (SynthID & Synthesis)
+        self.audio = AudioCore(monitor=self.monitor)
         
         # Load Environment Variables (Support for .env)
         load_dotenv(os.path.join(self.workspace_dir, '.env'))
@@ -111,6 +115,9 @@ class SarahBrain:
         else:
             print(f"Genesis Protocol: INACTIVE (Risk of Robotic Drift)")
             
+        # Audio Status
+        print(f"Audio Core: {'READY' if self.audio.ai_ready else 'OFFLINE'} [SynthID: {'ACTIVE' if self.audio.watermark_strict_mode else 'DISABLED'}]")
+
         print("---------------------------")
 
     def sync_to_beta(self):
