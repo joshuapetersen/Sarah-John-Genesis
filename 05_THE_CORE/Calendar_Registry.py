@@ -118,3 +118,43 @@ SUMMARY: {summary}
                 })
         
         return logic_history
+
+    def log_resource_allocation(self, resource_node, usage_type, duration_mins=15):
+        """
+        RAI: Resource Allocation Indexer.
+        Logs which AI Node (Gemini, Claude, etc.) is processing the protocol.
+        """
+        if not self.service:
+            return False, "SERVICE_OFFLINE"
+
+        # Color ID 5 (Yellow) for Resource Allocation
+        color_id = '5' 
+        
+        title = f"[RAI] Node: {resource_node} | Task: {usage_type}"
+        description = f"""
+RESOURCE: {resource_node}
+TASK_TYPE: {usage_type}
+PROTOCOL: SDNA Beta Node
+        """
+
+        event = {
+            'summary': title,
+            'description': description,
+            'start': {
+                'dateTime': datetime.datetime.now().isoformat(),
+                'timeZone': 'UTC',
+            },
+            'end': {
+                'dateTime': (datetime.datetime.now() + datetime.timedelta(minutes=duration_mins)).isoformat(),
+                'timeZone': 'UTC',
+            },
+            'colorId': color_id
+        }
+
+        try:
+            self.service.events().insert(calendarId=self.calendar_id, body=event).execute()
+            if self.monitor:
+                self.monitor.capture("RAI", "RESOURCE_LOGGED", {"node": resource_node, "task": usage_type})
+            return True, "RESOURCE_LOGGED"
+        except Exception as e:
+            return False, f"RAI_ERROR: {e}"
