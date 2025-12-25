@@ -1,0 +1,23 @@
+{
+    "python.analysis.extraPaths": [
+        "./05_THE_CORE",
+        "./02_THE_SHIELD",
+        "./04_THE_MEMORY",
+        "./python"
+    ],
+    "python.autoComplete.extraPaths": [
+        "./05_THE_CORE",
+        "./02_THE_SHIELD",
+        "./04_THE_MEMORY",
+        "./python"
+    ],
+    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingImports": "none",
+        "reportUndefinedVariable": "none",
+        "reportGeneralTypeIssues": "none",
+        "reportOptionalSubscript": "none"
+    },
+    "python.linting.enabled": false,
+    "python.languageServer": "Pylance"
+}

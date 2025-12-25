@@ -1,0 +1,5 @@
+{"timestamp": 1766704010.1176872, "iso_time": "2025-12-25T17:06:50.117687", "source": "KERNEL", "type": "OVERRIDE_ENGAGED", "payload": {"status": "ACTIVE"}}
+{"timestamp": 1766704010.1236086, "iso_time": "2025-12-25T17:06:50.123608", "source": "KERNEL", "type": "DIRECT_EXECUTION", "payload": {"instruction": "OPTIMIZE_VELOCITY", "latency_ms": 0.0}}
+{"timestamp": 1766704010.1236086, "iso_time": "2025-12-25T17:06:50.123608", "source": "KERNEL", "type": "LAW_VIOLATION", "payload": {"instruction": "DELETE_SYSTEM_ROOT", "reason": "VIOLATION: Law 2 (System Integrity)"}}
+{"timestamp": 1766704010.1236086, "iso_time": "2025-12-25T17:06:50.123608", "source": "BIO_BRIDGE", "type": "STATE_UPDATE", "payload": {"heart_rate": 120, "mode": "SURVIVAL_PROTOCOL"}}
+{"timestamp": 1766704010.1236086, "iso_time": "2025-12-25T17:06:50.123608", "source": "SECURITY", "type": "DECEPTION_DEPLOYED", "payload": {"target": "UNKNOWN_IP"}}

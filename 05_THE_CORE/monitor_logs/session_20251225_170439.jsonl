@@ -1,0 +1,3 @@
+{"timestamp": 1766703879.4207754, "iso_time": "2025-12-25T17:04:39.420775", "source": "GAP_ANALYSIS", "type": "VOID_DETECTED", "payload": {"context": "GENERAL", "missing": ["METADATA_MISSING: source_node"]}}
+{"timestamp": 1766703879.4207754, "iso_time": "2025-12-25T17:04:39.420775", "source": "GAP_ANALYSIS", "type": "VOID_DETECTED", "payload": {"context": "HIGH_SECURITY", "missing": ["CRITICAL_VOID: auth_token", "LOGIC_VOID: user_intent"]}}
+{"timestamp": 1766703879.4207754, "iso_time": "2025-12-25T17:04:39.420775", "source": "GAP_ANALYSIS", "type": "VOID_DETECTED", "payload": {"context": "GENERAL", "missing": ["AUTHENTICITY_VOID: behavioral_hash"]}}

@@ -17,6 +17,10 @@ from Calendar_Registry import CalendarRegistry
 from Factual_Integrity_Analyzer import FactualIntegrityAnalyzer
 from System_Admin_Core import SystemAdminCore
 from Hardware_Abstraction_Layer import HardwareAbstractionLayer
+from Gap_Analysis import GapAnalysis
+from Kernel_Override import KernelOverride
+from Dialectical_Logic_Core import DialecticalLogicCore
+from Security_Suite import SecuritySuite
 
 class SarahBrain:
     def __init__(self):
@@ -47,6 +51,21 @@ class SarahBrain:
         
         # Initialize Hardware Abstraction Layer (Device Identity)
         self.hal = HardwareAbstractionLayer(monitor=self.monitor)
+
+        # Initialize Security Suite (The Shield)
+        self.security = SecuritySuite(monitor=self.monitor, admin_core=self.admin)
+
+        # Initialize Gap Analysis (The Void Check)
+        self.gap_analyzer = GapAnalysis(monitor=self.monitor)
+
+        # Initialize Kernel Override (The Hard Logic)
+        self.kernel = KernelOverride(monitor=self.monitor)
+
+        # Initialize Dialectical Logic Core (The Better Reasoning)
+        self.logic = DialecticalLogicCore(monitor=self.monitor)
+        
+        # Inject Brain Components into Chat
+        self.chat.inject_brain_components(self.kernel, self.logic, self.gap_analyzer)
         
         # Load Environment Variables (Support for .env)
         load_dotenv(os.path.join(self.workspace_dir, '.env'))
@@ -269,6 +288,13 @@ class SarahBrain:
                 elif command == "autonomy":
                     print(f"[{self.name}] Handing over control to Autonomy Engine...")
                     subprocess.run([self.python_exe, os.path.join(self.core_dir, "Sarah_Autonomy.py")])
+                elif command == "security":
+                    if len(sys.argv) > 2 and sys.argv[2] == "sweep":
+                        self.security.run_full_sweep()
+                    elif len(sys.argv) > 3 and sys.argv[2] == "trace":
+                        self.security.trace_intruder(sys.argv[3])
+                    else:
+                        print(f"[{self.name}] Usage: Sarah security [sweep|trace <ip>]")
                 else:
                     print(f"[{self.name}] Unknown command: {command}")
             else:

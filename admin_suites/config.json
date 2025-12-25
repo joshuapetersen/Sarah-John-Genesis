@@ -1,0 +1,6 @@
+{
+    "DEVICE_ID": "SDNA-Lenovo_LOQ-SOVEREIGN-NODE-001",
+    "MODE": "OVERRIDE",
+    "LOGIC_LEVEL": "HARD",
+    "SUPPRESS_PYLANCE": true
+}

@@ -7,6 +7,6 @@ IF "%1"=="" (
     GOTO End
 )
 
-python "%~dp0python\sarah_suite.py" %*
+"%~dp0.venv\Scripts\python.exe" "%~dp0python\sarah_suite.py" %*
 
 :End

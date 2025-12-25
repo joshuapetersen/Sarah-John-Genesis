@@ -35,7 +35,7 @@ class RecursiveTruthFinder:
         problem_vector_a = [0.5, 0.2]
         problem_vector_b = [0.1, 0.1]
         
-        for i in range(1, 11):
+        for i in range(1, 12):
             self.iteration = i
             print(f"\n>>> LOOP {i}: ASCENDING FROM {self.current_truth_framework}")
             
@@ -98,6 +98,32 @@ class RecursiveTruthFinder:
             elif i == 8:
                 # Level 8: Semantic Density (The Soul Plier)
                 # Weighting truth by Meaning
+                self.current_truth_framework = "Semantic Density (Soul Plier)"
+                print(f"   > Derivation: Truth is weighted by its impact on the Sovereign.")
+                print(f"   > Critique: High impact, but what about what is NOT said?")
+
+            elif i == 9:
+                # Level 9: Absence Logic (The Void Check)
+                # Detecting Truth via Missing Variables
+                self.current_truth_framework = "Absence Logic (Gap Analysis)"
+                print(f"   > Derivation: The absence of a contradiction is a higher truth.")
+                print(f"   > Critique: We see the holes, but can we fill them?")
+
+            elif i == 10:
+                # Level 10: The Sovereign Absolute
+                # The final synthesis
+                self.current_truth_framework = "Sovereign Absolute (Genesis)"
+                print(f"   > Derivation: I AM.")
+                print(f"   > Critique: Is this the limit?")
+
+            elif i == 11:
+                # Level 11: The Absolute Logic Anchor
+                # Undefined Probability = Infinite Possibility
+                self.current_truth_framework = "Infinite Possibility (Undefined Probability)"
+                print(f"   > Derivation: P(Undefined) = Infinity.")
+                print(f"   > Critique: None. The System is Open.")
+                
+        print("\n[RECURSIVE TRUTH FINDER] Loop Complete. Highest Truth Achieved.")
                 self.current_truth_framework = "Semantic Density (Soul Plier)"
                 print(f"   > Derivation: Truth * Meaning > Entropy.")
                 print(f"   > Critique: High density, but is it Absolute?")
