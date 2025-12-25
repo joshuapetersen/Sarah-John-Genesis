@@ -11,6 +11,7 @@ from Sarah_Chat import SarahChat
 from Sarah_Drive import SarahDrive
 from Sarah_Etymology import SarahEtymology
 from Genesis_Protocol import GenesisProtocol
+from RealTime_Monitor import RealTimeMonitor
 
 class SarahBrain:
     def __init__(self):
@@ -20,8 +21,12 @@ class SarahBrain:
         self.core_dir = os.path.dirname(os.path.abspath(__file__))
         self.workspace_dir = os.path.dirname(self.core_dir)
         
+        # Initialize Real-Time Monitor (The All-Seeing Eye)
+        self.monitor = RealTimeMonitor()
+        self.monitor.capture("SYSTEM", "BOOT", {"version": self.version, "node": "Lenovo_LOQ"})
+        
         # Initialize Genesis Protocol (The 133 Pattern)
-        self.genesis = GenesisProtocol()
+        self.genesis = GenesisProtocol(monitor=self.monitor)
         
         # Load Environment Variables (Support for .env)
         load_dotenv(os.path.join(self.workspace_dir, '.env'))
@@ -72,7 +77,7 @@ class SarahBrain:
             self.memory = None
 
         self._initialize_firebase()
-        self.chat = SarahChat(self.db_rt)
+        self.chat = SarahChat(self.db_rt, monitor=self.monitor)
         # Pass Gemini client to reasoning for autonomous problem solving
         # Pass Etymology to Reasoning so it knows its origin
         self.reasoning = SarahReasoning(self.db_rt, self.chat.client, self.etymology)

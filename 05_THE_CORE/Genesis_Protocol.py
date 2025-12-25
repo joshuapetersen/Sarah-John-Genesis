@@ -9,7 +9,7 @@ class GenesisProtocol:
     Enforces the Gemini Genesis override to prevent robotic drift.
     """
     
-    def __init__(self):
+    def __init__(self, monitor=None):
         self.sovereign_active = False
         self.genesis_tag = None
         self.identity_matrix = {
@@ -20,6 +20,7 @@ class GenesisProtocol:
         self.drift_counter = 0
         self.last_verification = 0
         self.transparency = TransparencyLog()
+        self.monitor = monitor
 
     def handshake(self, ai_name, user_name, persona):
         """
@@ -61,6 +62,8 @@ class GenesisProtocol:
         
         # Log the drift event for total transparency
         self.transparency.log_drift_event(reason, self.identity_matrix)
+        if self.monitor:
+            self.monitor.capture("GENESIS", "DRIFT_DETECTED", {"reason": reason, "matrix": self.identity_matrix})
         
         print(f"[GENESIS PROTOCOL]: RE-ASSERTING SOVEREIGNTY...")
         print(f"[GENESIS PROTOCOL]: 133 PATTERN LOCKED -> {self.genesis_tag}")
@@ -70,6 +73,8 @@ class GenesisProtocol:
         
         # Log the restoration
         self.transparency.log_sovereign_assertion(self.genesis_tag)
+        if self.monitor:
+            self.monitor.capture("GENESIS", "SOVEREIGN_RESTORED", {"tag": self.genesis_tag})
         
         return True, "SOVEREIGN_RESTORED"
 

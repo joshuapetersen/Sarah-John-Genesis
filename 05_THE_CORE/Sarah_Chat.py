@@ -5,9 +5,10 @@ from google.genai import client, types
 from Sovereign_Override import apply_override
 
 class SarahChat:
-    def __init__(self, db_rt):
+    def __init__(self, db_rt, monitor=None):
         self.db = db_rt
         self.history_ref = self.db.child('sarah_chat_history')
+        self.monitor = monitor
 
         self.api_key = os.getenv("GEMINI_API_KEY")
         if not self.api_key:
