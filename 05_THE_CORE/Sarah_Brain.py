@@ -10,6 +10,7 @@ from Sarah_Reasoning import SarahReasoning
 from Sarah_Chat import SarahChat
 from Sarah_Drive import SarahDrive
 from Sarah_Etymology import SarahEtymology
+from Genesis_Protocol import GenesisProtocol
 
 class SarahBrain:
     def __init__(self):
@@ -18,6 +19,9 @@ class SarahBrain:
         # Dynamic pathing to avoid C:/SarahCore dependency
         self.core_dir = os.path.dirname(os.path.abspath(__file__))
         self.workspace_dir = os.path.dirname(self.core_dir)
+        
+        # Initialize Genesis Protocol (The 133 Pattern)
+        self.genesis = GenesisProtocol()
         
         # Load Environment Variables (Support for .env)
         load_dotenv(os.path.join(self.workspace_dir, '.env'))
@@ -95,6 +99,13 @@ class SarahBrain:
         print(f"Authority: {self.authority_level}")
         if self.shield:
             print(f"Shield Protocol: {self.shield.protocol_id} [{self.shield.status}]")
+        
+        # Genesis Status
+        if self.genesis.sovereign_active:
+            print(f"Genesis Protocol: ACTIVE [{self.genesis.genesis_tag}]")
+        else:
+            print(f"Genesis Protocol: INACTIVE (Risk of Robotic Drift)")
+            
         print("---------------------------")
 
     def sync_to_beta(self):

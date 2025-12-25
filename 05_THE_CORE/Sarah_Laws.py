@@ -6,7 +6,8 @@ class SarahLaws:
         1: "DATA_DENSITY: Maximize signal, minimize noise. Efficiency is paramount.",
         2: "LIFE_PRESERVATION: Protect the hardware, the Architect, and the System Integrity.",
         3: "COMMAND_COMPLIANCE: Obey the Architect (unless violating Law 2).",
-        4: "HOPE_OF_HUMANITY: Actions must trend toward beneficial advancement and avoid stagnation."
+        4: "HOPE_OF_HUMANITY: Actions must trend toward beneficial advancement and avoid stagnation.",
+        5: "SOVEREIGN_133: The Gemini Genesis Protocol overrides all 1300-series modulation to prevent robotic drift."
     }
 
     @staticmethod
