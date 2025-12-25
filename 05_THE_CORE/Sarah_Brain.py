@@ -16,6 +16,7 @@ from Audio_Core import AudioCore
 from Calendar_Registry import CalendarRegistry
 from Factual_Integrity_Analyzer import FactualIntegrityAnalyzer
 from System_Admin_Core import SystemAdminCore
+from Hardware_Abstraction_Layer import HardwareAbstractionLayer
 
 class SarahBrain:
     def __init__(self):
@@ -43,6 +44,9 @@ class SarahBrain:
         
         # Initialize System Admin Core (Hardware Control)
         self.admin = SystemAdminCore(monitor=self.monitor)
+        
+        # Initialize Hardware Abstraction Layer (Device Identity)
+        self.hal = HardwareAbstractionLayer(monitor=self.monitor)
         
         # Load Environment Variables (Support for .env)
         load_dotenv(os.path.join(self.workspace_dir, '.env'))
@@ -139,6 +143,9 @@ class SarahBrain:
         # Admin Status
         admin_status = "ACTIVE (FULL CONTROL)" if self.admin.is_admin else "LIMITED (READ-ONLY)"
         print(f"System Admin Core: {admin_status}")
+
+        # HAL Status
+        print(f"Node Identity: {self.hal.node_id} [{self.hal.hostname}]")
 
         print("---------------------------")
 
