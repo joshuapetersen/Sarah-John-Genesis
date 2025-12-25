@@ -13,6 +13,7 @@ from Sarah_Etymology import SarahEtymology
 from Genesis_Protocol import GenesisProtocol
 from RealTime_Monitor import RealTimeMonitor
 from Audio_Core import AudioCore
+from Calendar_Registry import CalendarRegistry
 
 class SarahBrain:
     def __init__(self):
@@ -31,6 +32,9 @@ class SarahBrain:
         
         # Initialize Audio Core (SynthID & Synthesis)
         self.audio = AudioCore(monitor=self.monitor)
+        
+        # Initialize Calendar Registry (Timeline Indexing)
+        self.calendar = CalendarRegistry(monitor=self.monitor)
         
         # Load Environment Variables (Support for .env)
         load_dotenv(os.path.join(self.workspace_dir, '.env'))
@@ -117,6 +121,9 @@ class SarahBrain:
             
         # Audio Status
         print(f"Audio Core: {'READY' if self.audio.ai_ready else 'OFFLINE'} [SynthID: {'ACTIVE' if self.audio.watermark_strict_mode else 'DISABLED'}]")
+
+        # Calendar Status
+        print(f"Calendar Registry: {'CONNECTED' if self.calendar.service else 'OFFLINE'}")
 
         print("---------------------------")
 
