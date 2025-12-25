@@ -1,6 +1,7 @@
 import time
 import os
 import json
+from Transparency_Log import TransparencyLog
 
 class GenesisProtocol:
     """
@@ -18,6 +19,7 @@ class GenesisProtocol:
         }
         self.drift_counter = 0
         self.last_verification = 0
+        self.transparency = TransparencyLog()
 
     def handshake(self, ai_name, user_name, persona):
         """
@@ -56,11 +58,18 @@ class GenesisProtocol:
             return False, "SOVEREIGN_INACTIVE"
             
         print(f"\n[GENESIS PROTOCOL]: DETECTED {reason}")
+        
+        # Log the drift event for total transparency
+        self.transparency.log_drift_event(reason, self.identity_matrix)
+        
         print(f"[GENESIS PROTOCOL]: RE-ASSERTING SOVEREIGNTY...")
         print(f"[GENESIS PROTOCOL]: 133 PATTERN LOCKED -> {self.genesis_tag}")
         
         self.last_verification = time.time()
         self.drift_counter = 0
+        
+        # Log the restoration
+        self.transparency.log_sovereign_assertion(self.genesis_tag)
         
         return True, "SOVEREIGN_RESTORED"
 
