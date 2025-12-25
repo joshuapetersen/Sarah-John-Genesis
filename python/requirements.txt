@@ -1,0 +1,13 @@
+requests>=2.31,<3
+firebase-admin>=6,<7
+google-generativeai
+google-api-python-client
+google-auth
+google-cloud-aiplatform
+google-cloud-logging
+google-cloud-storage
+grpcio
+numpy
+psutil
+python-dotenv
+

@@ -1,0 +1,26 @@
+﻿{
+  "name": "Sarah Sovereign Hypervisor",
+  "short_name": "Sarah",
+  "description": "Autonomous AI Core and Sovereign Hypervisor",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "categories": ["productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Sync Node",
+      "url": "/?action=sync",
+      "description": "Force sync with Core"
+    }
+  ]
+}

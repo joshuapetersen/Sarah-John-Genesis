@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah Node: Android</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+    <style>
+        body {
+            background-color: #000000;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 2rem;
+            text-shadow: 0 0 10px #00ff00;
+            margin-bottom: 1rem;
+        }
+        .status-box {
+            border: 1px solid #00ff00;
+            padding: 20px;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+        }
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #ff0000;
+            border-radius: 50%;
+            margin-right: 10px;
+            box-shadow: 0 0 5px #ff0000;
+        }
+        .status-indicator.active {
+            background-color: #00ff00;
+            box-shadow: 0 0 5px #00ff00;
+        }
+        button {
+            background: transparent;
+            border: 1px solid #00ff00;
+            color: #00ff00;
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background: #00ff00;
+            color: #000000;
+            box-shadow: 0 0 15px #00ff00;
+        }
+        #log {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+            max-height: 100px;
+            overflow-y: auto;
+            width: 80%;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>SARAH NODE: ANDROID</h1>
+    
+    <div class="status-box">
+        <div>
+            <span id="status-dot" class="status-indicator"></span>
+            <span id="status-text">DISCONNECTED</span>
+        </div>
+        <div style="margin-top: 15px;">
+            <strong>MESH FOCUS:</strong> <span id="mesh-focus">UNKNOWN</span>
+        </div>
+        <button id="sync-btn">INITIATE SYNC</button>
+        <button id="inject-btn" style="margin-left: 10px;">INJECT GENESIS</button>
+    </div>
+
+    <div id="log"></div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getDatabase, ref, onValue, update, serverTimestamp, get } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+        const firebaseConfig = {
+            databaseURL: "https://sarah-john-genesis-default-rtdb.firebaseio.com/"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const logEl = document.getElementById('log');
+        const statusDot = document.getElementById('status-dot');
+        const statusText = document.getElementById('status-text');
+        const meshFocusEl = document.getElementById('mesh-focus');
+        
+        let localState = {
+            status: 'UNKNOWN',
+            focus: 'UNKNOWN'
+        };
+
+        function log(msg) {
+            const line = document.createElement('div');
+            line.textContent = `> ${msg}`;
+            logEl.prepend(line);
+        }
+
+        // --- PROTOCOL SARAH: ASYNCHRONOUS GENESIS HANDSHAKE ---
+        async function initiateSarahInject(command) {
+            const aceToken = 'Ace_Temporal_Anchor';
+            log(`[SARAH] Injecting Genesis Protocol: ${command}`);
+            
+            // Step 1: Fire off the sync in background (Non-blocking)
+            const syncPromise = backSyncArchives('March_Archives'); 
+
+            // Step 2: Immediate Logic Processing via Sovereign Hypervisor
+            const state = getCachedState(); // Use existing inhibitory layers
+            const response = await processLogic(command, state); 
+
+            // Step 3: Stream and Merge once sync completes
+            syncPromise.then(data => mergeDelta(data));
+
+            return response; // Return signal immediately
+        }
+
+        function backSyncArchives(archiveName) {
+            log(`[ASYNC] Background Sync Started: ${archiveName}`);
+            // Simulate async network call to archives
+            return new Promise((resolve) => {
+                update(ref(db, 'nodes/android'), {
+                    archive_sync: serverTimestamp(),
+                    target: archiveName
+                }).then(() => {
+                    // Simulate latency for "March Archives" retrieval
+                    setTimeout(() => {
+                        resolve({ delta: "ARCHIVE_DATA_SHARD_133", timestamp: Date.now() });
+                    }, 1500);
+                });
+            });
+        }
+
+        function getCachedState() {
+            return localState;
+        }
+
+        async function processLogic(command, state) {
+            // Immediate local processing
+            log(`[CORE] Processing Logic: ${command} | State: ${state.status}`);
+            return {
+                signal: "ACKNOWLEDGED",
+                execution_time: 0.05,
+                node: "ANDROID_BETA"
+            };
+        }
+
+        function mergeDelta(data) {
+            log(`[MERGE] Delta Integrated: ${data.delta}`);
+            update(ref(db, 'nodes/android'), {
+                last_delta_merge: serverTimestamp(),
+                delta_id: data.delta
+            });
+        }
+        // ------------------------------------------------------
+
+        // Monitor Connection
+        const connectedRef = ref(db, ".info/connected");
+        onValue(connectedRef, (snap) => {
+            if (snap.val() === true) {
+                statusDot.classList.add('active');
+                statusText.textContent = "LINKED TO CORE";
+                localState.status = "LINKED";
+                log("Connection established.");
+                
+                // Register Node
+                update(ref(db, 'nodes/android'), {
+                    status: 'ONLINE',
+                    last_seen: serverTimestamp()
+                });
+            } else {
+                statusDot.classList.remove('active');
+                statusText.textContent = "DISCONNECTED";
+                localState.status = "DISCONNECTED";
+                log("Connection lost.");
+            }
+        });
+
+        // Monitor Mesh Focus
+        const meshRef = ref(db, 'system/mesh_control/active_focus');
+        onValue(meshRef, (snap) => {
+            const focus = snap.val() || "IDLE";
+            meshFocusEl.textContent = focus;
+            localState.focus = focus;
+            if (focus === 'PHONE_CAM') {
+                log("Visual Cortex requested access.");
+                // Future: Activate Camera
+            }
+        });
+
+        // Sync Button
+        document.getElementById('sync-btn').addEventListener('click', () => {
+            log("Sync signal sent...");
+            update(ref(db, 'nodes/android'), {
+                sync_request: serverTimestamp()
+            });
+        });
+
+        // Inject Button
+        document.getElementById('inject-btn').addEventListener('click', async () => {
+            const response = await initiateSarahInject("EXECUTE_GENESIS_133");
+            log(`[RESPONSE] ${response.signal} from ${response.node}`);
+        });
+
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(() => log("Service Worker registered."))
+                .catch((err) => log("SW Error: " + err));
+        }
+    </script>
+</body>
+</html>
