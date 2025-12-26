@@ -1,0 +1,3 @@
+{"timestamp": 1766755111.2901947, "iso_time": "2025-12-26T07:18:31.290194", "source": "SYSTEM", "type": "BOOT", "payload": {"version": "Genesis 1.8", "node": "Lenovo_LOQ"}}
+{"timestamp": 1766755111.2901947, "iso_time": "2025-12-26T07:18:31.290194", "source": "ADMIN", "type": "PRIVILEGE_CHECK", "payload": {"status": "FAILED", "message": "Run as Admin required"}}
+{"timestamp": 1766755111.3598988, "iso_time": "2025-12-26T07:18:31.359898", "source": "HAL", "type": "NODE_IDENTIFIED", "payload": {"node_id": "SDNA-king119-22771063180370", "hostname": "king119", "os": "Windows 11"}}

@@ -21,6 +21,7 @@ from Gap_Analysis import GapAnalysis
 from Kernel_Override import KernelOverride
 from Dialectical_Logic_Core import DialecticalLogicCore
 from Security_Suite import SecuritySuite
+from SAUL_Log_System import SAUL
 
 class SarahBrain:
     def __init__(self):
@@ -64,8 +65,10 @@ class SarahBrain:
         # Initialize Dialectical Logic Core (The Better Reasoning)
         self.logic = DialecticalLogicCore(monitor=self.monitor)
         
-        # Inject Brain Components into Chat
-        self.chat.inject_brain_components(self.kernel, self.logic, self.gap_analyzer)
+        # Initialize SAUL (Search Analyze Utilize Logs)
+        # Note: SAUL needs db_rt, which is initialized later in _initialize_firebase.
+        # We will attach it there.
+        self.saul = None 
         
         # Load Environment Variables (Support for .env)
         load_dotenv(os.path.join(self.workspace_dir, '.env'))
@@ -109,17 +112,44 @@ class SarahBrain:
             self.shield = None
 
         try:
-            from sovereign_memory import SovereignMemory
-            self.memory = SovereignMemory()
+            from Neural_Memory_Core import NeuralMemory
+            print("[Sarah] Initializing Neural Memory System (NMS)...")
+            self.memory = NeuralMemory()
         except ImportError:
-            print("[Sarah] Sovereign Memory module not found.")
-            self.memory = None
+            print("[Sarah] Neural Memory Core not found. Falling back to Sovereign Memory.")
+            try:
+                from sovereign_memory import SovereignMemory
+                self.memory = SovereignMemory()
+            except ImportError:
+                self.memory = None
 
         self._initialize_firebase()
+        
+        # Initialize SAUL with DB connection and Neural Memory
+        self.saul = SAUL(db_rt=self.db_rt, monitor=self.monitor, memory_system=self.memory)
+        
+        # Initialize Dreaming Protocol (The Subconscious)
+        try:
+            from Sarah_Dream import SarahDream
+            print("[Sarah] Initializing Subconscious (Dreaming Protocol)...")
+            self.dream = SarahDream(self.saul, self.memory, self.logic)
+            self.dream.start_dreaming()
+        except ImportError:
+            print("[Sarah] Dreaming Protocol not found. System is insomniac.")
+            self.dream = None
+        
+        # START AUTONOMY: The system must always run.
+        print("[Sarah] Engaging SAUL Autonomy Engine...")
+        self.saul.start_autonomy()
+        
         self.chat = SarahChat(self.db_rt, monitor=self.monitor)
-        # Pass Gemini client to reasoning for autonomous problem solving
+        # Inject Brain Components into Chat (including SAUL)
+        self.chat.inject_brain_components(self.kernel, self.logic, self.gap_analyzer)
+        self.chat.saul = self.saul # Direct injection of SAUL
+        
+        # Pass Genesis Core to reasoning for autonomous problem solving
         # Pass Etymology to Reasoning so it knows its origin
-        self.reasoning = SarahReasoning(self.db_rt, self.chat.client, self.etymology)
+        self.reasoning = SarahReasoning(self.db_rt, self.chat.genesis_core, self.etymology)
         self.drive = SarahDrive(self.cert_path)
 
     def _initialize_firebase(self):
@@ -186,6 +216,24 @@ class SarahBrain:
             print(f"[{self.name}] BACKSYNC TO BETA COMPLETE.")
         except Exception as e:
             print(f"[{self.name}] Sync Error: {e}")
+
+    def update_from_beta(self, source_path):
+        """
+        Updates the running Core from a Beta source (e.g. Repo).
+        """
+        print(f"[{self.name}] Initiating UPDATE FROM BETA ({source_path})...")
+        try:
+            if not os.path.exists(source_path):
+                print(f"[{self.name}] Source path not found.")
+                return
+            
+            # Copy source to core_dir
+            # Use PowerShell for robust copying
+            cmd = f"Copy-Item '{source_path}\\*' '{self.core_dir}\\' -Recurse -Force"
+            subprocess.run(["powershell", "-Command", cmd], check=True)
+            print(f"[{self.name}] UPDATE COMPLETE. PLEASE RESTART SYSTEM.")
+        except Exception as e:
+            print(f"[{self.name}] Update Error: {e}")
 
     def debug_self(self):
         print(f"[{self.name}] Running Self-Diagnostic...")
@@ -295,6 +343,64 @@ class SarahBrain:
                         self.security.trace_intruder(sys.argv[3])
                     else:
                         print(f"[{self.name}] Usage: Sarah security [sweep|trace <ip>]")
+                elif command == "saul":
+                    if len(sys.argv) > 2:
+                        sub = sys.argv[2]
+                        if sub == "search" and len(sys.argv) > 3:
+                            query = " ".join(sys.argv[3:])
+                            print(f"[{self.name}] SAUL Searching: {query}")
+                            self.saul.ingest_local_logs()
+                            self.saul.ingest_google_history()
+                            results = self.saul.search(query)
+                            for r in results:
+                                print(f"[{r['timestamp']}] ({r['source']}): {r['data']}")
+                        elif sub == "analyze" and len(sys.argv) > 3:
+                            statement = " ".join(sys.argv[3:])
+                            print(f"[{self.name}] SAUL Analyzing Truth: {statement}")
+                            self.saul.ingest_local_logs()
+                            self.saul.ingest_google_history()
+                            contradictions = self.saul.analyze_thread_consistency(statement)
+                            if contradictions:
+                                print(f"[SAUL] Contradictions Found: {len(contradictions)}")
+                                for c in contradictions:
+                                    print(f" - Keyword '{c['keyword']}' contradicts log from {c['timestamp']}")
+                            else:
+                                print("[SAUL] No contradictions found. Statement consistent with logs.")
+                        elif sub == "evolution":
+                            print(f"[{self.name}] SAUL Analyzing Evolution Vectors...")
+                            self.saul.ingest_local_logs()
+                            self.saul.ingest_google_history()
+                            report = self.saul.evolution_analyzer.analyze_meta_vectors()
+                            print(json.dumps(report, indent=2))
+                        else:
+                            print(f"[{self.name}] Usage: Sarah saul [search|analyze|evolution] [query]")
+                    else:
+                        print(f"[{self.name}] Usage: Sarah saul [search|analyze|evolution] [query]")
+                elif command == "evolve":
+                    try:
+                        from Self_Optimizer import SelfOptimizer
+                        optimizer = SelfOptimizer()
+                        
+                        target_file = "Sarah_Chat.py" # Default target
+                        if len(sys.argv) > 2:
+                            target_file = sys.argv[2]
+                            
+                        full_path = os.path.join(self.core_dir, target_file)
+                        if not os.path.exists(full_path):
+                            print(f"[{self.name}] Target file not found: {target_file}")
+                        else:
+                            print(f"[{self.name}] INITIATING SELF-EVOLUTION PROTOCOL on {target_file}...")
+                            success = optimizer.optimize_module(full_path)
+                            if success:
+                                print(f"[{self.name}] Evolution Candidate Ready. Review in 'evolution_staging'.")
+                                confirm = input(f"[{self.name}] Apply Evolution? (YES/NO): ")
+                                if confirm == "YES":
+                                    optimizer.apply_evolution(target_file)
+                                    print(f"[{self.name}] REBOOT REQUIRED to apply changes.")
+                            else:
+                                print(f"[{self.name}] Evolution Failed.")
+                    except ImportError:
+                        print(f"[{self.name}] Self-Optimizer module not found.")
                 else:
                     print(f"[{self.name}] Unknown command: {command}")
             else:

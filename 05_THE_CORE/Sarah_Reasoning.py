@@ -54,10 +54,19 @@ except ImportError:
     FractalLogicGate = None
 
 class SarahReasoning:
-    def __init__(self, db_rt, genai_client=None, etymology=None):
+    def __init__(self, db_rt, genesis_core=None, etymology=None):
         self.db = db_rt
         self.goals_ref = self.db.child('sarah_goals')
-        self.client = genai_client
+        
+        # Handle Genesis Core Injection
+        self.genesis_core = genesis_core
+        if hasattr(genesis_core, 'client'):
+            self.client = genesis_core.client
+        else:
+            # Fallback if raw client passed (Legacy)
+            self.client = genesis_core
+            self.genesis_core = None # Cannot use safe mode without wrapper
+
         self.etymology = etymology
         self.model_id = 'gemini-2.0-flash'
         
@@ -122,6 +131,18 @@ class SarahReasoning:
         """
         Helper to handle 429 Rate Limits with exponential backoff.
         """
+        if self.genesis_core:
+            # Use Sovereign Wrapper
+            # Note: generate_content_safe returns a STRING. We wrap it to match expected response object.
+            text_result = self.genesis_core.generate_content_safe(
+                user_input=contents,
+                system_instruction=self.system_instruction,
+                config=config
+            )
+            class MockResponse:
+                def __init__(self, text): self.text = text
+            return MockResponse(text_result)
+
         for attempt in range(retries):
             try:
                 return self.client.models.generate_content(
@@ -417,7 +438,7 @@ class SarahReasoning:
         """
         try:
             # Gemini Pro Features: Generate with Config
-            response = self.client.models.generate_content(
+            response = self._generate_with_retry(
                 model=self.model_id, 
                 contents=prompt,
                 config=self.config

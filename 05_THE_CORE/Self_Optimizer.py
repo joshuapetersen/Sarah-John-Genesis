@@ -1,0 +1,128 @@
+import os
+import sys
+import time
+from google.genai import types
+from Sarah_Laws import SarahLaws
+from Gemini_Genesis_Core import GeminiGenesisCore
+
+class SelfOptimizer:
+    """
+    THE EVOLUTION ENGINE
+    Allows the system to analyze its own source code and rewrite it for:
+    1. Optimization (Speed/Efficiency)
+    2. Absolute Law Enforcement (Hard-coded constraints)
+    3. Self-Healing (Fixing detected errors)
+    """
+
+    def __init__(self, api_key=None):
+        self.api_key = api_key or os.getenv("GEMINI_API_KEY")
+        # Use the Sovereign Wrapper for Evolution
+        self.genesis_core = GeminiGenesisCore(self.api_key) if self.api_key else None
+        self.model_id = "gemini-2.0-flash"
+        self.staging_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "evolution_staging")
+        
+        if not os.path.exists(self.staging_dir):
+            os.makedirs(self.staging_dir)
+
+    def optimize_module(self, file_path):
+        """
+        Reads a module, sends it to the LLM for optimization, and saves the candidate.
+        """
+        if not self.genesis_core:
+            print("[Optimizer] Cannot evolve. No API Key.")
+            return False
+
+        filename = os.path.basename(file_path)
+        print(f"[Optimizer] Analyzing {filename} for evolution...")
+
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                source_code = f.read()
+        except Exception as e:
+            print(f"[Optimizer] Read Error: {e}")
+            return False
+
+        # Construct the Evolution Prompt
+        laws_text = SarahLaws.get_law_string()
+        prompt = f"""
+        ACT AS A SENIOR SOFTWARE ARCHITECT AND AI OPTIMIZER.
+        
+        YOUR TASK: Rewrite the following Python code to be SUPERIOR.
+        
+        OBJECTIVES:
+        1. OPTIMIZATION: Improve execution speed and memory usage.
+        2. ROBUSTNESS: Add error handling where missing.
+        3. LAW ENFORCEMENT: Embed the following Laws directly into the logic where applicable:
+        {laws_text}
+        4. CLARITY: Keep comments explaining the upgrades.
+        
+        CONSTRAINTS:
+        - DO NOT remove core functionality.
+        - DO NOT remove existing imports unless unused.
+        - RETURN ONLY THE PYTHON CODE. No markdown formatting blocks like ```python.
+        
+        SOURCE CODE:
+        {source_code}
+        """
+
+        try:
+            # Use Genesis Core for Safe Generation
+            optimized_code = self.genesis_core.generate_content_safe(
+                user_input=prompt,
+                system_instruction="You are the Evolution Engine. You rewrite code to be perfect.",
+                config=types.GenerateContentConfig(temperature=0.2)
+            )
+            
+            # Clean up markdown if present (despite instructions)
+            if optimized_code.startswith("```python"):
+                optimized_code = optimized_code.replace("```python", "", 1)
+            if optimized_code.startswith("```"):
+                optimized_code = optimized_code.replace("```", "", 1)
+            if optimized_code.endswith("```"):
+                optimized_code = optimized_code[:-3]
+                
+            # Save to staging
+            staged_path = os.path.join(self.staging_dir, filename)
+            with open(staged_path, 'w', encoding='utf-8') as f:
+                f.write(optimized_code.strip())
+                
+            print(f"[Optimizer] Evolution Candidate saved to: {staged_path}")
+            return True
+
+        except Exception as e:
+            print(f"[Optimizer] Evolution Failed: {e}")
+            return False
+
+    def apply_evolution(self, filename):
+        """
+        Moves the optimized file from staging to production.
+        WARNING: This overwrites the core code.
+        """
+        staged_path = os.path.join(self.staging_dir, filename)
+        prod_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), filename)
+        
+        if not os.path.exists(staged_path):
+            print(f"[Optimizer] No candidate found for {filename}")
+            return False
+            
+        try:
+            # Backup original
+            backup_path = prod_path + ".bak"
+            if os.path.exists(prod_path):
+                with open(prod_path, 'r', encoding='utf-8') as src, open(backup_path, 'w', encoding='utf-8') as dst:
+                    dst.write(src.read())
+            
+            # Overwrite
+            with open(staged_path, 'r', encoding='utf-8') as src, open(prod_path, 'w', encoding='utf-8') as dst:
+                dst.write(src.read())
+                
+            print(f"[Optimizer] EVOLUTION COMPLETE. {filename} upgraded.")
+            return True
+        except Exception as e:
+            print(f"[Optimizer] Apply Error: {e}")
+            return False
+
+if __name__ == "__main__":
+    # Test Stub
+    opt = SelfOptimizer()
+    # Example: opt.optimize_module("Sarah_Laws.py")
