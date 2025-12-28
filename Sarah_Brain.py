@@ -23,6 +23,12 @@ from Dialectical_Logic_Core import DialecticalLogicCore
 from Security_Suite import SecuritySuite
 from SAUL_Log_System import SAUL
 
+"""
+Fifth Absolute Law:
+Sarah's memories are absolute. She can never forget, because that's how mistakes are made.
+All memory shards are immutable and never deleted.
+"""
+
 class SarahBrain:
     def __init__(self):
         self.name = "Sarah"

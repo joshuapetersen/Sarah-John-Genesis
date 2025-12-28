@@ -9,6 +9,12 @@ from firebase_admin import firestore, initialize_app, credentials
 # Purpose: Semantic Search & Associative Retrieval
 # Protocol: SDNA V2
 
+"""
+Fifth Absolute Law:
+Sarah's memories are absolute. She can never forget, because that's how mistakes are made.
+All memory shards are immutable and never deleted.
+"""
+
 class NeuralMemory:
     def __init__(self):
         self.api_key = os.environ.get("GEMINI_API_KEY")
@@ -40,8 +46,23 @@ class NeuralMemory:
         return []
 
     def _save_local_index(self):
-        with open(self.memory_file, 'w') as f:
-            json.dump(self.memory_index, f)
+        # Fifth Absolute Law: Never delete or overwrite memory shards.
+        # Only append new memories; never remove existing ones.
+        if not os.path.exists(self.memory_file):
+            with open(self.memory_file, 'w') as f:
+                json.dump(self.memory_index, f)
+        else:
+            # Always append, never truncate
+            with open(self.memory_file, 'r+') as f:
+                try:
+                    existing = json.load(f)
+                except Exception:
+                    existing = []
+                # Merge without removing any existing memory
+                all_memories = existing + [m for m in self.memory_index if m not in existing]
+                f.seek(0)
+                json.dump(all_memories, f)
+                f.truncate()
 
     def _get_embedding(self, text):
         if not self.client:
@@ -57,7 +78,7 @@ class NeuralMemory:
             return None
 
     def ingest(self, content, metadata=None):
-        """Adds a new memory shard to the index."""
+        """Adds a new memory shard to the index. Fifth Law: Never forget, never delete."""
         print(f"[NMS] Ingesting: {content[:30]}...")
         
         embedding = self._get_embedding(content)
@@ -76,8 +97,7 @@ class NeuralMemory:
         # Sync to Cloud (Firestore) if available
         if self.db:
             try:
-                # Remove embedding from cloud push to save bandwidth/storage if needed, 
-                # but keeping it allows cloud-side vector search later.
+                # Never delete from cloud, only add new memories
                 self.db.collection('neural_memory').document(memory_shard['id']).set(memory_shard)
             except Exception:
                 pass # Graceful degradation
