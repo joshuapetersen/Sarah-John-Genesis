@@ -1,0 +1,353 @@
+[
+    {
+        "name": "Driver Booster 13",
+        "version": "13.1.0",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Google Chrome",
+        "version": "143.0.7499.170",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Microsoft Edge",
+        "version": "143.0.3650.96",
+        "risk_score": 20,
+        "reasons": [
+            "Proprietary Lock-in Risk"
+        ],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Microsoft Edge WebView2 Runtime",
+        "version": "143.0.3650.96",
+        "risk_score": 20,
+        "reasons": [
+            "Proprietary Lock-in Risk"
+        ],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Lenovo System Update",
+        "version": "5.08.03.59",
+        "risk_score": 50,
+        "reasons": [
+            "Telemetry/Bloat Pattern"
+        ],
+        "assimilation_path": "CONTAINER"
+    },
+    {
+        "name": "Lenovo Vantage Service",
+        "version": "4.2511.18.0",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.42.34438",
+        "version": "14.42.34438",
+        "risk_score": 20,
+        "reasons": [
+            "Proprietary Lock-in Risk"
+        ],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Python Launcher",
+        "version": "3.12.10150.0",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Microsoft Visual C++ 2022 X86 Additional Runtime - 14.42.34438",
+        "version": "14.42.34438",
+        "risk_score": 20,
+        "reasons": [
+            "Proprietary Lock-in Risk"
+        ],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.42.34438",
+        "version": "14.42.34438.0",
+        "risk_score": 20,
+        "reasons": [
+            "Proprietary Lock-in Risk"
+        ],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.42.34438",
+        "version": "14.42.34438.0",
+        "risk_score": 20,
+        "reasons": [
+            "Proprietary Lock-in Risk"
+        ],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Git",
+        "version": "2.52.0",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Python 3.12.10 Executables (64-bit)",
+        "version": "3.12.10150.0",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Python 3.12.10 Test Suite (64-bit)",
+        "version": "3.12.10150.0",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Python 3.12.10 Documentation (64-bit)",
+        "version": "3.12.10150.0",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.42.34438",
+        "version": "14.42.34438",
+        "risk_score": 20,
+        "reasons": [
+            "Proprietary Lock-in Risk"
+        ],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Python 3.12.10 Add to Path (64-bit)",
+        "version": "3.12.10150.0",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Node.js",
+        "version": "24.12.0",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Python 3.12.10 Tcl/Tk Support (64-bit)",
+        "version": "3.12.10150.0",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Python 3.12.10 Core Interpreter (64-bit)",
+        "version": "3.12.10150.0",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "NVIDIA Graphics Driver 591.59",
+        "version": "591.59",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "NVIDIA App 11.0.5.420",
+        "version": "11.0.5.420",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "NVIDIA MessageBus 3 for NvApp",
+        "version": "3.16",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "NVIDIA Backend",
+        "version": "11.0.5.420",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "NvCpl",
+        "version": "1.0",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "NVIDIA PhysX System Software 9.23.1019",
+        "version": "9.23.1019",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "NVIDIA FrameView SDK 1.5.11504.36206172",
+        "version": "1.5.11504.36206172",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "NVIDIA HD Audio Driver 1.4.5.7",
+        "version": "1.4.5.7",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "NVIDIA Install Application",
+        "version": "2.1002.438.0",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "NVIDIA Container",
+        "version": "1.44",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "NVIDIA AIUser Container",
+        "version": "1.44",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "NVIDIA LocalSystem Container",
+        "version": "1.44",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "NVIDIA Session Container",
+        "version": "1.44",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "NVIDIA User Container",
+        "version": "1.44",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "NVIDIA NvDLISR",
+        "version": "1.0",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "NVIDIA Platform Controllers and Framework",
+        "version": "590.71",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "NVIDIA Watchdog Plugin for NvContainer",
+        "version": "1.44",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "NVIDIA Telemetry Client",
+        "version": "19.4.29.0",
+        "risk_score": 50,
+        "reasons": [
+            "Telemetry/Bloat Pattern"
+        ],
+        "assimilation_path": "CONTAINER"
+    },
+    {
+        "name": "NVIDIA ShadowPlay 11.0.5.400",
+        "version": "11.0.5.400",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "NVIDIA USBC Driver 1.52.831.832",
+        "version": "1.52.831.832",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "NVIDIA Virtual Audio 4.65.0.3",
+        "version": "4.65.0.3",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Epic Games Launcher",
+        "version": "1.3.161.0",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Python 3.12.10 pip Bootstrap (64-bit)",
+        "version": "3.12.10150.0",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Python 3.12.10 Standard Library (64-bit)",
+        "version": "3.12.10150.0",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Microsoft Visual C++ 2022 X64 Additional Runtime - 14.42.34438",
+        "version": "14.42.34438",
+        "risk_score": 20,
+        "reasons": [
+            "Proprietary Lock-in Risk"
+        ],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Microsoft GameInput",
+        "version": "10.1.26100.6879",
+        "risk_score": 20,
+        "reasons": [
+            "Proprietary Lock-in Risk"
+        ],
+        "assimilation_path": "NATIVE_MESH"
+    },
+    {
+        "name": "Python 3.12.10 Development Libraries (64-bit)",
+        "version": "3.12.10150.0",
+        "risk_score": 0,
+        "reasons": [],
+        "assimilation_path": "NATIVE_MESH"
+    }
+]

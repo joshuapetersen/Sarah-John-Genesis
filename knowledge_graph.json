@@ -1,0 +1,1 @@
+{"entities": {"Stephen": {"mentions": 1, "last_seen": 1766787277.6663897}, "A tamer": {"mentions": 1, "last_seen": 1766787277.6663897}}, "relations": [{"a": "Stephen", "r": "IS", "b": "A tamer", "weight": 1}]}

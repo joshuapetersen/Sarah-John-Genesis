@@ -1,0 +1,151 @@
+[
+    {
+        "file": "font.h",
+        "classes": [],
+        "functions": []
+    },
+    {
+        "file": "freetype.h",
+        "classes": [
+            "Scale_t",
+            "pgFontId",
+            "pgFontObject"
+        ],
+        "functions": []
+    },
+    {
+        "file": "mask.h",
+        "classes": [],
+        "functions": []
+    },
+    {
+        "file": "mixer.h",
+        "classes": [],
+        "functions": []
+    },
+    {
+        "file": "palette.h",
+        "classes": [],
+        "functions": []
+    },
+    {
+        "file": "pgarrinter.h",
+        "classes": [
+            "PyArrayInterface"
+        ],
+        "functions": []
+    },
+    {
+        "file": "pgbufferproxy.h",
+        "classes": [],
+        "functions": []
+    },
+    {
+        "file": "pgcompat.h",
+        "classes": [],
+        "functions": []
+    },
+    {
+        "file": "pgopengl.h",
+        "classes": [],
+        "functions": []
+    },
+    {
+        "file": "pgplatform.h",
+        "classes": [],
+        "functions": []
+    },
+    {
+        "file": "pygame.h",
+        "classes": [],
+        "functions": []
+    },
+    {
+        "file": "scrap.h",
+        "classes": [],
+        "functions": [
+            "pygame_scrap_initialized",
+            "pygame_scrap_init",
+            "pygame_scrap_lost",
+            "pygame_scrap_put",
+            "pygame_scrap_get",
+            "pygame_scrap_get_types",
+            "pygame_scrap_contains"
+        ]
+    },
+    {
+        "file": "simd_blitters.h",
+        "classes": [],
+        "functions": [
+            "pg_sse2_at_runtime_but_uncompiled",
+            "pg_neon_at_runtime_but_uncompiled",
+            "pg_avx2_at_runtime_but_uncompiled",
+            "alphablit_alpha_sse2_argb_surf_alpha",
+            "alphablit_alpha_sse2_argb_no_surf_alpha",
+            "alphablit_alpha_sse2_argb_no_surf_alpha_opaque_dst",
+            "blit_blend_rgba_mul_sse2",
+            "blit_blend_rgb_mul_sse2",
+            "blit_blend_rgba_add_sse2",
+            "blit_blend_rgb_add_sse2",
+            "blit_blend_rgba_sub_sse2",
+            "blit_blend_rgb_sub_sse2",
+            "blit_blend_rgba_max_sse2",
+            "blit_blend_rgb_max_sse2",
+            "blit_blend_rgba_min_sse2",
+            "blit_blend_rgb_min_sse2",
+            "blit_blend_premultiplied_sse2",
+            "premul_surf_color_by_alpha_non_simd",
+            "premul_surf_color_by_alpha_sse2",
+            "pg_has_avx2",
+            "blit_blend_rgba_mul_avx2",
+            "blit_blend_rgb_mul_avx2",
+            "blit_blend_rgba_add_avx2",
+            "blit_blend_rgb_add_avx2",
+            "blit_blend_rgba_sub_avx2",
+            "blit_blend_rgb_sub_avx2",
+            "blit_blend_rgba_max_avx2",
+            "blit_blend_rgb_max_avx2",
+            "blit_blend_rgba_min_avx2",
+            "blit_blend_rgb_min_avx2"
+        ]
+    },
+    {
+        "file": "surface.h",
+        "classes": [],
+        "functions": [
+            "surface_fill_blend",
+            "surface_respect_clip_rect",
+            "pygame_AlphaBlit",
+            "pygame_Blit",
+            "premul_surf_color_by_alpha",
+            "pg_warn_simd_at_runtime_but_uncompiled"
+        ]
+    },
+    {
+        "file": "_blit_info.h",
+        "classes": [
+            "SDL_BlitInfo"
+        ],
+        "functions": []
+    },
+    {
+        "file": "_camera.h",
+        "classes": [],
+        "functions": []
+    },
+    {
+        "file": "_pygame.h",
+        "classes": [
+            "pgEventObject",
+            "pgLifetimeLockObject",
+            "pgSubSurface_Data",
+            "pgColorObject"
+        ],
+        "functions": []
+    },
+    {
+        "file": "_surface.h",
+        "classes": [],
+        "functions": []
+    }
+]

@@ -1,0 +1,152 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:06.000 --> 00:00:08.070 align:start position:0%
+ 
+When<00:00:06.240><c> plumbing</c><00:00:06.640><c> problems</c><00:00:07.040><c> hit</c><00:00:07.200><c> in</c><00:00:07.440><c> Chicago,</c>
+
+00:00:08.070 --> 00:00:08.080 align:start position:0%
+When plumbing problems hit in Chicago,
+ 
+
+00:00:08.080 --> 00:00:10.870 align:start position:0%
+When plumbing problems hit in Chicago,
+trust<00:00:08.400><c> matters.</c><00:00:09.440><c> Rob</c><00:00:09.760><c> West</c><00:00:10.160><c> Plumbing</c><00:00:10.559><c> brings</c>
+
+00:00:10.870 --> 00:00:10.880 align:start position:0%
+trust matters. Rob West Plumbing brings
+ 
+
+00:00:10.880 --> 00:00:12.790 align:start position:0%
+trust matters. Rob West Plumbing brings
+confidence<00:00:11.280><c> and</c><00:00:11.599><c> professionalism</c><00:00:12.240><c> to</c><00:00:12.480><c> every</c>
+
+00:00:12.790 --> 00:00:12.800 align:start position:0%
+confidence and professionalism to every
+ 
+
+00:00:12.800 --> 00:00:15.589 align:start position:0%
+confidence and professionalism to every
+job,<00:00:13.599><c> ensuring</c><00:00:14.080><c> your</c><00:00:14.320><c> property</c><00:00:14.719><c> is</c><00:00:14.960><c> in</c><00:00:15.200><c> expert</c>
+
+00:00:15.589 --> 00:00:15.599 align:start position:0%
+job, ensuring your property is in expert
+ 
+
+00:00:15.599 --> 00:00:18.710 align:start position:0%
+job, ensuring your property is in expert
+hands.<00:00:17.039><c> From</c><00:00:17.279><c> leaky</c><00:00:17.680><c> pipes</c><00:00:18.080><c> to</c><00:00:18.320><c> complete</c>
+
+00:00:18.710 --> 00:00:18.720 align:start position:0%
+hands. From leaky pipes to complete
+ 
+
+00:00:18.720 --> 00:00:21.029 align:start position:0%
+hands. From leaky pipes to complete
+system<00:00:19.039><c> upgrades,</c><00:00:20.000><c> our</c><00:00:20.320><c> skilled</c><00:00:20.720><c> team</c>
+
+00:00:21.029 --> 00:00:21.039 align:start position:0%
+system upgrades, our skilled team
+ 
+
+00:00:21.039 --> 00:00:22.790 align:start position:0%
+system upgrades, our skilled team
+delivers<00:00:21.439><c> reliable</c><00:00:22.000><c> residential</c><00:00:22.480><c> and</c>
+
+00:00:22.790 --> 00:00:22.800 align:start position:0%
+delivers reliable residential and
+ 
+
+00:00:22.800 --> 00:00:25.509 align:start position:0%
+delivers reliable residential and
+commercial<00:00:23.119><c> plumbing</c><00:00:23.519><c> services.</c><00:00:24.880><c> We</c><00:00:25.119><c> tailor</c>
+
+00:00:25.509 --> 00:00:25.519 align:start position:0%
+commercial plumbing services. We tailor
+ 
+
+00:00:25.519 --> 00:00:27.349 align:start position:0%
+commercial plumbing services. We tailor
+highquality<00:00:26.240><c> solutions</c><00:00:26.640><c> to</c><00:00:26.880><c> your</c><00:00:27.039><c> unique</c>
+
+00:00:27.349 --> 00:00:27.359 align:start position:0%
+highquality solutions to your unique
+ 
+
+00:00:27.359 --> 00:00:29.830 align:start position:0%
+highquality solutions to your unique
+needs,<00:00:28.240><c> always</c><00:00:28.640><c> prioritizing</c><00:00:29.279><c> your</c><00:00:29.519><c> peace</c><00:00:29.679><c> of</c>
+
+00:00:29.830 --> 00:00:29.840 align:start position:0%
+needs, always prioritizing your peace of
+ 
+
+00:00:29.840 --> 00:00:32.310 align:start position:0%
+needs, always prioritizing your peace of
+mind<00:00:30.080><c> and</c><00:00:30.400><c> satisfaction.</c>
+
+00:00:32.310 --> 00:00:32.320 align:start position:0%
+mind and satisfaction.
+ 
+
+00:00:32.320 --> 00:00:35.350 align:start position:0%
+mind and satisfaction.
+Plumbing<00:00:32.719><c> emergencies</c><00:00:33.600><c> cannot</c><00:00:34.160><c> wait.</c><00:00:35.120><c> That</c>
+
+00:00:35.350 --> 00:00:35.360 align:start position:0%
+Plumbing emergencies cannot wait. That
+ 
+
+00:00:35.360 --> 00:00:37.670 align:start position:0%
+Plumbing emergencies cannot wait. That
+is<00:00:35.520><c> why</c><00:00:35.680><c> we</c><00:00:35.920><c> offer</c><00:00:36.239><c> fast,</c><00:00:36.800><c> dependable</c><00:00:37.360><c> service</c>
+
+00:00:37.670 --> 00:00:37.680 align:start position:0%
+is why we offer fast, dependable service
+ 
+
+00:00:37.680 --> 00:00:40.229 align:start position:0%
+is why we offer fast, dependable service
+across<00:00:38.079><c> Chicago</c><00:00:38.559><c> and</c><00:00:38.879><c> surrounding</c><00:00:39.280><c> areas,</c>
+
+00:00:40.229 --> 00:00:40.239 align:start position:0%
+across Chicago and surrounding areas,
+ 
+
+00:00:40.239 --> 00:00:41.910 align:start position:0%
+across Chicago and surrounding areas,
+getting<00:00:40.480><c> your</c><00:00:40.719><c> water</c><00:00:40.960><c> flowing</c><00:00:41.280><c> and</c><00:00:41.440><c> your</c><00:00:41.680><c> life</c>
+
+00:00:41.910 --> 00:00:41.920 align:start position:0%
+getting your water flowing and your life
+ 
+
+00:00:41.920 --> 00:00:44.709 align:start position:0%
+getting your water flowing and your life
+back<00:00:42.160><c> on</c><00:00:42.399><c> track</c><00:00:42.719><c> quickly.</c><00:00:43.840><c> Do</c><00:00:44.079><c> not</c><00:00:44.239><c> let</c><00:00:44.399><c> small</c>
+
+00:00:44.709 --> 00:00:44.719 align:start position:0%
+back on track quickly. Do not let small
+ 
+
+00:00:44.719 --> 00:00:47.990 align:start position:0%
+back on track quickly. Do not let small
+leaks<00:00:45.040><c> become</c><00:00:45.360><c> big</c><00:00:45.680><c> problems.</c><00:00:47.120><c> Call</c><00:00:47.360><c> Rob</c><00:00:47.760><c> West</c>
+
+00:00:47.990 --> 00:00:48.000 align:start position:0%
+leaks become big problems. Call Rob West
+ 
+
+00:00:48.000 --> 00:00:52.709 align:start position:0%
+leaks become big problems. Call Rob West
+Plumbing<00:00:48.320><c> now</c><00:00:48.559><c> at</c><00:00:48.879><c> 773-29-8232.</c>
+
+00:00:52.709 --> 00:00:52.719 align:start position:0%
+ 
+ 
+
+00:00:52.719 --> 00:00:55.600 align:start position:0%
+ 
+Quality<00:00:53.120><c> you</c><00:00:53.280><c> can</c><00:00:53.440><c> count</c>
+

@@ -1,0 +1,15 @@
+[package]
+name = "lib-dns"
+version = "0.1.0"
+edition = "2021"
+authors = ["DrBrad <brad@bradeagle.com>", "Sovereign Network Team"]
+description = "DNS Library for Sovereign Network"
+license = "MIT"
+keywords = ["dns", "resolver", "sovereign-network"]
+categories = ["network-programming"]
+
+[dependencies]
+
+[lib]
+name = "lib_dns"
+path = "src/lib.rs"

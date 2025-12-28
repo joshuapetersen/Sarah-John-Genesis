@@ -1,0 +1,33 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build pybind11 Bridge",
+			"type": "shell",
+			"command": "cmake -S . -B build && cmake --build build --config Release",
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Build pybind11 Bridge (Windows)",
+			"type": "shell",
+			"command": "cmake -S . -B build; cmake --build build --config Release",
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Build pybind11 Bridge (CMake)",
+			"type": "shell",
+			"command": "cmake -S . -B build; cmake --build build --config Release",
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Genesis Handshake: Compile and Import",
+			"type": "shell",
+			"command": "python -c \"import genesis_core; print('Genesis handshake successful.')\"",
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}
