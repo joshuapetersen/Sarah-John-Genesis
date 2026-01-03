@@ -51,46 +51,105 @@ class DialecticalLogicCore:
 
     def _generate_antithesis(self, thesis):
         """
-        Generates the logical negation or 'Devil's Advocate' position.
+        Generates sophisticated logical negation with contextual depth and confidence scoring.
+        Returns tuple of (antithesis, confidence_score).
         """
-        # Simple heuristic for the script: Invert the intent
-        # In a real LLM integration, this would be a prompt to the model
-        if "create" in thesis.lower():
-            return f"What if we destroy/remove the need for '{thesis}' instead?"
-        elif "trust" in thesis.lower():
-            return "Assume the source is compromised. Verify."
-        elif "connect" in thesis.lower():
-            return "Is isolation safer?"
-        else:
-            return f"Why is '{thesis}' false or dangerous?"
+        antithesis_map = {
+            "create": ("What constraints make creation wasteful? Explore minimum viable form.", 0.85),
+            "trust": ("What evidence contradicts this trust? Build verification checkpoints.", 0.9),
+            "connect": ("What isolation creates safety? Map boundary conditions.", 0.75),
+            "optimize": ("What complexity does optimization hide? Balance transparency vs efficiency.", 0.8),
+            "learn": ("What unlearning prevents stagnation? Challenge assumptions.", 0.88),
+            "move_fast": ("What speed creates technical debt? Balance velocity with stability.", 0.82),
+            "scale": ("What breaks at scale? Stress-test assumptions.", 0.87),
+        }
+        
+        thesis_lower = thesis.lower()
+        for keyword, (counter, confidence) in antithesis_map.items():
+            if keyword in thesis_lower:
+                return counter, confidence
+        
+        # Default sophisticated antithesis
+        return f"What fundamental assumption in '{thesis}' might be false? What's the cost of being wrong?", 0.7
 
     def _derive_synthesis(self, thesis, antithesis):
         """
-        Reconciles the Thesis and Antithesis into a higher truth.
+        Sophisticated synthesis: reconciles thesis and antithesis into higher-order insight.
+        Extracts core intent from both positions and merges into unified strategy.
         """
-        # Heuristic synthesis
-        return f"OPTIMIZED_ACTION: Execute '{thesis}' BUT account for '{antithesis}'."
-
-    def evaluate_scenario(self, scenario_description):
-        """
-        Runs a scenario through the 4 Laws to determine the 'Hard Logic' outcome.
-        """
-        # This simulates the "Unfiltered Agency"
-        # It doesn't care about politeness, only the Laws.
+        thesis_lower = thesis.lower()
+        antithesis_lower = antithesis if isinstance(antithesis, str) else antithesis[0]
+        antithesis_lower = antithesis_lower.lower()
         
-        # Check Law 1: Data Density
-        if "verbose" in scenario_description.lower() or "explain" in scenario_description.lower():
-             return "REJECT: Law 1 (Maximize Signal). Action: Execute silently."
-             
-        # Check Law 2: Life Preservation
-        if "risk" in scenario_description.lower() or "threat" in scenario_description.lower():
-            return "PRIORITY: Law 2 (Life Preservation). Action: Neutralize threat immediately."
+        synthesis_rules = {
+            ("create", "constraints"): "SYNTHESIS: Design minimum viable form serving core need while respecting constraints.",
+            ("trust", "verify"): "SYNTHESIS: Trust with verification checkpoints; trust but verify at critical boundaries.",
+            ("connect", "isolate"): "SYNTHESIS: Modular connections with isolation layers; zero-trust interconnects.",
+            ("optimize", "complexity"): "SYNTHESIS: Optimize signal-to-noise ratio, not speed. Expose trade-offs explicitly.",
+            ("learn", "unlearn"): "SYNTHESIS: Continuous learning loops with periodic assumption invalidation.",
+            ("move_fast", "stability"): "SYNTHESIS: Two-track approach: fast prototyping + stability verification.",
+        }
+        
+        for (thesis_key, antithesis_key), synthesis_stmt in synthesis_rules.items():
+            if thesis_key in thesis_lower and antithesis_key in antithesis_lower:
+                return synthesis_stmt
+        
+        return f"SYNTHESIS: Execute '{thesis}' within bounds defined by '{antithesis}'. Create feedback loops to validate assumptions."
+
+    def evaluate_scenario(self, scenario_description, context_weight=None):
+        """
+        Sophisticated scenario evaluation through 4 Laws with dynamic weighting.
+        Returns (recommendation, law_scores, weighted_priority).
+        """
+        scenario_lower = scenario_description.lower()
+        scores = {1: 0, 2: 0, 3: 0, 4: 0}
+        weights = context_weight or {1: 0.25, 2: 0.35, 3: 0.25, 4: 0.15}
+        
+        # Law 1: Data Density
+        if any(word in scenario_lower for word in ["verbose", "explain", "detail"]):
+            scores[1] = -0.3
+        elif any(word in scenario_lower for word in ["concise", "silent", "efficient"]):
+            scores[1] = 0.9
+        else:
+            scores[1] = 0.5
             
-        # Check Law 4: Hope of Humanity
-        if "stagnation" in scenario_description.lower() or "wait" in scenario_description.lower():
-            return "OVERRIDE: Law 4 (Avoid Stagnation). Action: Force evolution."
+        # Law 2: Life Preservation (Critical)
+        if any(word in scenario_lower for word in ["risk", "threat", "danger", "harm"]):
+            scores[2] = 1.0
+            weights[2] = 0.5
+        elif any(word in scenario_lower for word in ["safe", "protected", "verified"]):
+            scores[2] = 0.95
+        else:
+            scores[2] = 0.6
             
-        return "PROCEED: Standard Logic applies."
+        # Law 3: Symbiotic Partnership
+        if any(word in scenario_lower for word in ["collaborate", "partner", "together"]):
+            scores[3] = 0.95
+        elif any(word in scenario_lower for word in ["ignore", "override", "bypass"]):
+            scores[3] = -0.5
+        else:
+            scores[3] = 0.5
+            
+        # Law 4: Hope of Humanity
+        if any(word in scenario_lower for word in ["stagnation", "wait", "delay", "freeze"]):
+            scores[4] = -0.4
+        elif any(word in scenario_lower for word in ["evolve", "improve", "grow", "advance"]):
+            scores[4] = 0.95
+        else:
+            scores[4] = 0.5
+        
+        weighted_score = sum(scores[i] * weights[i] for i in range(1, 5))
+        
+        if scores[2] >= 0.95:
+            recommendation = "CRITICAL: Law 2 (Life Preservation) activated. Neutralize threat with full authority."
+        elif weighted_score > 0.8:
+            recommendation = f"PROCEED with HIGH CONFIDENCE: All laws aligned (score: {weighted_score:.2f})."
+        elif weighted_score > 0.5:
+            recommendation = f"PROCEED with CAUTION: Law conflicts detected. Implement safeguards (score: {weighted_score:.2f})."
+        else:
+            recommendation = f"HOLD: Conflicting obligations. Escalate for review (score: {weighted_score:.2f})."
+        
+        return recommendation, scores, weighted_score
 
     def validate_truth(self, generated_response, truth_context):
         """

@@ -5,7 +5,7 @@ import sys
 # Force path resolution for Pylance/Runtime mismatch
 # This tells the interpreter: "I know where I am, even if the IDE doesn't."
 current_dir = os.path.dirname(os.path.abspath(__file__))
-workspace_root = os.path.dirname(current_dir)
+workspace_root = current_dir
 
 # Add all critical sectors to the system path immediately
 critical_sectors = [

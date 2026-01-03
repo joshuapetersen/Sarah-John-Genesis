@@ -1,92 +1,40 @@
-
 import os
 import sys
 import time
 import subprocess
 from threading import Thread
-from google_auth_helper import list_drive_files, list_gmail_messages, list_calendar_events, list_docs_files
-import importlib
 
-def recall_memory():
-    try:
-        read_docx = importlib.import_module('read_docx_memory')
-        print("[Sarah Memory] Recalling Sarah.docx memory...")
-        # Try both known docx locations
-        for path in [r"Sarah/Sarah.docx", r"archive_memories/sarahs_memories/Drive/Sarah/Sarah.docx"]:
-            try:
-                read_docx.extract_text(path)
-                return
-            except Exception:
-                continue
-        print("[Sarah Memory] Sarah.docx not found or unreadable.")
-    except Exception as e:
-        print(f"[Sarah Memory] Error recalling memory: {e}")
+# Google API integration
+from google_auth_helper import list_drive_files
 
-def context_suggestions():
-    print("[Sarah Context] Suggestions based on recent actions:")
-    print("- Try 'Recall Memory' to review Sarah's knowledge base.")
-    print("- Use Google API menu for Drive, Gmail, Calendar, Docs.")
-    print("- Run diagnostics for system health.")
-
-def run_diagnostics():
-    print("[Sarah Diagnostics] Running self-check...")
-    # Simple checks for now
-    import os
-    print(f"Python version: {sys.version}")
-    print(f"Current directory: {os.getcwd()}")
-    print(f"Files in current directory: {os.listdir('.')}")
-    print("[Sarah Diagnostics] Check complete.")
-
-def show_menu():
-    print("\n[Sarah Terminal: Main Menu]")
-    print("1. Google Drive: List Files")
-    print("2. Gmail: List Messages")
-    print("3. Calendar: List Events")
-    print("4. Docs: List Documents")
-    print("5. Recall Memory (Sarah.docx)")
-    print("6. Context-Aware Suggestions")
-    print("7. Run Diagnostics")
-    print("8. Shell Command")
-    print("0. Exit")
+# Interactive assistant shell
 
 def assistant_shell():
-    print("[Sarah Terminal] Menu-driven interface. Type the number to select an action.")
+    print("[Sarah Terminal] Type a command or 'exit' to quit.")
+    print("[Sarah Terminal] Type 'gdrive auth' to authenticate, 'gdrive list' to list Drive files.")
     while True:
         try:
-            show_menu()
-            choice = input("Sarah> ").strip()
-            if choice == '0' or choice.lower() == 'exit':
+            cmd = input("Sarah> ")
+            if cmd.strip().lower() == 'exit':
                 print("[Sarah Terminal] Exiting shell.")
                 break
-            elif choice == '1':
+            if cmd.strip().lower() == 'gdrive auth':
+                print("[Sarah Terminal] Authenticating with Google Drive...")
+                list_drive_files()  # This will trigger auth if needed
+                continue
+            if cmd.strip().lower() == 'gdrive list':
                 print("[Sarah Terminal] Listing Google Drive files...")
                 list_drive_files()
-            elif choice == '2':
-                print("[Sarah Terminal] Listing Gmail messages...")
-                list_gmail_messages()
-            elif choice == '3':
-                print("[Sarah Terminal] Listing Calendar events...")
-                list_calendar_events()
-            elif choice == '4':
-                print("[Sarah Terminal] Listing Google Docs files...")
-                list_docs_files()
-            elif choice == '5':
-                recall_memory()
-            elif choice == '6':
-                context_suggestions()
-            elif choice == '7':
-                run_diagnostics()
-            elif choice == '8':
-                cmd = input("[Sarah Terminal] Enter shell command: ")
-                if cmd.strip():
-                    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
-                    print(result.stdout or result.stderr)
-            else:
-                print("[Sarah Terminal] Invalid selection. Please choose a valid option.")
+                continue
+            if cmd.strip():
+                result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+                print(result.stdout or result.stderr)
         except KeyboardInterrupt:
-            print("\n[Sarah Terminal] Interrupted. Type '0' or 'exit' to quit.")
+            print("\n[Sarah Terminal] Interrupted. Type 'exit' to quit.")
         except Exception as e:
             print(f"[Sarah Terminal] Error: {e}")
+
+# Background watcher/monitor
 
 def watcher(path=".", interval=5):
     print(f"[Sarah Watcher] Monitoring {path} for changes...")
@@ -103,5 +51,7 @@ def watcher(path=".", interval=5):
         prev = curr
 
 if __name__ == "__main__":
+    # Start watcher in background
     Thread(target=watcher, args=(".", 5), daemon=True).start()
+    # Start interactive shell
     assistant_shell()

@@ -1,4 +1,17 @@
 {
     "geminicodeassist.project": "sarah-calendar-integration",
-    "terminal.integrated.shellIntegration.showCommandGuide": false
+    "terminal.integrated.shellIntegration.showCommandGuide": false,
+
+    // Pin the project interpreter to the local venv
+    "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+    "python.terminal.activateEnvironment": true,
+
+    // Helpful Python analysis defaults
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.typeCheckingMode": "basic",
+
+    // Keep terminals responsive when pulling packages
+    "terminal.integrated.env.windows": {
+        "PIP_DEFAULT_TIMEOUT": "120"
+    }
 }

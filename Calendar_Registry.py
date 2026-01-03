@@ -26,7 +26,7 @@ class CalendarRegistry:
         Handles OAuth2 flow for Google Calendar.
         """
         token_path = os.path.join(os.path.dirname(__file__), 'token.pickle')
-        creds_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '04_THE_MEMORY', 'credentials.json')
+        creds_path = os.path.join(os.path.dirname(__file__), '04_THE_MEMORY', 'credentials.json')
 
         if os.path.exists(token_path):
             with open(token_path, 'rb') as token:
@@ -38,6 +38,7 @@ class CalendarRegistry:
             else:
                 if os.path.exists(creds_path):
                     flow = InstalledAppFlow.from_client_secrets_file(creds_path, self.SCOPES)
+                    # Use port=0 to allow the OS to pick an available port.
                     self.creds = flow.run_local_server(port=0)
                 else:
                     print("[Calendar] credentials.json not found in 04_THE_MEMORY. Calendar sync disabled.")
