@@ -6,6 +6,7 @@ import threading
 import logging
 import time
 from typing import Optional, Dict, Any, List
+from Millisecond_Timing import MillisecondTimer
 from datetime import datetime
 
 # Configure logging with milliseconds
@@ -42,6 +43,8 @@ class HolographicInterface:
         self.app.get("/ui")(self.serve_ui)
         self.app.get("/zhtp/status")(self.get_zhtp_status)
         self.app.post("/zhtp/override")(self.register_override)
+        self.app.get("/health/sovereign-time")(self.get_sovereign_time_health)
+        self.app.post("/time/reconcile")(self.reconcile_time)
 
     def start(self, host="127.0.0.1", port=8000):
         """Starts the API server in a background thread."""
@@ -119,6 +122,25 @@ class HolographicInterface:
             "api_hooks": self.hypervisor.zhtp.api_hooks,
             "lumen_firmware": self.hypervisor.zhtp.generate_lumen_firmware()
         }
+
+    async def get_sovereign_time_health(self, device_id: Optional[str] = None, drift_threshold_ms: int = 250):
+        """Runs sovereign device check + time redundancy drift validation."""
+        device = device_id or "PC_TERMINAL"
+        report = MillisecondTimer.sovereign_time_reality_check(device_id=device, drift_threshold_ms=drift_threshold_ms)
+        return report
+
+    async def reconcile_time(self, request: Dict[str, Any]):
+        """
+        Reconcilers predictive time against actual time with a safety buffer.
+        Body: {"predictive_unix_ms": <int>, "buffer_ms": <int, optional>}
+        """
+        predictive_unix_ms = request.get("predictive_unix_ms")
+        buffer_ms = request.get("buffer_ms", 500)
+        if predictive_unix_ms is None:
+            raise HTTPException(status_code=400, detail="predictive_unix_ms is required")
+
+        report = MillisecondTimer.reconcile_predictive_time(predictive_unix_ms, buffer_ms=buffer_ms)
+        return report
 
     async def register_override(self, request: Dict[str, str]):
         """Registers a Presidential Override."""

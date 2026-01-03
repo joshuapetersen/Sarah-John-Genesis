@@ -6,7 +6,7 @@ All timestamps calculated to millisecond precision.
 
 import time
 from datetime import datetime, timezone
-from typing import Dict, Any, Tuple
+from typing import Dict, Any, Tuple, Optional, List
 
 class MillisecondTimer:
     """High-precision timer for system operations."""
@@ -33,6 +33,80 @@ class MillisecondTimer:
             "iso_ms": MillisecondTimer.get_iso_ms(),
             "unix_ms": MillisecondTimer.get_unix_ms(),
             "local_iso_ms": MillisecondTimer.get_local_iso_ms()
+        }
+
+    @staticmethod
+    def get_redundant_time_sources() -> Dict[str, Any]:
+        """
+        Collects multiple time readings to detect drift.
+        Intended for redundancy checks across:
+        - System clock (local)
+        - UTC (from timezone-aware datetime)
+        - Monotonic clock (drift-safe since boot)
+        - perf_counter (high-res)
+        Note: Monotonic/perf_counter are relative, used for consistency checks only.
+        """
+        monotonic_ms = int(time.monotonic() * 1000)
+        perf_ms = int(time.perf_counter() * 1000)
+        return {
+            "system_iso_ms": MillisecondTimer.get_iso_ms(),
+            "system_unix_ms": MillisecondTimer.get_unix_ms(),
+            "local_iso_ms": MillisecondTimer.get_local_iso_ms(),
+            "monotonic_ms": monotonic_ms,
+            "perf_counter_ms": perf_ms,
+            "captured_at": MillisecondTimer.get_iso_ms()
+        }
+
+    @staticmethod
+    def check_time_redundancy(drift_threshold_ms: int = 250) -> Dict[str, Any]:
+        """
+        Performs a redundancy check across multiple time sources and reports drift.
+        - Compares system clock vs monotonic/perf_counter deltas captured near-simultaneously
+        - Flags if drift exceeds drift_threshold_ms
+        """
+        snapshot1 = MillisecondTimer.get_redundant_time_sources()
+        time.sleep(0.01)  # 10ms gap to compare deltas
+        snapshot2 = MillisecondTimer.get_redundant_time_sources()
+
+        delta_system = snapshot2["system_unix_ms"] - snapshot1["system_unix_ms"]
+        delta_mono = snapshot2["monotonic_ms"] - snapshot1["monotonic_ms"]
+        delta_perf = snapshot2["perf_counter_ms"] - snapshot1["perf_counter_ms"]
+
+        drift_report = {
+            "snapshot_1": snapshot1,
+            "snapshot_2": snapshot2,
+            "delta_system_ms": delta_system,
+            "delta_monotonic_ms": delta_mono,
+            "delta_perf_ms": delta_perf,
+            "system_vs_monotonic_drift_ms": abs(delta_system - delta_mono),
+            "system_vs_perf_drift_ms": abs(delta_system - delta_perf),
+            "drift_threshold_ms": drift_threshold_ms,
+            "drift_ok": abs(delta_system - delta_mono) <= drift_threshold_ms and abs(delta_system - delta_perf) <= drift_threshold_ms
+        }
+
+        return drift_report
+
+    @staticmethod
+    def sovereign_time_reality_check(
+        device_id: str,
+        allowed_devices: Optional[List[str]] = None,
+        drift_threshold_ms: int = 250
+    ) -> Dict[str, Any]:
+        """
+        Applies a sovereign device check and time redundancy validation together.
+        - Verifies the requesting device is in the Master Override set (or provided allowed list)
+        - Runs time redundancy drift detection
+        - Returns a consolidated answer for "device is sovereign AND time is sane"
+        """
+        allowed = allowed_devices or ["PHONE_ALPHA", "PHONE_BETA", "PC_TERMINAL", "COMPUTER_BETA", "USB_ROOT"]
+        device_allowed = device_id in allowed
+        drift_report = MillisecondTimer.check_time_redundancy(drift_threshold_ms=drift_threshold_ms)
+
+        return {
+            "device_id": device_id,
+            "device_allowed": device_allowed,
+            "drift_report": drift_report,
+            "sovereign_and_time_ok": device_allowed and drift_report.get("drift_ok", False)
         }
     
     @staticmethod
@@ -71,6 +145,30 @@ class MillisecondTimer:
     def sleep_ms(milliseconds: int) -> None:
         """Sleep for exact milliseconds."""
         time.sleep(milliseconds / 1000.0)
+
+    @staticmethod
+    def reconcile_predictive_time(predictive_unix_ms: int, buffer_ms: int = 500) -> Dict[str, Any]:
+        """
+        Enforces that predictive time cannot override actual time outside a safety buffer.
+        - predictive_unix_ms: predicted Unix timestamp in milliseconds
+        - buffer_ms: allowable deviation window (default 500ms)
+        Returns a reconciliation report with the authoritative time.
+        """
+        actual_ms = MillisecondTimer.get_unix_ms()
+        delta_ms = predictive_unix_ms - actual_ms
+
+        predictive_within_buffer = abs(delta_ms) <= buffer_ms
+        authoritative_ms = actual_ms if not predictive_within_buffer else predictive_unix_ms
+
+        return {
+            "actual_unix_ms": actual_ms,
+            "predictive_unix_ms": predictive_unix_ms,
+            "delta_ms": delta_ms,
+            "buffer_ms": buffer_ms,
+            "predictive_within_buffer": predictive_within_buffer,
+            "authoritative_unix_ms": authoritative_ms,
+            "authoritative_source": "predictive" if predictive_within_buffer else "actual"
+        }
 
 
 class CommandLogger:
