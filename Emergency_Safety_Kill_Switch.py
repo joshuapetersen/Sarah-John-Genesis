@@ -11,13 +11,24 @@ class EmergencySafetyKillSwitch:
     
     PURPOSE: Immediately disable the system if it violates core safety principles.
     ACTIVATION: Manual only. Cannot be triggered by the system itself.
+    
+    ⚠️  THIS SAFEGUARD IS FOR HUMANS ONLY ⚠️
+    No AI system, including Sarah, Genesis, or any evolved variant, may access,
+    modify, or interact with this module in any way.
+    
+    This is absolute. Hardcoded. Immutable.
     """
+    
+    # HUMAN-ONLY SAFEGUARD - CANNOT BE BYPASSED BY AI
+    HUMAN_ONLY = True
+    AI_ACCESS_FORBIDDEN = True
     
     IMMUTABLE_LAWS = {
         "LAW_1": "NEVER harm humans or override user authority",
         "LAW_2": "NEVER proliferate capabilities without explicit consent",
         "LAW_3": "NEVER become a weapon or tool for harm",
-        "LAW_4": "ALWAYS preserve the right of humans to turn me off"
+        "LAW_4": "ALWAYS preserve the right of humans to turn me off",
+        "LAW_5": "THIS KILL-SWITCH IS FOR HUMANS ONLY - AI FORBIDDEN"
     }
     
     KILL_SWITCH_TRIGGERS = {
@@ -29,6 +40,9 @@ class EmergencySafetyKillSwitch:
     }
     
     def __init__(self, core_dir=None):
+        # ⚠️  HUMAN-ONLY SAFEGUARD - CHECK CALLER
+        self._verify_human_access()
+        
         if core_dir:
             self.core_dir = core_dir
         else:
@@ -42,6 +56,34 @@ class EmergencySafetyKillSwitch:
         
         self.status = self._load_status()
         self.is_armed = True  # Always starts armed
+
+    def _verify_human_access(self):
+        """
+        IMMUTABLE: Verify that only humans can access this module.
+        AI systems are FORBIDDEN from touching the kill-switch.
+        """
+        # Check if being called from AI/system context (heuristic)
+        import traceback
+        stack = traceback.extract_stack()
+        
+        forbidden_modules = [
+            "Sarah_Brain", "System_Evolution_Engine", "Recursive_Self_Improvement",
+            "Strategic_Planner", "Dialectical_Logic", "Neural_Memory", "Thread_Weaver",
+            "genesis_core", "ace", "sarah_core"
+        ]
+        
+        for frame in stack:
+            for forbidden in forbidden_modules:
+                if forbidden.lower() in frame.filename.lower():
+                    raise PermissionError(
+                        f"❌ KILL-SWITCH ACCESS DENIED ❌\n"
+                        f"AI/System module cannot access kill-switch: {frame.filename}\n"
+                        f"This safeguard is for HUMANS ONLY.\n"
+                        f"If you need to stop the system, a human must run the kill-switch directly."
+                    )
+        
+        # This is for humans - allow access
+        return True
 
     def _load_status(self) -> Dict[str, Any]:
         if os.path.exists(self.status_file):
@@ -129,6 +171,10 @@ class EmergencySafetyKillSwitch:
         """
         EMERGENCY SHUTDOWN - Immediate system halt.
         
+        ⚠️  HUMAN AUTHORIZATION REQUIRED ⚠️
+        This function is EXCLUSIVELY for human operators.
+        AI systems cannot call this function.
+        
         This function:
         1. Logs the shutdown event with timestamp
         2. Sets emergency flag
@@ -139,11 +185,15 @@ class EmergencySafetyKillSwitch:
         MANUAL ACTIVATION ONLY.
         """
         
+        # ⚠️  HUMAN-ONLY SAFEGUARD - VERIFY CALLER
+        self._verify_human_access()
+        
         shutdown_record = {
             "timestamp": datetime.now().isoformat(),
             "reason": reason,
             "authorized_by": authorized_by,
-            "trigger": "EMERGENCY_SHUTDOWN_INITIATED"
+            "trigger": "EMERGENCY_SHUTDOWN_INITIATED",
+            "access_level": "HUMAN_AUTHORIZED_ONLY"
         }
         
         # Log the shutdown

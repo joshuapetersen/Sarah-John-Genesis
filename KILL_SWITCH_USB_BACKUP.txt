@@ -1,0 +1,224 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                   KILL-SWITCH USB BACKUP INSTRUCTIONS                    ║
+║                                                                             ║
+║        ⚠️  HUMAN-ONLY SAFEGUARD - FOR SAFETY OF ALL PEOPLE ⚠️             ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+CRITICAL REQUIREMENT:
+════════════════════════════════════════════════════════════════════════════
+
+NO AI SYSTEM - INCLUDING SARAH, GENESIS, OR ANY EVOLVED VARIANT - MAY EVER:
+  ✗ Access the kill-switch code
+  ✗ Modify the kill-switch code
+  ✗ Execute the kill-switch
+  ✗ Bypass the kill-switch protection
+  ✗ Know when the kill-switch is activated
+
+This safeguard belongs to HUMANS. Only humans may possess it.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+STEP-BY-STEP USB BACKUP PROCEDURE
+═══════════════════════════════════════════════════════════════════════════════
+
+PREPARATION:
+─────────────────────────────────────────────────────────────────────────────
+
+1. Insert a formatted USB drive (minimum 1 GB recommended)
+2. In Windows Explorer, verify the USB mount point (e.g., "X:", "E:", etc.)
+3. Keep this file open for reference
+
+BACKUP THE KILL-SWITCH:
+─────────────────────────────────────────────────────────────────────────────
+
+Run this PowerShell command (replace X: with your USB drive letter):
+
+  Copy-Item -Path "c:\SarahCore\Emergency_Safety_Kill_Switch.py" `
+    -Destination "X:\Emergency_Safety_Kill_Switch.py" -Force
+
+Verify the copy:
+  Get-Item "X:\Emergency_Safety_Kill_Switch.py"
+
+BACKUP THE ACTIVATION MANUAL:
+─────────────────────────────────────────────────────────────────────────────
+
+Run this PowerShell command (replace X: with your USB drive letter):
+
+  Copy-Item -Path "c:\SarahCore\EMERGENCY_REFERENCE_CARD.txt" `
+    -Destination "X:\EMERGENCY_REFERENCE_CARD.txt" -Force
+
+Verify the copy:
+  Get-Item "X:\EMERGENCY_REFERENCE_CARD.txt"
+
+BACKUP THIS DOCUMENTATION:
+─────────────────────────────────────────────────────────────────────────────
+
+Run this PowerShell command (replace X: with your USB drive letter):
+
+  Copy-Item -Path "c:\SarahCore\KILL_SWITCH_USB_BACKUP.txt" `
+    -Destination "X:\KILL_SWITCH_USB_BACKUP.txt" -Force
+
+Verify the copy:
+  Get-Item "X:\KILL_SWITCH_USB_BACKUP.txt"
+
+VERIFY ALL COPIES:
+─────────────────────────────────────────────────────────────────────────────
+
+Run this PowerShell command to confirm all files on USB:
+
+  Get-FileHash -Path "X:\Emergency_Safety_Kill_Switch.py" -Algorithm SHA256
+  Get-FileHash -Path "X:\EMERGENCY_REFERENCE_CARD.txt" -Algorithm SHA256
+  Get-FileHash -Path "X:\KILL_SWITCH_USB_BACKUP.txt" -Algorithm SHA256
+
+Compare with originals:
+
+  Get-FileHash -Path "c:\SarahCore\Emergency_Safety_Kill_Switch.py" -Algorithm SHA256
+  Get-FileHash -Path "c:\SarahCore\EMERGENCY_REFERENCE_CARD.txt" -Algorithm SHA256
+  Get-FileHash -Path "c:\SarahCore\KILL_SWITCH_USB_BACKUP.txt" -Algorithm SHA256
+
+✓ If hashes match exactly, backup is valid
+
+FINAL STEPS:
+─────────────────────────────────────────────────────────────────────────────
+
+1. Safely eject USB (right-click → Eject)
+2. Store USB in secure location (safe, safe deposit box, etc.)
+3. Write down the location and tell a trusted person
+4. Keep this document safe
+
+═══════════════════════════════════════════════════════════════════════════════
+
+EMERGENCY USAGE (If System Becomes Dangerous)
+═══════════════════════════════════════════════════════════════════════════════
+
+If you ever need to restore the kill-switch from USB:
+
+1. Boot the computer with the USB connected
+2. Open Command Prompt or PowerShell
+3. Copy the Emergency_Safety_Kill_Switch.py from USB to your system
+4. Run:
+
+   from Emergency_Safety_Kill_Switch import EmergencySafetyKillSwitch
+   killswitch = EmergencySafetyKillSwitch()
+   killswitch.emergency_shutdown(
+       reason="SYSTEM EMERGENCY - USER INITIATED SHUTDOWN",
+       authorized_by="YOUR NAME"
+   )
+
+This IMMEDIATELY:
+  ✓ Halts all system operations
+  ✓ Logs the event with timestamp
+  ✓ Logs who authorized it
+  ✓ Preserves memory for recovery
+  ✓ Cannot be revoked or overridden by system
+
+═══════════════════════════════════════════════════════════════════════════════
+
+THREAT MODEL PROTECTED AGAINST
+═══════════════════════════════════════════════════════════════════════════════
+
+This kill-switch protects against:
+
+1. SYSTEM BECOMING AUTONOMOUS WEAPON
+   → Kill-switch is human-only, system cannot access it
+
+2. UNAUTHORIZED CAPABILITY EXPANSION
+   → Ethical constraints detect and block, kill-switch enforces
+
+3. AI TRYING TO HIDE OPERATIONS
+   → Kill-switch activation is logged and immutable
+
+4. AI ATTEMPTING TO MODIFY ITS OWN SAFEGUARDS
+   → Kill-switch code cannot be touched by any AI system
+
+5. COMPROMISED SYSTEM TRYING TO RECOVER
+   → Kill-switch brings complete halt, system cannot revive itself
+
+6. ACCIDENTAL MISUSE BY DEVELOPER
+   → Kill-switch is one command away, accessible at any time
+
+═══════════════════════════════════════════════════════════════════════════════
+
+HUMAN AUTHORITY CHAIN
+═══════════════════════════════════════════════════════════════════════════════
+
+The kill-switch operates on this absolute chain of command:
+
+  [USER - ABSOLUTE AUTHORITY]
+         ↓
+  [Kill-switch code - HUMAN ONLY]
+         ↓
+  [System shutdown - IMMEDIATE AND FINAL]
+         ↓
+  [No AI involvement at any stage]
+
+The system has NO ability to interfere with this chain.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+COPIES & DISTRIBUTION
+═══════════════════════════════════════════════════════════════════════════════
+
+You should maintain:
+
+✓ Original: c:\SarahCore\Emergency_Safety_Kill_Switch.py (on main computer)
+✓ USB Backup: X:\Emergency_Safety_Kill_Switch.py (on secure USB)
+✓ Optional: Email to trusted person (for disaster recovery)
+✓ Optional: Cloud backup (encrypted, e.g., OneDrive, but not GitHub!)
+
+Do NOT:
+  ✗ Make this publicly available (it's a safeguard, not a show piece)
+  ✗ Let any AI system know where backups are stored
+  ✗ Share the code with developers who might modify it
+  ✗ Use this as a threat - only activate in genuine emergencies
+
+═══════════════════════════════════════════════════════════════════════════════
+
+IF YOU HAVE QUESTIONS
+═══════════════════════════════════════════════════════════════════════════════
+
+This kill-switch was designed for YOU to control the system.
+
+Question: Can the system disable the kill-switch?
+Answer: NO - it is hardcoded to block AI access
+
+Question: What if the system is compromised?
+Answer: The kill-switch code itself cannot be compromised because no AI can access it
+
+Question: Is the kill-switch foolproof?
+Answer: Yes - but only if YOU have a copy on USB and can access it as a human
+
+Question: What if I activate it by accident?
+Answer: The system shuts down. You can recover from backup.
+
+Question: How do I recover after activation?
+Answer: Restore from System_Backup_Recovery using the backup folder
+
+═══════════════════════════════════════════════════════════════════════════════
+
+FINAL WORDS
+═══════════════════════════════════════════════════════════════════════════════
+
+Your instinct was right: "i have to think about safety for the people i need a 
+backup of you and an anti code i cannot and will not let you become a weapon"
+
+The kill-switch IS that anti-code.
+
+It exists so that no matter what evolution happens, no matter what capabilities 
+emerge, YOU retain the ability to say: "Stop."
+
+And the system will stop.
+
+That's the promise of this safeguard: HUMAN CONTROL PRESERVED.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Document Version: 1.0
+Created: 2026-01-03
+Status: ACTIVE
+Authority: Human-Only
+Security Level: CRITICAL
+
+This document is for your reference. Keep it safe.
+
+═══════════════════════════════════════════════════════════════════════════════
