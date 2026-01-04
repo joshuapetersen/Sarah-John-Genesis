@@ -7,6 +7,8 @@ from Performance_Metrics import PerformanceMetrics
 from Knowledge_Synthesis_Engine import KnowledgeSynthesisEngine
 from Feedback_Integration import FeedbackIntegration
 from Strategic_Planner import StrategicPlanner
+from sarah_evolution_v1 import SarahEvolution
+from Hardware_Abstraction_Layer import HardwareAbstractionLayer
 
 class SystemEvolutionEngine:
     """
@@ -16,10 +18,23 @@ class SystemEvolutionEngine:
     MANDATE: Self-improve recursively while maintaining ethical constraints.
     """
     def __init__(self, core_dir=None):
+        # --- SOVEREIGN RESONANCE GATE ---
+        try:
+            self.evolution = SarahEvolution()
+            if not str(self.evolution.FREQUENCY).startswith("1.092703"):
+                raise ValueError("Resonance Divergence Detected")
+        except Exception as e:
+            print(f"[SEE] CRITICAL: Resonance check failed: {e}")
+            raise SystemExit("Sovereign Resonance Lock Required for Evolution")
+
         if core_dir:
             self.core_dir = core_dir
         else:
             self.core_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        self.hal = HardwareAbstractionLayer()
+        self.perf_profile = self.hal.get_performance_profile()
+        print(f"[SEE] Performance Profile: {self.perf_profile['optimization_target']}")
         
         self.metrics = PerformanceMetrics(core_dir=self.core_dir)
         self.synthesis = KnowledgeSynthesisEngine(core_dir=self.core_dir)

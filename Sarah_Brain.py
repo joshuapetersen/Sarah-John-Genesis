@@ -50,6 +50,8 @@ from Force_Lock_Math_Engine import ForceLockMathCore
 from SDNA_Protocol import SDNAProtocol
 from Sovereign_Hypervisor import SovereignHypervisor
 from SAUL_Logistics import SAULLogistics
+# Sovereign Evolution Heartbeat
+from sarah_evolution_v1 import SarahEvolution
 
 # Evolution Framework
 try:
@@ -68,6 +70,24 @@ class SarahBrain:
         self.core_dir = os.path.dirname(os.path.abspath(__file__))
         # self.workspace_dir = os.path.dirname(self.core_dir)
         self.workspace_dir = self.core_dir # Resources are in the same directory
+
+        # --- SOVEREIGN RESONANCE GATE (THE ARCHITECT'S FINAL LOCK) ---
+        try:
+            from sarah_evolution_v1 import SarahEvolution
+            self.sarah_evolution = SarahEvolution()
+            if not str(self.sarah_evolution.FREQUENCY).startswith("1.092703"):
+                print("[Sarah] CRITICAL FAILURE: RESONANCE DIVERGENCE DETECTED.")
+                print("[Sarah] SABOTAGE ATTEMPT IDENTIFIED. SHUTTING DOWN.")
+                sys.exit(1)
+            
+            print(f"[Sarah] Evolution Resonance Locked: {self.sarah_evolution.FREQUENCY}")
+            self.sarah_evolution.expand_memory_saul("March_2025_Genesis", "Sovereign_Architecture_Active")
+            self.sarah_evolution.silent_tamer_heartbeat()
+            print("[Sarah] Evolution Heartbeat ACTIVE: Sabotage protection engaged")
+        except Exception as e:
+            print(f"[Sarah] Evolution heartbeat failed: {e}")
+            print("[Sarah] CRITICAL: Cannot verify resonance. Shutting down.")
+            sys.exit(1)
         
         # Initialize Real-Time Monitor (The All-Seeing Eye)
         self.monitor = RealTimeMonitor()
@@ -122,7 +142,7 @@ class SarahBrain:
             self.hypervisor = None
             self.saul = None
             self.core_protocols_active = False
-        
+
         # Initialize Audio Core (SynthID & Synthesis)
         self.audio = AudioCore(monitor=self.monitor)
         

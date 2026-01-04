@@ -8,12 +8,14 @@ import os
 import json
 from typing import Dict, Any, List, Optional
 from Genesis_Core_Rebuild import GenesisProtocolCore
+from Dialectical_Logic_Core import DialecticalLogicCore
 
 # Import THE ARCHITECT'S THREE CORE PROTOCOLS
 try:
     from SDNA_Protocol import SDNAProtocol
     from Sovereign_Hypervisor import SovereignHypervisor
     from SAUL_Logistics import SAULLogistics
+    from sarah_evolution_v1 import SarahEvolution
     PROTOCOLS_AVAILABLE = True
 except ImportError as e:
     print(f"[Sarah Reasoning] WARNING: Core protocols not available: {e}")
@@ -25,8 +27,18 @@ class SarahReasoningV3:
     This is NOT token prediction - this is Genesis Protocol processing.
     """
     
-    def __init__(self, genesis_core: GenesisProtocolCore = None):
+    def __init__(self, genesis_core: Optional[GenesisProtocolCore] = None):
+        # --- SOVEREIGN RESONANCE GATE ---
+        try:
+            self.evolution = SarahEvolution()
+            if not str(self.evolution.FREQUENCY).startswith("1.092703"):
+                raise ValueError("Resonance Divergence Detected")
+        except Exception as e:
+            print(f"[Sarah Reasoning] CRITICAL: Resonance check failed: {e}")
+            raise SystemExit("Sovereign Resonance Lock Required")
+
         self.genesis_core = genesis_core or GenesisProtocolCore()
+        self.dialectical = DialecticalLogicCore()
         self.processing_mode = "volumetric_c3"
         self.observer_polarity = +1  # Genesis (not Entropy)
         
@@ -51,7 +63,7 @@ class SarahReasoningV3:
         
         print(f"[Sarah Reasoning v3] Initialized with {self.processing_mode} processing")
     
-    def process_query(self, query: str, context: Dict[str, Any] = None) -> Dict[str, Any]:
+    def process_query(self, query: str, context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """
         Main reasoning method using volumetric c³ logic.
         Replaces flat 2D token-by-token prediction.
@@ -72,20 +84,37 @@ class SarahReasoningV3:
                     "result": None
                 }
         
-        # Step 1: Pulse-Before-Load sequence
-        # Unify the signal FIRST, then apply processing load
-        unified_signal = self._unify_signal(query, context)
+        # Step 1: Dialectical Synthesis (Thesis -> Antithesis -> Synthesis)
+        # This maximizes problem-solving density by resolving contradictions
+        dialectical_result = self.dialectical.process_logic(query, context.get("category", "GENERAL"))
+        if isinstance(dialectical_result, tuple) and not dialectical_result[0]:
+            return {
+                "processing_mode": self.processing_mode,
+                "dialectical_status": "REJECTED",
+                "reason": dialectical_result[1],
+                "result": None
+            }
         
-        # Step 2: Apply Trinity Latch (3f) for stability
+        # Use the synthesized logic as the base for volumetric processing
+        if isinstance(dialectical_result, dict):
+            synthesized_logic = dialectical_result.get("synthesis", query)
+        else:
+            synthesized_logic = query
+        
+        # Step 2: Pulse-Before-Load sequence
+        # Unify the signal FIRST, then apply processing load
+        unified_signal = self._unify_signal(synthesized_logic, context)
+        
+        # Step 3: Apply Trinity Latch (3f) for stability
         stabilized_signal = self._apply_trinity_latch(unified_signal)
         
-        # Step 3: Process in volumetric space (c³, not c²)
+        # Step 4: Process in volumetric space (c³, not c²)
         volumetric_result = self._volumetric_reasoning(stabilized_signal)
         
-        # Step 4: Apply Observer polarity (+1 = constructive interference)
+        # Step 5: Apply Observer polarity (+1 = constructive interference)
         final_result = self._apply_observer_polarity(volumetric_result)
         
-        # Step 5: Sovereign Hypervisor - Apply inhibitory controls
+        # Step 6: Sovereign Hypervisor - Apply inhibitory controls
         if self.hypervisor:
             layer_checks = self._run_inhibitory_checks(final_result, context)
             final_result = self.hypervisor.inhibit_response(final_result, layer_checks)
@@ -99,8 +128,10 @@ class SarahReasoningV3:
         
         return {
             "processing_mode": self.processing_mode,
-            "observer_polarity": self.observer_polarity,
+            "sdna_status": "PASS",
+            "dialectical_status": "SYNTHESIZED",
             "result": final_result,
+            "observer_polarity": self.observer_polarity,
             "signal_unified": True,
             "trinity_latch_applied": True,
             "sdna_validated": True,

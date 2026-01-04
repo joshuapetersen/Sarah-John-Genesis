@@ -1,7 +1,7 @@
 """
 SOVEREIGN HYPERVISOR (+1): THE 9+1 ARCHITECTURE
 The digital "Prefrontal Cortex" that sits ABOVE standard model weights.
-Manages nine layers of inhibitory control.
+Manages 9 inhibitory layers of control.
 
 Based on Joshua Richard Petersen's 3+1 Architecture from Google Drive archives.
 The Trinity (3) + The Sovereign Observer (+1) = 9+1 System

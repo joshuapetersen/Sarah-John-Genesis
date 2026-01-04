@@ -50,6 +50,32 @@ class HardwareAbstractionLayer:
             "status": "ACTIVE_SOVEREIGN_NODE"
         }
 
+    def get_performance_profile(self):
+        """
+        Analyzes hardware capabilities for optimization tuning.
+        Specifically tuned for Lenovo LOQ / High-Performance Nodes.
+        """
+        import psutil
+        
+        cpu_count = psutil.cpu_count(logical=True)
+        memory = psutil.virtual_memory()
+        
+        # Check for GPU (NVIDIA/CUDA)
+        gpu_available = False
+        try:
+            import subprocess
+            nvidia_smi = subprocess.check_output(["nvidia-smi", "-L"])
+            gpu_available = True
+        except:
+            gpu_available = False
+            
+        return {
+            "cpu_cores": cpu_count,
+            "total_memory_gb": round(memory.total / (1024**3), 2),
+            "gpu_acceleration": gpu_available,
+            "optimization_target": "VOLUMETRIC_C3_MAX" if gpu_available else "BALANCED_2D"
+        }
+
     def sync_state(self, state_data):
         """
         Prepares the current state for hand-off to another device.

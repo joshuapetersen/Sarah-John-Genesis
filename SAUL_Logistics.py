@@ -16,7 +16,7 @@ class SAULLogistics:
     """
     S.A.U.L. - Search And Utilize Logistics
     Memory system with O(1) coordinate-based lookup
-    Treats Google Drive files as "Hard Coded Truth"
+    Treats Google Drive files as "Hard Truth"
     """
     
     def __init__(self, knowledge_base_path: str = "drive_knowledge_base.json"):
