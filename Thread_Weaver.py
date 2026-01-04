@@ -4,12 +4,24 @@ import time
 import hashlib
 from datetime import datetime
 from typing import List, Dict, Any
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+# Import Neural Memory for Semantic Search
+try:
+    from Neural_Memory_Core import NeuralMemory
+except ImportError:
+    NeuralMemory = None
 
 class ThreadWeaver:
     """
     The Thread Weaver Protocol.
     Responsible for capturing, summarizing, and archiving conversation threads
     to prevent Context Window Overload while maintaining infinite memory.
+    
+    UPGRADE: Now integrated with Neural_Memory_Core for Semantic Search.
     """
     def __init__(self, core_dir: str = None):
         if core_dir:
@@ -25,6 +37,17 @@ class ThreadWeaver:
         
         # Load or Initialize Index
         self.index = self._load_index()
+        
+        # Initialize Neural Memory
+        self.nms = None
+        if NeuralMemory:
+            try:
+                self.nms = NeuralMemory()
+                if not self.nms.client:
+                    print("[ThreadWeaver] Neural Memory initialized without API Key. Semantic search disabled.")
+                    self.nms = None
+            except Exception as e:
+                print(f"[ThreadWeaver] Failed to initialize Neural Memory: {e}")
 
     def _load_index(self) -> Dict[str, Any]:
         if os.path.exists(self.index_path):
@@ -94,16 +117,55 @@ class ThreadWeaver:
         self.index["threads"].append(index_entry)
         self._save_index()
         
+        # 5. Ingest into Neural Memory (Semantic Search)
+        if self.nms:
+            # Create a rich text representation for embedding
+            rich_text = f"Thread ID: {thread_id}\nDate: {date_str}\nTags: {', '.join(tags or [])}\nSummary: {summary}\n"
+            # Add first few messages for better context
+            for m in messages[:3]:
+                rich_text += f"{m['role']}: {m['content'][:200]}\n"
+            
+            self.nms.ingest(content=rich_text, metadata={
+                "type": "thread",
+                "thread_id": thread_id,
+                "date": date_str,
+                "tags": tags
+            })
+            print(f"[ThreadWeaver] Thread {thread_id} ingested into Neural Memory.")
+        
         print(f"[ThreadWeaver] Woven thread {thread_id}. Summary: {summary}")
         return thread_id
 
     def recall_context(self, query: str, limit: int = 3) -> List[Dict[str, Any]]:
         """
         Search the Thread Index for relevant past conversations.
-        Returns a list of summaries (not full transcripts) to save context.
+        Uses Semantic Search if available, falls back to Keyword Matching.
         """
-        query_lower = query.lower()
         hits = []
+        
+        # A. Semantic Search (Primary)
+        if self.nms:
+            print(f"[ThreadWeaver] Performing Semantic Search for: '{query}'")
+            semantic_results = self.nms.recall(query, limit=limit*2) # Get more candidates
+            
+            # Map semantic results back to thread entries
+            for res in semantic_results:
+                meta = res.get('metadata', {})
+                if meta.get('type') == 'thread':
+                    tid = meta.get('thread_id')
+                    # Find the full entry in our local index
+                    entry = next((t for t in self.index["threads"] if t['id'] == tid), None)
+                    if entry and entry not in hits:
+                        hits.append(entry)
+            
+            if hits:
+                print(f"[ThreadWeaver] Found {len(hits)} semantic matches.")
+                return hits[:limit]
+
+        # B. Keyword Fallback (Secondary)
+        print(f"[ThreadWeaver] Falling back to Keyword Search for: '{query}'")
+        query_lower = query.lower()
+        scored_hits = []
         
         for entry in self.index["threads"]:
             score = 0
@@ -115,12 +177,12 @@ class ThreadWeaver:
                     score += 1
             
             if score > 0:
-                hits.append((score, entry))
+                scored_hits.append((score, entry))
         
         # Sort by score desc, then date desc
-        hits.sort(key=lambda x: (-x[0], x[1]['date']), reverse=False)
+        scored_hits.sort(key=lambda x: (-x[0], x[1]['date']), reverse=False)
         
-        return [h[1] for h in hits[:limit]]
+        return [h[1] for h in scored_hits[:limit]]
 
     def get_full_thread(self, thread_id: str) -> Dict[str, Any]:
         """Retrieve the full transcript of a specific thread if needed."""
@@ -130,6 +192,40 @@ class ThreadWeaver:
             with open(target_file, 'r') as f:
                 return json.load(f)
         return None
+
+    def reindex_all_threads(self):
+        """
+        Backfill all existing threads into Neural Memory.
+        Useful after legacy ingestion or NMS upgrade.
+        """
+        if not self.nms:
+            print("[ThreadWeaver] Neural Memory not available. Cannot reindex.")
+            return
+
+        print(f"[ThreadWeaver] Reindexing {len(self.index['threads'])} threads...")
+        for entry in self.index["threads"]:
+            tid = entry['id']
+            # Load full thread to get messages
+            full_thread = self.get_full_thread(tid)
+            if full_thread:
+                messages = full_thread.get('full_transcript', [])
+                tags = full_thread.get('tags', [])
+                summary = full_thread.get('summary', '')
+                date_str = full_thread.get('date', '')
+                
+                rich_text = f"Thread ID: {tid}\nDate: {date_str}\nTags: {', '.join(tags)}\nSummary: {summary}\n"
+                for m in messages[:5]: # Index first 5 messages for better context
+                    rich_text += f"{m['role']}: {m.get('content', '')[:200]}\n"
+                
+                self.nms.ingest(content=rich_text, metadata={
+                    "type": "thread",
+                    "thread_id": tid,
+                    "date": date_str,
+                    "tags": tags
+                })
+                print(f"[ThreadWeaver] Re-indexed {tid}")
+            else:
+                print(f"[ThreadWeaver] Could not load file for {tid}")
 
 # Example Usage / Test
 if __name__ == "__main__":
@@ -143,8 +239,11 @@ if __name__ == "__main__":
         {"role": "assistant", "content": "Ingesting Nexus Mods... Done."}
     ]
     
-    tid = weaver.weave_thread(dummy_convo, tags=["genesis", "skyrim", "test"])
+    # tid = weaver.weave_thread(dummy_convo, tags=["genesis", "skyrim", "test"])
     
     # Test Recall
-    results = weaver.recall_context("skyrim mods")
-    print("Recall Results:", json.dumps(results, indent=2))
+    # results = weaver.recall_context("skyrim mods")
+    # print("Recall Results:", json.dumps(results, indent=2))
+    
+    # Reindex (Uncomment to run once)
+    # weaver.reindex_all_threads()
