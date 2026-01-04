@@ -57,6 +57,12 @@ from Sovereign_Orchestrator import ThousandThousandFilter, ContinuityProtocol
 from Dialectical_Logic_Core import DialecticalLogicCore
 from Sovereign_Ontology import HomotopyVerifier
 
+try:
+    from Strategic_Planner import StrategicPlanner
+except ImportError:
+    print("[Reasoning] Strategic Planner not found.")
+    StrategicPlanner = None
+
 class SarahReasoning:
     def __init__(self, db_rt, genesis_core=None, etymology=None):
         self.db = db_rt
@@ -86,6 +92,7 @@ class SarahReasoning:
         self.continuity = ContinuityProtocol()
         self.dialectics = DialecticalLogicCore()
         self.hott_verifier = HomotopyVerifier()
+        self.planner = StrategicPlanner() if StrategicPlanner else None
         
         # Load HLE / Benchmark Failure Data
 
@@ -519,6 +526,17 @@ class SarahReasoning:
                     self.log_thought(goal_id, "Self-Correction: Detected previous error. Re-evaluating strategy.")
                 
                 self.log_thought(goal_id, f"Reasoning cycle completed at {time.ctime()}")
+
+    def solve_complex_problem(self, problem_statement):
+        """
+        Invokes the Strategic Planner to solve a complex problem.
+        """
+        if not self.planner:
+            return {"error": "Strategic Planner not available."}
+            
+        print(f"[Reasoning] Delegating to Strategic Planner: {problem_statement}")
+        return self.planner.solve(problem_statement)
+
 
     def log_thought(self, goal_id, thought):
         self.goals_ref.child(goal_id).child('thought_log').push(thought)

@@ -31,14 +31,16 @@ class DialecticalLogicCore:
         synthesis = self._derive_synthesis(thesis, antithesis)
         
         # 4. Law Validation (The Immutable Check)
-        is_compliant, reason = self.laws.check_compliance(synthesis, context)
+        # check_compliance returns (bool, reason, compliance_score, violated_laws)
+        is_compliant, reason, score, violations = self.laws.check_compliance(synthesis, context)
         
         result = {
             "thesis": thesis,
             "antithesis": antithesis,
             "synthesis": synthesis,
             "compliant": is_compliant,
-            "law_check": reason
+            "law_check": reason,
+            "compliance_score": score
         }
 
         if self.monitor:
