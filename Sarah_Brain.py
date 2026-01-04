@@ -47,7 +47,8 @@ class SarahBrain:
         self.version = "Genesis 1.8"
         # Dynamic pathing to avoid C:/SarahCore dependency
         self.core_dir = os.path.dirname(os.path.abspath(__file__))
-        self.workspace_dir = os.path.dirname(self.core_dir)
+        # self.workspace_dir = os.path.dirname(self.core_dir)
+        self.workspace_dir = self.core_dir # Resources are in the same directory
         
         # Initialize Real-Time Monitor (The All-Seeing Eye)
         self.monitor = RealTimeMonitor()

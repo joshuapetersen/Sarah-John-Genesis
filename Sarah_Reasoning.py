@@ -12,7 +12,7 @@ from Sovereign_Override import apply_override
 
 # Add Memory Path
 current_dir = os.path.dirname(os.path.abspath(__file__))
-memory_dir = os.path.join(os.path.dirname(current_dir), '04_THE_MEMORY')
+memory_dir = os.path.join(current_dir, '04_THE_MEMORY')
 if memory_dir not in sys.path:
     sys.path.append(memory_dir)
 

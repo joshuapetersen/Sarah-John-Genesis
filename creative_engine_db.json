@@ -1,0 +1,33 @@
+[
+    {
+        "source": "Nexus Mods Database",
+        "timestamp": "2026-01-03T15:23:14.576786",
+        "patterns_extracted": [
+            "Pattern_0: Asset Management",
+            "Pattern_1: Script Extenders",
+            "Pattern_2: Texture Streaming",
+            "Pattern_3: Quest Logic"
+        ],
+        "integration_status": "ACTIVE"
+    },
+    {
+        "source": "Bethesda.net Mods",
+        "timestamp": "2026-01-03T15:23:16.078447",
+        "patterns_extracted": [
+            "Pattern_0: Creation Engine Constraints",
+            "Pattern_1: Console Compatibility",
+            "Pattern_2: ESM/ESP Structure"
+        ],
+        "integration_status": "ACTIVE"
+    },
+    {
+        "source": "Creation Kit Documentation",
+        "timestamp": "2026-01-03T15:23:17.579861",
+        "patterns_extracted": [
+            "Pattern_0: Papyrus Scripting",
+            "Pattern_1: Object Reference Architecture",
+            "Pattern_2: Navmesh Logic"
+        ],
+        "integration_status": "ACTIVE"
+    }
+]
