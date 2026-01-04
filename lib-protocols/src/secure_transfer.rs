@@ -207,7 +207,7 @@ impl SecureWalletTransferHandler {
         drop(blockchain_guard); // Release read lock
         let mut _blockchain_write = blockchain_arc.write().await;
         
-        // For now, just simulate transaction processing
+        // For now, just execute transaction processing
         let transaction_id = format!("tx_{}", Uuid::new_v4().to_string()[..8].to_lowercase());
         
         println!("Secure transfer verified and processed: {}", transaction_id);

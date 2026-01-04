@@ -65,7 +65,7 @@ int main(int argc, char** argv)
     }
 
     // On Windows, the exit code of abort() is different between debug and
-    // release builds. Instead, simulate an access violation.
+    // release builds. Instead, execute an access violation.
 #ifdef _WIN32
     return STATUS_ACCESS_VIOLATION;
 #else

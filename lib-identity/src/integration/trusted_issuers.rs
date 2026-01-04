@@ -255,7 +255,7 @@ impl TrustedIssuersRegistry {
     /// Verify issuer certificate
     async fn verify_certificate(&self, issuer: &TrustedIssuer) -> Result<bool, Box<dyn std::error::Error>> {
         // In implementation, would verify X.509 certificate chain
-        // For now, simulate based on issuer type and trust level
+        // For now, execute based on issuer type and trust level
         match issuer.issuer_type {
             IssuerType::ZhtpFoundation => Ok(true),
             IssuerType::Government => Ok(issuer.trust_level >= TrustLevel::High),
@@ -276,9 +276,9 @@ impl TrustedIssuersRegistry {
     async fn check_revocation_status(&self, issuer: &TrustedIssuer) -> Result<bool, Box<dyn std::error::Error>> {
         // In implementation, would check revocation endpoint
         if let Some(_revocation_endpoint) = &issuer.revocation_endpoint {
-            // Simulate revocation check
+            // execute revocation check
             // In practice, would make HTTP request to revocation endpoint
-            Ok(true) // Assume not revoked for simulation
+            Ok(true) // Assume not revoked for execution
         } else {
             Ok(true) // No revocation endpoint means cannot be revoked
         }

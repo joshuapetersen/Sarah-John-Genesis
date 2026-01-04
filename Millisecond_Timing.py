@@ -259,7 +259,7 @@ if __name__ == "__main__":
     log1 = logger.log_command_ms("lock_energy_grid", "PHONE_ALPHA", "RECEIVED")
     print(f"Received: {log1['timestamp_iso_ms']}")
     
-    # Simulate execution
+    # execute execution
     start_ms = log1['timestamp_unix_ms']
     time.sleep(0.15)  # 150ms execution
     

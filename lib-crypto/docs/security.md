@@ -384,7 +384,7 @@ fn secure_input_validation() -> Result<()> {
     }
     
     // Sanitize and validate all inputs
-    let raw_signature = [0u8; 64]; // Simulated input
+    let raw_signature = [0u8; 64]; // executed input
     let raw_message = b"Test message";
     let raw_pubkey = [1u8; 32];
     
@@ -813,7 +813,7 @@ impl SecurityMonitor {
 fn security_monitoring() -> Result<()> {
     let mut monitor = SecurityMonitor::new();
     
-    // Simulate security events
+    // execute security events
     monitor.record_verification_failure();
     monitor.record_timing_anomaly(
         std::time::Duration::from_millis(1),
@@ -1258,7 +1258,7 @@ fn secure_input_validation() -> Result<()> {
     }
     
     // Sanitize and validate all inputs
-    let raw_signature = [0u8; 64]; // Simulated input
+    let raw_signature = [0u8; 64]; // executed input
     let raw_message = b"Test message";
     let raw_pubkey = [1u8; 32];
     
@@ -1687,7 +1687,7 @@ impl SecurityMonitor {
 fn security_monitoring() -> Result<()> {
     let mut monitor = SecurityMonitor::new();
     
-    // Simulate security events
+    // execute security events
     monitor.record_verification_failure();
     monitor.record_timing_anomaly(
         std::time::Duration::from_millis(1),

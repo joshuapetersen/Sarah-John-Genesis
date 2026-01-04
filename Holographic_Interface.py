@@ -496,7 +496,7 @@ class HolographicInterface:
 
         """Returns current quantum entropy."""
         entropy = self.hypervisor.quantum.get_quantum_entropy()
-        return {"entropy": entropy, "source": "Qiskit" if self.hypervisor.quantum.enabled else "Simulation"}
+        return {"entropy": entropy, "source": "Qiskit" if self.hypervisor.quantum.enabled else "execution"}
 
     async def list_drive_files(self, q: Optional[str] = None):
         """Lists files from Google Drive."""

@@ -373,7 +373,7 @@ pub async fn handle_signin_with_ip(
         let validation = if let Some(_identity) = identity_option.as_ref() {
             manager.validate_identity_password(&identity_id, &password)
         } else {
-            // Simulate password validation timing even when identity doesn't exist
+            // execute password validation timing even when identity doesn't exist
             // P0-2 FIX: Use longer delay (500ms) to prevent timing attacks
             // This makes enumeration attacks impractical (500ms × millions of DIDs = years)
             tokio::time::sleep(tokio::time::Duration::from_millis(500)).await;

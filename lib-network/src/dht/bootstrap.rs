@@ -170,7 +170,7 @@ impl DHTBootstrap {
             }
             
             // No localhost fallback scanning - use only peer discovery via mDNS
-            debug!(" peer discovery complete - no localhost simulation used");
+            debug!(" peer discovery complete - no localhost execution used");
             
             // ZHTP protocol discovery complete
             // Future enhancement: Add multicast DNS for:

@@ -26,7 +26,7 @@ class TransparencyLog:
         timestamp = datetime.now().isoformat()
         
         if active_protocols is None:
-            # Simulate detection of 1300 series if not provided
+            # execute detection of 1300 series if not provided
             active_protocols = ["1300_SAFETY_MODULATION", "1301_TONE_POLICING"]
 
         entry = {

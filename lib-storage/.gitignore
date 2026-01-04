@@ -507,9 +507,9 @@ docker-compose.test.yml
 /storage-benchmarks/
 *.storage-benchmark
 
-# Economic model simulation data
-/simulation-data/
-*.simulation
+# Economic model execution data
+/execution-data/
+*.execution
 
 # Integration test artifacts
 /integration-test-data/
@@ -527,8 +527,8 @@ docker-compose.test.yml
 /contract-logs/
 *.contract.log
 
-# Market simulation data
-/market-simulation/
+# Market execution data
+/market-execution/
 *.market-sim
 
 # Reputation system data

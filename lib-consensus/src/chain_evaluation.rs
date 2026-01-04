@@ -847,7 +847,7 @@ mod tests {
 
     #[test]
     fn test_prevents_split_brain_attack() {
-        // Simulate the exact scenario from the analysis:
+        // execute the exact scenario from the analysis:
         // Two 100-node networks trying to merge with only 2 bridge nodes
         let mut cluster_a = create_test_chain(20, 10000, 100, 500);
         let mut cluster_b = create_test_chain(20, 10000, 100, 500);
@@ -860,7 +860,7 @@ mod tests {
         cluster_b.bridge_node_count = 2;
         cluster_a.validator_count = 15; // Both have sufficient validators
         cluster_b.validator_count = 15;
-        cluster_a.total_validator_stake = 20000; // Different stake amounts to simulate low overlap
+        cluster_a.total_validator_stake = 20000; // Different stake amounts to execute low overlap
         cluster_b.total_validator_stake = 5000;  // Much lower stake = insufficient overlap
         
         // Make validator sets different to test BFT requirements

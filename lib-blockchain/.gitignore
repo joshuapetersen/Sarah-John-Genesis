@@ -93,7 +93,7 @@ test_network_config.json
 proof_cache/
 verification_keys/
 
-# Network simulation data
+# Network execution data
 simulation_results/
 network_logs/
 

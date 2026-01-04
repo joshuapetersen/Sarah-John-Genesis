@@ -547,7 +547,7 @@ impl MeshMessageHandler {
         let (status, status_message, response_body) = match method.as_str() {
             "GET" => {
                 info!("Processing GET request for {}", uri);
-                // Simulate content retrieval
+                // execute content retrieval
                 if uri == "/health" {
                     (200, "OK".to_string(), b"Mesh node healthy".to_vec())
                 } else if uri.starts_with("/content/") {

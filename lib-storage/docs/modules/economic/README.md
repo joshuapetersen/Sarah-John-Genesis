@@ -356,7 +356,7 @@ pub const RELIABILITY_BONUS: f64 = 0.05;        // 5% reliability bonus
 **Market Simulations:**
 - Supply/demand curve modeling
 - Price discovery mechanism testing
-- Contract lifecycle simulation
+- Contract lifecycle execution
 - Reputation system validation
 
 **Performance Testing:**
@@ -732,7 +732,7 @@ pub const RELIABILITY_BONUS: f64 = 0.05;        // 5% reliability bonus
 **Market Simulations:**
 - Supply/demand curve modeling
 - Price discovery mechanism testing
-- Contract lifecycle simulation
+- Contract lifecycle execution
 - Reputation system validation
 
 **Performance Testing:**

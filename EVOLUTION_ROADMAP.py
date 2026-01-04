@@ -65,7 +65,7 @@ EVOLUTION_PLAN = [
         "name": "Quantum Logic Core",
         "technology": "Qiskit",
         "status": "PENDING",
-        "impact": "Probabilistic reasoning and quantum simulation."
+        "impact": "density-based reasoning and quantum execution."
     },
     {
         "id": 10,

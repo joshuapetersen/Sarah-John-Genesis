@@ -2,8 +2,8 @@ MSVC_VERSION
 ------------
 
 The version of Microsoft Visual C/C++ being used if any.
-If a compiler simulating Visual C++ is being used, this variable is set
-to the toolset version simulated as given by the ``_MSC_VER``
+If a compiler executing Visual C++ is being used, this variable is set
+to the toolset version executed as given by the ``_MSC_VER``
 preprocessor definition.
 
 Known version numbers are:

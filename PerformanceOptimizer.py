@@ -313,7 +313,7 @@ if __name__ == "__main__":
     
     optimizer = PerformanceOptimizer()
     
-    # Simulate requests
+    # execute requests
     for i in range(10):
         request = {"query": f"test_query_{i}", "context": "Sample context " * 100}
         optimized = optimizer.optimize_request(request)

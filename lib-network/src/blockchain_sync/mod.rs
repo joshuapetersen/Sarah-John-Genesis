@@ -244,7 +244,7 @@ mod tests {
         
         assert_eq!(chunks.len(), 3); // 500 bytes / 200 = 3 chunks
 
-        // Simulate receiving chunks
+        // execute receiving chunks
         for message in chunks {
             if let ZhtpMeshMessage::BlockchainData { sender: _, request_id, chunk_index, total_chunks, data, complete_data_hash } = message {
                 let result = sync_manager.add_chunk(request_id, chunk_index, total_chunks, data, complete_data_hash).await.unwrap();

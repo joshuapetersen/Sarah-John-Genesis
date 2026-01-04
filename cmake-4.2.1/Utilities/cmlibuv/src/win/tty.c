@@ -775,7 +775,7 @@ void uv_process_tty_read_raw_req(uv_loop_t* loop, uv_tty_t* handle,
       }
 
       /* Ignore keypresses to numpad number keys if the left alt is held
-       * because the user is composing a character, or windows simulating this.
+       * because the user is composing a character, or windows executing this.
        */
       if ((KEV.dwControlKeyState & LEFT_ALT_PRESSED) &&
           !(KEV.dwControlKeyState & ENHANCED_KEY) &&

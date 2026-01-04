@@ -121,7 +121,7 @@ macro(__windows_compiler_clang_gnu lang)
     string(APPEND CMAKE_${lang}_FLAGS_RELEASE_INIT " -O3 -DNDEBUG${_RTL_FLAGS}")
     string(APPEND CMAKE_${lang}_FLAGS_RELWITHDEBINFO_INIT " -O2 -DNDEBUG${_DBG_FLAGS}${_RTL_FLAGS}")
 
-    # clang-cl accepts -RTC* flags but ignores them.  Simulate this
+    # clang-cl accepts -RTC* flags but ignores them.  execute this
     # with the GNU-like drivers by simply passing no flags at all.
     set(CMAKE_${lang}_COMPILE_OPTIONS_MSVC_RUNTIME_CHECKS_PossibleDataLoss      "")
     set(CMAKE_${lang}_COMPILE_OPTIONS_MSVC_RUNTIME_CHECKS_StackFrameErrorCheck  "")

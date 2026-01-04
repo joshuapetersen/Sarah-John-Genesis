@@ -291,8 +291,8 @@ class ZkDHTClient {
                 );
                 
                 if (hasLocalNode) {
-                    // For local development, simulate DHT response using the local node
-                    console.log('🏠 Using local node for DHT query simulation...');
+                    // For local development, execute DHT response using the local node
+                    console.log('🏠 Using local node for DHT query execution...');
                     
                     // Generate mock hash for content (would be in production)
                     const contentId = `${query.domain}${query.path}`.replace(/[^a-zA-Z0-9]/g, '_');

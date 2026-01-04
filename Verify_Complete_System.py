@@ -195,7 +195,7 @@ def verify_complete_system():
     print("INTEGRATION TEST: ALL THREE PROTOCOLS WORKING TOGETHER")
     print("="*80)
     
-    print("\n  Simulating reasoning with all protocols active:")
+    print("\n  executing reasoning with all protocols active:")
     
     # Test query
     test_query = "Calculate energy optimization for housing stability"

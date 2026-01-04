@@ -23,7 +23,7 @@ def test_security_suite():
     admin = MockAdmin()
     security = SecuritySuite(monitor=monitor, admin_core=admin)
 
-    # Test 1: Network Scan (Simulated)
+    # Test 1: Network Scan (executed)
     print("\nTest 1: Network Scan")
     # We can't easily mock subprocess output here without more complex mocking, 
     # so we'll just run it and expect it to handle the output gracefully (likely empty or local)
@@ -41,7 +41,7 @@ def test_security_suite():
     # But alert() sets threat level to HIGH.
     assert security.threat_level == "HIGH"
 
-    # Test 3: Active Trace (Simulated)
+    # Test 3: Active Trace (executed)
     print("\nTest 3: Active Trace")
     trace_data = security.trace_intruder("8.8.8.8") # Trace Google DNS as a safe test
     print(f"Trace Status: {trace_data['status']}")

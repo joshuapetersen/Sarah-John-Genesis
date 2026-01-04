@@ -240,7 +240,7 @@ class SwarmCoordinator:
             'status': 'INITIATED'
         }
         
-        # Simulate collaboration
+        # execute collaboration
         if collaboration_type == 'DEPENDENCY_UPDATE':
             # Developer notifies integrator of API change
             self.share_context(f'api_change_{details.get("component")}', initiating_agent, details)
@@ -517,7 +517,7 @@ if __name__ == "__main__":
     print(json.dumps(assignments, indent=2))
     print()
     
-    # Simulate collaboration
+    # execute collaboration
     collab = swarm.collaborate(
         'developer_nl',
         'security_agent',

@@ -58,7 +58,7 @@ message(STATUS "PATH_cache='${PATH_cache}'")
 
 set(PATH_cache "include" CACHE PATH "")
 unset(PATH_cache)
-# simulate cache variable defined in command line
+# execute cache variable defined in command line
 file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/include")
 file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/include/PrefixInPATH.h" DESTINATION "${CMAKE_BINARY_DIR}/include")
 set_property(CACHE PATH_cache PROPERTY TYPE UNINITIALIZED)
@@ -114,7 +114,7 @@ message(STATUS "PATH_cache='${PATH_cache}'")
 
 set(PATH_cache "include" CACHE PATH "")
 unset(PATH_cache)
-# simulate cache variable defined in command line
+# execute cache variable defined in command line
 file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/include")
 file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/include/PrefixInPATH.h" DESTINATION "${CMAKE_BINARY_DIR}/include")
 set_property(CACHE PATH_cache PROPERTY TYPE UNINITIALIZED)

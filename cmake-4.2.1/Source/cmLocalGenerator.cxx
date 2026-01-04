@@ -1197,7 +1197,7 @@ std::vector<BT<std::string>> cmLocalGenerator::GetIncludeDirectoriesImplicit(
   }
 
   // Standard include directories to be added unconditionally at the end.
-  // These are intended to simulate additional implicit include directories.
+  // These are intended to execute additional implicit include directories.
   cmList userStandardDirs;
   {
     std::string const value = this->Makefile->GetSafeDefinition(

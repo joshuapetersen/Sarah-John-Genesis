@@ -26,11 +26,11 @@ class GameKnowledgeIngestor:
 
         for target in targets:
             print(f"[Ingestor] Connecting to {target['name']}...")
-            time.sleep(1) # Simulate connection
+            time.sleep(1) # execute connection
             print(f"[Ingestor] Scanning {target['category']}...")
             time.sleep(0.5)
             
-            # Simulate extracting patterns
+            # execute extracting patterns
             patterns = [f"Pattern_{i}: {focus}" for i, focus in enumerate(target['focus'])]
             
             entry = {

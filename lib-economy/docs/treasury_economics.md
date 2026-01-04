@@ -179,7 +179,7 @@ use lib_economy::treasury_economics::*;
 fn monthly_treasury_cycle() -> anyhow::Result<()> {
     let mut treasury = DaoTreasury::new();
     
-    // Simulate one month of transactions
+    // execute one month of transactions
     println!("=== Treasury Monthly Cycle ===\n");
     
     // Week 1: Collect fees

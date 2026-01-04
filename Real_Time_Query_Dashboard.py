@@ -437,7 +437,7 @@ if __name__ == "__main__":
     
     print("=== REAL-TIME QUERY DASHBOARD ===\n")
     
-    # Simulate dashboard updates
+    # execute dashboard updates
     for i in range(3):
         print(f"Dashboard Update {i+1}")
         update = dashboard.update_dashboard(components)

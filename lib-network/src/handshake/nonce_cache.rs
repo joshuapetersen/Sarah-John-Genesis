@@ -709,7 +709,7 @@ mod tests {
             assert!(cache.check_and_store(&nonce, 1234567890).is_err());
         }
 
-        // Second session: simulate restart
+        // Second session: execute restart
         {
             let cache = NonceCache::open_default(db_path, 300).unwrap();
             let epoch2 = cache.current_epoch();

@@ -781,7 +781,7 @@ mod tests {
         let mut shards = ec.encode(data).unwrap();
         let original_shard = shards.data_shards[1].clone();
 
-        // Simulate shard loss by corrupting it
+        // execute shard loss by corrupting it
         shards.data_shards[1] = vec![0; shards.shard_size];
 
         // Repair the missing shard

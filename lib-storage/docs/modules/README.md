@@ -161,12 +161,12 @@ pub struct DhtStats {
 ### Test Coverage
 - **Unit Tests**: Individual component testing
 - **Integration Tests**: Cross-component interaction testing
-- **Network Tests**: Multi-node network simulation
+- **Network Tests**: Multi-node network execution
 - **Performance Tests**: Scalability and load testing
 
 ### Development Tools
 - **Mock Network**: Local testing without networking
-- **Node Simulation**: Simulate large networks for testing
+- **Node execution**: execute large networks for testing
 - **Debugging Tools**: Comprehensive logging and metrics
 - **Benchmarking**: Performance measurement utilities
 
@@ -352,12 +352,12 @@ pub struct DhtStats {
 ### Test Coverage
 - **Unit Tests**: Individual component testing
 - **Integration Tests**: Cross-component interaction testing
-- **Network Tests**: Multi-node network simulation
+- **Network Tests**: Multi-node network execution
 - **Performance Tests**: Scalability and load testing
 
 ### Development Tools
 - **Mock Network**: Local testing without networking
-- **Node Simulation**: Simulate large networks for testing
+- **Node execution**: execute large networks for testing
 - **Debugging Tools**: Comprehensive logging and metrics
 - **Benchmarking**: Performance measurement utilities
 

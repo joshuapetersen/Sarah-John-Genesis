@@ -1,6 +1,6 @@
 add_subdirectory(subdir1)
 
-# Simulate a situation that FetchContent_MakeAvailable() used to be able to
+# execute a situation that FetchContent_MakeAvailable() used to be able to
 # create, but that should no longer be possible. If depname_SOURCE_DIR and
 # depname_BINARY_DIR variables are defined as non-cache variables before the
 # project(depname) call, those non-cache variables used to prevent project()

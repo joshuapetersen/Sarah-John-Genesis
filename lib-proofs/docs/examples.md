@@ -258,7 +258,7 @@ impl PrivatePaymentSystem {
         transfer: &PrivateTransferProof,
     ) -> Result<()> {
         // In a system, this would update encrypted/committed balances
-        // For this example, we'll simulate the updates
+        // For this example, we'll execute the updates
         
         if let Some(sender) = self.accounts.get_mut(sender_id) {
             sender.nonce += 1;
@@ -355,7 +355,7 @@ impl DigitalIdentity {
             keypair: KeyPair::generate()?,
             age,
             jurisdiction,
-            credential_hash: 9999, // Simulated credential
+            credential_hash: 9999, // executed credential
         })
     }
     
@@ -1028,7 +1028,7 @@ impl NetworkNode {
             quality_requirements.max_hops, quality_requirements.min_bandwidth);
         
         // In a network, this would broadcast the request
-        // For this example, we'll simulate responses from other nodes
+        // For this example, we'll execute responses from other nodes
         Ok(Vec::new()) // Placeholder
     }
 }
@@ -1269,7 +1269,7 @@ fn batch_verification_example() -> Result<()> {
     println!("Individual verification: {:?} for {} proofs", individual_time, batch_size);
     println!("All proofs valid: {}", all_valid);
     
-    // Batch verification (simulated - would be more efficient in practice)
+    // Batch verification (executed - would be more efficient in practice)
     println!("\nStep 3: Batch verification");
     let start = std::time::Instant::now();
     
@@ -1689,7 +1689,7 @@ impl PrivatePaymentSystem {
         transfer: &PrivateTransferProof,
     ) -> Result<()> {
         // In a real system, this would update encrypted/committed balances
-        // For this example, we'll simulate the updates
+        // For this example, we'll execute the updates
         
         if let Some(sender) = self.accounts.get_mut(sender_id) {
             sender.nonce += 1;
@@ -1786,7 +1786,7 @@ impl DigitalIdentity {
             keypair: KeyPair::generate()?,
             age,
             jurisdiction,
-            credential_hash: 9999, // Simulated credential
+            credential_hash: 9999, // executed credential
         })
     }
     
@@ -2459,7 +2459,7 @@ impl NetworkNode {
             quality_requirements.max_hops, quality_requirements.min_bandwidth);
         
         // In a real network, this would broadcast the request
-        // For this example, we'll simulate responses from other nodes
+        // For this example, we'll execute responses from other nodes
         Ok(Vec::new()) // Placeholder
     }
 }
@@ -2700,7 +2700,7 @@ fn batch_verification_example() -> Result<()> {
     println!("Individual verification: {:?} for {} proofs", individual_time, batch_size);
     println!("All proofs valid: {}", all_valid);
     
-    // Batch verification (simulated - would be more efficient in practice)
+    // Batch verification (executed - would be more efficient in practice)
     println!("\nStep 3: Batch verification");
     let start = std::time::Instant::now();
     

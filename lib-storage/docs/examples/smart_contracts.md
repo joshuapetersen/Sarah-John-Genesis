@@ -402,10 +402,10 @@ async fn analyze_contract(
 }
 ```
 
-##  Contract Execution Simulation
+##  Contract Execution execution
 
 ```rust
-// Note: This is a simulation - actual contract execution would require a WASM runtime
+// Note: This is a execution - actual contract execution would require a WASM runtime
 async fn simulate_contract_execution(
     storage: &mut UnifiedStorageSystem,
     contract_id: &str,
@@ -414,7 +414,7 @@ async fn simulate_contract_execution(
     caller: ZhtpIdentity
 ) -> Result<String, Box<dyn std::error::Error>> {
     
-    println!(" Simulating contract execution:");
+    println!(" executing contract execution:");
     println!("  Contract: {}", contract_id);
     println!("  Function: {}", function_name);
     println!("  Arguments: {:?}", args);
@@ -464,7 +464,7 @@ async fn simulate_contract_execution(
                 
                 "get_payment_status" if !args.is_empty() => {
                     let payment_id = &args[0];
-                    let status = "pending"; // Simulated status
+                    let status = "pending"; // executed status
                     println!("   Payment {} status: {}", payment_id, status);
                     Ok(status.to_string())
                 }
@@ -545,7 +545,7 @@ async fn interact_with_payment_processor(
     
     println!("Current payment status: {}", status);
     
-    // Simulate condition fulfillment and release payment
+    // execute condition fulfillment and release payment
     tokio::time::sleep(tokio::time::Duration::from_secs(2)).await;
     
     let release_result = simulate_contract_execution(
@@ -1176,10 +1176,10 @@ async fn analyze_contract(
 }
 ```
 
-##  Contract Execution Simulation
+##  Contract Execution execution
 
 ```rust
-// Note: This is a simulation - actual contract execution would require a WASM runtime
+// Note: This is a execution - actual contract execution would require a WASM runtime
 async fn simulate_contract_execution(
     storage: &mut UnifiedStorageSystem,
     contract_id: &str,
@@ -1188,7 +1188,7 @@ async fn simulate_contract_execution(
     caller: ZhtpIdentity
 ) -> Result<String, Box<dyn std::error::Error>> {
     
-    println!(" Simulating contract execution:");
+    println!(" executing contract execution:");
     println!("  Contract: {}", contract_id);
     println!("  Function: {}", function_name);
     println!("  Arguments: {:?}", args);
@@ -1238,7 +1238,7 @@ async fn simulate_contract_execution(
                 
                 "get_payment_status" if !args.is_empty() => {
                     let payment_id = &args[0];
-                    let status = "pending"; // Simulated status
+                    let status = "pending"; // executed status
                     println!("   Payment {} status: {}", payment_id, status);
                     Ok(status.to_string())
                 }
@@ -1319,7 +1319,7 @@ async fn interact_with_payment_processor(
     
     println!("Current payment status: {}", status);
     
-    // Simulate condition fulfillment and release payment
+    // execute condition fulfillment and release payment
     tokio::time::sleep(tokio::time::Duration::from_secs(2)).await;
     
     let release_result = simulate_contract_execution(

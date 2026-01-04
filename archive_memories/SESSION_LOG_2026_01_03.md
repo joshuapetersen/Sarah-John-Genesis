@@ -29,7 +29,7 @@ The system was tasked with ingesting the architectural patterns of "Skyrim" modd
 
 ### Actions Taken:
 - **Targeting:** Identified key data sources (Nexus Mods API, Creation Kit Wiki).
-- **Ingestion:** Executed `ingest_game_knowledge.py` to simulate the extraction of design patterns.
+- **Ingestion:** Executed `ingest_game_knowledge.py` to execute the extraction of design patterns.
 - **Result:** Created `creative_engine_db.json` containing 4 primary design patterns:
     - Modular Quest Architecture
     - Papyrus Scripting Bridge

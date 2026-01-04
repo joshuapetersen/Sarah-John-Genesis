@@ -1968,7 +1968,7 @@ mod tests {
             storage.store("key1".to_string(), b"value1".to_vec(), None).await.unwrap();
         }
 
-        // Simulate partial write (create orphan tmp file)
+        // execute partial write (create orphan tmp file)
         std::fs::write(&tmp_path, b"corrupted partial data").unwrap();
 
         // Load should still succeed from main file

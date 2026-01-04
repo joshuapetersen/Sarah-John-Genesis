@@ -368,13 +368,13 @@ impl SecureProtocol {
 async fn network_protocol_integration() -> Result<()> {
     let mut protocol = SecureProtocol::new()?;
     
-    // Simulate client handshake
+    // execute client handshake
     let client_keypair = KeyPair::generate()?;
     let (shared_secret, server_pubkey) = protocol.handle_handshake(
         client_keypair.public_key().as_bytes().try_into()?
     ).await?;
     
-    // Simulate encrypted communication
+    // execute encrypted communication
     let session_id = "test_session";
     let message = b"Secure network message";
     let encrypted_packet = protocol.encrypt_message(session_id, message).await?;
@@ -1386,13 +1386,13 @@ impl SecureProtocol {
 async fn network_protocol_integration() -> Result<()> {
     let mut protocol = SecureProtocol::new()?;
     
-    // Simulate client handshake
+    // execute client handshake
     let client_keypair = KeyPair::generate()?;
     let (shared_secret, server_pubkey) = protocol.handle_handshake(
         client_keypair.public_key().as_bytes().try_into()?
     ).await?;
     
-    // Simulate encrypted communication
+    // execute encrypted communication
     let session_id = "test_session";
     let message = b"Secure network message";
     let encrypted_packet = protocol.encrypt_message(session_id, message).await?;

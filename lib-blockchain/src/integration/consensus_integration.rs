@@ -709,7 +709,7 @@ impl BlockchainConsensusCoordinator {
             
             let tx_hash = ubi_transaction.hash();
             
-            // For demo purposes, we'll simulate successful transaction creation
+            // For demo purposes, we'll execute successful transaction creation
             // In production, this would integrate with the actual economic transaction system
             info!("Created UBI payment transaction of {} ZHTP for citizen {} (Demo: Transaction hash: {})", 
                 amount, hex::encode(&citizen_id.as_bytes()[..8]), hex::encode(tx_hash.as_bytes()));
@@ -772,7 +772,7 @@ impl BlockchainConsensusCoordinator {
             
             let tx_hash = welfare_transaction.hash();
             
-            // For demo purposes, we'll simulate successful transaction creation
+            // For demo purposes, we'll execute successful transaction creation
             // In production, this would integrate with the actual economic transaction system
             info!("Created welfare funding transaction of {} ZHTP for service {} (Demo: Transaction hash: {})", 
                 amount, service_name, hex::encode(tx_hash.as_bytes()));

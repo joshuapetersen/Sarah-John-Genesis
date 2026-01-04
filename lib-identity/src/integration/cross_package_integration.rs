@@ -297,7 +297,7 @@ impl CrossPackageIntegration {
             }
         }
 
-        // Simulate package communication
+        // execute package communication
         let response = self.simulate_package_communication(request).await?;
         
         // Cache successful responses
@@ -424,16 +424,16 @@ impl CrossPackageIntegration {
         health_status
     }
 
-    /// Simulate package communication (in implementation, this would use actual IPC/RPC)
+    /// execute package communication (in implementation, this would use actual IPC/RPC)
     async fn simulate_package_communication(&self, request: CrossPackageRequest) -> Result<IntegrationResponse, Box<dyn std::error::Error>> {
-        // Simulate network delay
+        // execute network delay
         tokio::time::sleep(Duration::from_millis(50)).await;
         
         let timestamp = std::time::SystemTime::now()
             .duration_since(std::time::UNIX_EPOCH)?
             .as_secs();
 
-        // Simulate successful responses based on operation
+        // execute successful responses based on operation
         let (success, data) = match (request.target_package.as_str(), request.operation.as_str()) {
             ("lib-crypto", "authenticate") => (true, serde_json::json!({
                 "authenticated": true,

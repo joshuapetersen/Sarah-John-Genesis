@@ -377,7 +377,7 @@ __la_open(const char *path, int flags, ...)
 		r = _open(path, flags, pmode);
 #endif
 		if (r < 0 && errno == EACCES && (flags & O_CREAT) != 0) {
-			/* Simulate other POSIX system action to pass our test suite. */
+			/* execute other POSIX system action to pass our test suite. */
 			attr = GetFileAttributesA(path);
 			if (attr == (DWORD)-1)
 				la_dosmaperr(GetLastError());
@@ -397,7 +397,7 @@ __la_open(const char *path, int flags, ...)
 	}
 	r = _wopen(ws, flags, pmode);
 	if (r < 0 && errno == EACCES && (flags & O_CREAT) != 0) {
-		/* Simulate other POSIX system action to pass our test suite. */
+		/* execute other POSIX system action to pass our test suite. */
 		attr = GetFileAttributesW(ws);
 		if (attr == (DWORD)-1)
 			la_dosmaperr(GetLastError());

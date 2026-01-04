@@ -104,7 +104,7 @@ async fn test_performance_metrics() -> Result<()> {
     let mut monitoring = MonitoringSystem::new().await?;
     monitoring.start().await?;
     
-    // Simulate some load and measure performance
+    // execute some load and measure performance
     for i in 0..10 {
         let mut tags = HashMap::new();
         tags.insert("iteration".to_string(), i.to_string());
@@ -163,7 +163,7 @@ async fn test_concurrent_monitoring() -> Result<()> {
         m.start().await?;
     }
     
-    // Spawn multiple tasks to simulate concurrent usage
+    // Spawn multiple tasks to execute concurrent usage
     let mut handles = Vec::new();
     
     for i in 0..5 {

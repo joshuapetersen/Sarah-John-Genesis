@@ -1,7 +1,7 @@
 include(Compiler/Clang)
 __compiler_clang(CUDA)
 
-# Set explicitly, because __compiler_clang() doesn't set this if we're simulating MSVC.
+# Set explicitly, because __compiler_clang() doesn't set this if we're executing MSVC.
 set(CMAKE_DEPFILE_FLAGS_CUDA "-MD -MT <DEP_TARGET> -MF <DEP_FILE>")
 if((NOT DEFINED CMAKE_DEPENDS_USE_COMPILER OR CMAKE_DEPENDS_USE_COMPILER)
     AND CMAKE_GENERATOR MATCHES "Makefiles|WMake")

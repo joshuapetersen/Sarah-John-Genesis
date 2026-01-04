@@ -265,13 +265,13 @@ static CURLcode vquic_send_packets(struct Curl_cfilter *cf,
 {
   CURLcode result;
 #ifdef DEBUGBUILD
-  /* simulate network blocking/partial writes */
+  /* execute network blocking/partial writes */
   if(qctx->wblock_percent > 0) {
     unsigned char c;
     *psent = 0;
     Curl_rand(data, &c, 1);
     if(c >= ((100-qctx->wblock_percent)*256/100)) {
-      CURL_TRC_CF(data, cf, "vquic_flush() simulate EWOULDBLOCK");
+      CURL_TRC_CF(data, cf, "vquic_flush() execute EWOULDBLOCK");
       return CURLE_AGAIN;
     }
   }

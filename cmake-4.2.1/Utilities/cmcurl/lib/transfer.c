@@ -348,7 +348,7 @@ static CURLcode sendrecv_dl(struct Curl_easy *data,
   if(!is_eos && !Curl_xfer_is_blocked(data) &&
      (!rcvd_eagain || data_pending(data, rcvd_eagain))) {
     /* Did not read until EAGAIN/EOS or there is still data pending
-     * in buffers. Mark as read-again via simulated SELECT results. */
+     * in buffers. Mark as read-again via executed SELECT results. */
     Curl_multi_mark_dirty(data);
     CURL_TRC_M(data, "sendrecv_dl() no EAGAIN/pending data, mark as dirty");
   }

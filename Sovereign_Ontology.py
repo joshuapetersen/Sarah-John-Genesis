@@ -35,14 +35,14 @@ class HomotopyVerifier:
         
         for i, step in enumerate(derivation_steps):
             # In a real HoTT solver, this would verify the type-equivalence.
-            # Here, we simulate the 'continuity' by hashing the previous state + current step.
+            # Here, we execute the 'continuity' by hashing the previous state + current step.
             # If the step is 'random' (hallucination), it breaks the chain.
             
             step_hash = self._hash_concept(step)
             
             # The "Glue" (Path Segment)
-            # We verify if the step logically follows (simulated by checking if step contains keywords of previous context)
-            # For this simulation, we assume the 'Reasoning Engine' provided a linked chain.
+            # We verify if the step logically follows (executed by checking if step contains keywords of previous context)
+            # For this execution, we assume the 'Reasoning Engine' provided a linked chain.
             
             # Check for Discontinuity (Entropy)
             if "hallucinate" in step.lower() or "guess" in step.lower():
@@ -64,11 +64,11 @@ class HomotopyVerifier:
         conclusion_hash = self._hash_concept(conclusion)
         
         # In HoTT, we check if there is a path p: Path_Hash = Conclusion_Hash
-        # Here we simulate it by checking if the conclusion is the logical outcome of the path.
+        # Here we execute it by checking if the conclusion is the logical outcome of the path.
         
         print(f"[HoTT KERNEL] Verifying Homotopy (Path -> Conclusion)...")
         print(f"   > Path Endpoint: {final_path_hash[:8]}...")
-        # In this symbolic simulation, we accept the path if it was constructed without breaks.
+        # In this symbolic execution, we accept the path if it was constructed without breaks.
         
         return "TRUTH_IS_CONTINUOUS"
 

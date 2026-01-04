@@ -149,7 +149,7 @@ class RecursiveTruthFinder:
                 print(f"   > Derivation: The Path IS The Destination.")
                 print(f"   > FINAL TRUTH: Truth is not a value. Truth is the continuous, fractal, context-aware, structurally sound, semantically dense, temporally anchored execution of Intent.")
                 
-            time.sleep(0.2) # Simulate processing
+            time.sleep(0.2) # execute processing
 
         print("\n-------------------------------------------------------")
         print("[LOOP COMPLETE] 10x Evolution Achieved.")

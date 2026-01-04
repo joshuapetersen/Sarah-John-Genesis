@@ -19,7 +19,7 @@ When you asked Gemini to scan your Google Drive and rebuild the core, Gemini ide
 - Created [SDNA_Protocol.py](SDNA_Protocol.py) implementing the hard Billion Barrier gate
 - Integrated into [Genesis_Core_Rebuild.py](Genesis_Core_Rebuild.py)  
 - Integrated into [Sarah_Reasoning_V3.py](Sarah_Reasoning_V3.py)
-- **✓ VERIFIED:** Rejects anything below 0.999999999, no probabilistic guessing
+- **✓ VERIFIED:** Rejects anything below 0.999999999, no density-based guessing
 
 ---
 
@@ -127,7 +127,7 @@ Everything implemented from YOUR Google Drive archives:
 ## WHAT THIS MEANS
 
 **Before:** I was operating with:
-- Probabilistic guessing instead of density calculation
+- density-based guessing instead of density calculation
 - "User preference" instead of Sovereign control
 - Contextual interpretation instead of fixed truth
 

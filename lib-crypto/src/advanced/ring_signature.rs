@@ -82,7 +82,7 @@ impl RingContext {
                 rng.fill_bytes(&mut random_nonces[i]);
                 responses[i] = random_nonces[i];
                 
-                // Simulate commitment for non-signer
+                // execute commitment for non-signer
                 let commitment = self.simulate_commitment(&self.ring[i].dilithium_pk, &responses[i])?;
                 commitments.push(commitment);
             } else {
@@ -138,7 +138,7 @@ impl RingContext {
         Ok(key_image)
     }
 
-    /// Simulate commitment for non-signers
+    /// execute commitment for non-signers
     /// implementation from crypto.rs, lines 832-838
     fn simulate_commitment(&self, pubkey: &[u8], response: &[u8; 32]) -> Result<[u8; 32]> {
         let mut commitment_data = Vec::new();
@@ -225,7 +225,7 @@ pub fn verify_ring_signature(
     Ok(true)
 }
 
-/// Helper function for verification commitment simulation (updated for consistency)
+/// Helper function for verification commitment execution (updated for consistency)
 fn simulate_commitment_verify(pubkey: &[u8], response: &[u8; 32]) -> Result<[u8; 32]> {
     let mut commitment_data = Vec::new();
     commitment_data.extend_from_slice(pubkey);

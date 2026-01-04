@@ -281,7 +281,7 @@ class SelfOptimizingPipeline:
         strategy = self.predictor.recommend_execution_strategy(final_query, predicted_time)
         
         # Step 5: Execute (mock execution)
-        execution_time = predicted_time * 0.8  # Simulated improvement
+        execution_time = predicted_time * 0.8  # executed improvement
         row_count = 1000
         success = True
         

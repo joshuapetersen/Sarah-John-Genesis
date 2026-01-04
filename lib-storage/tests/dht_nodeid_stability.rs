@@ -25,9 +25,9 @@ async fn test_nodeid_stability_across_restarts() -> Result<()> {
 
     let mut observed_node_ids = Vec::new();
 
-    // Simulate RESTART_COUNT node restarts
+    // execute RESTART_COUNT node restarts
     for restart_num in 0..RESTART_COUNT {
-        // Create NodeId (simulating node restart with same identity)
+        // Create NodeId (executing node restart with same identity)
         let node_id = NodeId::from_did_device(TEST_DID, TEST_DEVICE)?;
 
         // Initialize DHT node with this NodeId
@@ -39,7 +39,7 @@ async fn test_nodeid_stability_across_restarts() -> Result<()> {
 
         observed_node_ids.push(actual_node_id);
 
-        // Drop storage to simulate shutdown
+        // Drop storage to execute shutdown
         drop(storage);
     }
 
@@ -142,7 +142,7 @@ async fn test_dht_routing_table_rebuild() -> Result<()> {
         drop(storage);
     }
 
-    // Simulate restart - recreate with same NodeId
+    // execute restart - recreate with same NodeId
     {
         let config = create_test_config(node_id, 33460);
         let storage = UnifiedStorageSystem::new(config).await?;
@@ -205,7 +205,7 @@ async fn test_dht_locate_with_stable_nodeid() -> Result<()> {
     // Verify we can retrieve the same NodeId
     assert_eq!(storage.get_node_id(), bootstrap_node_id);
 
-    // Simulate restart
+    // execute restart
     drop(storage);
 
     // Recreate with same identity

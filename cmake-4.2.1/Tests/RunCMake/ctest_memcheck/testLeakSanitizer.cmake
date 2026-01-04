@@ -5,7 +5,7 @@ message("LSAN_OPTIONS = [$ENV{LSAN_OPTIONS}]")
 string(REGEX REPLACE ".*log_path='([^']*)'.*" "\\1" LOG_FILE "$ENV{LSAN_OPTIONS}")
 message("LOG_FILE=[${LOG_FILE}]")
 
-# if we are not asked to simulate LeakSanitizer don't do it
+# if we are not asked to execute LeakSanitizer don't do it
 if(NOT "$ENV{LSAN_OPTIONS}]" MATCHES "simulate_sanitizer.1")
   return()
 endif()

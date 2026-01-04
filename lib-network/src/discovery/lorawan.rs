@@ -282,7 +282,7 @@ async fn macos_scan_lorawan_frequency(frequency_hz: u32) -> Result<LoRaWANGatewa
 }
 
 async fn simulate_gateway_detection(frequency_hz: u32) -> Result<LoRaWANGatewayInfo> {
-    // Realistic simulation of gateway detection
+    // Realistic execution of gateway detection
     tokio::time::sleep(Duration::from_millis(2000)).await; // Realistic scan time
     
     // 85% chance of no gateway (realistic for most areas)

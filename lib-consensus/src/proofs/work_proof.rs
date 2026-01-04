@@ -263,10 +263,10 @@ impl NetworkState {
     /// Get routing work performed by a node from network records
     pub fn get_node_routing_work(&self, node_id: &[u8; 32]) -> Result<u64> {
         // In production, this would query actual network routing data
-        // For now, simulate based on network participation metrics
+        // For now, execute based on network participation metrics
         let base_routing = (self.total_bandwidth_shared / self.total_participants).max(1);
         
-        // Add some variation based on node ID for realistic simulation
+        // Add some variation based on node ID for realistic execution
         let node_factor = (node_id[0] as u64 % 5) + 1; // 1-5 multiplier
         let routing_work = base_routing * node_factor;
         
@@ -278,7 +278,7 @@ impl NetworkState {
         use super::{StorageProof, StorageChallenge};
         use lib_crypto::Hash;
         
-        // Simulate realistic storage proofs based on network state
+        // execute realistic storage proofs based on network state
         let num_proofs = ((node_id[1] as usize % 3) + 1).min(5); // 1-3 storage proofs
         let mut proofs = Vec::new();
         
@@ -341,7 +341,7 @@ impl NetworkState {
     pub fn get_node_compute_results(&self, node_id: &[u8; 32]) -> Result<Vec<crate::types::ComputeResult>> {
         use crate::types::ComputeResult;
         
-        // Simulate realistic compute results based on node capabilities
+        // execute realistic compute results based on node capabilities
         let num_results = ((node_id[2] as usize % 4) + 1).min(8); // 1-4 compute results
         let mut results = Vec::new();
         

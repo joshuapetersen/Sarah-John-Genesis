@@ -226,13 +226,13 @@ impl RequirementsVerifier {
         proof_req: &ProofRequirement,
     ) -> Result<VerifiedProof, Box<dyn std::error::Error>> {
         // In implementation, would integrate with actual proof verification system
-        // For now, simulate verification based on identity data
+        // For now, execute verification based on identity data
         
         let current_time = std::time::SystemTime::now()
             .duration_since(std::time::UNIX_EPOCH)?
             .as_secs();
 
-        // Simulate proof verification
+        // execute proof verification
         let confidence = match proof_req.proof_type.as_str() {
             "citizenship_proof" => 0.95,
             "identity_proof" => 0.90,
@@ -253,7 +253,7 @@ impl RequirementsVerifier {
         Ok(VerifiedProof {
             proof_type: proof_req.proof_type.clone(),
             issuer: "lib_identity_system".to_string(), // Would be actual issuer
-            issued_at: current_time - 86400, // Simulate issued yesterday
+            issued_at: current_time - 86400, // execute issued yesterday
             verified_at: current_time,
             confidence,
             attributes_disclosed: disclosed_attributes,

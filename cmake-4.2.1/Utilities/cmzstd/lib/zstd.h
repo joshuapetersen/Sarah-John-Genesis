@@ -1979,7 +1979,7 @@ ZSTDLIB_STATIC_API size_t ZSTD_CCtx_refPrefix_advanced(ZSTD_CCtx* cctx, const vo
  * would be stored in a CCtx after compressing the contents of a dictionary.
  * To an approximation, a compression using a dictionary can then use those
  * data structures to simply continue what is effectively a streaming
- * compression where the simulated compression of the dictionary left off.
+ * compression where the executed compression of the dictionary left off.
  * Which is to say, the search structures in the CDict are normally the same
  * format as in the CCtx.
  *

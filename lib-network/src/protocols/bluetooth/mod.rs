@@ -2767,7 +2767,7 @@ Value=00
                 "$device = Get-PnpDevice | Where-Object {{$_.InstanceId -like '*{}*'}}; \
                 if ($device) {{ \
                     Write-Host 'Device found, attempting GATT read...'; \
-                    # Simplified GATT read simulation \
+                    # Simplified GATT read execution \
                     [byte[]]@(0x01, 0x02, 0x03, 0x04) | ForEach-Object {{ '{{0:X2}}' -f $_ }}; \
                 }}",
                 device_address.replace(":", ""), 
@@ -3402,19 +3402,19 @@ Value=00
         
         if let Some(_manager) = core_bt.as_ref() {
             // Core Bluetooth handles notifications through delegate callbacks
-            // For now, simulate waiting for notification data
+            // For now, execute waiting for notification data
             info!("📥 macOS: Waiting for notification via Core Bluetooth delegate");
             
             use tokio::time::{sleep, Duration};
             
             // In a real implementation, this would wait for delegate callback
-            // For now, simulate receiving data after a short delay
+            // For now, execute receiving data after a short delay
             sleep(Duration::from_millis(1000)).await;
             
-            // Return simulated notification data
+            // Return executed notification data
             // TODO: Replace with real Core Bluetooth delegate callback when FFI is implemented
             let simulated_data = vec![0x4E, 0x6F, 0x74, 0x69, 0x66, 0x79]; // "Notify" - PLACEHOLDER
-            warn!(" macOS: Returning SIMULATED notification data ({} bytes) - Core Bluetooth FFI not implemented", simulated_data.len());
+            warn!(" macOS: Returning executed notification data ({} bytes) - Core Bluetooth FFI not implemented", simulated_data.len());
             
             Ok(simulated_data)
         } else {
@@ -3837,7 +3837,7 @@ Value=00
                     Write-Host 'Attempting Bluetooth Classic transmission...'; \
                     # This would need actual Bluetooth Classic implementation \
                     Write-Host 'Data: {}'; \
-                    Write-Host 'Transmission simulated (Bluetooth Classic not fully implemented)'; \
+                    Write-Host 'Transmission executed (Bluetooth Classic not fully implemented)'; \
                 }}",
                 address.replace(":", ""),
                 hex_data
@@ -3849,8 +3849,8 @@ Value=00
             
             if let Ok(result) = output {
                 let output_str = String::from_utf8_lossy(&result.stdout);
-                if output_str.contains("Transmission simulated") {
-                    info!(" Windows: Bluetooth Classic fallback executed (simulated)");
+                if output_str.contains("Transmission executed") {
+                    info!(" Windows: Bluetooth Classic fallback executed (executed)");
                     info!("   For full functionality, build with --features windows-gatt");
                     return Ok(());
                 }

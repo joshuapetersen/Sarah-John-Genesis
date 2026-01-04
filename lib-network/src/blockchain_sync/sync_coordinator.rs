@@ -360,7 +360,7 @@ mod tests {
         // Should prevent duplicate immediately
         assert!(!coordinator.register_peer_protocol(&peer_id, NetworkProtocol::BluetoothLE, sync_type).await);
 
-        // Manually set old start time to simulate timeout
+        // Manually set old start time to execute timeout
         {
             let mut syncs = coordinator.peer_syncs.write().await;
             if let Some(state) = syncs.get_mut(&peer_id) {

@@ -604,7 +604,7 @@ mod tests {
         let compression_info = CompressionInfo::new(
             "gzip".to_string(),
             data.len() as u64,
-            30, // Simulated compressed size
+            30, // executed compressed size
             Some(6),
         );
         

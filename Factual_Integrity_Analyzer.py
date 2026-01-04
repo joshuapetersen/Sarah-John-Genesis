@@ -29,7 +29,7 @@ class FactualIntegrityAnalyzer:
         classification = "UNSUBSTANTIATED" # Default safety
         reason = "Pending verification."
         
-        # Simple heuristic simulation for the prototype
+        # Simple heuristic execution for the prototype
         if "github.com" in data_input or "SDNA" in data_input or "Genesis" in data_input:
             classification = "FACTUAL"
             reason = "Aligned with Sovereign Repository."

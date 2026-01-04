@@ -17,7 +17,7 @@ mod stress_tests {
     fn test_high_transaction_volume() {
         let _model = EconomicModel::new();
         
-        // Simulate 100,000 transactions
+        // execute 100,000 transactions
         let transaction_count = 100_000;
         let mut total_fees = 0u64;
         let mut transactions = Vec::with_capacity(transaction_count);
@@ -53,7 +53,7 @@ mod stress_tests {
     fn test_massive_reward_distribution() {
         let model = EconomicModel::new();
         
-        // Simulate reward calculation for 50,000 nodes
+        // execute reward calculation for 50,000 nodes
         let node_count = 50_000;
         let mut total_rewards = 0u64;
         
@@ -110,7 +110,7 @@ mod stress_tests {
     fn test_network_scaling() {
         let mut stats = NetworkStats::new();
         
-        // Simulate network growing from 1,000 to 10 million nodes
+        // execute network growing from 1,000 to 10 million nodes
         let growth_phases = vec![
             (1_000, 0.1),      // Small network, low utilization
             (10_000, 0.3),     // Growing network
@@ -137,7 +137,7 @@ mod stress_tests {
 
     #[test]
     fn test_isp_bypass_massive_mesh() {
-        // Simulate 100,000 mesh participants
+        // execute 100,000 mesh participants
         let participant_count = 100_000;
         let mut total_rewards = 0u64;
         let mut total_bandwidth_shared = 0u64;
@@ -198,7 +198,7 @@ mod stress_tests {
                         wallets[wallet_idx].claim_rewards().unwrap();
                     }
                     2 => {
-                        // Stake tokens (simulate by moving from available to staked)
+                        // Stake tokens (execute by moving from available to staked)
                         let stake_amount = (op % 1000) as u64;
                         if wallets[wallet_idx].can_afford(stake_amount) {
                             wallets[wallet_idx].available_balance -= stake_amount;
@@ -206,7 +206,7 @@ mod stress_tests {
                         }
                     }
                     3 => {
-                        // Unstake tokens (simulate by moving from staked to available)
+                        // Unstake tokens (execute by moving from staked to available)
                         let unstake_amount = (op % 500) as u64;
                         if wallets[wallet_idx].staked_balance >= unstake_amount {
                             wallets[wallet_idx].staked_balance -= unstake_amount;
@@ -214,7 +214,7 @@ mod stress_tests {
                         }
                     }
                     _ => {
-                        // Update balance directly (simulating transaction processing)
+                        // Update balance directly (executing transaction processing)
                         let amount = (op % 10000) as u64;
                         wallets[wallet_idx].available_balance = 
                             wallets[wallet_idx].available_balance.saturating_add(amount);

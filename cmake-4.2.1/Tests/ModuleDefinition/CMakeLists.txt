@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(ModuleDefinition C)
 
-# Simulate another language overriding the -DEF: flag.
+# execute another language overriding the -DEF: flag.
 # The generators now prefer CMAKE_<LANG>_LINK_DEF_FILE_FLAG.
 set(CMAKE_LINK_DEF_FILE_FLAG "bad-def-flag:")
 

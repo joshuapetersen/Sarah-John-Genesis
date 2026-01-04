@@ -434,7 +434,7 @@ cargo clippy
 
 ### **Economic Model Contributions**
 We especially welcome contributions in:
-- Economic modeling and simulation
+- Economic modeling and execution
 - Anti-speculation mechanism design
 - UBI distribution optimization
 - Cross-cultural economic adaptation

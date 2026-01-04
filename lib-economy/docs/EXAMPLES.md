@@ -304,7 +304,7 @@ use lib_economy::DaoTreasury;
 fn process_dao_fees() -> anyhow::Result<()> {
     let mut treasury = DaoTreasury::new();
     
-    // Simulate receiving fees from multiple transactions
+    // execute receiving fees from multiple transactions
     let transactions_fees = vec![20, 50, 100, 200, 30]; // DAO fees in ZHTP
     
     for fee in transactions_fees {
@@ -674,7 +674,7 @@ fn citizen_ubi_flow() -> anyhow::Result<()> {
 fn treasury_monthly_cycle() -> anyhow::Result<()> {
     let mut treasury = DaoTreasury::new();
     
-    // Simulate one month of transactions
+    // execute one month of transactions
     println!("\n=== Treasury Monthly Cycle ===");
     
     // Week 1: 10,000 ZHTP in DAO fees

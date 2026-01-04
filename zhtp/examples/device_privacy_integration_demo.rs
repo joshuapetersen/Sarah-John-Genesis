@@ -12,7 +12,7 @@ async fn main() -> Result<()> {
     println!(" ZHTP Device Privacy Integration Demo");
     println!("======================================");
     
-    // Simulate device privacy features
+    // execute device privacy features
     demo_identity_masking().await?;
     demo_network_anonymization().await?;
     demo_secure_communication().await?;
@@ -27,7 +27,7 @@ async fn demo_identity_masking() -> Result<()> {
     println!("\n Identity Masking Demo");
     println!("-----------------------");
     
-    // Simulate device identity creation
+    // execute device identity creation
     let device_id = generate_device_id();
     println!(" Device ID: {}", device_id);
     
@@ -47,7 +47,7 @@ async fn demo_network_anonymization() -> Result<()> {
     println!("\nNetwork Anonymization Demo");
     println!("-----------------------------");
     
-    // Simulate network routing through privacy layers
+    // execute network routing through privacy layers
     let original_ip = "192.168.1.100";
     println!(" Original IP: {}", original_ip);
     
@@ -70,12 +70,12 @@ async fn demo_secure_communication() -> Result<()> {
     let channel_id = create_secure_channel();
     println!("Secure Channel ID: {}", channel_id);
     
-    // Simulate message encryption
+    // execute message encryption
     let message = "Hello, private world!";
     let encrypted_message = encrypt_message(message, &channel_id);
     println!(" Encrypted Message: {}", encrypted_message);
     
-    // Simulate message decryption
+    // execute message decryption
     let decrypted_message = decrypt_message(&encrypted_message, &channel_id);
     println!("🔓 Decrypted Message: {}", decrypted_message);
     
@@ -125,7 +125,7 @@ fn create_anonymized_route(ip: &str) -> Vec<String> {
 }
 
 fn simulate_traffic_mixing() -> u32 {
-    // Simulate random traffic mixing percentage
+    // execute random traffic mixing percentage
     (rand::random_u64() % 100) as u32
 }
 
@@ -163,7 +163,7 @@ async fn collect_privacy_metrics() -> HashMap<String, String> {
     metrics.insert("Privacy Score".to_string(), "95%".to_string());
     metrics.insert("Network Latency".to_string(), "45ms".to_string());
     
-    // Simulate async operation
+    // execute async operation
     tokio::time::sleep(tokio::time::Duration::from_millis(100)).await;
     
     metrics
@@ -178,7 +178,7 @@ fn simple_hash(input: &str) -> u64 {
     hasher.finish()
 }
 
-// Add rand dependency simulation for demo purposes
+// Add rand dependency execution for demo purposes
 mod rand {
     pub fn random_u64() -> u64 {
         use std::time::{SystemTime, UNIX_EPOCH};

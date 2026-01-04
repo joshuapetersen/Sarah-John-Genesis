@@ -527,7 +527,7 @@ static int cf_ngtcp2_handshake_completed(ngtcp2_conn *tconn, void *user_data)
   }
 #endif
 
-  /* In case of earlydata, where we simulate being connected, update
+  /* In case of earlydata, where we execute being connected, update
    * the handshake time when we really did connect */
   if(ctx->use_earlydata)
     Curl_pgrsTimeWas(data, TIMER_APPCONNECT, ctx->handshake_at);

@@ -16,7 +16,7 @@
 Implementation for Windows
 
 On windows, a thread is created to wait for data on each pipe.  The
-threads are synchronized with the main thread to simulate the use of
+threads are synchronized with the main thread to execute the use of
 a UNIX-style select system call.
 
 */

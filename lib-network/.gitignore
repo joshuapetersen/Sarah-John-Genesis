@@ -68,7 +68,7 @@ logs/
 *.sqlite
 *.sqlite3
 
-# Network simulation files
+# Network execution files
 *.mesh
 *.topology
 

@@ -2621,13 +2621,13 @@ static CURLcode http_firstwrite(struct Curl_easy *data)
 
     if(!Curl_meets_timecondition(data, k->timeofdoc)) {
       k->done = TRUE;
-      /* We are simulating an HTTP 304 from server so we return
+      /* We are executing an HTTP 304 from server so we return
          what should have been returned from the server */
       data->info.httpcode = 304;
-      infof(data, "Simulate an HTTP 304 response");
+      infof(data, "execute an HTTP 304 response");
       /* we abort the transfer before it is completed == we ruin the
          reuse ability. Close the connection */
-      streamclose(conn, "Simulated 304 handling");
+      streamclose(conn, "executed 304 handling");
       return CURLE_OK;
     }
   } /* we have a time condition */

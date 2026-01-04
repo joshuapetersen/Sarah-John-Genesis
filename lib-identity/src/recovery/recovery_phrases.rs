@@ -1580,7 +1580,7 @@ mod tests {
             word_count: 2,
         };
 
-        // Manually zeroize (simulating drop)
+        // Manually zeroize (executing drop)
         phrase.zeroize();
 
         // Verify words and entropy are cleared

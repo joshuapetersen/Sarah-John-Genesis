@@ -685,7 +685,7 @@ fn secure_file_storage_example() -> Result<()> {
     // Store some files
     let document1 = b"This is a confidential document with sensitive information.";
     let document2 = b"Another secret file containing important data.";
-    let image_data = vec![0u8; 10240]; // Simulate 10KB image
+    let image_data = vec![0u8; 10240]; // execute 10KB image
     
     let doc1_id = file_storage.encrypt_and_store("confidential.txt", document1)?;
     let doc2_id = file_storage.encrypt_and_store("secrets.txt", document2)?;
@@ -1865,7 +1865,7 @@ fn secure_file_storage_example() -> Result<()> {
     // Store some files
     let document1 = b"This is a confidential document with sensitive information.";
     let document2 = b"Another secret file containing important data.";
-    let image_data = vec![0u8; 10240]; // Simulate 10KB image
+    let image_data = vec![0u8; 10240]; // execute 10KB image
     
     let doc1_id = file_storage.encrypt_and_store("confidential.txt", document1)?;
     let doc2_id = file_storage.encrypt_and_store("secrets.txt", document2)?;

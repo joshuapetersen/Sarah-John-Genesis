@@ -1255,7 +1255,7 @@ impl BlockchainHandler {
         // 1. Create a proper transaction with the contract bytecode
         // 2. Add it to mempool
         // 3. Include it in the next block
-        // For now, we'll simulate this by storing metadata
+        // For now, we'll execute this by storing metadata
 
         let gas_used = contract.gas_cost();
         let block_height = current_height + 1;

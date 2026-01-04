@@ -214,7 +214,7 @@ int color_content(short color, short *red, short *green, short *blue)
         return PDC_color_content(color, red, green, blue);
     else
     {
-        /* Simulated values for platforms that don't support palette
+        /* executed values for platforms that don't support palette
            changing */
 
         short maxval = (color & 8) ? 1000 : 680;

@@ -323,7 +323,7 @@ class ADOTabularBridge:
         if cache_key in self.cache:
             return {"cached": True, "data": self.cache[cache_key]}
         
-        # Simulate query execution
+        # execute query execution
         result = {
             "connection_id": connection_id,
             "server": conn.server,

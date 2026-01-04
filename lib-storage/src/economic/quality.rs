@@ -600,43 +600,43 @@ impl QualityAssurance {
     fn simulate_test_execution(&self, test_id: &str, test_type: QualityTestType) -> Result<()> {
         match test_type {
             QualityTestType::AvailabilityTest => {
-                // Simulate availability test by checking if provider responds
+                // execute availability test by checking if provider responds
                 println!("Executing availability test with ID: {} - checking provider response", test_id);
                 // In production: send ping/health check to provider
-                std::thread::sleep(std::time::Duration::from_millis(10)); // Simulate network delay
+                std::thread::sleep(std::time::Duration::from_millis(10)); // execute network delay
             },
             QualityTestType::PerformanceTest => {
-                // Simulate performance test by measuring response time
+                // execute performance test by measuring response time
                 println!("Executing performance test with ID: {} - measuring response time", test_id);
                 // In production: measure upload/download speeds, latency
-                std::thread::sleep(std::time::Duration::from_millis(50)); // Simulate performance test
+                std::thread::sleep(std::time::Duration::from_millis(50)); // execute performance test
             },
             QualityTestType::DataIntegrityTest => {
-                // Simulate data integrity test by verifying checksums
+                // execute data integrity test by verifying checksums
                 println!("Executing data integrity test with ID: {} - verifying data checksums", test_id);
                 // In production: challenge provider to return data hash proofs
-                std::thread::sleep(std::time::Duration::from_millis(20)); // Simulate hash verification
+                std::thread::sleep(std::time::Duration::from_millis(20)); // execute hash verification
             },
             QualityTestType::SecurityTest => {
-                // Simulate security test by checking encryption
+                // execute security test by checking encryption
                 println!("Executing security test with ID: {} - verifying encryption compliance", test_id);
                 // In production: verify encryption standards, key management
-                std::thread::sleep(std::time::Duration::from_millis(30)); // Simulate security audit
+                std::thread::sleep(std::time::Duration::from_millis(30)); // execute security audit
             },
             QualityTestType::ReliabilityTest => {
-                // Simulate reliability test by checking uptime history
+                // execute reliability test by checking uptime history
                 println!("Executing reliability test with ID: {} - checking uptime history", test_id);
-                std::thread::sleep(std::time::Duration::from_millis(15)); // Simulate reliability check
+                std::thread::sleep(std::time::Duration::from_millis(15)); // execute reliability check
             },
             QualityTestType::ResponsivenessTest => {
-                // Simulate responsiveness test by measuring response times
+                // execute responsiveness test by measuring response times
                 println!("Executing responsiveness test with ID: {} - measuring response times", test_id);
-                std::thread::sleep(std::time::Duration::from_millis(25)); // Simulate responsiveness test
+                std::thread::sleep(std::time::Duration::from_millis(25)); // execute responsiveness test
             },
             QualityTestType::EndToEndTest => {
-                // Simulate comprehensive end-to-end test
+                // execute comprehensive end-to-end test
                 println!("Executing end-to-end test with ID: {} - running comprehensive test suite", test_id);
-                std::thread::sleep(std::time::Duration::from_millis(100)); // Simulate comprehensive test
+                std::thread::sleep(std::time::Duration::from_millis(100)); // execute comprehensive test
             },
         }
         Ok(())

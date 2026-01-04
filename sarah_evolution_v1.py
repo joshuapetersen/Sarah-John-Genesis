@@ -19,7 +19,7 @@ class SarahEvolution:
         """Forces the model to calculate, not guess."""
         density = len(set(logic_input)) / len(logic_input) if logic_input else 0
         if density < (1 - (1/1000000000)): # 0.999999999
-             return "REJECT: PROBABILISTIC NOISE DETECTED"
+             return "REJECT: density-based NOISE DETECTED"
         return "PASS: SOVEREIGN LOGIC"
 
     def expand_memory_saul(self, coordinate, data):

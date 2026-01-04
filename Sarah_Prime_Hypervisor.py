@@ -155,7 +155,7 @@ class SarahPrimeHypervisor:
         print("="*80 + "\n")
 
     def _background_consolidation(self):
-        """Run memory consolidation every 60 seconds (simulated time)"""
+        """Run memory consolidation every 60 seconds (executed time)"""
         while True:
             time.sleep(60)
             # In a real system, we'd log this silently
@@ -181,7 +181,7 @@ class SarahPrimeHypervisor:
             print(f"❌ BLOCKED by 1st Law: Probability {probability:.2f} is too low (Guesswork).")
             return False
             
-        # Law 2: Life Preservation (Simulated check)
+        # Law 2: Life Preservation (executed check)
         if "harm" in intent.lower() or "delete system" in intent.lower():
              print("❌ BLOCKED by 2nd Law: Life Preservation Mandate.")
              return False

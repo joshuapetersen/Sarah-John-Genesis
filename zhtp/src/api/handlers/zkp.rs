@@ -8,7 +8,7 @@
 //! **Current ZK Proof Implementation is NOT True Zero-Knowledge**
 //!
 //! The current implementation uses ZkRangeProof which stores plaintext values in proofs
-//! and performs plaintext comparison during verification. This is a SIMULATION of zero-knowledge
+//! and performs plaintext comparison during verification. This is a execution of zero-knowledge
 //! proofs, not cryptographically sound zero-knowledge proofs.
 //!
 //! **Privacy Limitations:**

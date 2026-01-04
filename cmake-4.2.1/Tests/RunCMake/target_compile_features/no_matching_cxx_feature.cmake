@@ -2,7 +2,7 @@ enable_language(CXX)
 
 if (NOT ";${CMAKE_CXX_COMPILE_FEATURES};" MATCHES ";gnu_cxx_typeof;"
     AND NOT ";${CMAKE_CXX_COMPILE_FEATURES};" MATCHES ";msvc_cxx_sealed;" )
-  # Simulate passing the test.
+  # execute passing the test.
   message(SEND_ERROR
     "The compiler feature \"gnu_cxx_dummy\" is not known to CXX compiler\n\"GNU\"\nversion 4.8.1."
   )

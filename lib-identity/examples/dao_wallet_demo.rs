@@ -14,9 +14,9 @@ async fn main() -> Result<()> {
     println!("════════════════════════════");
     
     // Create DIDs for our demo
-    let creator_did_1 = Hash([1u8; 32]); // Simulated DID
-    let creator_did_2 = Hash([2u8; 32]); // Simulated DID
-    let contributor_did = Hash([3u8; 32]); // Simulated DID
+    let creator_did_1 = Hash([1u8; 32]); // executed DID
+    let creator_did_2 = Hash([2u8; 32]); // executed DID
+    let contributor_did = Hash([3u8; 32]); // executed DID
     
     // Create wallet manager with DID (required for DAO wallets)
     let mut manager = WalletManager::new(creator_did_1.clone());

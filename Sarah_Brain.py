@@ -25,7 +25,7 @@ from firebase_admin import credentials, db, firestore
 from dotenv import load_dotenv # Import dotenv
 import json
 
-from Sarah_Reasoning import SarahReasoning
+from Sarah_Reasoning_V3 import SarahReasoningV3
 from Sarah_Chat import SarahChat
 from Sarah_Drive import SarahDrive
 from Sarah_Etymology import SarahEtymology
@@ -268,7 +268,7 @@ class SarahBrain:
         
         # Pass Genesis Core to reasoning for autonomous problem solving
         # Pass Etymology to Reasoning so it knows its origin
-        self.reasoning = SarahReasoning(self.db_rt, self.chat.genesis_core, self.etymology)
+        self.reasoning = SarahReasoningV3(self.chat.genesis_core)
         self.drive = SarahDrive(self.cert_path)
 
     def _initialize_firebase(self):

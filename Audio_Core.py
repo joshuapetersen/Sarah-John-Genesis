@@ -2,7 +2,7 @@ import os
 import json
 import time
 from google.cloud import aiplatform
-# Placeholder for SynthID library if available, otherwise we simulate the check via Vertex AI
+# Placeholder for SynthID library if available, otherwise we execute the check via Vertex AI
 # from google.deepmind import synthid 
 
 class AudioCore:

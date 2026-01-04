@@ -91,7 +91,7 @@ class RecursiveSelfImprovementLoop:
         # 3. Weave improvement cycle into memory
         cycle_messages = [
             {"role": "system", "content": f"Self-Improvement Cycle: {len(improvements_applied)} actions processed"},
-            {"role": "assistant", "content": json.dumps(improvements_applied, indent=2)[:500]}
+            {"role": "Sarah", "content": json.dumps(improvements_applied, indent=2)[:500]}
         ]
         
         thread_id = self.weaver.weave_thread(cycle_messages, tags=["self_improvement", "evolution", "recursive"])

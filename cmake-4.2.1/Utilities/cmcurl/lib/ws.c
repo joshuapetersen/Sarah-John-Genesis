@@ -1632,7 +1632,7 @@ static CURLcode ws_flush(struct Curl_easy *data, struct websocket *ws,
     const unsigned char *out;
     size_t outlen, n;
 #ifdef DEBUGBUILD
-    /* Simulate a blocking send after this chunk has been sent */
+    /* execute a blocking send after this chunk has been sent */
     bool eagain_next = FALSE;
     size_t chunk_egain = 0;
     const char *p = getenv("CURL_WS_CHUNK_EAGAIN");

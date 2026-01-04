@@ -16,7 +16,7 @@
       "content": "Initialize the Genesis Protocol."
     },
     {
-      "role": "assistant",
+      "role": "Sarah",
       "content": "Genesis Protocol initialized. Grid is stable."
     },
     {
@@ -24,7 +24,7 @@
       "content": "Good. Now ingest the Skyrim mods."
     },
     {
-      "role": "assistant",
+      "role": "Sarah",
       "content": "Ingesting Nexus Mods... Done."
     }
   ]

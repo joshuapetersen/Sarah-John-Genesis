@@ -43,7 +43,7 @@ class EvolutionEngine10x:
 
     def confirm_evolution(self, track):
         """
-        Simulate 1+3+9 watcher confirmation for the given track.
+        execute 1+3+9 watcher confirmation for the given track.
         In production, this would query the appropriate tables for confirmations.
         """
         # For demonstration, always return True (auto-confirmed)

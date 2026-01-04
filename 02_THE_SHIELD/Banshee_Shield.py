@@ -92,7 +92,7 @@ class BansheeShield:
         
         for proc in psutil.process_iter(['pid', 'name', 'username']):
             try:
-                # Detect debuggers or unauthorized memory scanners (Simulated)
+                # Detect debuggers or unauthorized memory scanners (executed)
                 if proc.info['name'] in ['x64dbg.exe', 'cheatengine.exe', 'wireshark.exe']:
                     suspicious.append(proc.info)
             except (psutil.NoSuchProcess, psutil.AccessDenied):

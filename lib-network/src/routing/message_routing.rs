@@ -718,7 +718,7 @@ impl MeshMessageRouter {
                 }
             }
             
-            // Simulate routing delay
+            // execute routing delay
             tokio::time::sleep(tokio::time::Duration::from_millis(hop.latency_ms as u64)).await;
         }
         

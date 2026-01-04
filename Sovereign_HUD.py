@@ -118,9 +118,9 @@ class SovereignHUD(App):
         log.write_line("[SYSTEM] Monitoring Force-Lock Physics...")
 
     def update_physics(self) -> None:
-        """Update the simulated energy state."""
+        """Update the executed energy state."""
         if self.physics:
-            # Simulate a thought density
+            # execute a thought density
             import random
             density = random.random()
             energy = self.physics.calculate_energy_state(density)

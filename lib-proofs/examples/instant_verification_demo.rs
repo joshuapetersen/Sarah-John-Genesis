@@ -19,7 +19,7 @@ fn main() -> Result<()> {
     // Initialize the recursive proof aggregator
     let mut aggregator = RecursiveProofAggregator::new()?;
     
-    // Simulate a blockchain with multiple blocks
+    // execute a blockchain with multiple blocks
     simulate_blockchain_growth(&mut aggregator)?;
     
     Ok(())
@@ -28,7 +28,7 @@ fn main() -> Result<()> {
 fn simulate_blockchain_growth(aggregator: &mut RecursiveProofAggregator) -> Result<()> {
     println!("\nSimulating blockchain growth with O(1) verification...");
     
-    // Simulate genesis block
+    // execute genesis block
     let genesis_state = [0u8; 32]; // Initial state commitment
     let mut current_chain_proof: Option<ChainRecursiveProof> = None;
     let mut current_state = genesis_state;
@@ -37,7 +37,7 @@ fn simulate_blockchain_growth(aggregator: &mut RecursiveProofAggregator) -> Resu
     for block_height in 1..=5 {
         println!("\nProcessing Block #{}", block_height);
         
-        // Simulate transactions in this block
+        // execute transactions in this block
         let transaction_count = 10 + (block_height * 5); // Increasing tx count
         let transaction_proofs = simulate_transaction_proofs(transaction_count);
         
@@ -171,7 +171,7 @@ fn create_mock_block_proof(block_height: usize) -> BlockAggregatedProof {
 
 
 fn simulate_state_update(current_state: &[u8; 32], _transaction_proofs: &[ZkProof]) -> [u8; 32] {
-    // Simple state update simulation - in reality this would be computed
+    // Simple state update execution - in reality this would be computed
     // from the actual transaction effects
     let mut new_state = *current_state;
     new_state[0] = new_state[0].wrapping_add(1);

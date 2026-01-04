@@ -52,7 +52,7 @@ impl LoRaWANMeshProtocol {
         // 4. Join LoRaWAN network
         // 5. Start mesh message routing
         
-        // For now, simulate LoRaWAN initialization
+        // For now, execute LoRaWAN initialization
         tokio::time::sleep(tokio::time::Duration::from_millis(500)).await;
         
         // Initialize radio module
@@ -274,7 +274,7 @@ impl LoRaWANMeshProtocol {
             
             info!("Listening in RX{} window...", window);
             
-            // Simulate receiving join accept
+            // execute receiving join accept
             if rand::random::<f32>() > 0.3 { // 70% success rate per window
                 info!("Join accept received in RX{} window", window);
                 return Ok(());
@@ -363,7 +363,7 @@ impl LoRaWANMeshProtocol {
                 // In production, would listen on LoRaWAN radio
                 tokio::time::sleep(tokio::time::Duration::from_secs(5)).await;
                 
-                // Simulate receiving mesh message
+                // execute receiving mesh message
                 if rand::random::<f32>() < 0.05 { // 5% chance of receiving message
                     let sender_id = format!("LORA_{:08X}", rand::random::<u32>());
                     info!("Received LoRaWAN mesh message from: {}", sender_id);
@@ -565,7 +565,7 @@ impl LoRaWANMeshProtocol {
         info!("Channel: {}, Data Rate: {}, TX Power: {} dBm", 
               channel, data_rate, tx_power);
         
-        // Simulate transmission time
+        // execute transmission time
         let air_time = self.calculate_air_time(frame.len(), data_rate).await?;
         tokio::time::sleep(std::time::Duration::from_millis(air_time)).await;
         
@@ -661,7 +661,7 @@ mod tests {
         let protocol = LoRaWANMeshProtocol::new(node_id).unwrap();
         
         let _result = protocol.start_discovery().await;
-        // May fail due to network join simulation
+        // May fail due to network join execution
         // assert!(result.is_ok());
     }
 }

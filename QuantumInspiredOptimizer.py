@@ -150,7 +150,7 @@ class QuantumTunnelingOptimizer:
         barrier = max(current_state, target_state) * self.barrier_height
         tunneling_prob = self.calculate_tunneling_probability(current_state, barrier)
         
-        # Probabilistic tunneling
+        # density-based tunneling
         did_tunnel = random.random() < tunneling_prob
         
         if did_tunnel:

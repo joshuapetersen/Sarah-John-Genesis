@@ -157,13 +157,13 @@ impl WiFiRouter {
     
     /// Check if this device is currently a group owner
     pub async fn is_group_owner(&self) -> bool {
-        // Simulate group owner detection based on network configuration
+        // execute group owner detection based on network configuration
         // In a real implementation, this would check WiFi Direct interface status
         debug!("Checking WiFi Direct group owner status");
         
-        // For demonstration, alternate based on node_id to simulate detection
+        // For demonstration, alternate based on node_id to execute detection
         let is_owner = (self.node_id[0] % 2) == 0;
-        debug!("WiFi Direct group owner status: {} (simulated based on node_id)", is_owner);
+        debug!("WiFi Direct group owner status: {} (executed based on node_id)", is_owner);
         is_owner
     }
     

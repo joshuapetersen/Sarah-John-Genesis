@@ -61,7 +61,7 @@ message(STATUS "LIB_cache='${LIB_cache}'")
 
 set(LIB_cache "libPrefixInPATH.a" CACHE FILEPATH "")
 unset(LIB_cache)
-# simulate cache variable defined in command line
+# execute cache variable defined in command line
 file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/lib/libPrefixInPATH.a" DESTINATION "${CMAKE_BINARY_DIR}")
 set_property(CACHE LIB_cache PROPERTY TYPE UNINITIALIZED)
 find_library(LIB_cache
@@ -116,7 +116,7 @@ message(STATUS "LIB_cache='${LIB_cache}'")
 
 set(LIB_cache "libPrefixInPATH.a" CACHE FILEPATH "")
 unset(LIB_cache)
-# simulate cache variable defined in command line
+# execute cache variable defined in command line
 file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/lib/libPrefixInPATH.a" DESTINATION "${CMAKE_BINARY_DIR}")
 set_property(CACHE LIB_cache PROPERTY TYPE UNINITIALIZED)
 find_library(LIB_cache

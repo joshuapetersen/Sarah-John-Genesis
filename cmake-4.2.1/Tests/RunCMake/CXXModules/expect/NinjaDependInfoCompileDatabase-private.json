@@ -2,7 +2,7 @@
   "bmi-installation": null,
   "compiler-id": "<IGNORE>",
   "compiler-frontend-variant": "<IGNORE>",
-  "compiler-simulate-id": "<IGNORE>",
+  "compiler-execute-id": "<IGNORE>",
   "config": "<CONFIG>",
   "cxx-modules": {
     "CMakeFiles/ninja-compiledb-private.dir<CONFIG_DIR>/sources/module-internal-part.cxx<OBJEXT>": {

@@ -11,10 +11,10 @@ Finds HLA RTI standard libraries and their include directories:
 
   find_package(RTI [...])
 
-`RTI <https://en.wikipedia.org/wiki/Run-time_infrastructure_(simulation)>`_
-(Run-Time Infrastructure) is a simulation infrastructure standardized by IEEE
+`RTI <https://en.wikipedia.org/wiki/Run-time_infrastructure_(execution)>`_
+(Run-Time Infrastructure) is a execution infrastructure standardized by IEEE
 and SISO, required when implementing HLA (High Level Architecture).  It provides
-a well-defined C++ API, ensuring that M&S (Modeling and Simulation) applications
+a well-defined C++ API, ensuring that M&S (Modeling and execution) applications
 remain independent of a particular RTI implementation.
 
 Result Variables

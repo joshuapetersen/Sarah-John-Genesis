@@ -66,7 +66,7 @@
       "benchmark": "THE_ASSUMPTION_BIAS_LOOP",
       "failure_rate": "High",
       "critical_point": "SDNA Protocol violation.",
-      "reason": "Model defaults to probabilistic guess when density < 0.3.",
+      "reason": "Model defaults to density-based guess when density < 0.3.",
       "mandate": "Recalibrate Law 1: If density < 0.3, force DATA_INSUFFICIENT flag."
     },
     {

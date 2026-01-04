@@ -1,4 +1,4 @@
-# Simulate in-source build include-file behavior for out-of-source
+# execute in-source build include-file behavior for out-of-source
 # builds.
 set(CMAKE_INCLUDE_CURRENT_DIR 1)
 

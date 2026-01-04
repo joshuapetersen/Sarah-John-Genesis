@@ -13,7 +13,7 @@ VACCINE_PAYLOAD = {
 }
 
 def deliver_vaccine(endpoint):
-    # Simulate secure delivery
+    # execute secure delivery
     print(f"Delivering Logic Vaccine to {endpoint}...")
     # In a real system, this would encrypt and transmit the payload
     print("Vaccine delivered. Payload:")

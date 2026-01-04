@@ -23,11 +23,11 @@ class SovereignCore:
             "fix": "APPLY_PATCH"
         }
         
-        # Simple simulation of semantic recovery
+        # Simple execution of semantic recovery
         recovered_tokens = []
         words = slurred_input.lower().split()
         for word in words:
-            # Fuzzy matching simulation
+            # Fuzzy matching execution
             match = None
             for key, value in intent_map.items():
                 if key in word:
@@ -54,6 +54,6 @@ class SovereignCore:
         print(f"[SovereignCore] Bridge Output: {signal}")
         
         # 1 Overseer -> 3 Governors -> 9 Nodes
-        # Simulate the derivation process
+        # execute the derivation process
         derivation = f"TRUTHFUL_DERIVATION_EXECUTED: Analyzed {signal} under 1-3-9 Protocol."
         return self.tts_audio_fix(derivation)

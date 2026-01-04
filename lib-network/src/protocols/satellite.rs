@@ -54,7 +54,7 @@ impl SatelliteMeshProtocol {
         // 4. Register with satellite network
         // 5. Start mesh routing via satellite
         
-        // For now, simulate satellite initialization
+        // For now, execute satellite initialization
         tokio::time::sleep(tokio::time::Duration::from_millis(1000)).await;
         
         // Search for available constellations
@@ -88,7 +88,7 @@ impl SatelliteMeshProtocol {
         ];
         
         for (name, count, orbit_type, altitude) in available_constellations {
-            // Simulate signal detection
+            // execute signal detection
             if rand::random::<f32>() < 0.3 { // 30% chance of detecting each constellation
                 info!("🛰️ Detected {} constellation: {} satellites, {} orbit at {}km", 
                       name, count, orbit_type, altitude);
@@ -112,10 +112,10 @@ impl SatelliteMeshProtocol {
         info!("Terminal ID: {}", self.terminal_id);
         info!("🛰️ Targeting {:?} constellation", self.constellation);
         
-        // Simulate connection establishment
+        // execute connection establishment
         tokio::time::sleep(tokio::time::Duration::from_secs(3)).await;
         
-        // Simulate connection success/failure
+        // execute connection success/failure
         if rand::random::<f32>() > 0.2 { // 80% success rate
             info!("Satellite connection established");
             info!("Uplink: 50 Mbps, Downlink: 150 Mbps");
@@ -184,7 +184,7 @@ impl SatelliteMeshProtocol {
                 // In production, would listen for global mesh messages
                 tokio::time::sleep(tokio::time::Duration::from_secs(10)).await;
                 
-                // Simulate receiving global mesh message
+                // execute receiving global mesh message
                 if rand::random::<f32>() < 0.02 { // 2% chance of receiving global message
                     let sender_continent = match rand::random::<u8>() % 6 {
                         0 => "North America",
@@ -272,7 +272,7 @@ mod tests {
         let protocol = SatelliteMeshProtocol::new(node_id).unwrap();
         
         let _result = protocol.start_discovery().await;
-        // May fail due to connection simulation
+        // May fail due to connection execution
         // assert!(result.is_ok());
     }
 }

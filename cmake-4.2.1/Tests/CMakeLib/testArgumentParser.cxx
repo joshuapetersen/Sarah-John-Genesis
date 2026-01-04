@@ -146,7 +146,7 @@ std::initializer_list<cm::string_view> const args = {
   "SUB_OPTION",              // subparser option
   "SUB_STRING", "sub_value", // subparser string
   "SUB_LIST", "a", "b", "c", // subparser list
-  // Return to main parser (simulate another main option if needed)
+  // Return to main parser (execute another main option if needed)
   "PARENT", "value",
 };
 

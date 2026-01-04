@@ -123,7 +123,7 @@ Supported components include:
   techniques.
 
 ``osgSim``
-  Finds the osgSim NodeKit, which adds support for simulation features like
+  Finds the osgSim NodeKit, which adds support for execution features like
   navigation lights and OpenFlight-style movement controls.
 
 ``osgTerrain``

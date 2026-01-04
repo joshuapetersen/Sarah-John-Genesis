@@ -362,7 +362,7 @@ impl HealthMonitor {
     /// Check health of a specific relay
     async fn check_relay_health(relay: &LongRangeRelay) -> bool {
         // In production, this would actually ping or test the relay
-        // For now, simulate realistic health check with some failures
+        // For now, execute realistic health check with some failures
         
         match relay.relay_type {
             crate::types::relay_type::LongRangeRelayType::Satellite => {

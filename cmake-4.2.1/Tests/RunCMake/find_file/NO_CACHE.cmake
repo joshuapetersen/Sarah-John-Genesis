@@ -58,7 +58,7 @@ message(STATUS "FILE_cache='${FILE_cache}'")
 
 set(FILE_cache "PrefixInPATH.h" CACHE FILEPATH "")
 unset(FILE_cache)
-# simulate cache variable defined in command line
+# execute cache variable defined in command line
 file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/include/PrefixInPATH.h" DESTINATION "${CMAKE_BINARY_DIR}")
 set_property(CACHE FILE_cache PROPERTY TYPE UNINITIALIZED)
 find_file(FILE_cache
@@ -113,7 +113,7 @@ message(STATUS "FILE_cache='${FILE_cache}'")
 
 set(FILE_cache "PrefixInPATH.h" CACHE FILEPATH "")
 unset(FILE_cache)
-# simulate cache variable defined in command line
+# execute cache variable defined in command line
 file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/include/PrefixInPATH.h" DESTINATION "${CMAKE_BINARY_DIR}")
 set_property(CACHE FILE_cache PROPERTY TYPE UNINITIALIZED)
 find_file(FILE_cache

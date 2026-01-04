@@ -398,7 +398,7 @@ if __name__ == "__main__":
     ]
     
     def mock_processor(query, context):
-        time.sleep(0.1)  # Simulate processing
+        time.sleep(0.1)  # execute processing
         return {'success': True, 'query': query}
     
     print("Testing acceleration strategies...\n")

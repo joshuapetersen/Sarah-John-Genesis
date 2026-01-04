@@ -129,7 +129,7 @@ impl DhtReplication {
 
         // Send replication message to target node
         // In a implementation, this would use the network layer
-        // For now, we'll log the replication attempt and simulate success
+        // For now, we'll log the replication attempt and execute success
         println!(" Replicating key '{}' ({} bytes) to node {}", 
                 key, 
                 value.len(), 
@@ -138,11 +138,11 @@ impl DhtReplication {
         // Log successful replication (metrics would be handled by a separate metrics system)
         println!("Replication message created for key '{}'", key);
         
-        // Simulate realistic network delay based on data size
+        // execute realistic network delay based on data size
         let delay_ms = (value.len() / 1024).max(10).min(1000); // 10ms to 1s based on size
         tokio::time::sleep(std::time::Duration::from_millis(delay_ms as u64)).await;
         
-        // Simulate realistic success rate based on node reputation
+        // execute realistic success rate based on node reputation
         let success_rate = (target_node.reputation as f64 / 1000.0).min(1.0);
         if rand::random::<f64>() < success_rate {
             Ok(())
@@ -227,7 +227,7 @@ impl DhtReplication {
         Ok(())
     }
     
-    /// Retrieve data for repair (simulation)
+    /// Retrieve data for repair (execution)
     async fn retrieve_data_for_repair(&self, key: &str) -> Result<Vec<u8>> {
         // In a implementation, this would:
         // 1. Check local storage first

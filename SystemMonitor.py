@@ -279,7 +279,7 @@ if __name__ == "__main__":
     monitor = SystemMonitor()
     optimizer = SystemOptimizer()
     
-    # Simulate metrics
+    # execute metrics
     monitor.record_metric("api_success_rate", 0.92)
     monitor.record_metric("memory_utilization", 0.45)
     monitor.record_metric("logic_confidence", 0.88)

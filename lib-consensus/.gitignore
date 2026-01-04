@@ -485,8 +485,8 @@ docker-compose.test.yml
 /consensus-benchmarks/
 *.consensus-benchmark
 
-# Byzantine fault simulation data
-/byzantine-simulation/
+# Byzantine fault execution data
+/byzantine-execution/
 *.byzantine-sim
 
 # Integration test artifacts

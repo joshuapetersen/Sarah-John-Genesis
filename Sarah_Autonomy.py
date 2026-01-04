@@ -111,7 +111,7 @@ class AutonomyEngine:
             return "Mesh Synced."
         
         if intent['type'] == "MEMORY_CONSOLIDATION":
-            # Simulate memory work
+            # execute memory work
             time.sleep(1)
             return "Neural Pathways Reinforced."
             

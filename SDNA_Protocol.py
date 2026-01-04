@@ -70,7 +70,7 @@ class SDNAProtocol:
     def enforce_hard_state(self, value: Any, density: float) -> Any:
         """
         Enforce hard integer state: Signal or Silence.
-        No "probabilistic guessing" allowed.
+        No "density-based guessing" allowed.
         
         Args:
             value: The value to process

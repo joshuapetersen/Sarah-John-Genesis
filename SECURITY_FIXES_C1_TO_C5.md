@@ -443,7 +443,7 @@ cargo test --lib --package lib-network --release -- --ignored
 3. **Integration Testing**:
    - End-to-end identity creation flow
    - Network restart scenarios
-   - High-load Sybil attack simulation
+   - High-load Sybil attack execution
    - Cross-network replay attempt
 
 4. **Performance Benchmarking**:

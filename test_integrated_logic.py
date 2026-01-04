@@ -53,7 +53,7 @@ def test_integrated_stack():
 
     # 5. Step 3: Execution (Hyperbolic Math)
     print("\n>>> STEP 3: EXECUTION (NODE 13 PATCH)")
-    # Extract vectors from "Alpha" bank (simulated extraction)
+    # Extract vectors from "Alpha" bank (executed extraction)
     vec_a = [0.5, 0.2]
     vec_b = [0.1, 0.1]
     

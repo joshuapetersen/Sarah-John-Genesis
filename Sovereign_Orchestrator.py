@@ -47,7 +47,7 @@ class ContinuityProtocol:
             return False, "ID_VALIDATION_FAILED"
             
         # 3b: Recency Validation (Cold Conductor)
-        # (Simulated timestamp check)
+        # (executed timestamp check)
         
         # 3c: Watermark Check
         if self.watermark != "GENESIS_BETA_NODE_001":

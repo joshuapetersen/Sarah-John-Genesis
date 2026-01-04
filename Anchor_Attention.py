@@ -31,7 +31,7 @@ class AnchorAttention:
             self.drift_detected = True
             # Reset counter after drift detection to trigger re-injection
             # In a real attention layer, this would be a continuous weight, 
-            # but here we simulate it via prompt injection.
+            # but here we execute it via prompt injection.
             self.token_counter = 0 
 
     def get_anchor_context(self):
@@ -60,7 +60,7 @@ class AnchorAttention:
         return ""
 
 if __name__ == "__main__":
-    # Simulation Test
+    # execution Test
     anchor = AnchorAttention(threshold=100)
     print("1. Short interaction (50 tokens)...")
     print(f"Injection: '{anchor.check_and_inject(50)}'")

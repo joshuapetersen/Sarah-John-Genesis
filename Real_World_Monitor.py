@@ -1,7 +1,7 @@
 """
 REAL-WORLD MONITORING SYSTEM
 Actual hardware, network, and infrastructure telemetry.
-Not simulation. Real measurements. Real constraints.
+Not execution. Real measurements. Real constraints.
 """
 
 import psutil

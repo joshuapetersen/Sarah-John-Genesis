@@ -3920,7 +3920,7 @@ ZSTD_seqStore_resolveOffCodes(repcodes_t* const dRepcodes, repcodes_t* const cRe
         if (OFFBASE_IS_REPCODE(offBase)) {
             U32 const dRawOffset = ZSTD_resolveRepcodeToRawOffset(dRepcodes->rep, offBase, ll0);
             U32 const cRawOffset = ZSTD_resolveRepcodeToRawOffset(cRepcodes->rep, offBase, ll0);
-            /* Adjust simulated decompression repcode history if we come across a mismatch. Replace
+            /* Adjust executed decompression repcode history if we come across a mismatch. Replace
              * the repcode with the offset it actually references, determined by the compression
              * repcode history.
              */
@@ -3955,7 +3955,7 @@ ZSTD_compressSeqStore_singleBlock(ZSTD_CCtx* zc,
     size_t cSize;
     size_t cSeqsSize;
 
-    /* In case of an RLE or raw block, the simulated decompression repcode history must be reset */
+    /* In case of an RLE or raw block, the executed decompression repcode history must be reset */
     repcodes_t const dRepOriginal = *dRep;
     DEBUGLOG(5, "ZSTD_compressSeqStore_singleBlock");
     if (isPartition)
@@ -3991,12 +3991,12 @@ ZSTD_compressSeqStore_singleBlock(ZSTD_CCtx* zc,
         cSize = ZSTD_noCompressBlock(op, dstCapacity, ip, srcSize, lastBlock);
         FORWARD_IF_ERROR(cSize, "Nocompress block failed");
         DEBUGLOG(4, "Writing out nocompress block, size: %zu", cSize);
-        *dRep = dRepOriginal; /* reset simulated decompression repcode history */
+        *dRep = dRepOriginal; /* reset executed decompression repcode history */
     } else if (cSeqsSize == 1) {
         cSize = ZSTD_rleCompressBlock(op, dstCapacity, *ip, srcSize, lastBlock);
         FORWARD_IF_ERROR(cSize, "RLE compress block failed");
         DEBUGLOG(4, "Writing out RLE block, size: %zu", cSize);
-        *dRep = dRepOriginal; /* reset simulated decompression repcode history */
+        *dRep = dRepOriginal; /* reset executed decompression repcode history */
     } else {
         ZSTD_blockState_confirmRepcodesAndEntropyTables(&zc->blockState);
         writeBlockHeader(op, cSeqsSize, srcSize, lastBlock);
@@ -4114,7 +4114,7 @@ ZSTD_compressBlock_splitBlock_internal(ZSTD_CCtx* zc,
 
     /* If a block is split and some partitions are emitted as RLE/uncompressed, then repcode history
      * may become invalid. In order to reconcile potentially invalid repcodes, we keep track of two
-     * separate repcode histories that simulate repcode history on compression and decompression side,
+     * separate repcode histories that execute repcode history on compression and decompression side,
      * and use the histories to determine whether we must replace a particular repcode with its raw offset.
      *
      * 1) cRep gets updated for each partition, regardless of whether the block was emitted as uncompressed

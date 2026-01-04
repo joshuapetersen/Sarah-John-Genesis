@@ -200,7 +200,7 @@ async fn test_threshold_monitoring() -> Result<()> {
     let alert_manager = AlertManager::with_thresholds(thresholds).await?;
     alert_manager.start().await?;
     
-    // Simulate metrics that exceed thresholds
+    // execute metrics that exceed thresholds
     let mut tags = HashMap::new();
     tags.insert("component".to_string(), "system".to_string());
     

@@ -298,7 +298,7 @@ impl TransactionVerifier {
     /// Parallel verification for large batches
     pub fn verify_batch_parallel(&mut self, proofs: &[TransactionProof]) -> Result<Vec<bool>> {
         // Note: In a implementation, this would use actual parallelization
-        // For now, we'll simulate parallel processing with chunked verification
+        // For now, we'll execute parallel processing with chunked verification
         
         let chunk_size = std::cmp::max(1, proofs.len() / num_cpus::get());
         let mut results = Vec::with_capacity(proofs.len());

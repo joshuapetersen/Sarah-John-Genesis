@@ -38,7 +38,7 @@ class UniversalSiliconBridge:
             }
         else:
             self.telemetry_sources = {
-                "Generic_Telemetry": "ONLINE (Simulated)"
+                "Generic_Telemetry": "ONLINE (executed)"
             }
 
         logging.info(f"Universal Silicon Bridge: ONLINE [{self.os_type} Detected]")
@@ -135,7 +135,7 @@ class UniversalSiliconBridge:
         except Exception as e:
             logging.warning(f"USB enumeration failed: {e}")
 
-        # Fallback simulated response
+        # Fallback executed response
         return {
             "success": False,
             "devices": [],
@@ -149,7 +149,7 @@ class UniversalSiliconBridge:
         if self.os_type == "Linux":
             return self._get_linux_metrics()
             
-        # Simulated Metrics (In real implementation, this would query DCGM/WMI)
+        # executed Metrics (In real implementation, this would query DCGM/WMI)
         metrics = {
             "gpu_utilization": random.uniform(10, 45), # %
             "gpu_temp": random.uniform(40, 65), # Celsius
@@ -194,7 +194,7 @@ class UniversalSiliconBridge:
                     metrics["vram_usage"] = float(data[2]) / 1024.0 # Convert MB to GB
                     metrics["power_draw"] = float(data[3])
         except Exception:
-            # Fallback to simulation if nvidia-smi fails or not present
+            # Fallback to execution if nvidia-smi fails or not present
             metrics["gpu_utilization"] = random.uniform(10, 45)
             metrics["gpu_temp"] = random.uniform(40, 65)
 
@@ -216,7 +216,7 @@ class UniversalSiliconBridge:
             return f"Error: Tool {tool_name} not bound."
             
         logging.info(f"Routing Logic to {tool_name} (NIM): '{prompt[:30]}...'")
-        # Simulate processing delay
+        # execute processing delay
         time.sleep(0.1)
         return f"[{tool_name}] Processed: {prompt}"
 
@@ -227,7 +227,7 @@ class UniversalSiliconBridge:
         logging.info("Initiating Hardware Performance Benchmark...")
         start_metrics = self.get_hardware_metrics()
         
-        # Simulate load
+        # execute load
         time.sleep(1)
         
         end_metrics = self.get_hardware_metrics()

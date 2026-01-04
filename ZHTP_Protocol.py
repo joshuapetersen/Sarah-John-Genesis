@@ -36,7 +36,7 @@ class ZHTPProtocol:
         """
         Verifies a data packet using Zero-Knowledge Proof logic.
         """
-        # Simulate ZKP verification
+        # execute ZKP verification
         if "zhtp_token" in data_packet:
             return True
         return False

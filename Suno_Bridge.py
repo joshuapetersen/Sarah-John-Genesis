@@ -25,7 +25,7 @@ class SunoBridge:
         """
         logging.info(f"Generating Audio Asset: '{prompt}' [{tags}]")
         
-        # Simulate generation delay (20-60s in real life, 2s here)
+        # execute generation delay (20-60s in real life, 2s here)
         time.sleep(2)
         
         mock_asset = {

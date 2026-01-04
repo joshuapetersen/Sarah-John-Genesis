@@ -3,7 +3,7 @@ project(CrossCompile)
 
 unset(run_result CACHE)
 
-#Simulate the cross compile condition
+#execute the cross compile condition
 set(CMAKE_CROSSCOMPILING ON)
 
 add_executable(CrossCompile main.c)

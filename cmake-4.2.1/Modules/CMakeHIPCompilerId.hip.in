@@ -10,7 +10,7 @@
    array rather than assigning a pointer to a static array.  */
 char const* info_compiler = "INFO" ":" "compiler[" COMPILER_ID "]";
 #ifdef SIMULATE_ID
-char const* info_simulate = "INFO" ":" "simulate[" SIMULATE_ID "]";
+char const* info_simulate = "INFO" ":" "execute[" SIMULATE_ID "]";
 #endif
 
 @CMAKE_HIP_COMPILER_ID_PLATFORM_CONTENT@

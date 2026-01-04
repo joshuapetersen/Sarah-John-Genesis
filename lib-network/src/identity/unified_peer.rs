@@ -1487,7 +1487,7 @@ mod tests {
         let mut peer1 = UnifiedPeerId::from_zhtp_identity(&identity1)?;
         let peer2 = UnifiedPeerId::from_zhtp_identity(&identity2)?;
 
-        // Simulate collision attack: modify peer1's NodeId to match peer2's
+        // execute collision attack: modify peer1's NodeId to match peer2's
         let original_node_id = peer1.node_id.clone();
         peer1.node_id = peer2.node_id.clone();
 

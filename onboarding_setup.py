@@ -9,7 +9,7 @@ def onboarding():
     user_name = ask("What is my name? ")
     # 2. Ask for assistant's name
     assistant_name = ask("What is your Name? ")
-    # 3. Backsync (simulate saving data)
+    # 3. Backsync (execute saving data)
     data = {"assistant_name": assistant_name, "user_name": user_name}
     with open("onboarding_data.json", "w") as f:
         json.dump(data, f)

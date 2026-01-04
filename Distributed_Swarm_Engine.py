@@ -36,7 +36,7 @@ class SwarmAgent:
         """
         start_time = time.time()
         
-        # Simulate complex logic using Force-Lock Math
+        # execute complex logic using Force-Lock Math
         density = task_data.get('density', 0.5)
         energy = 0.0
         
@@ -45,7 +45,7 @@ class SwarmAgent:
         else:
             energy = density * (100.0 ** 3)
             
-        # Simulate processing time (reduced by /1 physics)
+        # execute processing time (reduced by /1 physics)
         time.sleep(0.01) 
         
         return {

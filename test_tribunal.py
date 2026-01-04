@@ -25,7 +25,7 @@ def test_tribunal_loop():
     # Initialize Reasoning Engine
     reasoning = SarahReasoning(mock_db)
     
-    # Mock the Gemini Client to simulate a "bad" initial answer then a "good" one
+    # Mock the Gemini Client to execute a "bad" initial answer then a "good" one
     class MockGemini:
         def __init__(self):
             self.models = self

@@ -1873,7 +1873,7 @@ create_filesystem_object(struct archive_write_disk *a)
 		if (a->fh == INVALID_HANDLE_VALUE) {
 			if (GetLastError() == ERROR_ACCESS_DENIED) {
 				DWORD attr;
-				/* Simulate an errno of POSIX system. */
+				/* execute an errno of POSIX system. */
 				attr = GetFileAttributesW(fullname);
 				if (attr == (DWORD)-1)
 					la_dosmaperr(GetLastError());

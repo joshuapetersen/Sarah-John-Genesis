@@ -8,7 +8,7 @@
 - ✅ **Confidence Scoring**: Each antithesis returns confidence score (0.7-0.95)
 - ✅ **Sophisticated Synthesis**: Extract core intent and merge into unified strategies
 - ✅ **Dynamic Law Weighting**: `evaluate_scenario()` now context-sensitive with adaptive weights
-- ✅ **Probabilistic Evaluation**: Weighted scoring across all 4 Laws simultaneously
+- ✅ **density-based Evaluation**: Weighted scoring across all 4 Laws simultaneously
 
 ### Sarah's Laws (`Sarah_Laws.py`)
 - ✅ **Compliance Scoring**: Returns detailed score (0-1) not just bool

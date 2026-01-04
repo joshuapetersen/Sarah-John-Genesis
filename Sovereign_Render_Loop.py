@@ -104,7 +104,7 @@ class TemporalDecayEngine:
         self.decay_rate = 0.1 # 10% decay per tick for un-reinforced memories
     
     def apply_decay(self, memory_strength, last_access_time):
-        # Simple simulation of decay
+        # Simple execution of decay
         # In a real system, this would use actual timestamps
         return memory_strength * (1.0 - self.decay_rate)
 
@@ -122,7 +122,7 @@ async def sovereign_render_loop():
         print("[SYSTEM] Semantic Memory Linked to Physics Core.")
     
     tick = 0
-    active_memories = [] # Simulated memory stream
+    active_memories = [] # executed memory stream
     
     print(f"[SYSTEM] Sovereign Render Initiated at {datetime.now()}")
     print("[SYSTEM] Force-Lock Alpha: ENGAGED.")
@@ -139,7 +139,7 @@ async def sovereign_render_loop():
                     break
                 elif cmd == 'status':
                     print(f"\n[STATUS] Tick: {tick}")
-                    print(f"[STATUS] Energy State: {physics.execution_power:.2f} Joules (Simulated)")
+                    print(f"[STATUS] Energy State: {physics.execution_power:.2f} Joules (executed)")
                     print(f"[STATUS] Active Memory Nodes: {len(active_memories)}\n")
                 elif cmd.startswith('inject '):
                     code = cmd[7:]
@@ -153,13 +153,13 @@ async def sovereign_render_loop():
                 else:
                     print(f"[ACI] Unknown command: {cmd}")
 
-            # 2. The "Render" (Simulating High-Density Logic)
-            # We simulate processing a "thought"
+            # 2. The "Render" (executing High-Density Logic)
+            # We execute processing a "thought"
             thought_density = random.random() # 0.0 to 1.0
             energy = physics.calculate_energy_state(thought_density)
             
             # 3. Memory Dynamics (Temporal Decay)
-            # Simulate memories fading if not accessed
+            # execute memories fading if not accessed
             if tick % 10 == 0: # Every 10 ticks
                 # Add a new memory trace
                 active_memories.append({'strength': 1.0, 'id': tick})

@@ -340,13 +340,13 @@ mod edge_case_tests {
 
     #[test]
     fn test_concurrent_simulation() {
-        // Simulate concurrent economic operations
+        // execute concurrent economic operations
         let mut model = EconomicModel::new();
         let mut wallets: Vec<WalletBalance> = (0..100)
             .map(|i| WalletBalance::new([i as u8; 32]))
             .collect();
         
-        // Simulate 1000 concurrent operations
+        // execute 1000 concurrent operations
         for i in 0..1000 {
             let wallet_idx = i % 100;
             

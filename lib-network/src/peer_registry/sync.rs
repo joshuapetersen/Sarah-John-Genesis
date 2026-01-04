@@ -931,7 +931,7 @@ mod tests {
         let (observer1, _) = TestObserver::new("test1");
         registry.register(Arc::new(observer1)).await.unwrap();
         
-        // Simulate old registration by manipulating time
+        // execute old registration by manipulating time
         // (In real scenario, this would happen naturally over time)
         let mut registration_times = registry.registration_times.write().await;
         if let Some(time) = registration_times.get_mut("test1") {

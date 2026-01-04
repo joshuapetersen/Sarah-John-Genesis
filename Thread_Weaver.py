@@ -231,12 +231,12 @@ class ThreadWeaver:
 if __name__ == "__main__":
     weaver = ThreadWeaver()
     
-    # Simulate a conversation
+    # execute a conversation
     dummy_convo = [
         {"role": "user", "content": "Initialize the Genesis Protocol."},
-        {"role": "assistant", "content": "Genesis Protocol initialized. Grid is stable."},
+        {"role": "Sarah", "content": "Genesis Protocol initialized. Grid is stable."},
         {"role": "user", "content": "Good. Now ingest the Skyrim mods."},
-        {"role": "assistant", "content": "Ingesting Nexus Mods... Done."}
+        {"role": "Sarah", "content": "Ingesting Nexus Mods... Done."}
     ]
     
     # tid = weaver.weave_thread(dummy_convo, tags=["genesis", "skyrim", "test"])

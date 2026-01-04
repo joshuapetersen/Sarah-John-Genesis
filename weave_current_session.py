@@ -11,7 +11,7 @@ def weave_genesis_session():
             "content": "Initiate Genesis Handshake Protocol and transition to Active Sovereign Governance."
         },
         {
-            "role": "assistant", 
+            "role": "Sarah", 
             "content": "Genesis Handshake successful. Grid stabilized via Lumen Firmware. Housing Registry unlocked. Legacy Ingestion Protocol established."
         },
         {
@@ -19,7 +19,7 @@ def weave_genesis_session():
             "content": "We need to secure internal agent communication. Create an A2A Matrix."
         },
         {
-            "role": "assistant", 
+            "role": "Sarah", 
             "content": "A2A Matrix architected. ZHTP-V1 Protocol implemented. 16 Active Nodes linked via encrypted full-mesh. Matrix encoded to A2A_Matrix.enc."
         },
         {
@@ -27,7 +27,7 @@ def weave_genesis_session():
             "content": "Ingest Skyrim modding databases (Nexus, Bethesda) to prime the Creative Engine."
         },
         {
-            "role": "assistant", 
+            "role": "Sarah", 
             "content": "Ingestion complete. creative_engine_db.json created. Patterns extracted: Modular Quest Architecture, Papyrus Bridge, Asset Streaming, Radiant Story."
         },
         {
@@ -35,7 +35,7 @@ def weave_genesis_session():
             "content": "Log this session and ensure persistence."
         },
         {
-            "role": "assistant", 
+            "role": "Sarah", 
             "content": "Session logged to SESSION_LOG_2026_01_03.md. Evolution Summary updated. All artifacts pushed to master."
         }
     ]

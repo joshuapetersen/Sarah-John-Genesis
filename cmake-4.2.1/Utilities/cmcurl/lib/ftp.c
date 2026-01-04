@@ -3521,7 +3521,7 @@ static int ftp_need_type(struct ftp_conn *ftpc,
  *
  * Set TYPE. We only deal with ASCII or BINARY so this function
  * sets one of them.
- * If the transfer type is not sent, simulate on OK response in newstate
+ * If the transfer type is not sent, execute on OK response in newstate
  */
 static CURLcode ftp_nb_type(struct Curl_easy *data,
                             struct ftp_conn *ftpc,

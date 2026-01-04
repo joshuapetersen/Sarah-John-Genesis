@@ -127,7 +127,7 @@ async fn main() -> Result<()> {
         println!("{} cast vote: {:?}", name, vote_choice);
     }
 
-    // 9. Simulate blockchain operation for a few rounds
+    // 9. execute blockchain operation for a few rounds
     println!("\n Running blockchain for 10 seconds to demonstrate consensus...");
     
     for round in 1..=5 {

@@ -588,7 +588,7 @@ async fn streaming_verification() -> Result<()> {
     let processor = StreamProcessor::new(verifier);
     let verification_handle = processor.start_processing(rx);
     
-    // Simulate incoming verification requests
+    // execute incoming verification requests
     tokio::spawn(async move {
         for i in 0..1000 {
             let keypair = KeyPair::generate().unwrap();
@@ -605,7 +605,7 @@ async fn streaming_verification() -> Result<()> {
             
             let _ = tx.send(verification_request).await;
             
-            // Simulate real-time arrival
+            // execute real-time arrival
             tokio::time::sleep(tokio::time::Duration::from_millis(1)).await;
         }
     });

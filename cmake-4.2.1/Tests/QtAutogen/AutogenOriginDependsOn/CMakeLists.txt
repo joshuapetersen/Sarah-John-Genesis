@@ -21,7 +21,7 @@ set(CBD ${CMAKE_CURRENT_BINARY_DIR})
 # custom command has been completed.
 #
 # The sleep seconds artificially increase the build time of the custom command
-# to simulate a slow file generation process that takes longer to run than
+# to execute a slow file generation process that takes longer to run than
 # the build of the mocDepGenFile_autogen target.
 add_custom_command(
   OUTPUT ${CBD}/GenFile.hpp
@@ -48,7 +48,7 @@ set_target_properties(mocDepGenFile PROPERTIES AUTOMOC TRUE)
 # is only valid after the mocDepTargetUtil build has been completed.
 #
 # The sleep seconds artificially increase the build time of mocDepTargetUtil
-# to simulate a slow utility target build that takes longer to run than
+# to execute a slow utility target build that takes longer to run than
 # the build of the mocDepTarget_autogen target.
 add_custom_target(mocDepTargetUtil
   BYPRODUCTS ${CBD}/GenTarget.hpp
@@ -75,7 +75,7 @@ add_dependencies(mocDepTarget mocDepTargetUtil)
 # completed.
 #
 # The sleep seconds artificially increase the build time of SimpleLib
-# to simulate a slow utility library build that takes longer to run than
+# to execute a slow utility library build that takes longer to run than
 # the build of the mocDepGenLib_autogen target.
 add_custom_command(
   OUTPUT ${CBD}/simpleLib.hpp ${CBD}/simpleLib.cpp

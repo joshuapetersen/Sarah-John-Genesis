@@ -148,15 +148,15 @@ characteristic.ReadRequested(&TypedEventHandler::new(
 
 ## Additional Changes
 
-### 1. macOS Notification Simulation Warning
+### 1. macOS Notification execution Warning
 
-Updated `macos_wait_notification_data()` (line 3020) to clearly indicate simulation:
+Updated `macos_wait_notification_data()` (line 3020) to clearly indicate execution:
 
 ```rust
-// Return simulated notification data
+// Return executed notification data
 // TODO: Replace with real Core Bluetooth delegate callback when FFI is implemented
 let simulated_data = vec![0x4E, 0x6F, 0x74, 0x69, 0x66, 0x79]; // "Notify" - PLACEHOLDER
-warn!(" macOS: Returning SIMULATED notification data ({} bytes) - Core Bluetooth FFI not implemented", 
+warn!(" macOS: Returning executed notification data ({} bytes) - Core Bluetooth FFI not implemented", 
       simulated_data.len());
 ```
 

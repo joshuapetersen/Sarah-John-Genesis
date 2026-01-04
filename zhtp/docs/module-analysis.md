@@ -285,7 +285,7 @@ config/
 **Mesh Modes**:
 - **Hybrid**: Mesh primary with TCP/IP fallback
 - **Pure**: Complete , mesh-only
-- **Development**: Local testing with simulation
+- **Development**: Local testing with execution
 
 ## Runtime System Analysis (src/runtime/)
 

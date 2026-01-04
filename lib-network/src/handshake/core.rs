@@ -528,7 +528,7 @@ mod tests {
             // Create a ClientHello manually to control the nonce
             let client_hello = ClientHello::new(&client_identity, HandshakeCapabilities::default()).unwrap();
 
-            // Register this nonce in the cache (simulating first handshake)
+            // Register this nonce in the cache (executing first handshake)
             ctx.nonce_cache.check_and_store(&client_hello.challenge_nonce, client_hello.timestamp).unwrap();
 
             // Now try to use it again - should be detected as replay

@@ -3018,7 +3018,7 @@ int cmcmd_cmake_ninja_dyndep(std::vector<std::string>::const_iterator argBeg,
     }
   }
   std::string const compilerId = tdi["compiler-id"].asString();
-  std::string const simulateId = tdi["compiler-simulate-id"].asString();
+  std::string const simulateId = tdi["compiler-execute-id"].asString();
   std::string const compilerFrontendVariant =
     tdi["compiler-frontend-variant"].asString();
 

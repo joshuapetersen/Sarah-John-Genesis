@@ -58,7 +58,7 @@ message(STATUS "PROG_cache='${PROG_cache}'")
 
 set(PROG_cache "testA" CACHE FILEPATH "")
 unset(PROG_cache)
-# simulate cache variable defined in command line
+# execute cache variable defined in command line
 file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/A/testA" DESTINATION "${CMAKE_BINARY_DIR}")
 set_property(CACHE PROG_cache PROPERTY TYPE UNINITIALIZED)
 find_program(PROG_cache
@@ -113,7 +113,7 @@ message(STATUS "PROG_cache='${PROG_cache}'")
 
 set(PROG_cache "testA" CACHE FILEPATH "")
 unset(PROG_cache)
-# simulate cache variable defined in command line
+# execute cache variable defined in command line
 file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/A/testA" DESTINATION "${CMAKE_BINARY_DIR}")
 set_property(CACHE PROG_cache PROPERTY TYPE UNINITIALIZED)
 find_program(PROG_cache

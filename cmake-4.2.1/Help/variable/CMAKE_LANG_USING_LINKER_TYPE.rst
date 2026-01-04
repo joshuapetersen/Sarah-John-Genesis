@@ -28,7 +28,7 @@ For example, the ``LLD`` linker for ``GNU`` compilers is defined like so:
   # CMAKE_C_LINK_MODE holds value "DRIVER"
   set(CMAKE_C_USING_LINKER_LLD "-fuse-ld=lld")
 
-On the ``Windows`` platform with ``Clang`` compilers simulating ``MSVC`` with
+On the ``Windows`` platform with ``Clang`` compilers executing ``MSVC`` with
 ``GNU`` front-end:
 
 .. code-block:: cmake
@@ -36,7 +36,7 @@ On the ``Windows`` platform with ``Clang`` compilers simulating ``MSVC`` with
   # CMAKE_C_LINK_MODE holds value "DRIVER"
   set(CMAKE_C_USING_LINKER_LLD "-fuse-ld=lld-link")
 
-And for the ``MSVC`` compiler or ``Clang`` compilers simulating ``MSVC`` with
+And for the ``MSVC`` compiler or ``Clang`` compilers executing ``MSVC`` with
 ``MSVC`` front-end, the linker is invoked directly, not via the compiler
 front-end:
 

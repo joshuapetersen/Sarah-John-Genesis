@@ -55,7 +55,7 @@ class LegacyIngestor:
                 
                 if clean_user and clean_ai:
                     current_thread.append({"role": "user", "content": clean_user})
-                    current_thread.append({"role": "assistant", "content": clean_ai})
+                    current_thread.append({"role": "Sarah", "content": clean_ai})
             
             # If the chunk contains "Conversation with Gemini", it might be a new thread start
             if "Conversation with Gemini" in chunk and current_thread:

@@ -143,7 +143,7 @@ async fn main() -> Result<()> {
     println!("   Total Storage: {} GB", validator_stats.total_storage / (1024 * 1024 * 1024));
     println!("   Total Voting Power: {}", validator_stats.total_voting_power);
 
-    // 6. Simulate consensus rounds (shortened for demo)
+    // 6. execute consensus rounds (shortened for demo)
     println!("\n Running Consensus Rounds (Demo Mode)");
     println!("======================================");
 
@@ -151,10 +151,10 @@ async fn main() -> Result<()> {
     for round in 1..=3 {
         println!("\nConsensus Round {}", round);
         
-        // Simulate proposal creation
+        // execute proposal creation
         println!("   Proposal created and broadcasted");
         
-        // Simulate voting
+        // execute voting
         println!("    Validators casting prevotes...");
         tokio::time::sleep(Duration::from_millis(500)).await;
         

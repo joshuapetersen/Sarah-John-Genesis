@@ -50,7 +50,7 @@ class SarahDream:
                 target_log = self._fetch_dream_target()
                 
                 if target_log:
-                    # 3. Re-Simulate (The Dream)
+                    # 3. Re-execute (The Dream)
                     synthetic_insight = self._process_dream(target_log)
                     
                     if synthetic_insight:

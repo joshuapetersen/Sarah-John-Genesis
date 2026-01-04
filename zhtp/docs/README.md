@@ -212,7 +212,7 @@ zhtp node start --config configs/pure-mesh.toml --pure-mesh
 - Ultimate goal for complete internet replacement
 
 ### Development Mode
-- Local testing with mesh simulation
+- Local testing with mesh execution
 - Enhanced debugging and logging
 - Rapid development and testing cycles
 - Safe environment for experimentation

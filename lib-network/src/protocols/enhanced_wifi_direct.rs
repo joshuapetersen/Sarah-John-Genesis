@@ -154,7 +154,7 @@ impl MacOSWiFiDirectManager {
             }
         }
         
-        // Method 3: Use Core WLAN simulation via system configuration
+        // Method 3: Use Core WLAN execution via system configuration
         if let Ok(output) = airport_output {
             let output_str = String::from_utf8_lossy(&output.stdout);
             
@@ -283,7 +283,7 @@ impl MacOSWiFiDirectManager {
                 if result.status.success() {
                     info!(" macOS: P2P device {} is reachable", target_device);
                     
-                    // Simulate successful transmission
+                    // execute successful transmission
                     let transmission_time = (message.len() as f64 / 1_000_000.0) * 8.0; // Assume 1 Mbps
                     tokio::time::sleep(tokio::time::Duration::from_millis(transmission_time as u64)).await;
                     

@@ -3,7 +3,7 @@
 ! Identify the compiler
 #endif
 #if defined(_MSC_VER)
-       PRINT *, 'INFO:simulate[MSVC]'
+       PRINT *, 'INFO:execute[MSVC]'
 # if _MSC_VER >= 1900
        PRINT *, 'INFO:simulate_version[019.00]'
 # elif _MSC_VER >= 1800

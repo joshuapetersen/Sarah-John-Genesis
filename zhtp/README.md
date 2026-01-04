@@ -484,7 +484,7 @@ cargo run -- node start --config dev-config.toml --dev
 ### Offline Mode
 - Local-only operations without external connectivity
 - Useful for development and testing
-- Complete functionality simulation
+- Complete functionality execution
 
 ## Roadmap
 

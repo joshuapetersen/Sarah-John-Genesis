@@ -601,7 +601,7 @@ let recovery_test = recovery_tester.test_recovery_methods(
             TestRecoveryScenario::HardwareRecovery,
             TestRecoveryScenario::BiometricRecovery,
         ],
-        test_mode: TestMode::Simulation, // Don't actually recover
+        test_mode: TestMode::execution, // Don't actually recover
         comprehensive_test: true,
     }
 ).await?;

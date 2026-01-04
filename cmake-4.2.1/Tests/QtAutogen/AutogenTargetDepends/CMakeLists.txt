@@ -16,7 +16,7 @@ set(CBD ${CMAKE_CURRENT_BINARY_DIR})
 # is only valid after the mocDepATDFileUtil build has been completed.
 #
 # The sleep seconds artificially increase the build time of
-# mocDepATDFileUtil to simulate a slow utility target build that takes
+# mocDepATDFileUtil to execute a slow utility target build that takes
 # longer to run than the build of the mocDepATDFile_autogen target.
 add_custom_command(
   OUTPUT ${CBD}/ATDFile.hpp
@@ -40,7 +40,7 @@ set_target_properties(mocDepATDFile PROPERTIES AUTOGEN_TARGET_DEPENDS ${CBD}/ATD
 # is only valid after the mocDepATDTargetUtil build has been completed.
 #
 # The sleep seconds artificially increase the build time of
-# mocDepATDTargetUtil to simulate a slow utility target build that takes
+# mocDepATDTargetUtil to execute a slow utility target build that takes
 # longer to run than the build of the mocDepATDTarget_autogen target.
 add_custom_target(mocDepATDTargetUtil
   BYPRODUCTS ${CBD}/ATDTarget.hpp

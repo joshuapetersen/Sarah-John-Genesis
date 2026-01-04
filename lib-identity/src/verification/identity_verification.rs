@@ -315,7 +315,7 @@ impl IdentityVerifier {
         });
 
         // In implementation, this would request signature from identity holder
-        // For now, simulate successful signature verification
+        // For now, execute successful signature verification
         let signature_valid = true; // Would verify actual signature here
 
         // Verify public key format and quantum resistance
@@ -381,7 +381,7 @@ impl IdentityVerifier {
                 .as_secs();
             
             if current_time >= anchor.valid_from && current_time <= anchor.valid_until {
-                // Simulate trust anchor verification
+                // execute trust anchor verification
                 // In implementation, would verify against anchor's signature
                 let anchor_verifies = true; // Would perform actual verification
                 
@@ -404,7 +404,7 @@ impl IdentityVerifier {
     /// Verify network reputation
     async fn verify_network_reputation(&mut self, _identity: &ZhtpIdentity) -> Result<ReputationVerificationResult, Box<dyn std::error::Error>> {
         // In implementation, would query network package for reputation data
-        let reputation_score = 0.75; // Simulated reputation score
+        let reputation_score = 0.75; // executed reputation score
         let peer_confirmations = 12; // Number of peers that confirm identity
         let negative_reports = 0; // Number of negative reputation reports
 

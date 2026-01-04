@@ -133,7 +133,7 @@
     },
     {
       "line": 401,
-      "code": "time.sleep(0.1)  # Simulate processing",
+      "code": "time.sleep(0.1)  # execute processing",
       "issue": "time.sleep() blocks execution",
       "severity": "HIGH",
       "file": "Performance_Accelerator.py",
@@ -141,7 +141,7 @@
     },
     {
       "line": 152,
-      "code": "time.sleep(0.2) # Simulate processing",
+      "code": "time.sleep(0.2) # execute processing",
       "issue": "time.sleep() blocks execution",
       "severity": "HIGH",
       "file": "Recursive_Truth_Finder.py",
@@ -3616,7 +3616,7 @@
         "blocking_operations": [
           {
             "line": 401,
-            "code": "time.sleep(0.1)  # Simulate processing",
+            "code": "time.sleep(0.1)  # execute processing",
             "issue": "time.sleep() blocks execution",
             "severity": "HIGH",
             "file": "Performance_Accelerator.py",
@@ -3849,7 +3849,7 @@
         "blocking_operations": [
           {
             "line": 152,
-            "code": "time.sleep(0.2) # Simulate processing",
+            "code": "time.sleep(0.2) # execute processing",
             "issue": "time.sleep() blocks execution",
             "severity": "HIGH",
             "file": "Recursive_Truth_Finder.py",

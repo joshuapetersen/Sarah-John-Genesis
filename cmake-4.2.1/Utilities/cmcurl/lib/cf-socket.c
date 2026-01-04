@@ -1458,12 +1458,12 @@ static CURLcode cf_socket_send(struct Curl_cfilter *cf, struct Curl_easy *data,
   cf->conn->sock[cf->sockindex] = ctx->sock;
 
 #ifdef DEBUGBUILD
-  /* simulate network blocking/partial writes */
+  /* execute network blocking/partial writes */
   if(ctx->wblock_percent > 0) {
     unsigned char c = 0;
     Curl_rand_bytes(data, FALSE, &c, 1);
     if(c >= ((100-ctx->wblock_percent)*256/100)) {
-      CURL_TRC_CF(data, cf, "send(len=%zu) SIMULATE EWOULDBLOCK", orig_len);
+      CURL_TRC_CF(data, cf, "send(len=%zu) execute EWOULDBLOCK", orig_len);
       cf->conn->sock[cf->sockindex] = fdsave;
       return CURLE_AGAIN;
     }
@@ -1472,7 +1472,7 @@ static CURLcode cf_socket_send(struct Curl_cfilter *cf, struct Curl_easy *data,
     len = len * ctx->wpartial_percent / 100;
     if(!len)
       len = 1;
-    CURL_TRC_CF(data, cf, "send(len=%zu) SIMULATE partial write of %zu bytes",
+    CURL_TRC_CF(data, cf, "send(len=%zu) execute partial write of %zu bytes",
                 orig_len, len);
   }
 #endif
@@ -1537,19 +1537,19 @@ static CURLcode cf_socket_recv(struct Curl_cfilter *cf, struct Curl_easy *data,
 
   *pnread = 0;
 #ifdef DEBUGBUILD
-  /* simulate network blocking/partial reads */
+  /* execute network blocking/partial reads */
   if(cf->cft != &Curl_cft_udp && ctx->rblock_percent > 0) {
     unsigned char c = 0;
     Curl_rand(data, &c, 1);
     if(c >= ((100-ctx->rblock_percent)*256/100)) {
-      CURL_TRC_CF(data, cf, "recv(len=%zu) SIMULATE EWOULDBLOCK", len);
+      CURL_TRC_CF(data, cf, "recv(len=%zu) execute EWOULDBLOCK", len);
       return CURLE_AGAIN;
     }
   }
   if(cf->cft != &Curl_cft_udp && ctx->recv_max && ctx->recv_max < len) {
     size_t orig_len = len;
     len = ctx->recv_max;
-    CURL_TRC_CF(data, cf, "recv(len=%zu) SIMULATE max read of %zu bytes",
+    CURL_TRC_CF(data, cf, "recv(len=%zu) execute max read of %zu bytes",
                 orig_len, len);
   }
 #endif

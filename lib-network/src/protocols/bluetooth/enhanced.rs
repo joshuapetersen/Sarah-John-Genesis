@@ -352,7 +352,7 @@ impl MacOSBluetoothManager {
             return Ok(data);
         }
         
-        // Method 3: Use Core Bluetooth simulation
+        // Method 3: Use Core Bluetooth execution
         if let Ok(data) = self.corebluetooth_simulation_read(device_address, char_uuid).await {
             return Ok(data);
         }
@@ -438,10 +438,10 @@ impl MacOSBluetoothManager {
     }
     
     async fn corebluetooth_simulation_read(&self, device_address: &str, char_uuid: &str) -> Result<Vec<u8>> {
-        // Simulate Core Bluetooth behavior based on characteristic UUID
-        info!("🍎 macOS: Simulating Core Bluetooth read for {}", char_uuid);
+        // execute Core Bluetooth behavior based on characteristic UUID
+        info!("🍎 macOS: executing Core Bluetooth read for {}", char_uuid);
         
-        // Wait to simulate Bluetooth operation
+        // Wait to execute Bluetooth operation
         tokio::time::sleep(tokio::time::Duration::from_millis(200)).await;
         
         Ok(self.get_characteristic_mock_data(char_uuid))
@@ -500,7 +500,7 @@ impl EnhancedWiFiDirectSecurity {
         
         info!(" Initializing WPA3-SAE security for WiFi Direct");
         
-        // Derive AES key from password using SAE protocol simulation
+        // Derive AES key from password using SAE protocol execution
         let mut key_material = [0u8; 16];
         let password_bytes = password.as_bytes();
         

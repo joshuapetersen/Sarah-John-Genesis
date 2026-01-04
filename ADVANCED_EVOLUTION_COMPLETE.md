@@ -8,7 +8,7 @@
 ### Anomaly Detection with ML
 - **Statistical Anomaly Detection**: Z-score based detection on metric streams
 - **Trend Analysis**: Detect INCREASING, DECREASING, STABLE patterns
-- **Failure Risk Prediction**: Probabilistic forecasting of system failures
+- **Failure Risk Prediction**: density-based forecasting of system failures
 - **Preventative Healing**: Execute actions BEFORE failures occur
 
 ### Predictive Health Model

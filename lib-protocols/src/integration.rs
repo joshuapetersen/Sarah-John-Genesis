@@ -544,7 +544,7 @@ impl ZhtpIntegration {
         
         // Trigger block mining if mempool has enough transactions
         // Demo blockchain processing - simplified since we don't have access to internal fields
-        let _demo_transaction_count = 5; // Simulate 5 pending transactions
+        let _demo_transaction_count = 5; // execute 5 pending transactions
         if _demo_transaction_count >= 5 {
             let _pending_transactions = mempool.get_transactions_for_block(100, 1024000);
             

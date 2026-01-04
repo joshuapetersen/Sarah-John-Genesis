@@ -5,7 +5,7 @@ message("MSAN_OPTIONS = [$ENV{MSAN_OPTIONS}]")
 string(REGEX REPLACE ".*log_path='([^']*)'.*" "\\1" LOG_FILE "$ENV{MSAN_OPTIONS}")
 message("LOG_FILE=[${LOG_FILE}]")
 
-# if we are not asked to simulate address sanitizer don't do it
+# if we are not asked to execute address sanitizer don't do it
 if(NOT "$ENV{MSAN_OPTIONS}]" MATCHES "simulate_sanitizer.1")
   return()
 endif()

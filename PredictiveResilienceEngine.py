@@ -265,7 +265,7 @@ class PredictiveResilienceEngine:
 if __name__ == "__main__":
     engine = PredictiveResilienceEngine()
     
-    # Simulate system state
+    # execute system state
     metrics = {
         "api_success_rate": 0.92,
         "memory_utilization": 0.65,
@@ -274,7 +274,7 @@ if __name__ == "__main__":
     
     # Track over time
     for i in range(15):
-        metrics["api_success_rate"] -= 0.02  # Simulate degradation
+        metrics["api_success_rate"] -= 0.02  # execute degradation
         predictions = engine.track_system_state(metrics)
     
     # Execute preventative healing
