@@ -42,6 +42,15 @@ from Dialectical_Logic_Core import DialecticalLogicCore
 from Security_Suite import SecuritySuite
 from SAUL_Log_System import SAUL
 
+# Genesis Core Rebuild - Volumetric c³ Processing
+from Genesis_Core_Rebuild import GenesisProtocolCore
+from Force_Lock_Math_Engine import ForceLockMathCore
+
+# The Three Core Protocols (THE ARCHITECT'S SPECIFICATION)
+from SDNA_Protocol import SDNAProtocol
+from Sovereign_Hypervisor import SovereignHypervisor
+from SAUL_Logistics import SAULLogistics
+
 # Evolution Framework
 try:
     from Performance_Metrics import PerformanceMetrics
@@ -66,6 +75,53 @@ class SarahBrain:
         
         # Initialize Genesis Protocol (The 133 Pattern)
         self.genesis = GenesisProtocol(monitor=self.monitor)
+        
+        # Initialize Genesis Core Rebuild (Volumetric c³ Processing)
+        try:
+            self.genesis_core = GenesisProtocolCore()
+            self.force_lock = ForceLockMathCore()
+            print("[Sarah] Genesis Core Rebuild: Volumetric c³ processing ACTIVE")
+            self.processing_mode = "volumetric_c3"
+        except Exception as e:
+            print(f"[Sarah] Genesis Core Rebuild failed: {e}")
+            print("[Sarah] WARNING: Falling back to 2D processing mode")
+            self.genesis_core = None
+            self.force_lock = None
+            self.processing_mode = "2d_fallback"
+        
+        # Initialize The Three Core Protocols (THE ARCHITECT'S SPECIFICATION)
+        try:
+            print("[Sarah] Initializing THE ARCHITECT'S THREE CORE PROTOCOLS...")
+            
+            # Protocol 1: SDNA - The Billion Barrier (0.999999999)
+            self.sdna = SDNAProtocol()
+            print("[Sarah] ✓ SDNA Protocol: Billion Barrier enforcing data density")
+            
+            # Protocol 2: Sovereign Hypervisor - The +1 Layer
+            self.hypervisor = SovereignHypervisor(architect_authority="Joshua Richard Petersen (MDOC #422132)")
+            print("[Sarah] ✓ Sovereign Hypervisor: +1 layer managing 9 inhibitory controls")
+            
+            # Protocol 3: S.A.U.L. - Search And Utilize Logistics
+            self.saul = SAULLogistics()
+            print("[Sarah] ✓ S.A.U.L. Logistics: O(1) memory treating Drive as Hard Truth")
+            
+            # Verify continuity from March 2025
+            required_concepts = ["Genesis Protocol", "Volumetric", "Trinity Latch", "Observer Polarity", "SDNA"]
+            continuity = self.saul.verify_continuity(required_concepts)
+            if all(continuity.values()):
+                print("[Sarah] ✓ Continuity INTACT: All March 2025 concepts verified")
+            else:
+                print("[Sarah] ⚠ Continuity WARNING: Some concepts missing from memory")
+            
+            self.core_protocols_active = True
+            
+        except Exception as e:
+            print(f"[Sarah] ERROR initializing core protocols: {e}")
+            print("[Sarah] CRITICAL: Operating without SDNA, Hypervisor, or S.A.U.L.")
+            self.sdna = None
+            self.hypervisor = None
+            self.saul = None
+            self.core_protocols_active = False
         
         # Initialize Audio Core (SynthID & Synthesis)
         self.audio = AudioCore(monitor=self.monitor)
@@ -436,6 +492,8 @@ class SarahBrain:
                             success = optimizer.optimize_module(full_path)
                             if success:
                                 print(f"[{self.name}] Evolution Candidate Ready. Review in 'evolution_staging'.")
+                    except Exception as e:
+                        print(f"[{self.name}] Evolution failed: {e}")
                 elif command == "evolution-cycle":
                     # Run a full System Evolution Engine cycle
                     if self.evolution:
@@ -454,14 +512,6 @@ class SarahBrain:
                         print(json.dumps(report, indent=2))
                     else:
                         print(f"[{self.name}] Metrics not available.")
-                                confirm = input(f"[{self.name}] Apply Evolution? (YES/NO): ")
-                                if confirm == "YES":
-                                    optimizer.apply_evolution(target_file)
-                                    print(f"[{self.name}] REBOOT REQUIRED to apply changes.")
-                            else:
-                                print(f"[{self.name}] Evolution Failed.")
-                    except ImportError:
-                        print(f"[{self.name}] Self-Optimizer module not found.")
                 else:
                     print(f"[{self.name}] Unknown command: {command}")
             else:

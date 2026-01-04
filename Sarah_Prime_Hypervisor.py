@@ -39,6 +39,7 @@ try:
     from Universal_Silicon_Bridge import UniversalSiliconBridge
     from Linux_Assimilation_Bridge import LinuxAssimilationBridge
     from ZHTP_Protocol import ZHTPProtocol
+    from Google_Drive_Bridge import GoogleDriveBridge
 except ImportError as e:
     print(f"CRITICAL HYPERVISOR FAILURE: Missing Subsystem - {e}")
     sys.exit(1)
@@ -133,6 +134,9 @@ class SarahPrimeHypervisor:
         
         self.suno = SunoBridge()
         print("✓ Suno Audio Bridge (Global Vibe): ONLINE")
+
+        self.drive = GoogleDriveBridge()
+        print("✓ Google Drive Bridge (Knowledge Base): ONLINE")
 
         # 9. Initialize Universal Silicon Bridge (The "Hardware Bind")
         self.silicon = UniversalSiliconBridge()
