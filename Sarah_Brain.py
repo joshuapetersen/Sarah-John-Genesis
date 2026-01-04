@@ -23,6 +23,7 @@ import subprocess
 import firebase_admin
 from firebase_admin import credentials, db, firestore
 from dotenv import load_dotenv # Import dotenv
+import json
 
 from Sarah_Reasoning import SarahReasoning
 from Sarah_Chat import SarahChat
@@ -40,6 +41,15 @@ from Kernel_Override import KernelOverride
 from Dialectical_Logic_Core import DialecticalLogicCore
 from Security_Suite import SecuritySuite
 from SAUL_Log_System import SAUL
+
+# Evolution Framework
+try:
+    from Performance_Metrics import PerformanceMetrics
+    from Knowledge_Synthesis_Engine import KnowledgeSynthesisEngine
+    from Feedback_Integration import FeedbackIntegration
+    from System_Evolution_Engine import SystemEvolutionEngine
+except ImportError as e:
+    print(f"[Sarah] Evolution modules not available: {e}")
 
 class SarahBrain:
     def __init__(self):
@@ -83,6 +93,20 @@ class SarahBrain:
 
         # Initialize Dialectical Logic Core (The Better Reasoning)
         self.logic = DialecticalLogicCore(monitor=self.monitor)
+        
+        # Initialize Evolution Framework (The Self-Improvement Engine)
+        try:
+            self.metrics = PerformanceMetrics(core_dir=self.core_dir)
+            self.synthesis = KnowledgeSynthesisEngine(core_dir=self.core_dir)
+            self.feedback = FeedbackIntegration(core_dir=self.core_dir)
+            self.evolution = SystemEvolutionEngine(core_dir=self.core_dir)
+            print("[Sarah] Evolution Framework initialized successfully.")
+        except Exception as e:
+            print(f"[Sarah] Evolution Framework initialization failed: {e}")
+            self.metrics = None
+            self.synthesis = None
+            self.feedback = None
+            self.evolution = None
         
         # Initialize SAUL (Search Analyze Utilize Logs)
         # Note: SAUL needs db_rt, which is initialized later in _initialize_firebase.
@@ -412,6 +436,24 @@ class SarahBrain:
                             success = optimizer.optimize_module(full_path)
                             if success:
                                 print(f"[{self.name}] Evolution Candidate Ready. Review in 'evolution_staging'.")
+                elif command == "evolution-cycle":
+                    # Run a full System Evolution Engine cycle
+                    if self.evolution:
+                        print(f"[{self.name}] Running System Evolution Cycle...")
+                        cycle_result = self.evolution.run_evolution_cycle()
+                        report = self.evolution.get_evolution_report()
+                        print(f"[{self.name}] Evolution Report:")
+                        print(json.dumps(report, indent=2))
+                    else:
+                        print(f"[{self.name}] Evolution Framework not available.")
+                elif command == "health":
+                    # Get system health report
+                    if self.metrics:
+                        report = self.metrics.get_health_report()
+                        print(f"[{self.name}] System Health Report:")
+                        print(json.dumps(report, indent=2))
+                    else:
+                        print(f"[{self.name}] Metrics not available.")
                                 confirm = input(f"[{self.name}] Apply Evolution? (YES/NO): ")
                                 if confirm == "YES":
                                     optimizer.apply_evolution(target_file)
