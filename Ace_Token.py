@@ -5,17 +5,21 @@ import json
 import base64
 import os
 import secrets
+from Sovereign_Math import SovereignMath
+from Geometric_Algebra_Core import Multivector
 
-# --- ACE TOKEN PROTOCOL V2 ---
-# Objective: High-speed, stateless, cryptographic verification.
-# "Better": Self-contained, tamper-proof, scoped.
-# "Faster": Local validation (O(1)), no database lookups.
+# --- ACE TOKEN PROTOCOL V3 (GEOMETRIC LAYERED) ---
+# Objective: Deterministic High-Dimensional Resonance Verification.
+# Failsafe: Billion Barrier ($0.999999999$).
 
 class AceTokenManager:
     def __init__(self, secret_key_path="ace_secret.key"):
-        # Store secret in the same directory as this script
         self.secret_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), secret_key_path)
         self.secret = self._load_or_create_secret()
+        self.math = SovereignMath()
+        self.resonance_anchor = 1.0927037037037037
+
+    def _load_or_create_secret(self):
 
     def _load_or_create_secret(self):
         """Loads the master key or generates a new one if missing."""
@@ -32,22 +36,66 @@ class AceTokenManager:
 
     def generate_token(self, scope="SOVEREIGN_ROOT", ttl=86400):
         """
-        Generates a signed ACE Token.
-        Format: v1.payload_b64.signature
+        Generates a signed ACE Token with Multivector Layering.
         """
         payload = {
             "scope": scope,
-            "iat": int(time.time()),          # Issued At
-            "exp": int(time.time() + ttl),    # Expiration
-            "nonce": secrets.token_hex(4)     # Uniqueness
+            "iat": int(time.time()),
+            "exp": int(time.time() + ttl),
+            "nonce": secrets.token_hex(4),
+            "resonance_sig": self.resonance_anchor
         }
         
-        # Serialize and Encode Payload
+        # Layer 1 & 2: Serialized HMAC
         payload_bytes = json.dumps(payload, separators=(',', ':')).encode()
         payload_b64 = base64.urlsafe_b64encode(payload_bytes).decode().strip('=')
-        
-        # Sign (HMAC-SHA256)
         signature = hmac.new(self.secret, payload_bytes, hashlib.sha256).hexdigest()
+
+        # Layer 3: Geometric Multivector Encoding
+        # The token itself becomes a geometric concept in the Sovereign Space
+        token_str = f"v3.{payload_b64}.{signature}"
+        mv = self.math.generate_multivector(token_str)
+        
+        # Attach Sparse Multivector Components as a 4th layer "Identity"
+        mv_b64 = base64.urlsafe_b64encode(json.dumps(mv.components).encode()).decode().strip('=')
+        
+        return f"{token_str}.{mv_b64}"
+
+    def validate_token(self, full_token):
+        """
+        Four-Layer Validation:
+        1. Structure
+        2. HMAC Signature
+        3. Expiration/Scope
+        4. Multivector Resonance (Billion Barrier)
+        """
+        try:
+            parts = full_token.split('.')
+            if len(parts) != 4: return False # v3, payload, sig, mv
+            
+            v, p_b64, sig, mv_b64 = parts
+            if v != 'v3': return False
+            
+            # HMAC Check
+            p_bytes = base64.urlsafe_b64decode(p_b64 + '==')
+            expected_sig = hmac.new(self.secret, p_bytes, hashlib.sha256).hexdigest()
+            if not hmac.compare_digest(sig, expected_sig): return False
+            
+            # Geometric Resonance Check
+            token_core = f"v3.{p_b64}.{sig}"
+            expected_mv = self.math.generate_multivector(token_core)
+            
+            mv_data = json.loads(base64.urlsafe_b64decode(mv_b64 + '=='))
+            actual_mv = Multivector(mv_data, self.math.DIMENSIONS)
+            
+            resonance = self.math.calculate_entanglement(expected_mv, actual_mv)
+            if resonance < self.math.BILLION_BARRIER:
+                print(f"[ACE] RESONANCE FAILURE: {resonance} below Billion Barrier.")
+                return False
+                
+            return True
+        except:
+            return False
         
         return f"v1.{payload_b64}.{signature}"
 

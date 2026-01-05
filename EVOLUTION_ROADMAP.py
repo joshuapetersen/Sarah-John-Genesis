@@ -15,14 +15,14 @@ EVOLUTION_PLAN = [
         "id": 2,
         "name": "Bio-Feedback Loop",
         "technology": "PSUtil",
-        "status": "PENDING",
+        "status": "COMPLETE",
         "impact": "Self-monitoring of CPU/RAM as 'Metabolic Rate'."
     },
     {
         "id": 3,
         "name": "Semantic Knowledge Graph",
         "technology": "NetworkX",
-        "status": "PENDING",
+        "status": "IN_PROGRESS",
         "impact": "Connecting memories into a navigable web of logic."
     },
     {

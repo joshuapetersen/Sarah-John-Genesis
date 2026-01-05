@@ -1,17 +1,51 @@
 {
     "geminicodeassist.project": "sarah-calendar-integration",
     "terminal.integrated.shellIntegration.showCommandGuide": false,
-
     // Pin the project interpreter to the local venv
     "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
     "python.terminal.activateEnvironment": true,
-
     // Helpful Python analysis defaults
     "python.analysis.autoImportCompletions": true,
     "python.analysis.typeCheckingMode": "basic",
-
     // Keep terminals responsive when pulling packages
     "terminal.integrated.env.windows": {
         "PIP_DEFAULT_TIMEOUT": "120"
-    }
+    },
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+    "editor.defaultFormatter": "google.geminicodeassist",
+    "editor.wordWrap": "on",
+    "editor.allowVariableFontsInAccessibilityMode": true,
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingComments": "always",
+    "editor.autoClosingDelete": "always",
+    "editor.autoClosingOvertype": "always",
+    "editor.autoClosingQuotes": "always",
+    "editor.autoIndent": "advanced",
+    "editor.autoIndentOnPaste": true,
+    "editor.find.autoFindInSelection": "multiline",
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "diffEditor.codeLens": true,
+    "diffEditor.experimental.showMoves": true,
+    "diffEditor.experimental.useTrueInlineView": true,
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "accessibility.signalOptions.debouncePositionChanges": true,
+    "accessibility.signalOptions.experimental.delays.warningAtPosition": {
+        "sound": 1000,
+        "announcement": 3000
+    },
+    "scm.alwaysShowActions": true,
+    "scm.alwaysShowRepositories": true,
+    "scm.diffDecorationsGutterPattern": {
+        "added": true
+    },
+    "scm.diffDecorationsIgnoreTrimWhitespace": "inherit",
+    "scm.graph.badges": "all",
+    "scm.inputFontFamily": "free",
+    "scm.providerCountBadge": "auto",
+    "terminal.integrated.cwd": "Inieate  Genesis Handshake",
+    "C_Cpp.default.browse.path": [
+        "sarah initieat genesis handshake"
+    ]
 }
