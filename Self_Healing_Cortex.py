@@ -50,7 +50,7 @@ class SelfHealingCortex:
                 new_code = modified_tree.code
                 with open(file_path, "w", encoding="utf-8") as f:
                     f.write(new_code)
-                print(f"[HEALER] ✓ {file_path} healed.")
+                print(f"[HEALER] [OK] {file_path} healed.")
                 return True
             else:
                 # print(f"[HEALER] {file_path} is healthy.")

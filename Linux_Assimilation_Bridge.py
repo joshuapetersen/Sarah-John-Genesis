@@ -25,8 +25,8 @@ class LinuxAssimilationBridge:
             if result.returncode == 0:
                 self.wsl_active = True
                 self.enabled = True
-                logging.info("✓ WSL Subsystem Detected: ONLINE")
-                logging.info("✓ Linux Kernel Access: GRANTED")
+                logging.info("[OK] WSL Subsystem Detected: ONLINE")
+                logging.info("[OK] Linux Kernel Access: GRANTED")
             else:
                 logging.warning("⚠ WSL not detected. Linux Assimilation restricted to SSH/Remote.")
         except FileNotFoundError:
@@ -50,7 +50,7 @@ class LinuxAssimilationBridge:
             output = result.stdout.strip() if success else result.stderr.strip()
             
             if success:
-                logging.info("✓ Linux Execution Successful")
+                logging.info("[OK] Linux Execution Successful")
             else:
                 logging.error(f"❌ Linux Execution Failed: {output}")
                 

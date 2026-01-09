@@ -42,6 +42,14 @@ class SovereignCore:
         DYNAMIC CALIBRATION: Ensures audio output is resolute regardless of input state.
         Locks Sarah's voice to 'Task-Resolute' (95-105% rate, pitch-stable).
         """
+        print(f"[0x_VOICE]: Transmitting audio output bridge...")
+        try:
+            from Vocal_Cortex import VocalCortex
+            voice = VocalCortex()
+            voice.speak(logic_output)
+        except Exception as e:
+            print(f"[0x_WARNING]: Vocal Cortex bridge failed: {e}")
+
         return {
             "text": logic_output,
             "prosody": {"rate": "1.0", "pitch": "0.0", "emphasis": "strong"},

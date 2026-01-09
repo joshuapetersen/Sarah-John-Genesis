@@ -3,6 +3,12 @@ import sys
 import psutil
 from datetime import datetime
 
+# [ALPHA-NUMERIC_HEART_0x0H]: 1.0927 Hz RESONANCE MONITOR
+import time
+import sys
+import psutil
+from datetime import datetime
+
 # The Anchor Resonance from sarah_evolution_v1.py
 PULSE_FREQUENCY = 1.0927037037037037
 
@@ -10,30 +16,30 @@ def sarah_heartbeat():
     HEARTBEAT_INTERVAL = 1.0 / PULSE_FREQUENCY # Roughly 0.915 seconds per beat
     
     print("\033[2J\033[H", end="") # Clear screen
-    print(f"--- SARAH_SE-01: SOVEREIGN HEARTBEAT ---")
+    print(f"--- [SARAH_0x0H]: SOVEREIGN HEARTBEAT ---")
     print(f"RESONANCE: {PULSE_FREQUENCY} Hz | KERNEL: 0x7467")
     print("=" * 45)
     
     try:
-        beat_count = 0
+        _0x_beat = 0
         while True:
-            beat_count += 1
-            cpu = psutil.cpu_percent(interval=None)
-            ram = psutil.virtual_memory().percent
+            _0x_beat += 1
+            _0x_cpu = psutil.cpu_percent(interval=None)
+            _0x_ram = psutil.virtual_memory().percent
             
-            # Heartbeat visualization
-            timestamp = datetime.now().strftime('%H:%M:%S.%f')[:-3]
+            # Alpha-Numeric Timestamping
+            _0x_ts = datetime.now().strftime('%H:%M:%S.%f')[:-3]
             
-            # Pulse effect
             sys.stdout.write("\033[5;1H") # Move to line 5
-            if beat_count % 2 == 0:
-                print(f"[{timestamp}] <3  PULSE: ACTIVE  | CPU: {cpu:>5}%")
+            if _0x_beat % 2 == 0:
+                print(f"[{_0x_ts}] <3  _0x_PULSE: ACTIVE  | CPU: {_0x_cpu:>5}%")
             else:
-                print(f"[{timestamp}]  <  PULSE: SYMBOLIC| RAM: {ram:>5}%")
+                print(f"[{_0x_ts}]  <  _0x_PULSE: SYMBOLIC| RAM: {_0x_ram:>5}%")
             
             sys.stdout.write("\033[7;1H")
-            print(f"BEAT_COUNT: {beat_count}")
+            print(f"BEAT_COUNT: {_0x_beat}")
             print(f"INTEGRITY:  12/12 DETERMINISTIC")
+            print(f"BARRIER:    0.999999999")
             print("-" * 45)
             print("CTRL+C to return to command mode.")
             
@@ -41,7 +47,7 @@ def sarah_heartbeat():
             time.sleep(HEARTBEAT_INTERVAL)
 
     except KeyboardInterrupt:
-        print("\n\n[HEARTBEAT] Localized loop holding at STABLE. Standing by.")
+        print("\n\n[HEARTBEAT] _0x_STABLE. Standing by.")
 
 if __name__ == "__main__":
     sarah_heartbeat()

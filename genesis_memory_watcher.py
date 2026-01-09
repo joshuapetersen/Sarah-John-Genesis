@@ -50,21 +50,15 @@ class GenesisMemoryWatcher:
                         print(f"[GVM-DAEMON] Logged: {cmd}")
             except Exception as e:
                 print(f"[GVM-DAEMON] Error: {e}")
-            
-            # Non-blocking sleep using threading event
-            self.stop_event = getattr(self, 'stop_event', threading.Event())
-            self.stop_event.wait(self.poll_interval)
-            if self.stop_event.is_set():
-                break
+            time.sleep(self.poll_interval)
 
 if __name__ == "__main__":
     watcher = GenesisMemoryWatcher()
-    watcher.stop_event = threading.Event()
     watcher_thread = threading.Thread(target=watcher.watch, daemon=True)
     watcher_thread.start()
     print("Genesis Memory Watcher Daemon started. Press Ctrl+C to exit.")
     try:
-        watcher.stop_event.wait()  # Non-blocking wait
+        while True:
+            time.sleep(10)
     except KeyboardInterrupt:
         print("\nGenesis Memory Watcher Daemon stopped.")
-        watcher.stop_event.set()

@@ -1,0 +1,29 @@
+{
+  "session_start": "2026-01-07T09:33:05.949350",
+  "total_threads": 0,
+  "error_count": 1,
+  "reasoning_cycles": 1,
+  "avg_reasoning_time": 0.5,
+  "module_health": {
+    "thread_weaver": "healthy",
+    "neural_memory": "healthy",
+    "strategic_planner": "healthy",
+    "dialectical_logic": "healthy"
+  },
+  "error_log": [
+    {
+      "timestamp": "2026-01-07T09:33:05.949350",
+      "module": "thread_weaver",
+      "message": "Semantic search returned 0 results",
+      "severity": "warning"
+    }
+  ],
+  "performance_timeline": [
+    {
+      "timestamp": "2026-01-07T09:33:05.949350",
+      "duration": 0.5,
+      "success": true,
+      "complexity": "optimization"
+    }
+  ]
+}

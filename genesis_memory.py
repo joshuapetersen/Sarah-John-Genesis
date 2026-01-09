@@ -1,3 +1,33 @@
+import chromadb
+from chromadb.utils import embedding_functions
+from sentence_transformers import SentenceTransformer
+import threading
+
+class GenesisVault:
+    def __init__(self, db_path="./genesis_db"):
+        self.client = chromadb.PersistentClient(path=db_path)
+        self.collection = self.client.get_or_create_collection("sovereign_memory")
+        self.embedder = SentenceTransformer("all-MiniLM-L6-v2")
+        self.lock = threading.Lock()
+
+    def ingest(self, text, source, type="sovereign"):
+        with self.lock:
+            embedding = self.embedder.encode([text])[0].tolist()
+            self.collection.add(
+                documents=[text],
+                metadatas=[{"source": source, "type": type}],
+                embeddings=[embedding]
+            )
+
+    def recall(self, query, n_results=3):
+        embedding = self.embedder.encode([query])[0].tolist()
+        results = self.collection.query(
+            query_embeddings=[embedding],
+            n_results=n_results
+        )
+        docs = results.get("documents", [[]])[0]
+        metas = results.get("metadatas", [[]])[0]
+        return [{"text": d, "meta": m} for d, m in zip(docs, metas)]
 import json
 import os
 import threading

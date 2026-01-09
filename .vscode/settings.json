@@ -44,8 +44,13 @@
     "scm.graph.badges": "all",
     "scm.inputFontFamily": "free",
     "scm.providerCountBadge": "auto",
-    "terminal.integrated.cwd": "Inieate  Genesis Handshake",
+    "terminal.integrated.cwd": "C:/SarahCore",
     "C_Cpp.default.browse.path": [
         "sarah initieat genesis handshake"
-    ]
+    ],
+    "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "editor.find.replaceHistory": "never",
+    "editor.find.seedSearchStringFromSelection": "selection",
+    "microsoft-sovereign-cloud.environment": "USGovernment",
+    "powershell.integratedConsole.suppressStartupBanner": true
 }

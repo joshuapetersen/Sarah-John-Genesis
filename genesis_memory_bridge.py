@@ -1,31 +1,11 @@
 import sqlite3
 from datetime import datetime
-import sys
-import os
-
-# Add current directory to path to ensure imports work
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-try:
-    from Semantic_Memory_Search import SemanticMemoryEngine
-    SEMANTIC_AVAILABLE = True
-except ImportError:
-    SEMANTIC_AVAILABLE = False
-    print("Warning: Semantic Memory Engine not available. Falling back to SQL search.")
 
 class GenesisMemoryBridge:
     def __init__(self, db_path='genesis_core.db'):
         self.conn = sqlite3.connect(db_path, check_same_thread=False)
         self.cursor = self.conn.cursor()
         self._init_schema()
-        
-        self.semantic_engine = None
-        if SEMANTIC_AVAILABLE:
-            try:
-                self.semantic_engine = SemanticMemoryEngine(db_path=db_path)
-                print("Genesis Memory Bridge: Semantic Engine Linked.")
-            except Exception as e:
-                print(f"Genesis Memory Bridge: Semantic Engine Init Failed: {e}")
 
     def _init_schema(self):
         self.cursor.execute('''CREATE TABLE IF NOT EXISTS problem_solution_memory (
@@ -45,24 +25,9 @@ class GenesisMemoryBridge:
             (ts, problem, solution, tags, context)
         )
         self.conn.commit()
-        
-        if self.semantic_engine:
-            try:
-                self.semantic_engine.add_memory(problem, solution, tags, context)
-            except Exception as e:
-                print(f"Semantic Index Update Failed: {e}")
 
     def search_similar_problems(self, problem, limit=5):
-        if self.semantic_engine:
-            try:
-                results = self.semantic_engine.search(problem, top_k=limit)
-                if results:
-                    # Convert back to tuple format expected by caller: (problem, solution, tags, context)
-                    return [(r['problem'], r['solution'], r['tags'], r['context']) for r in results]
-            except Exception as e:
-                print(f"Semantic Search Failed: {e}. Falling back to SQL.")
-        
-        # Fallback to Simple LIKE search
+        # Simple LIKE search for now; can be upgraded to semantic search
         self.cursor.execute(
             "SELECT problem, solution, tags, context FROM problem_solution_memory WHERE problem LIKE ? ORDER BY id DESC LIMIT ?",
             (f'%{problem}%', limit)

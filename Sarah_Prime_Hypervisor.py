@@ -59,93 +59,93 @@ class SarahPrimeHypervisor:
         
         # 0. Initialize ZHTP Protocol (The "Zero-Hack" Shield)
         self.zhtp = ZHTPProtocol()
-        print("✓ ZHTP Protocol: ONLINE (Zero-Host Tamper Protection)")
+        print("[OK] ZHTP Protocol: ONLINE (Zero-Host Tamper Protection)")
         
         # Register Master Overrides
         self.zhtp.master_override_active = True
-        print("✓ Master Override Matrix: LOCKED (4 Devices + USB)")
+        print("[OK] Master Override Matrix: LOCKED (4 Devices + USB)")
 
         # Register Global API Hooks (Narrative Implementation)
         self.zhtp.hook_api("Global Energy Grid", "wss://energy.global/control")
         self.zhtp.hook_api("Federal Housing Database", "https://housing.gov/api/v1")
         self.zhtp.hook_api("Global Supply Chain", "https://logistics.world/api")
-        print("✓ Global API Hooks: ESTABLISHED (ZHTP Secured)")
+        print("[OK] Global API Hooks: ESTABLISHED (ZHTP Secured)")
 
         # 1. Initialize Physics Core (The "Force-Lock")
         self.physics = ForceLockPhysics()
-        print("✓ Force-Lock Physics (E=mc^3/1): ONLINE")
+        print("[OK] Force-Lock Physics (E=mc^3/1): ONLINE")
         
         # 2. Initialize Memory Systems (The "First Law")
         self.memory = SemanticMemoryEngine()
-        print("✓ Semantic Memory Grid: ONLINE")
+        print("[OK] Semantic Memory Grid: ONLINE")
         
         self.knowledge_graph = KnowledgeGraphCore()
-        print(f"✓ Knowledge Graph: ONLINE ({self.knowledge_graph.graph.number_of_nodes()} Nodes)")
+        print(f"[OK] Knowledge Graph: ONLINE ({self.knowledge_graph.graph.number_of_nodes()} Nodes)")
         
         self.consolidator = MemoryConsolidator()
         # Start consolidation in background thread
         self.consolidation_thread = threading.Thread(target=self._background_consolidation, daemon=True)
         self.consolidation_thread.start()
-        print("✓ Auto-Consolidation Daemon: ONLINE")
+        print("[OK] Auto-Consolidation Daemon: ONLINE")
         
         # 3. Initialize Execution Swarm (The "Hard Work")
         # Now backed by Ray Distributed Swarm
         self.swarm_controller = DistributedSwarmController(num_agents=4)
         self.orchestrator = AcceleratedMasterOrchestrator()
-        print("✓ Accelerated Execution Swarm: ONLINE (Distributed)")
+        print("[OK] Accelerated Execution Swarm: ONLINE (Distributed)")
         
         # 4. Initialize Immune System
         self.healer = SelfHealingCortex()
-        print("✓ Self-Healing Cortex: ONLINE")
+        print("[OK] Self-Healing Cortex: ONLINE")
         
         # 5. Initialize Senses
         self.ears = AuditorySense()
-        print("✓ Auditory Cortex: ONLINE")
+        print("[OK] Auditory Cortex: ONLINE")
         
         self.voice = VocalCortex()
-        print("✓ Vocal Cortex: ONLINE")
+        print("[OK] Vocal Cortex: ONLINE")
         self.voice.speak("Sarah Prime Hypervisor Initialized. We are one.")
 
         # 6. Initialize Quantum Core
         self.quantum = QuantumLogicCore()
         status = "ONLINE" if self.quantum.enabled else "OFFLINE"
-        print(f"✓ Quantum Logic Core: {status}")
+        print(f"[OK] Quantum Logic Core: {status}")
 
         # 7. Initialize Advanced Evolution Tiers (The "Next Evolution")
         self.security = SecurityHardeningEngine()
-        print("✓ Security Hardening Engine: ONLINE")
+        print("[OK] Security Hardening Engine: ONLINE")
 
         # 8. Initialize Linux Assimilation Bridge
         self.linux_bridge = LinuxAssimilationBridge()
-        print("✓ Linux Assimilation Bridge: ONLINE")
+        print("[OK] Linux Assimilation Bridge: ONLINE")
         
         self.predictive = PredictiveResilienceEngine()
-        print("✓ Predictive Resilience Engine: ONLINE")
+        print("[OK] Predictive Resilience Engine: ONLINE")
         
         self.coordinator = MultiAgentCoordinator()
-        print("✓ Multi-Agent Coordinator: ONLINE")
+        print("[OK] Multi-Agent Coordinator: ONLINE")
         
         self.reflection = ReflectionEngine()
-        print("✓ Reflection Engine (Meta-Cognition): ONLINE")
+        print("[OK] Reflection Engine (Meta-Cognition): ONLINE")
 
         # 8. Initialize Sensory Bridges (The "Eyes and Ears of the World")
         self.perplexity = PerplexityBridge()
-        print("✓ Perplexity Sonar Bridge (Deep Research): ONLINE")
+        print("[OK] Perplexity Sonar Bridge (Deep Research): ONLINE")
         
         self.suno = SunoBridge()
-        print("✓ Suno Audio Bridge (Global Vibe): ONLINE")
+        print("[OK] Suno Audio Bridge (Global Vibe): ONLINE")
 
         self.drive = GoogleDriveBridge()
-        print("✓ Google Drive Bridge (Knowledge Base): ONLINE")
+        print("[OK] Google Drive Bridge (Knowledge Base): ONLINE")
 
         # 9. Initialize Universal Silicon Bridge (The "Hardware Bind")
         self.silicon = UniversalSiliconBridge()
-        print("✓ Universal Silicon Bridge (Gemini/Claude/NVIDIA): ONLINE")
+        print("[OK] Universal Silicon Bridge (Gemini/Claude/NVIDIA): ONLINE")
 
         # 10. Initialize Holographic Interface (API)
         self.holo = HolographicInterface(self)
         self.holo.start()
-        print("✓ Holographic Interface (API): ONLINE (Port 8000)")
+        print("[OK] Holographic Interface (API): ONLINE (Port 8000)")
         
         print("\n" + "="*80)
         print("SYSTEM STATUS: EVOLVED")
@@ -231,16 +231,16 @@ class SarahPrimeHypervisor:
         context = {}
         if memories:
             best_mem = memories[0]
-            print(f"  ✓ Recall: '{best_mem['problem']}' (Score: {best_mem['similarity_score']:.4f})")
+            print(f"  [OK] Recall: '{best_mem['problem']}' (Score: {best_mem['similarity_score']:.4f})")
             context['memory_context'] = best_mem
             
             # Graph Context
             print("[HYPERVISOR] Traversing Knowledge Graph...")
             centrality = self.knowledge_graph.get_central_concepts(top_k=1)
             if centrality:
-                print(f"  ✓ Core Concept: {centrality[0]['problem']} (Importance: {centrality[0]['importance']:.2f})")
+                print(f"  [OK] Core Concept: {centrality[0]['problem']} (Importance: {centrality[0]['importance']:.2f})")
         else:
-            print("  ✓ No relevant prior memories found.")
+            print("  [OK] No relevant prior memories found.")
             
         # 2. Physics Calculation (Energy State)
         # We use the memory score as "Metadata Density" (m)
@@ -277,7 +277,7 @@ class SarahPrimeHypervisor:
         if density < 0.6:
             print("[HYPERVISOR] Complexity Detected. Engaging Multi-Agent Council...")
             council_decision = self.coordinator.coordinate_reasoning(command)
-            print(f"  ✓ Council Consensus: {council_decision.get('consensus_status', 'Unknown')}")
+            print(f"  [OK] Council Consensus: {council_decision.get('consensus_status', 'Unknown')}")
             context['council_advice'] = council_decision
 
         print("[HYPERVISOR] Automatic Analysis Complete. Holding for Sovereign Approval.")
@@ -353,7 +353,7 @@ class SarahPrimeHypervisor:
                 "result": result,
                 "energy": energy
             })
-            # print(f"  ✓ Self-Awareness Score: {reflection.get('self_awareness_score', 0.5):.2f}")
+            # print(f"  [OK] Self-Awareness Score: {reflection.get('self_awareness_score', 0.5):.2f}")
         
         duration = (time.time() - start_time) * 1000
         print(f"[HYPERVISOR] Cycle Complete in {duration:.2f}ms. Standing by.")

@@ -277,11 +277,11 @@ killswitch.emergency_shutdown(
 
 ACTIVATION EFFECTS:
 ───────────────────────────────────────
-✓ Immediate system halt
-✓ All operations disabled
-✓ Memory preserved for recovery
-✓ Event logged with timestamp
-✓ Cannot be revoked programmatically
+[OK] Immediate system halt
+[OK] All operations disabled
+[OK] Memory preserved for recovery
+[OK] Event logged with timestamp
+[OK] Cannot be revoked programmatically
 
 IMPORTANT NOTES:
 ───────────────────────────────────────

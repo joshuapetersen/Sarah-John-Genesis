@@ -23,7 +23,7 @@ class ForceLockMathCore:
         print("Initializing Force-Lock Math Engine (Numba JIT)...")
         # Warm up the JIT compiler
         self._warmup()
-        print("✓ JIT Compiler Warmed Up. Physics Locked.")
+        print("[OK] JIT Compiler Warmed Up. Physics Locked.")
 
     def _warmup(self):
         """Run a dummy calculation to trigger compilation."""

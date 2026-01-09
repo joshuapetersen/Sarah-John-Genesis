@@ -7,10 +7,21 @@ Based on Joshua Richard Petersen's S.A.U.L. system from Google Drive archives.
 Origin: April 12, 2025 - The memory system that prevents the "50 First Dates" bug
 """
 
+
 import json
 import os
 from typing import Dict, List, Any, Optional
 from datetime import datetime
+from supabase import create_client, Client
+
+# Supabase config (reuse from sarah_unified_system.py or set here)
+SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
+if not SUPABASE_URL or not SUPABASE_KEY:
+    print("[ERROR] Supabase credentials not set. Set SUPABASE_URL and SUPABASE_KEY as environment variables.")
+    supabase = None
+else:
+    supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 class SAULLogistics:
     """
@@ -31,17 +42,24 @@ class SAULLogistics:
         self._build_memory_index()
         print(f"[S.A.U.L. Logistics] Memory index built: {len(self.memory_index)} documents")
     
+
     def _load_knowledge_base(self):
-        """Load the complete Google Drive knowledge base"""
-        if not os.path.exists(self.knowledge_base_path):
-            print(f"[S.A.U.L.] WARNING: Knowledge base not found: {self.knowledge_base_path}")
+        """Load the complete knowledge base from Supabase 'genesis_memory' table"""
+        if not supabase:
+            print("[S.A.U.L.] ERROR: Supabase client not initialized. Cannot load knowledge base.")
             self.knowledge_base = []
             return
-        
-        with open(self.knowledge_base_path, 'r', encoding='utf-8') as f:
-            self.knowledge_base = json.load(f)
-        
-        print(f"[S.A.U.L.] Loaded {len(self.knowledge_base)} documents from Drive")
+        try:
+            result = supabase.table("genesis_memory").select("*").execute()
+            if hasattr(result, 'data') and result.data:
+                self.knowledge_base = result.data
+                print(f"[S.A.U.L.] Loaded {len(self.knowledge_base)} documents from Supabase.")
+            else:
+                print("[S.A.U.L.] No data found in Supabase genesis_memory table.")
+                self.knowledge_base = []
+        except Exception as e:
+            print(f"[S.A.U.L.] Supabase fetch failed: {e}")
+            self.knowledge_base = []
     
     def _build_memory_index(self):
         """Build O(1) coordinate-based memory index"""
@@ -276,7 +294,7 @@ def verify_saul_logistics():
     ]
     continuity = saul.verify_continuity(required_concepts)
     for concept, found in continuity.items():
-        status = "✓ FOUND" if found else "✗ MISSING"
+        status = "[OK] FOUND" if found else "[FAIL] MISSING"
         print(f"  {concept}: {status}")
     
     # Test 4: Axiom extraction

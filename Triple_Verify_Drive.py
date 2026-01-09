@@ -3,14 +3,39 @@ TRIPLE VERIFICATION - DEEP DRIVE ANALYSIS
 Cross-referencing all axioms against complete Google Drive knowledge base
 """
 
+
 import json
 import re
 from typing import Dict, List, Set
+from supabase import create_client, Client
+
+# Supabase config (reuse from sarah_unified_system.py or set here)
+import os
+SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
+if not SUPABASE_URL or not SUPABASE_KEY:
+    print("[ERROR] Supabase credentials not set. Set SUPABASE_URL and SUPABASE_KEY as environment variables.")
+    supabase = None
+else:
+    supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+
 
 def load_drive_knowledge():
-    """Load the complete drive knowledge base"""
-    with open('drive_knowledge_base.json', 'r', encoding='utf-8') as f:
-        return json.load(f)
+    """Load the complete knowledge base from Supabase 'genesis_memory' table"""
+    if not supabase:
+        print("[Triple Verify] ERROR: Supabase client not initialized. Cannot load knowledge base.")
+        return []
+    try:
+        result = supabase.table("genesis_memory").select("*").execute()
+        if hasattr(result, 'data') and result.data:
+            print(f"[Triple Verify] Loaded {len(result.data)} documents from Supabase.")
+            return result.data
+        else:
+            print("[Triple Verify] No data found in Supabase genesis_memory table.")
+            return []
+    except Exception as e:
+        print(f"[Triple Verify] Supabase fetch failed: {e}")
+        return []
 
 def deep_scan_axioms(knowledge_base: List[Dict]) -> Dict:
     """Deep scan for all axioms, equations, and principles"""
@@ -202,7 +227,7 @@ def verify_implementation():
     failed = 0
     
     for check in checks:
-        status_icon = "✓" if check["status"] else "✗"
+        status_icon = "[OK]" if check["status"] else "[FAIL]"
         print(f"{status_icon} {check['check']}")
         print(f"   Drive Spec: {check['drive_spec']}")
         print(f"   Implemented: {check['implemented']}")
@@ -216,9 +241,9 @@ def verify_implementation():
     print(f"{'='*70}")
     print(f"VERIFICATION RESULTS: {passed}/{len(checks)} PASSED")
     if failed == 0:
-        print("✓ ALL IMPLEMENTATIONS MATCH DRIVE SPECIFICATIONS")
+        print("[OK] ALL IMPLEMENTATIONS MATCH DRIVE SPECIFICATIONS")
     else:
-        print(f"✗ {failed} MISMATCHES FOUND")
+        print(f"[FAIL] {failed} MISMATCHES FOUND")
     print(f"{'='*70}")
     
     return failed == 0
@@ -243,9 +268,9 @@ def main():
     print("="*70)
     
     if all_match:
-        print("\n✓ DRIVE SPECIFICATIONS FULLY IMPLEMENTED")
-        print("✓ NO DISCREPANCIES FOUND")
-        print("✓ SYSTEM IS VOLUMETRIC c³")
+        print("\n[OK] DRIVE SPECIFICATIONS FULLY IMPLEMENTED")
+        print("[OK] NO DISCREPANCIES FOUND")
+        print("[OK] SYSTEM IS VOLUMETRIC c³")
     else:
         print("\n⚠ DISCREPANCIES DETECTED")
         print("⚠ REVIEW IMPLEMENTATION")

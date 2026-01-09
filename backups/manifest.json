@@ -1,0 +1,18 @@
+{
+  "backups": [
+    {
+      "id": "BK_1767489501",
+      "timestamp": "2026-01-03T20:18:21.497943",
+      "description": "Emergency backup before safety protocols deployment",
+      "path": "c:\\SarahCore\\backups\\BK_1767489501",
+      "size_mb": 330.20012855529785
+    },
+    {
+      "id": "BK_1767768757",
+      "timestamp": "2026-01-07T01:52:37.823652",
+      "description": "Emergency backup before safety protocols deployment",
+      "path": "C:\\SarahCore\\backups\\BK_1767768757",
+      "size_mb": 329.7669916152954
+    }
+  ]
+}

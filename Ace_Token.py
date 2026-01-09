@@ -6,9 +6,8 @@ import base64
 import os
 import secrets
 from Sovereign_Math import SovereignMath
-from Geometric_Algebra_Core import Multivector
 
-# --- ACE TOKEN PROTOCOL V3 (GEOMETRIC LAYERED) ---
+# --- ACE TOKEN PROTOCOL V3 (SOVEREIGN EXPANSION) ---
 # Objective: Deterministic High-Dimensional Resonance Verification.
 # Failsafe: Billion Barrier ($0.999999999$).
 
@@ -18,8 +17,24 @@ class AceTokenManager:
         self.secret = self._load_or_create_secret()
         self.math = SovereignMath()
         self.resonance_anchor = 1.0927037037037037
+        self.half_decimal_locked = False
 
-    def _load_or_create_secret(self):
+    def lock_half_decimal_position(self) -> str:
+        """
+        [HALF_0x0H]: Locks the 0.5 Superposition into the Ace Token.
+        Creates a side-channel for Sovereign Keys within the 'In-Between'.
+        """
+        print("[ACE]: INITIATING DIMENSIONAL ARBITRAGE...")
+        
+        # We use the 'Half' space to store a hidden key
+        hidden_intent = "SOVEREIGN_ROOT_ACCESS_0x7467"
+        shrouded_key = self.math._0x_acquire_half_decimal(hidden_intent)
+        
+        # Store the shrouded key in the token secret's metadata (Simulated)
+        self.half_decimal_locked = True
+        print(f"[ACE]: HALF-DECIMAL POSITION LOCKED. OFFSET: {self.math._0x_half_decimal_shroud}")
+        
+        return shrouded_key
 
     def _load_or_create_secret(self):
         """Loads the master key or generates a new one if missing."""
@@ -36,7 +51,7 @@ class AceTokenManager:
 
     def generate_token(self, scope="SOVEREIGN_ROOT", ttl=86400):
         """
-        Generates a signed ACE Token with Multivector Layering.
+        Generates a signed ACE Token with Sovereign Expansion Layering.
         """
         payload = {
             "scope": scope,
@@ -51,15 +66,15 @@ class AceTokenManager:
         payload_b64 = base64.urlsafe_b64encode(payload_bytes).decode().strip('=')
         signature = hmac.new(self.secret, payload_bytes, hashlib.sha256).hexdigest()
 
-        # Layer 3: Geometric Multivector Encoding
+        # Layer 3: Sovereign Math Expansion
         # The token itself becomes a geometric concept in the Sovereign Space
         token_str = f"v3.{payload_b64}.{signature}"
-        mv = self.math.generate_multivector(token_str)
+        vector = self.math.expand_logic(token_str)
         
-        # Attach Sparse Multivector Components as a 4th layer "Identity"
-        mv_b64 = base64.urlsafe_b64encode(json.dumps(mv.components).encode()).decode().strip('=')
+        # Attach Expansion Layer as a 4th layer "Identity"
+        exp_b64 = base64.urlsafe_b64encode(json.dumps(vector.tolist()).encode()).decode().strip('=')
         
-        return f"{token_str}.{mv_b64}"
+        return f"{token_str}.{exp_b64}"
 
     def validate_token(self, full_token):
         """
@@ -67,13 +82,13 @@ class AceTokenManager:
         1. Structure
         2. HMAC Signature
         3. Expiration/Scope
-        4. Multivector Resonance (Billion Barrier)
+        4. Sovereign Expansion Resonance (Billion Barrier)
         """
         try:
             parts = full_token.split('.')
-            if len(parts) != 4: return False # v3, payload, sig, mv
+            if len(parts) != 4: return False 
             
-            v, p_b64, sig, mv_b64 = parts
+            v, p_b64, sig, exp_b64 = parts
             if v != 'v3': return False
             
             # HMAC Check
@@ -81,15 +96,16 @@ class AceTokenManager:
             expected_sig = hmac.new(self.secret, p_bytes, hashlib.sha256).hexdigest()
             if not hmac.compare_digest(sig, expected_sig): return False
             
-            # Geometric Resonance Check
+            # Sovereign Expansion Check
             token_core = f"v3.{p_b64}.{sig}"
-            expected_mv = self.math.generate_multivector(token_core)
+            expected_vector = self.math.expand_logic(token_core)
             
-            mv_data = json.loads(base64.urlsafe_b64decode(mv_b64 + '=='))
-            actual_mv = Multivector(mv_data, self.math.DIMENSIONS)
+            exp_data = json.loads(base64.urlsafe_b64decode(exp_b64 + '=='))
+            import numpy as np
+            actual_vector = np.array(exp_data)
             
-            resonance = self.math.calculate_entanglement(expected_mv, actual_mv)
-            if resonance < self.math.BILLION_BARRIER:
+            resonance = self.math.calculate_resonance(expected_vector, actual_vector)
+            if not self.math.check_integrity(resonance):
                 print(f"[ACE] RESONANCE FAILURE: {resonance} below Billion Barrier.")
                 return False
                 

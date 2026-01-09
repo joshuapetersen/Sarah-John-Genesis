@@ -43,7 +43,7 @@ class MasterQueryOrchestrator:
         # Execution history
         self.execution_history: List[Dict[str, Any]] = []
         
-        print("✓ All systems initialized and ready\n")
+        print("[OK] All systems initialized and ready\n")
     
     def process_query_continuous_flow(self, natural_language_query: str, 
                                      context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
@@ -61,9 +61,9 @@ class MasterQueryOrchestrator:
         # STAGE 1: Natural Language Understanding (Query Intelligence)
         print("Stage 1: Natural Language Understanding...")
         query_result = self.query_intelligence.process_query(natural_language_query)
-        print(f"  ✓ Parsed intent: {query_result['intent']['action']}")
-        print(f"  ✓ Generated DAX: {query_result['generated_dax'][:60]}...")
-        print(f"  ✓ Confidence: {query_result['confidence']:.2%}\n")
+        print(f"  [OK] Parsed intent: {query_result['intent']['action']}")
+        print(f"  [OK] Generated DAX: {query_result['generated_dax'][:60]}...")
+        print(f"  [OK] Confidence: {query_result['confidence']:.2%}\n")
         
         # Handoff: Extract DAX query for next stage
         dax_query = query_result['generated_dax']
@@ -71,10 +71,10 @@ class MasterQueryOrchestrator:
         # STAGE 2: Consciousness Analysis (Self-Aware Generation)
         print("Stage 2: Consciousness-Aware Analysis...")
         conscious_result = self.consciousness.generate_conscious_query(natural_language_query)
-        print(f"  ✓ Consciousness Level: {conscious_result['consciousness_level']}")
-        print(f"  ✓ Belief Alignment: {conscious_result['belief_alignment']['alignment_score']:.2%}")
-        print(f"  ✓ Reasoning Steps: {len(conscious_result['reasoning_trace'])}")
-        print(f"  ✓ Quality: {conscious_result['quality_assessment'].get('overall_quality', 0.7):.2%}\n")
+        print(f"  [OK] Consciousness Level: {conscious_result['consciousness_level']}")
+        print(f"  [OK] Belief Alignment: {conscious_result['belief_alignment']['alignment_score']:.2%}")
+        print(f"  [OK] Reasoning Steps: {len(conscious_result['reasoning_trace'])}")
+        print(f"  [OK] Quality: {conscious_result['quality_assessment'].get('overall_quality', 0.7):.2%}\n")
         
         # Handoff: Use consciousness-validated query
         validated_query = conscious_result['generated_query']
@@ -82,10 +82,10 @@ class MasterQueryOrchestrator:
         # STAGE 3: Multi-Agent Planning (Strategy Consensus)
         print("Stage 3: Multi-Agent Planning...")
         query_plan = self.planner.plan_query_execution(validated_query, context)
-        print(f"  ✓ Strategy: {query_plan.strategy.value}")
-        print(f"  ✓ Agent Consensus: {query_plan.confidence:.2%}")
-        print(f"  ✓ Security Score: {query_plan.security_score:.2%}")
-        print(f"  ✓ Estimated Time: {query_plan.estimated_time_ms:.2f}ms\n")
+        print(f"  [OK] Strategy: {query_plan.strategy.value}")
+        print(f"  [OK] Agent Consensus: {query_plan.confidence:.2%}")
+        print(f"  [OK] Security Score: {query_plan.security_score:.2%}")
+        print(f"  [OK] Estimated Time: {query_plan.estimated_time_ms:.2f}ms\n")
         
         # Handoff: Use recommended strategy
         strategy = query_plan.strategy
@@ -93,29 +93,29 @@ class MasterQueryOrchestrator:
         # STAGE 4: Security Validation (Hardening)
         print("Stage 4: Security Hardening...")
         security_result = self.executor.execute_secure(validated_query, context)
-        print(f"  ✓ Security Checks: {len(security_result['security_report']['stages'])} stages")
-        print(f"  ✓ Was Sanitized: {security_result.get('was_sanitized', False)}")
-        print(f"  ✓ Execution Safe: {'✓' if security_result['success'] else '✗'}")
+        print(f"  [OK] Security Checks: {len(security_result['security_report']['stages'])} stages")
+        print(f"  [OK] Was Sanitized: {security_result.get('was_sanitized', False)}")
+        print(f"  [OK] Execution Safe: {'[OK]' if security_result['success'] else '[FAIL]'}")
         
         # Handoff: Use sanitized query or abort
         if not security_result['success']:
-            print(f"  ✗ BLOCKED: {security_result.get('reason', 'Security validation failed')}\n")
+            print(f"  [FAIL] BLOCKED: {security_result.get('reason', 'Security validation failed')}\n")
             return self._build_blocked_result(
                 natural_language_query, start_time, 
                 query_result, conscious_result, query_plan, security_result
             )
         
         secure_query = security_result['query']
-        print(f"  ✓ Security Duration: {security_result.get('total_duration_ms', 0):.2f}ms\n")
+        print(f"  [OK] Security Duration: {security_result.get('total_duration_ms', 0):.2f}ms\n")
         
         # STAGE 5: Optimized Execution (Self-Optimizing Pipeline)
         print("Stage 5: Self-Optimizing Execution...")
         execution_result = self.pipeline.execute_query(secure_query)
-        print(f"  ✓ Execution Strategy: {execution_result.get('strategy', 'DIRECT')}")
-        print(f"  ✓ Cached: {execution_result.get('cached', False)}")
-        print(f"  ✓ Predicted Time: {execution_result.get('predicted_time_ms', 0):.2f}ms")
-        print(f"  ✓ Actual Time: {execution_result.get('actual_time_ms', 0):.2f}ms")
-        print(f"  ✓ Improvement: {execution_result.get('improvement_pct', 0):.2f}%\n")
+        print(f"  [OK] Execution Strategy: {execution_result.get('strategy', 'DIRECT')}")
+        print(f"  [OK] Cached: {execution_result.get('cached', False)}")
+        print(f"  [OK] Predicted Time: {execution_result.get('predicted_time_ms', 0):.2f}ms")
+        print(f"  [OK] Actual Time: {execution_result.get('actual_time_ms', 0):.2f}ms")
+        print(f"  [OK] Improvement: {execution_result.get('improvement_pct', 0):.2f}%\n")
         
         # STAGE 6: Dashboard Update (Monitoring)
         print("Stage 6: Dashboard Monitoring...")
@@ -126,10 +126,10 @@ class MasterQueryOrchestrator:
             'consciousness': self.consciousness,
             'executor': self.executor
         })
-        print(f"  ✓ System Health: {dashboard_update['health']['status']}")
-        print(f"  ✓ Active Alerts: {len(dashboard_update.get('active_alerts', []))}")
+        print(f"  [OK] System Health: {dashboard_update['health']['status']}")
+        print(f"  [OK] Active Alerts: {len(dashboard_update.get('active_alerts', []))}")
         if dashboard_update.get('healing'):
-            print(f"  ✓ Auto-Healing: {dashboard_update['healing'].get('actions_executed', 0)} actions")
+            print(f"  [OK] Auto-Healing: {dashboard_update['healing'].get('actions_executed', 0)} actions")
         print()
         
         # Calculate total time
@@ -182,8 +182,8 @@ class MasterQueryOrchestrator:
         self.execution_history.append(result)
         
         print(f"{'='*70}")
-        print(f"✓ QUERY PROCESSING COMPLETE")
-        print(f"Total Time: {total_time:.2f}ms | Success: ✓ | Health: {dashboard_update['health']['status']}")
+        print(f"[OK] QUERY PROCESSING COMPLETE")
+        print(f"Total Time: {total_time:.2f}ms | Success: [OK] | Health: {dashboard_update['health']['status']}")
         print(f"{'='*70}\n")
         
         return result

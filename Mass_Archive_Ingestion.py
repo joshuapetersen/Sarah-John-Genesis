@@ -2,7 +2,6 @@ import os
 import json
 import docx
 from Sovereign_Math import SovereignMath
-from Geometric_Algebra_Core import Multivector
 
 def extract_text(file_path):
     if file_path.endswith('.docx'):
@@ -49,13 +48,13 @@ def ingest_legacy_archives():
         chunks = [text[i:i+1000] for i in range(0, len(text), 1000)]
         
         for idx, chunk in enumerate(chunks):
-            # Generate Multivector Hash
-            mv = math_engine.generate_multivector(chunk)
+            # Generate Sovereign Expansion
+            vector = math_engine.expand_logic(chunk)
             
             memory_id = f"legacy_{filename}_{idx}"
             memory_db[memory_id] = {
                 "content": chunk,
-                "multivector": mv.components,
+                "expansion_layer": vector.tolist(),
                 "source": filename,
                 "resonance": 1.0927037037037037,
                 "type": "legacy_core"

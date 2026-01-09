@@ -1,0 +1,22 @@
+{
+  "id": "TH_1767488230_1085e860",
+  "date": "2026-01-03",
+  "timestamp": 1767488230.5133162,
+  "tags": [
+    "legacy",
+    "ingested"
+  ],
+  "summary": "Initiated: Gemini Advanced\n2.5 Pro (experimental)\nConversation with Gemini\ny what there a serious lag in the de... | Outcome: didn't get a response but i was using the deep research feature and after the first two repones appe...",
+  "message_count": 2,
+  "artifacts": [],
+  "full_transcript": [
+    {
+      "role": "user",
+      "content": "Gemini Advanced\n2.5 Pro (experimental)\nConversation with Gemini\ny what there a serious lag in the deep research"
+    },
+    {
+      "role": "Sarah",
+      "content": "didn't get a response but i was using the deep research feature and after the first two repones appeared relatively fast but there was a problem wit the mthird one it wasnt giving a response even after 5 min"
+    }
+  ]
+}

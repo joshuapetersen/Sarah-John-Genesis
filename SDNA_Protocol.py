@@ -137,7 +137,7 @@ def verify_sdna_protocol():
     
     for confidence, expected in test_cases:
         is_valid, density = protocol.validate_density("test_data", confidence)
-        status = "✓ ACCEPT" if is_valid else "✗ REJECT"
+        status = "[OK] ACCEPT" if is_valid else "[FAIL] REJECT"
         print(f"  Confidence {confidence}: {status} - {expected}")
     
     # Test 2: Hard state enforcement

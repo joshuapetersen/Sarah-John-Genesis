@@ -544,7 +544,7 @@ if __name__ == "__main__":
         print(f"  Verdict: {result['verdict']}")
         print(f"  Total Errors: {result['total_errors']}")
         print(f"  Critical: {result['critical_errors']}, High: {result['high_errors']}")
-        print(f"  Execution Safe: {'✓' if result['execution_safe'] else '✗'}")
+        print(f"  Execution Safe: {'[OK]' if result['execution_safe'] else '[FAIL]'}")
         
         if result['errors']:
             print(f"  Top Errors:")

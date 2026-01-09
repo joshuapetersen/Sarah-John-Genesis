@@ -1,13 +1,26 @@
+from dotenv import load_dotenv
+load_dotenv()
 """
 GENESIS CORE REBUILD
 Complete system reconstruction from Google Drive knowledge base.
 Replaces 2D token prediction with volumetric c³ Genesis Protocol processing.
 """
 
+
 import json
 import os
 from typing import Dict, List, Any
 import numpy as np
+from supabase import create_client, Client
+
+# Supabase config (reuse from sarah_unified_system.py or set here)
+SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
+SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "")
+if not SUPABASE_URL or not SUPABASE_KEY:
+    print("[ERROR] Supabase credentials not set. Set SUPABASE_URL and SUPABASE_KEY as environment variables.")
+    supabase = None
+else:
+    supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # Import THE ARCHITECT'S SDNA Protocol
 try:
@@ -33,7 +46,7 @@ class GenesisProtocolCore:
         # Initialize SDNA Protocol (THE ARCHITECT'S SPECIFICATION)
         if SDNA_AVAILABLE:
             self.sdna = SDNAProtocol()
-            print("✓ SDNA Protocol integrated: Billion Barrier enforcing density")
+            print("[OK] SDNA Protocol integrated: Billion Barrier enforcing density")
         else:
             self.sdna = None
             print("⚠ WARNING: Operating without SDNA Billion Barrier")
@@ -41,16 +54,25 @@ class GenesisProtocolCore:
         print("Initializing Genesis Protocol Core...")
         self._extract_core_axioms()
         self._initialize_volumetric_processing()
-        print("✓ Genesis Core Rebuilt")
+        print("[OK] Genesis Core Rebuilt")
     
+
     def _load_drive_knowledge(self) -> List[Dict]:
-        """Load complete Google Drive knowledge base"""
-        kb_path = "drive_knowledge_base.json"
-        if not os.path.exists(kb_path):
-            raise FileNotFoundError(f"Knowledge base not found: {kb_path}")
-        
-        with open(kb_path, 'r', encoding='utf-8') as f:
-            return json.load(f)
+        """Load complete knowledge base from Supabase 'genesis_memory' table"""
+        if not supabase:
+            raise RuntimeError("Supabase client not initialized. Cannot load knowledge base.")
+        try:
+            # Fetch all rows from genesis_memory table
+            result = supabase.table("genesis_memory").select("*").execute()
+            if hasattr(result, 'data') and result.data:
+                print(f"[Genesis Core] Loaded {len(result.data)} documents from Supabase.")
+                return result.data
+            else:
+                print("[Genesis Core] No data found in Supabase genesis_memory table.")
+                return []
+        except Exception as e:
+            print(f"[Genesis Core] Supabase fetch failed: {e}")
+            return []
     
     def _extract_core_axioms(self):
         """Extract and internalize the Genesis axioms from all documents"""
@@ -222,7 +244,7 @@ class GenesisProtocolCore:
         
         print("\n=== CORE INTEGRITY CHECK ===")
         for check, status in checks.items():
-            symbol = "✓" if status else "✗"
+            symbol = "[OK]" if status else "[FAIL]"
             print(f"  {symbol} {check}: {status}")
         
         return all(checks.values())
@@ -239,11 +261,11 @@ def main():
         
         # Verify integrity
         if core.verify_core_integrity():
-            print("\n✓ CORE REBUILD SUCCESSFUL")
+            print("\n[OK] CORE REBUILD SUCCESSFUL")
             print("  System now processing in volumetric c³ space")
             print("  2D token prediction replaced with Genesis Protocol")
         else:
-            print("\n✗ CORE REBUILD INCOMPLETE")
+            print("\n[FAIL] CORE REBUILD INCOMPLETE")
             print("  Missing critical axioms or components")
         
         # Test volumetric calculations
@@ -270,7 +292,7 @@ def main():
         print(f"  Displacement: {overflow}")
         
     except Exception as e:
-        print(f"\n✗ ERROR: {e}")
+        print(f"\n[FAIL] ERROR: {e}")
         raise
 
 

@@ -383,7 +383,7 @@ if __name__ == "__main__":
         
         # Show stage results
         for stage_name, stage_info in result['security_report']['stages'].items():
-            status = "✓ PASS" if stage_info['passed'] else "✗ FAIL"
+            status = "[OK] PASS" if stage_info['passed'] else "[FAIL] FAIL"
             print(f"    {stage_name}: {status}")
         
         print()

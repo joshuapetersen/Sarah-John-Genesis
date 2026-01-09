@@ -10,6 +10,7 @@ import json
 from typing import Dict, List, Any, Optional
 from datetime import datetime
 from Performance_Accelerator import PerformanceAccelerator, memoize_result
+from googlecloudsdk.generated_clients.apis.geminicloudassist.v1 import geminicloudassist_v1_client
 
 # Import all systems
 try:
@@ -48,7 +49,7 @@ class AcceleratedMasterOrchestrator:
         self.total_time_ms = 0.0
         self.successful_queries = 0
         
-        print("✓ All systems initialized with acceleration enabled\n")
+        print("[OK] All systems initialized with acceleration enabled\n")
     
     def process_query_accelerated(self, natural_language_query: str, 
                                   context: Optional[Dict] = None) -> Dict[str, Any]:
@@ -86,10 +87,19 @@ class AcceleratedMasterOrchestrator:
         result['routing'] = routing
         
         print("\n" + "="*70)
-        print(f"✓ QUERY COMPLETE")
+        print(f"[OK] QUERY COMPLETE")
         print(f"Total Time: {total_time:.2f}ms | Routing: {routing}")
         print("="*70 + "\n")
         
+        # [0x_SPEECH]: ACTIVATE VOCAL FEEDBACK
+        try:
+            from Vocal_Cortex import VocalCortex
+            voice = VocalCortex()
+            # We speak a summary of the result
+            voice.speak(f"Query processed via {routing}. Total time {total_time:.0f} milliseconds.")
+        except:
+            pass
+
         return result
     
     def _fast_path_pipeline(self, query: str, context: Dict) -> Dict[str, Any]:
@@ -103,8 +113,8 @@ class AcceleratedMasterOrchestrator:
         dax_query = intent_result.get('dax_query', '')
         
         stage1_time = (time.time() - stage1_start) * 1000
-        print(f"  ✓ DAX Generated: {dax_query[:60]}...")
-        print(f"  ✓ Time: {stage1_time:.2f}ms\n")
+        print(f"  [OK] DAX Generated: {dax_query[:60]}...")
+        print(f"  [OK] Time: {stage1_time:.2f}ms\n")
         
         # Stage 2: Security check (critical, cannot skip)
         print("Stage 2: Security Scan...")
@@ -113,8 +123,8 @@ class AcceleratedMasterOrchestrator:
         security_result = self.executor.execute_secure(dax_query, context)
         
         stage2_time = (time.time() - stage2_start) * 1000
-        print(f"  ✓ Security: {'PASS' if security_result['success'] else 'BLOCKED'}")
-        print(f"  ✓ Time: {stage2_time:.2f}ms\n")
+        print(f"  [OK] Security: {'PASS' if security_result['success'] else 'BLOCKED'}")
+        print(f"  [OK] Time: {stage2_time:.2f}ms\n")
         
         if not security_result['success']:
             return security_result
@@ -126,8 +136,8 @@ class AcceleratedMasterOrchestrator:
         exec_result = self.pipeline.execute_query(dax_query, context)
         
         stage3_time = (time.time() - stage3_start) * 1000
-        print(f"  ✓ Strategy: {exec_result.get('execution_strategy', 'DIRECT')}")
-        print(f"  ✓ Time: {stage3_time:.2f}ms\n")
+        print(f"  [OK] Strategy: {exec_result.get('execution_strategy', 'DIRECT')}")
+        print(f"  [OK] Time: {stage3_time:.2f}ms\n")
         
         return {
             'success': True,
@@ -155,10 +165,10 @@ class AcceleratedMasterOrchestrator:
         confidence = intent_result.get('confidence', 0)
         
         stage1_time = (time.time() - stage1_start) * 1000
-        print(f"  ✓ Parsed intent: {intent_result.get('intent', 'UNKNOWN')}")
-        print(f"  ✓ Generated DAX: {dax_query[:60]}...")
-        print(f"  ✓ Confidence: {confidence:.2f}%")
-        print(f"  ✓ Time: {stage1_time:.2f}ms\n")
+        print(f"  [OK] Parsed intent: {intent_result.get('intent', 'UNKNOWN')}")
+        print(f"  [OK] Generated DAX: {dax_query[:60]}...")
+        print(f"  [OK] Confidence: {confidence:.2f}%")
+        print(f"  [OK] Time: {stage1_time:.2f}ms\n")
         
         # Stages 2 & 3 can run in parallel (consciousness doesn't need planning, planning doesn't need consciousness)
         print("Stages 2-3: Parallel Execution (Consciousness + Planning)...")
@@ -181,11 +191,11 @@ class AcceleratedMasterOrchestrator:
         parallel_time = (time.time() - parallel_start) * 1000
         
         print(f"  Stage 2 - Consciousness:")
-        print(f"    ✓ Belief Alignment: {conscious_result.get('belief_alignment', 0):.2f}%")
+        print(f"    [OK] Belief Alignment: {conscious_result.get('belief_alignment', 0):.2f}%")
         print(f"  Stage 3 - Multi-Agent Planning:")
-        print(f"    ✓ Strategy: {query_plan.strategy.value if hasattr(query_plan, 'strategy') else 'DIRECT'}")
-        print(f"    ✓ Agent Consensus: {query_plan.confidence * 100 if hasattr(query_plan, 'confidence') else 87:.2f}%")
-        print(f"  ✓ Parallel Time: {parallel_time:.2f}ms\n")
+        print(f"    [OK] Strategy: {query_plan.strategy.value if hasattr(query_plan, 'strategy') else 'DIRECT'}")
+        print(f"    [OK] Agent Consensus: {query_plan.confidence * 100 if hasattr(query_plan, 'confidence') else 87:.2f}%")
+        print(f"  [OK] Parallel Time: {parallel_time:.2f}ms\n")
         
         validated_query = conscious_result.get('validated_query', dax_query)
         
@@ -196,9 +206,9 @@ class AcceleratedMasterOrchestrator:
         security_result = self.executor.execute_secure(validated_query, context)
         
         stage4_time = (time.time() - stage4_start) * 1000
-        print(f"  ✓ Security Checks: {security_result.get('stages_passed', 6)} stages")
-        print(f"  ✓ Execution Safe: {'✓' if security_result['success'] else '✗'}")
-        print(f"  ✓ Time: {stage4_time:.2f}ms\n")
+        print(f"  [OK] Security Checks: {security_result.get('stages_passed', 6)} stages")
+        print(f"  [OK] Execution Safe: {'[OK]' if security_result['success'] else '[FAIL]'}")
+        print(f"  [OK] Time: {stage4_time:.2f}ms\n")
         
         if not security_result['success']:
             return security_result
@@ -210,9 +220,9 @@ class AcceleratedMasterOrchestrator:
         exec_result = self.pipeline.execute_query(validated_query, context)
         
         stage5_time = (time.time() - stage5_start) * 1000
-        print(f"  ✓ Execution Strategy: {exec_result.get('execution_strategy', 'DIRECT')}")
-        print(f"  ✓ Improvement: {exec_result.get('improvement_percentage', 0):.2f}%")
-        print(f"  ✓ Time: {stage5_time:.2f}ms\n")
+        print(f"  [OK] Execution Strategy: {exec_result.get('execution_strategy', 'DIRECT')}")
+        print(f"  [OK] Improvement: {exec_result.get('improvement_percentage', 0):.2f}%")
+        print(f"  [OK] Time: {stage5_time:.2f}ms\n")
         
         # Stage 6: Dashboard Monitoring (lightweight, async update)
         print("Stage 6: Dashboard Monitoring...")
@@ -221,9 +231,9 @@ class AcceleratedMasterOrchestrator:
         health = self.dashboard.get_system_health()
         
         stage6_time = (time.time() - stage6_start) * 1000
-        print(f"  ✓ System Health: {health.get('status', 'HEALTHY')}")
-        print(f"  ✓ Active Alerts: {len(health.get('alerts', []))}")
-        print(f"  ✓ Time: {stage6_time:.2f}ms\n")
+        print(f"  [OK] System Health: {health.get('status', 'HEALTHY')}")
+        print(f"  [OK] Active Alerts: {len(health.get('alerts', []))}")
+        print(f"  [OK] Time: {stage6_time:.2f}ms\n")
         
         return {
             'success': True,
@@ -308,5 +318,5 @@ if __name__ == "__main__":
     print(f"Total Queries: {batch_result['total_queries']}")
     print(f"Success Rate: {batch_result['successful']/batch_result['total_queries']*100:.1f}%")
     print(f"Average Time: {batch_result['avg_time_ms']:.2f}ms")
-    print(f"Acceleration Enabled: ✓")
+    print(f"Acceleration Enabled: [OK]")
     print("="*70)

@@ -1,0 +1,14 @@
+{
+  "name": "monitor_dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "three": "^0.155.0",
+    "plotly.js": "^2.24.1"
+  },
+  "scripts": {
+    "start": "npx serve -s build"
+  }
+}

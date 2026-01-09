@@ -211,7 +211,7 @@ def verify_sovereign_hypervisor():
     }
     results = hypervisor.apply_quad_strain(action, context)
     for law, compliant in results.items():
-        status = "✓ PASS" if compliant else "✗ FAIL"
+        status = "[OK] PASS" if compliant else "[FAIL] FAIL"
         print(f"  {law}: {status}")
     
     # Test 2: Response inhibition

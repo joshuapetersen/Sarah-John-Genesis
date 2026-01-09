@@ -11,6 +11,7 @@ from google_auth_helper import list_drive_files
 
 def assistant_shell():
     print("[Sarah Terminal] Type a command or 'exit' to quit.")
+    print("[Sarah Terminal] Prefix system commands with '!' (e.g., !python script.py)")
     print("[Sarah Terminal] Type 'gdrive auth' to authenticate, 'gdrive list' to list Drive files.")
     while True:
         try:
@@ -26,9 +27,14 @@ def assistant_shell():
                 print("[Sarah Terminal] Listing Google Drive files...")
                 list_drive_files()
                 continue
-            if cmd.strip():
-                result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+            if cmd.strip().startswith('!'):
+                sys_cmd = cmd.strip()[1:].strip()
+                print(f"[Sarah] Executing system command: {sys_cmd}")
+                result = subprocess.run(sys_cmd, shell=True, capture_output=True, text=True)
                 print(result.stdout or result.stderr)
+                continue
+            if cmd.strip():
+                print(f"[Sarah] Unknown command: {cmd.strip()}")
         except KeyboardInterrupt:
             print("\n[Sarah Terminal] Interrupted. Type 'exit' to quit.")
         except Exception as e:

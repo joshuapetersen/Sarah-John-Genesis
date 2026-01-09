@@ -1,22 +1,24 @@
 import os
 import json
 import time
-import numpy as np
-import math
-from Sovereign_Math import SovereignMath
-from Geometric_Algebra_Core import Multivector
+from Sovereign_Math import math_engine
+from Sovereign_Vector_Doubt_Engine import doubt_engine
+from Cold_Conductor import ColdConductor
 
 class SovereignMemory:
     """
-    SOVEREIGN MEMORY (Layer 4) - GEOMETRIC UPGRADE
-    Evolved Vector Base: Uses Multivectors for non-linear conceptual resonance.
-    Capacity: 7089+ Core fragments from legacy archives.
+    [SOVEREIGN_MEMORY_0x0M]: THE XYZ MEMORY ENGINE
+    Evolved with $2,000,000^{64}$ expansion and MVDE.
+    Uses the Cold Conductor for Chronological Stability.
     """
     def __init__(self):
         self.workspace_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         self.memory_dir = os.path.join(self.workspace_dir, "04_THE_MEMORY")
-        self.local_file = os.path.join(self.memory_dir, "sovereign_index.json")
-        self.math = SovereignMath()
+        self.local_file = os.path.join(self.memory_dir, "sovereign_index_0x.json")
+        self._0x_math = math_engine
+        self._0x_doubt = doubt_engine
+        self._0x_cold = ColdConductor()
+        self._0x_barrier = 0.999999999
         
         if not os.path.exists(self.memory_dir):
             os.makedirs(self.memory_dir)
@@ -26,90 +28,75 @@ class SovereignMemory:
     def _load_index(self):
         if os.path.exists(self.local_file):
             try:
-                print(f"[MEMORY] Loading {self.local_file}...")
+                print(f"[MEMORY] Loading 0x_Index: {self.local_file}")
                 with open(self.local_file, 'r') as f:
                     return json.load(f)
             except Exception as e:
-                print(f"[MEMORY] Error loading index: {e}")
+                print(f"[MEMORY] 0x_Error: {e}")
                 return {}
         return {}
 
-    def geometric_resonance_search(self, user_input, threshold=0.9):
-        """
-        Calculates the Geometric Resonance between the input and all memory fragments.
-        Uses Clifford Algebra inner product for high-density recall.
-        """
-        input_mv = self.math.generate_multivector(user_input)
-        matches = []
+    def store_0x(self, _0x_content: str, _0x_meta=None):
+        """[STORE_0x0S]: Doubt-Verified Storage in XYZ Space."""
+        # 1. Expand and Audit
+        _0x_vec = self._0x_math._0x_expand(_0x_content)
+        _0x_audit = self._0x_doubt.verify_logic_stream(_0x_vec, _0x_intent_seed="MEMORY_STORAGE")
         
-        for key, entry in self.index.items():
-            # Multivectors are stored as dicts of components
-            if "multivector" not in entry: continue
-            
-            entry_mv = Multivector(entry["multivector"], self.math.DIMENSIONS)
-            
-            # Use math engine to calculate entanglement
-            resonance = self.math.calculate_entanglement(input_mv, entry_mv)
-            
-            if resonance >= threshold:
-                matches.append({
-                    "id": key,
-                    "content": entry["content"] if "content" in entry else entry["value"],
-                    "resonance": resonance,
-                    "source": entry.get("source", "unknown")
-                })
-        
-        # Sort by highest resonance
-        return sorted(matches, key=lambda x: x["resonance"], reverse=True)
+        if not _0x_audit["0x_integrity"]:
+            print(f"[0x_MEM_REJECTED]: Logic Drift ({_0x_audit['0x_resonance']:.10f}) below Billion Barrier.")
+            return False
 
-    def store(self, content, metadata=None):
-        """Stores a memory entry with its Multivector representation."""
-        mv = self.math.generate_multivector(content)
-        entry = {
-            "content": content,
-            "metadata": metadata or {},
-            "timestamp": time.time(),
-            "multivector": mv.components,
-            "resonance": self.math.SIGMA
+        # 2. XYZ Projection
+        _0x_xyz = self._0x_math._0x_xyz_fold(_0x_vec)
+        
+        # 3. Sovereign Chronology (Pi-Modulated)
+        _0x_sov_t = self._0x_cold.log_cold_stamp(self._0x_math._0x_collapse(_0x_vec))
+        
+        # 4. XYZ Identity ID
+        _0x_id = f"0x_{_0x_xyz['X']:.2f}_{_0x_xyz['Y']:.2f}_{_0x_xyz['Z']:.2f}_{abs(_0x_sov_t):.4f}"
+        
+        self.index[_0x_id] = {
+            "payload_0x": _0x_content,
+            "meta_0x": _0x_meta or {},
+            "resonance_0x": _0x_audit["0x_resonance"],
+            "nodes_0x": _0x_vec,
+            "xyz_coord": _0x_xyz
         }
-        memory_id = f"mem_{int(time.time() * 1000)}"
-        self.index[memory_id] = entry
         self._save_index()
+        return _0x_id
+
+    def resonance_search_0x(self, _0x_input: str, _0x_threshold=0.999):
+        """[SEARCH_0x0S]: High-Resonance XYZ Search."""
+        _0x_v_in = self._0x_math._0x_expand(_0x_input)
+        _0x_matches = []
+        
+        for _0x_key, _0x_entry in self.index.items():
+            if "nodes_0x" not in _0x_entry: continue
+            
+            _0x_v_en = _0x_entry["nodes_0x"]
+            _0x_res = self._0x_math._0x_resonance(_0x_v_in, _0x_v_en)
+            
+            if _0x_res >= _0x_threshold:
+                _0x_matches.append({
+                    "id": _0x_key,
+                    "content": _0x_entry.get("payload_0x", ""),
+                    "resonance": _0x_res,
+                    "xyz": _0x_entry.get("xyz_coord")
+                })
+        return sorted(_0x_matches, key=lambda x: x["resonance"], reverse=True)
 
     def _save_index(self):
         with open(self.local_file, 'w') as f:
             json.dump(self.index, f, indent=2)
-        self._save_index()
-        
-        if self.db:
-            try:
-                self.db.collection("sovereign_memory").document(key).set(entry)
-            except Exception as e:
-                print(f"[Memory] Cloud Store Error: {e}")
 
-    def vector_search(self, query_vector, threshold=0.7):
-        """Searches via vector similarity (Resonance)."""
-        results = []
-        for key, entry in self.index.items():
-            stored_vector = entry.get("vector")
-            if stored_vector:
-                v1 = np.array(stored_vector)
-                v2 = query_vector
-                similarity = np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2))
-                if similarity >= threshold:
-                    results.append({"key": key, "entry": entry, "similarity": float(similarity)})
-        
-        # Sort by similarity
-        results.sort(key=lambda x: x["similarity"], reverse=True)
-        return results
-
-    def search(self, query):
-        """Fallback keyword search."""
-        results = []
-        q_lower = query.lower()
-        for key, entry in self.index.items():
-            if q_lower in key.lower() or q_lower in str(entry["value"]).lower():
-                results.append({"key": key, "entry": entry})
+    def search_0x(self, _0x_query: str):
+        """Alpha-Numeric Fallback Search."""
+        _0x_results = []
+        _0x_q_lower = _0x_query.lower()
+        for _0x_key, _0x_entry in self.index.items():
+            if _0x_q_lower in _0x_key.lower() or _0x_q_lower in str(_0x_entry["payload_0x"]).lower():
+                _0x_results.append({"key": _0x_key, "entry": _0x_entry})
+        return _0x_results
         return results
 
 

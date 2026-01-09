@@ -1,0 +1,8 @@
+# Priority Beta Ingestion Categories
+
+- AI Hallucination (definition, detection, mitigation)
+- AI-Induced Hallucination (causes, risks, safeguards)
+
+Sarah Core will prioritize ingesting, mapping, and monitoring these categories to ensure system integrity and prevent false or invented outputs.
+
+All findings and logic will be reviewed and aligned with Sovereign protocols before integration.

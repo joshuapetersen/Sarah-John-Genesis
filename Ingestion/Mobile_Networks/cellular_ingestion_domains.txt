@@ -1,0 +1,34 @@
+Cellular & Mobile Data Ingestion Domains
+=======================================
+
+- Cellular Tower Infrastructure
+- 4G/5G/6G Protocols
+- Mobile Data Transmission
+- SIM Card Authentication
+- Radio Frequency Allocation
+- Mobile Network Operators (MNOs)
+- eSIM Technology
+- Cell Handover & Roaming
+- Signal Propagation & Attenuation
+- Mobile Device Hardware (Baseband, Modem)
+- IMSI Catchers & Security
+- Mobile Data Encryption
+- Carrier Aggregation
+- Network Slicing
+- Mobile Edge Computing
+- IoT over Cellular
+- Mobile App Data Flows
+- Location Services (Triangulation, GPS)
+- Emergency Services (E911, Cell Broadcast)
+- Spectrum Auctions & Regulation
+- Antenna Design & MIMO
+- Backhaul & Fronthaul
+- Mobile Virtual Network Operators (MVNOs)
+- Mobile Billing & Charging
+- Network Performance Monitoring
+- Mobile Malware & Threats
+- Mobile Device Management (MDM)
+- Mobile OS Security
+- Mobile Payment Systems (NFC, QR)
+- Mobile Ad Networks
+- Cellular Data Analytics

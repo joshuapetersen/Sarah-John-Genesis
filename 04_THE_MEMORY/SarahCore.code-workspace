@@ -1,0 +1,44 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../Sarah"
+		}
+	],
+	"settings": {
+		"geminicodeassist.project": "sarah-calendar-integration",
+		"terminal.integrated.shellIntegration.showCommandGuide": false,
+		"workbench.editor.alwaysShowEditorActions": true,
+		"workbench.editor.autoLockGroups": {
+			"default": true,
+			"mainThreadWebview-markdown.preview": true,
+			"workbench.editor.chatSession": true,
+			"workbench.input.interactive": true,
+			"gitlens.rebase": true,
+			"imagePreview.previewEditor": true,
+			"jsProfileVisualizer.heapsnapshot.table": true,
+			"jsProfileVisualizer.heapprofile.table": true,
+			"jsProfileVisualizer.cpuprofile.table": true,
+			"vscode.audioPreview": true,
+			"vscode.videoPreview": true,
+			"workbench.editors.gettingStartedInput": true,
+			"repl": true,
+			"jupyter-notebook": true,
+			"notebookOutputEditor": true,
+			"workbench.editorinputs.searchEditorInput": true
+		},
+		"workbench.editor.closeOnFileDelete": true,
+		"workbench.editorAssociations": {
+			"# 1. FORCE KILL THE INTERFERENCE (ADMIN) taskkill /F /IM \"code.exe\" /T taskkill /F /IM \"Node.js JavaScript Runtime\" /T  # 2. LAUNCH CLEAN KERNEL (NO EXTENSIONS) code --disable-extensions --disable-gpu --user-data-dir=$(mktemp -d)  # 3. VERIFY 12/12 echo \"INTERFERENCE PURGED. KERNEL 0x7467 STANDING BY.\"": "default"
+		},
+		"workbench.editor.centeredLayoutFixedWidth": true,
+		"terminal.integrated.commandsToSkipShell": [
+			"Workbench › Editor › Custom Labels: Enabled Controls whether the custom workbench editor labels should be applied.  Workbench › Editor › Custom Labels: Patterns Controls the rendering of the editor label. Each Item is a pattern that matches a file path. Both relative and absolute file paths are supported. The relative path must include the WORKSPACE_FOLDER (e.g WORKSPACE_FOLDER/src/**.tsx or */src/**.tsx). Absolute patterns must start with a /. In case multiple patterns match, the longest matching path will be picked. Each Value is the template for the rendered editor when the Item matches. Variables are substituted based on the context:  ${dirname}: name of the folder in which the file is located (e.g. WORKSPACE_FOLDER/folder/file.txt -> folder). ${dirname(N)}: name of the nth parent folder in which the file is located (e.g. N=2: WORKSPACE_FOLDER/static/folder/file.txt -> WORKSPACE_FOLDER). Folders can be picked from the start of the path by using negative numbers (e.g. N=-1: WORKSPACE_FOLDER/folder/file.txt -> WORKSPACE_FOLDER). If the Item is an absolute pattern path, the first folder (N=-1) refers to the first folder in the absolute path, otherwise it corresponds to the workspace folder. ${filename}: name of the file without the file extension (e.g. WORKSPACE_FOLDER/folder/file.txt -> file). ${extname}: the file extension (e.g. WORKSPACE_FOLDER/folder/file.txt -> txt). ${extname(N)}: the nth extension of the file separated by '.' (e.g. N=2: WORKSPACE_FOLDER/folder/file.ext1.ext2.ext3 -> ext1). Extension can be picked from the start of the extension by using negative numbers (e.g. N=-1: WORKSPACE_FOLDER/folder/file.ext1.ext2.ext3 -> ext2). Example: \"**/static/**/*.html\": \"${filename} - ${dirname} (${extname})\" will render a file WORKSPACE_FOLDER/static/folder/file.html as file - folder (html).",
+			"# 1. APPLY WORKSPACE OVERRIDES echo \"Applying 12/12 Sovereign Settings...\"  # 2. REFRESH THE KERNEL LINK export KERNEL_STATE=ACTIVE export SOVEREIGN_ID=0x7467  # 3. INITIALIZE SENTINEL WATCH echo \"SARAH_SE-01: THE SYSTEM IS LOCALIZED. I AM WATCHING THE TELEMETRY NOW.\"",
+			"life"
+		],
+		"diffEditor.codeLens": true
+	}
+}

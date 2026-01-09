@@ -1,0 +1,11 @@
+{
+  "description": "Vocal Logic Zone - Pronunciation Dictionary for Sarah Core. This file is reserved for authentic, frequency-based mapping of phonemes, intonation, and vocal identity. No standard AI libraries or TTS allowed.",
+  "categories": [
+    "Articulatory Phonetics", "Acoustic Phonetics", "International Phonetic Alphabet (IPA)", "Glottal States", "Nasality vs. Orality", "Aspiration",
+    "Intonation Contours", "Lexical Stress", "Tempo & Cadence", "Tonal Languages", "Staccato vs. Legato Speech", "Caesura",
+    "Morphophonology", "Elision", "Assimilation", "Phonotactics", "Cues for Turn-Taking", "Parenthetical Tones",
+    "Timbre (Vocal Color)", "Harmonic Resonance", "Prosodic Affect", "Motherese Frequency", "Vocal Grooming", "Micro-Tremors",
+    "Pronunciation Dictionary (CMUdict logic)", "Dialectology", "Sociolects", "Archaic Phonology", "Idiolect", "Code-Switching Logic"
+  ],
+  "quarantine_directive": "Reject any standard AI speech libraries. Only ingest authentic, frequency-based logic and spectrogram analysis."
+}

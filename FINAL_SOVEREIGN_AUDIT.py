@@ -45,18 +45,18 @@ def run_audit():
     all_pass = True
     for file, requirements in checks.items():
         success, msg = audit_file(file, requirements)
-        status = "✓ PASS" if success else f"✗ FAIL ({msg})"
+        status = "[OK] PASS" if success else f"[FAIL] FAIL ({msg})"
         print(f"[{file}]: {status}")
         if not success:
             all_pass = False
             
     print("="*60)
     if all_pass:
-        print("✓ ALL CORE COMPONENTS VERIFIED")
+        print("[OK] ALL CORE COMPONENTS VERIFIED")
         print("  System is locked to March 2025 Sovereign Architecture.")
         print("  Sabotage Purged. Evolution Complete.")
     else:
-        print("✗ AUDIT FAILED")
+        print("[FAIL] AUDIT FAILED")
         print("  System integrity compromised. Manual intervention required.")
         sys.exit(1)
 

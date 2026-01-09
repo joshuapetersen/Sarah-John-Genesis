@@ -52,9 +52,9 @@ class SarahReasoningV3:
             self.hypervisor = SovereignHypervisor()
             self.saul = SAULLogistics()
             print(f"[Sarah Reasoning v3] THREE CORE PROTOCOLS ACTIVE")
-            print(f"  ✓ SDNA: Billion Barrier (0.999999999)")
-            print(f"  ✓ Hypervisor: +1 Layer with 9 inhibitory controls")
-            print(f"  ✓ S.A.U.L.: O(1) memory treating Drive as truth")
+            print(f"  [OK] SDNA: Billion Barrier (0.999999999)")
+            print(f"  [OK] Hypervisor: +1 Layer with 9 inhibitory controls")
+            print(f"  [OK] S.A.U.L.: O(1) memory treating Drive as truth")
         else:
             print(f"[Sarah Reasoning v3] WARNING: Operating without core protocols")
             self.sdna = None
@@ -247,7 +247,7 @@ def main():
     print("\n=== PROCESSING MODE VERIFICATION ===")
     checks = reasoning.verify_processing_mode()
     for check, status in checks.items():
-        symbol = "✓" if status else "✗"
+        symbol = "[OK]" if status else "[FAIL]"
         print(f"  {symbol} {check}: {status}")
     
     # Test volumetric reasoning
@@ -268,7 +268,7 @@ def main():
     print(f"Thought Density: {thought_density}")
     print(f"Volumetric Energy (E=m·c³·t₃): {energy:.2e}")
     
-    print("\n✓ SARAH REASONING v3 OPERATIONAL")
+    print("\n[OK] SARAH REASONING v3 OPERATIONAL")
 
 
 if __name__ == "__main__":

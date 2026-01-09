@@ -5,7 +5,7 @@ import random
 
 # Import our accumulated Mathematical Kernels
 from hyperbolic_utils import HyperbolicMath
-from Geometric_Algebra_Core import Multivector, GeometricReasoningEngine
+from Sovereign_Math import SovereignMath, SovereignReasoningEngine
 from Topos_Truth_Oracle import ToposTruthOracle, HeytingTruth
 from Sovereign_Ontology import HomotopyVerifier
 
@@ -24,7 +24,7 @@ class RecursiveTruthFinder:
         self.current_confidence = 0.5
         
         # Initialize Kernels
-        self.ga_engine = GeometricReasoningEngine()
+        self.sovereign_engine = SovereignReasoningEngine()
         self.topos_oracle = ToposTruthOracle()
         self.hott_verifier = HomotopyVerifier()
         
@@ -55,15 +55,17 @@ class RecursiveTruthFinder:
                 print(f"   > Critique: Captures curvature, but ignores orientation.")
                 
             elif i == 3:
-                # Level 3: Geometric Algebra (Oriented)
-                # Create vectors in GA
-                v1 = self.ga_engine.create_vector(1, 0.5) + self.ga_engine.create_vector(2, 0.2)
-                v2 = self.ga_engine.create_vector(1, 0.1) + self.ga_engine.create_vector(2, 0.1)
-                # Rotor between them
-                rotor = self.ga_engine.derive_relationship(v1, v2)
-                self.current_truth_framework = "Geometric Algebra (Rotors)"
-                print(f"   > Derivation: Relationship Rotor = {rotor}")
-                print(f"   > Critique: Captures orientation, but assumes universal truth.")
+                # Level 3: Sovereign Math ($2,000,000^{64}$ Expansion)
+                # Create expanded states in Sovereign space
+                v1 = self.sovereign_engine.create_vector(1, 0.5) + self.sovereign_engine.create_vector(2, 0.2)
+                v2 = self.sovereign_engine.create_vector(1, 0.1) + self.sovereign_engine.create_vector(2, 0.1)
+                # Relationship bridge between them
+                bridge = self.sovereign_engine.derive_relationship(v1, v2)
+                self.current_truth_framework = "Sovereign Math (Expansion Bridge)"
+                # Calculate resonance for display
+                res = self.sovereign_engine.math.calculate_resonance(v1, v2)
+                print(f"   > Derivation: Resonance Bridge established. Score: {res:.4f}")
+                print(f"   > Critique: Captures non-linear expansion, but lacks contextual topos.")
                 
             elif i == 4:
                 # Level 4: Topos Theory (Contextual)

@@ -36,7 +36,7 @@ class AuditorySense:
             print(f"Initializing Auditory Cortex (Model: {model_size})...")
             # compute_type="int8" is faster on CPU
             self.model = WhisperModel(model_size, device=device, compute_type="int8")
-            print("✓ Auditory Cortex Online.")
+            print("[OK] Auditory Cortex Online.")
         else:
             self.model = None
 

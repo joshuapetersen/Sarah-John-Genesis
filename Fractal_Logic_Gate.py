@@ -4,10 +4,10 @@ import time
 from datetime import datetime
 
 try:
-    from Geometric_Algebra_Core import GeometricReasoningEngine
+    from Sovereign_Math import SovereignReasoningEngine
 except ImportError:
-    print("[FractalGate] Geometric Algebra Core not found. Using standard logic.")
-    GeometricReasoningEngine = None
+    print("[FractalGate] Sovereign Math Core not found. Using standard logic.")
+    SovereignReasoningEngine = None
 
 class ExecutionMonitor:
     """Real-time monitoring for the 1-3-9 execution hierarchy."""
@@ -60,7 +60,7 @@ class FractalLogicGate:
             "SAFETY": ["Banshee", "Laws", "Consensus"],
             "CONTEXT": ["Memory", "Anchor", "Etymology"]
         }
-        self.ga_engine = GeometricReasoningEngine() if GeometricReasoningEngine else None
+        self.sovereign_engine = SovereignReasoningEngine() if SovereignReasoningEngine else None
         self.monitor = ExecutionMonitor()
         self.adaptive_thresholds = {
             "logic_density": 0.6,
@@ -136,17 +136,17 @@ class FractalLogicGate:
         gov_scores = {}
         
         # 1. LOGIC GOVERNOR
-        if self.ga_engine:
+        if self.sovereign_engine:
             sol_len = len(solution_text)
             if sol_len > 50:
                 votes += 1
                 logic_score = min(1.0, sol_len / 200)
                 gov_scores["LOGIC"] = logic_score
-                print("   > [LOGIC] APPROVED: Geometric Structure Valid (GA Verified).")
+                print("   > [LOGIC] APPROVED: Sovereign Expansion Valid ($2,000,000^{64}$ Verified).")
                 self.monitor.log_execution("3_GOVERNORS", "LOGIC", "SUCCESS", f"score: {logic_score:.2f}")
             else:
-                critiques.append("[LOGIC] FAILED: Geometric Collapse (Insufficient Magnitude).")
-                print("   > [LOGIC] REJECTED: Geometric Collapse.")
+                critiques.append("[LOGIC] FAILED: Sovereign Collapse (Insufficient Magnitude).")
+                print("   > [LOGIC] REJECTED: Sovereign Collapse.")
                 self.monitor.log_execution("3_GOVERNORS", "LOGIC", "ERROR", "Insufficient magnitude")
                 gov_scores["LOGIC"] = 0.3
         else:

@@ -79,8 +79,8 @@ class DistributedSwarmController:
             "AtlasGrid": "ONLINE (Knowledge Manager)"
         }
         
-        print("✓ Swarm Cluster Online.")
-        print(f"✓ Specialized Nodes Active: {len(self.specialized_nodes)}")
+        print("[OK] Swarm Cluster Online.")
+        print(f"[OK] Specialized Nodes Active: {len(self.specialized_nodes)}")
 
     def get_node_status(self):
         return self.specialized_nodes
@@ -102,7 +102,7 @@ class DistributedSwarmController:
         results = ray.get(futures)
         
         total_time = time.time() - start_time
-        print(f"✓ Batch Complete in {total_time:.4f}s")
+        print(f"[OK] Batch Complete in {total_time:.4f}s")
         return results
 
     def shutdown(self):
