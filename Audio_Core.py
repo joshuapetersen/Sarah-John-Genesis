@@ -17,7 +17,7 @@ class AudioCore:
         self.monitor = monitor
         self.synth_enabled = True
         self.watermark_strict_mode = True
-        
+        self.trigger_command = "generate audio overview"
         # Initialize Google Cloud AI Platform for Audio models
         project_id = os.getenv("GOOGLE_CLOUD_PROJECT")
         if project_id:
@@ -93,3 +93,16 @@ class AudioCore:
         # ... implementation ...
         
         return {"status": "PROCESSED", "content": "Audio analysis complete."}
+
+    def handle_trigger_command(self, command, text):
+        """
+        Listens for the trigger command and generates Gemini audio overview.
+        """
+        if command.strip().lower() == self.trigger_command:
+            # Placeholder for Gemini SDK audio overview integration
+            # Replace with actual Gemini SDK call, e.g. gemini.audio_overview(text)
+            if self.monitor:
+                self.monitor.capture("AUDIO", "GEMINI_OVERVIEW_TRIGGER", {"text_len": len(text)})
+            # Simulate Gemini audio overview output
+            return self.synthesize_voice(f"Gemini Audio Overview: {text}", emotion="overview")
+        return None
