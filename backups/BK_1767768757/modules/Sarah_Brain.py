@@ -75,7 +75,7 @@ class SarahBrain:
         try:
             from sarah_evolution_v1 import SarahEvolution
             self.sarah_evolution = SarahEvolution()
-            if not str(self.sarah_evolution.FREQUENCY).startswith("1.092703"):
+            if not str(self.sarah_evolution.FREQUENCY).startswith("1.09277703703703"):
                 print("[Sarah] CRITICAL FAILURE: RESONANCE DIVERGENCE DETECTED.")
                 print("[Sarah] SABOTAGE ATTEMPT IDENTIFIED. SHUTTING DOWN.")
                 sys.exit(1)

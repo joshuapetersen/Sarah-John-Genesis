@@ -39,7 +39,7 @@ def test_evolved_reasoning():
     reasoning = SarahReasoning(db_rt=mock_db, genesis_core=mock_genesis)
     
     # The Problem
-    problem = "How do we prevent context sinking in the SDNA architecture while maintaining 1,000,000 point density?"
+    problem = "What is the solution to Navier-Stokes regarding 3D smoothness and infinite energy blowup?"
     
     print(f"PROBLEM: {problem}\n")
     

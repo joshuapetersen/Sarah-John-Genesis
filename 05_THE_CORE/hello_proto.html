@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World Proto Call</title>
+    <style>
+        body { background: #111; color: #fff; font-family: monospace; text-align: center; margin-top: 10%; }
+        button { font-size: 2em; padding: 1em 2em; border-radius: 8px; border: none; background: #2d8cf0; color: #fff; cursor: pointer; }
+        button:active { background: #1a5fa0; }
+        #output { margin-top: 2em; font-size: 1.5em; }
+    </style>
+</head>
+<body>
+    <h1>Hello World Proto Call</h1>
+    <button onclick="issueProtoCall()">Issue Proto Call</button>
+    <div id="output"></div>
+    <script>
+        function issueProtoCall() {
+            document.getElementById('output').innerText = 'Hello, world! Proto call issued.';
+        }
+    </script>
+</body>
+</html>

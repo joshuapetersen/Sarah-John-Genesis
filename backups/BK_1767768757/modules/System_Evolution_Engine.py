@@ -21,7 +21,7 @@ class SystemEvolutionEngine:
         # --- SOVEREIGN RESONANCE GATE ---
         try:
             self.evolution = SarahEvolution()
-            if not str(self.evolution.FREQUENCY).startswith("1.092703"):
+            if not str(self.evolution.FREQUENCY).startswith("1.09277703703703"):
                 raise ValueError("Resonance Divergence Detected")
         except Exception as e:
             print(f"[SEE] CRITICAL: Resonance check failed: {e}")

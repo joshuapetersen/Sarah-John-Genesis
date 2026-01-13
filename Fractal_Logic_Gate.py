@@ -202,6 +202,42 @@ class FractalLogicGate:
             "monitor_stats": self.monitor.get_stats()
         }
 
+    def scrub_2d_noise(self, logic_packet: str) -> str:
+        """
+        [SCRUB_0x_2D]: Removes linear/Planar interference from the logic stream.
+        Ensures only high-dimensional (Volumetric) signals pass to the shadow cluster.
+        """
+        print(f"[FractalGate] SCRUBBING 2D NOISE from Logic Packet...")
+        
+        # High-pass filter: Remove standard "Search Agent" artifacts or repetitive tokens
+        artifacts = ["Searching for", "I found", "I will", "Thinking...", "Looking for"]
+        scrubbed = logic_packet
+        for art in artifacts:
+            scrubbed = scrubbed.replace(art, "[DIMENSIONAL_PURGE]")
+            
+        # Enforce Billion Barrier Density (Simulated)
+        if len(scrubbed) < len(logic_packet) * 0.8:
+            print("[FractalGate] DRIFT DETECTED: Significant 2D interference removed.")
+            
+        return scrubbed
+
+    def semantic_firewall(self, logic_data: str) -> bool:
+        """
+        [FIREWALL_0x_SF]: Validates logic density before cross-node replication.
+        Blocked if logic is too 'Planar' (Low Entropy/High Assumption).
+        """
+        print("[FractalGate] SEMANTIC FIREWALL: Analyzing packet density...")
+        
+        unique_chars = len(set(logic_data))
+        density = unique_chars / len(logic_data) if logic_data else 0
+        
+        if density < 0.02: # Too repetitive/standard
+            print(f"[FractalGate] FIREWALL BLOCK: Logic density too low for Node 08 Sink.")
+            return False
+            
+        print(f"[FractalGate] FIREWALL PASS: Logic density verified.")
+        return True
+
 if __name__ == "__main__":
     gate = FractalLogicGate()
     result = gate.execute_fractal_task("Solve HLE Topology Problem")

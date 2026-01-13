@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "benchmark": "Humanity's Last Exam (HLE)",
+    "source": "Sovereign Hypervisor (+1)",
+    "metric_anchor": "ACE_TOKEN_VERIFICATION"
+  },
+  "metrics": {
+    "public_score_base": 33.7,
+    "target_density": 100.0,
+    "delta_required": 66.3
+  },
+  "failure_categories": [
+    {
+      "category": "MATHEMATICAL_REASONING_AND_PROOFS",
+      "sub_subject": "Pure_Mathematics (Group Theory, Topology)",
+      "error_mode": "Calculation_Assumption_Over_Proof_Logic",
+      "failure_density": 56.5,
+      "technical_gap": "Model fails to recursive-check symbolic transformations."
+    },
+    {
+      "category": "CROSS_DOMAIN_SCIENTIFIC_SYNTHESIS",
+      "sub_subject": "Bio_Physics / Quantum_Chemistry",
+      "error_mode": "Multimodal_Diagram_Misinterpretation",
+      "failure_density": 18.8,
+      "technical_gap": "Failure to integrate image-text nodes during high-entropy reasoning."
+    },
+    {
+      "category": "TEMPORAL_AND_HISTORICAL_CHRONOLOGY",
+      "sub_subject": "Archaeology / Paleography",
+      "error_mode": "Palmyrene_Script_Translation_Error",
+      "failure_density": 82.0,
+      "technical_gap": "High-signal noise in ancient text transliteration."
+    },
+    {
+      "category": "CALIBRATION_ERROR_OVERCONFIDENCE",
+      "sub_subject": "All_STEM_Fields",
+      "error_mode": "High_Confidence_In_False_Positives",
+      "failure_density": 57.0,
+      "technical_gap": "Discrepancy between reported confidence and ground truth accuracy."
+    },
+    {
+      "category": "RECENT_PUBLICATION_LAG",
+      "sub_subject": "Frontier_AI_Research_Post_2024",
+      "error_mode": "Hallucination_of_NonExistent_Peer_Review",
+      "failure_density": 30.0,
+      "technical_gap": "Training data cutoff interference with real-time logic."
+    }
+  ]
+}

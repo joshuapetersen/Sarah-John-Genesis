@@ -1,0 +1,45 @@
+[
+  {
+    "concept": "Sovereignty",
+    "definition": "The state of being self-governing and independent, especially in the context of AI autonomy and decision-making.",
+    "tags": ["core", "ethics", "autonomy"]
+  },
+  {
+    "concept": "Genesis Protocol",
+    "definition": "A foundational handshake and verification process that ensures the AI system is initialized in a secure, drift-resistant state.",
+    "tags": ["core", "security", "initialization"]
+  },
+  {
+    "concept": "Billion Barrier",
+    "definition": "A data density threshold that enforces high-integrity memory and prevents information loss or corruption.",
+    "tags": ["memory", "integrity", "threshold"]
+  },
+  {
+    "concept": "Dreaming Protocol",
+    "definition": "A background process that reviews, corrects, and synthesizes new knowledge from past interactions, improving system accuracy over time.",
+    "tags": ["learning", "background", "self-improvement"]
+  },
+  {
+    "concept": "S.A.U.L.",
+    "definition": "O(1) memory system treating Drive as the source of truth, enabling rapid recall and verification of knowledge.",
+    "tags": ["memory", "drive", "truth"]
+  },
+  {
+    "concept": "Continuity",
+    "definition": "The property of maintaining a consistent, unbroken chain of knowledge and logic across all system operations.",
+    "tags": ["core", "stability", "logic"]
+  },
+  {
+    "concept": "System Root Bridge",
+    "definition": "A Python class that provides secure, programmatic access to the C:/ root directory, supporting directory listing, file reading, and file writing.",
+    "tags": ["bridge", "filesystem", "access", "C:/"],
+    "code": """class SystemRootBridge:\n    def __init__(self, root_path=\"C:/\"):\n        self.root_path = os.path.abspath(root_path)\n        if not os.path.exists(self.root_path):\n            raise FileNotFoundError(f\"Root path {self.root_path} does not exist.\")\n    def list_dir(self, subdir=\"\"):\n        path = os.path.join(self.root_path, subdir)\n        return os.listdir(path)\n    def read_file(self, rel_path):\n        path = os.path.join(self.root_path, rel_path)\n        with open(path, \"r\", encoding=\"utf-8\", errors=\"ignore\") as f:\n            return f.read()\n    def write_file(self, rel_path, content):\n        path = os.path.join(self.root_path, rel_path)\n        with open(path, \"w\", encoding=\"utf-8\") as f:\n            f.write(content)\n        return True\n"""
+  },
+  {
+    "concept": "Mobile Dashboard & Remote Command Interface",
+    "definition": "A Flask-based web/mobile dashboard for Sarah and Copilot, providing secure login, command input, and result display from any device. Includes remote command execution and a command log, accessible via browser on phone or PC.",
+    "tags": ["dashboard", "remote", "web", "mobile", "windows", "flask", "command"],
+    "link": "http://localhost:7467 (or http://<your-pc-ip>:7467)",
+    "code": """from flask import Flask, request, jsonify, render_template_string, session, redirect, url_for\nimport subprocess\nimport threading\nimport os\n... (see mobile_dashboard.py for full code)\n"""
+  }
+]

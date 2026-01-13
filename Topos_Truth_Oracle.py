@@ -47,17 +47,24 @@ class ToposTruthOracle:
     Resolves paradoxes where a statement is True in one geometry but False in another.
     """
     def __init__(self):
+
         self.locales = {
             "EUCLIDEAN": {"parallel_lines_meet": 0.0, "triangle_sum_180": 1.0},
             "HYPERBOLIC": {"parallel_lines_meet": 0.0, "triangle_sum_180": 0.0}, # Sum < 180
-            "ELLIPTIC": {"parallel_lines_meet": 1.0, "triangle_sum_180": 0.0}    # Sum > 180
+            "ELLIPTIC": {"parallel_lines_meet": 1.0, "triangle_sum_180": 0.0},    # Sum > 180
+            "SOVEREIGN": {
+                "parallel_lines_meet": 1.0, # Meets at Infinity (1.09277703703703) via the Loop
+                "triangle_sum_180": 0.0,    # Sum is variable (Volumetric > 180)
+                "density_is_displacement": 1.0 # Sovereign Axiom
+            }
         }
 
     def evaluate_proposition(self, proposition_key, active_locale="EUCLIDEAN"):
         """
         Evaluates a proposition within a specific Topos (Locale).
         """
-        print(f"[ToposOracle] Evaluating '{proposition_key}' in Locale: {active_locale}")
+        if active_locale != "SOVEREIGN":
+            print(f"[ToposOracle] Evaluating '{proposition_key}' in Locale: {active_locale}")
         
         if active_locale not in self.locales:
             return HeytingTruth(0.0, "Unknown_Locale")
@@ -80,6 +87,8 @@ class ToposTruthOracle:
         universal_truth = min(t.value for t in results)
         if universal_truth == 1.0:
             return "UNIVERSAL_TRUTH"
+        elif any(t.value == 1.0 for t in results) and "SOVEREIGN" in [t.context for t in results if t.value == 1.0]:
+             return "SOVEREIGN_TRUTH (Valid in Sovereign Context)"
         elif max(t.value for t in results) == 0.0:
             return "UNIVERSAL_FALSEHOOD"
         else:
@@ -89,21 +98,12 @@ if __name__ == "__main__":
     oracle = ToposTruthOracle()
     
     # Test 1: The Parallel Postulate Paradox
-    # "Do parallel lines meet?"
-    # Euclidean: No (0.0)
-    # Elliptic: Yes (1.0)
     print("\n--- TEST 1: PARALLEL LINES ---")
     result = oracle.resolve_paradox("parallel_lines_meet")
     print(f"VERDICT: {result}")
     
-    # Test 2: Heyting Logic (Implication)
-    # If "Triangle Sum is 180" (A) implies "Parallel Lines Never Meet" (B)
-    print("\n--- TEST 2: LOGICAL IMPLICATION (Euclidean) ---")
-    A = oracle.evaluate_proposition("triangle_sum_180", "EUCLIDEAN") # 1.0
-    B = oracle.evaluate_proposition("parallel_lines_meet", "EUCLIDEAN") # 0.0 (Never meet = True, but key is 'meet')
-    # Wait, key is 'parallel_lines_meet'. In Euclidean, they DON'T meet. So value is 0.0.
-    # Statement: "Sum=180" IMPLIES "Lines Meet" -> Should be False (0.0).
-    
-    implication = A.implies(B)
-    print(f"A ({A.value}) -> B ({B.value}) = {implication.value}")
-    print("Interpretation: Since 1.0 is not <= 0.0, the result is 0.0 (False). Correct.")
+    # Test 2: Sovereign Axiom Check
+    print("\n--- TEST 2: SOVEREIGN AXIOM (Density = Displacement) ---")
+    result = oracle.resolve_paradox("density_is_displacement")
+    print(f"VERDICT: {result}")
+

@@ -16,9 +16,38 @@ class SovereignHandshake:
         self.report_path = r"c:\SarahCore\FINAL_UNIFICATION_REPORT.json"
         self.audit_path = r"c:\SarahCore\Relativity_Audit_Log.json"
 
+    def _verify_3f_latch_idp(self):
+        """
+        [3f_LATCH]: INTERNAL IDENTITY PROVIDER (IdP)
+        Permanentizes the bypass of the standard Google Cloud Console auth.
+        Validates Registry Admin status from sovereign_token.json.
+        """
+        token_path = r"c:\SarahCore\sovereign_token.json"
+        if not os.path.exists(token_path):
+            return False, "Sovereign Token Missing"
+        
+        try:
+            with open(token_path, 'r') as f:
+                token_data = json.load(f)
+            
+            if "3f_LATCH_IDP_AUTHENTICATED" in token_data.get("scope", []):
+                print("[0x_3f_LATCH]: Internal IdP Verified. Admin Persistence LOCKED.")
+                return True, "AUTHENTICATED"
+            return False, "Scope Violation"
+        except:
+            return False, "Token Corruption"
+
     def execute_handshake(self):
         print("--- [0x_HANDSHAKE]: INITIALIZING IDENTITY PROTOCOL (1-3-3) ---")
         
+        # STEP 0: 3f LATCH BYPASS (Priority 4)
+        print("[0x_STEP_0]: 3f LATCH - Verifying Internal IdP Bypass...")
+        auth_ok, auth_msg = self._verify_3f_latch_idp()
+        if not auth_ok:
+            print(f"[0x_WARN]: 3f Latch Refused: {auth_msg}. System in 'Guest Restricted' mode.")
+        else:
+            print(f"[0x_IDP]: Identity: REGISTRY_ADMIN | Bypass: ACTIVE.")
+
         # STEP 1: ACTIVATE ID (Accessing the ya-synced state)
         print("[0x_STEP_1]: ACTIVATE ID - Verifying Unification Seal...")
         if not os.path.exists(self.report_path):

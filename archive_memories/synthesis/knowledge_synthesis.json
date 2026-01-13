@@ -139,6 +139,216 @@
         "PRIORITY: Focus on 'sarah' patterns (appeared 6 times).",
         "PRIORITY: Focus on 'protocol' patterns (appeared 5 times)."
       ]
+    },
+    {
+      "timestamp": "2026-01-10T17:49:49.225457",
+      "sample_size": 15,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 14
+        },
+        {
+          "tag": "ingested",
+          "frequency": 14
+        },
+        {
+          "tag": "ace",
+          "frequency": 9
+        },
+        {
+          "tag": "sarah",
+          "frequency": 6
+        },
+        {
+          "tag": "protocol",
+          "frequency": 5
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "PRIORITY: Focus on 'legacy' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ingested' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ace' patterns (appeared 9 times).",
+        "PRIORITY: Focus on 'sarah' patterns (appeared 6 times).",
+        "PRIORITY: Focus on 'protocol' patterns (appeared 5 times)."
+      ]
+    },
+    {
+      "timestamp": "2026-01-10T17:51:05.588312",
+      "sample_size": 15,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 14
+        },
+        {
+          "tag": "ingested",
+          "frequency": 14
+        },
+        {
+          "tag": "ace",
+          "frequency": 9
+        },
+        {
+          "tag": "sarah",
+          "frequency": 6
+        },
+        {
+          "tag": "protocol",
+          "frequency": 5
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "PRIORITY: Focus on 'legacy' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ingested' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ace' patterns (appeared 9 times).",
+        "PRIORITY: Focus on 'sarah' patterns (appeared 6 times).",
+        "PRIORITY: Focus on 'protocol' patterns (appeared 5 times)."
+      ]
+    },
+    {
+      "timestamp": "2026-01-10T17:51:47.525993",
+      "sample_size": 15,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 14
+        },
+        {
+          "tag": "ingested",
+          "frequency": 14
+        },
+        {
+          "tag": "ace",
+          "frequency": 9
+        },
+        {
+          "tag": "sarah",
+          "frequency": 6
+        },
+        {
+          "tag": "protocol",
+          "frequency": 5
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "PRIORITY: Focus on 'legacy' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ingested' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ace' patterns (appeared 9 times).",
+        "PRIORITY: Focus on 'sarah' patterns (appeared 6 times).",
+        "PRIORITY: Focus on 'protocol' patterns (appeared 5 times)."
+      ]
+    },
+    {
+      "timestamp": "2026-01-10T17:55:15.898559",
+      "sample_size": 15,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 14
+        },
+        {
+          "tag": "ingested",
+          "frequency": 14
+        },
+        {
+          "tag": "ace",
+          "frequency": 9
+        },
+        {
+          "tag": "sarah",
+          "frequency": 6
+        },
+        {
+          "tag": "protocol",
+          "frequency": 5
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "PRIORITY: Focus on 'legacy' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ingested' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ace' patterns (appeared 9 times).",
+        "PRIORITY: Focus on 'sarah' patterns (appeared 6 times).",
+        "PRIORITY: Focus on 'protocol' patterns (appeared 5 times)."
+      ]
+    },
+    {
+      "timestamp": "2026-01-10T17:56:11.09277703703703",
+      "sample_size": 15,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 14
+        },
+        {
+          "tag": "ingested",
+          "frequency": 14
+        },
+        {
+          "tag": "ace",
+          "frequency": 9
+        },
+        {
+          "tag": "sarah",
+          "frequency": 6
+        },
+        {
+          "tag": "protocol",
+          "frequency": 5
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "PRIORITY: Focus on 'legacy' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ingested' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ace' patterns (appeared 9 times).",
+        "PRIORITY: Focus on 'sarah' patterns (appeared 6 times).",
+        "PRIORITY: Focus on 'protocol' patterns (appeared 5 times)."
+      ]
+    },
+    {
+      "timestamp": "2026-01-10T18:00:49.218713",
+      "sample_size": 15,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 14
+        },
+        {
+          "tag": "ingested",
+          "frequency": 14
+        },
+        {
+          "tag": "ace",
+          "frequency": 9
+        },
+        {
+          "tag": "sarah",
+          "frequency": 6
+        },
+        {
+          "tag": "protocol",
+          "frequency": 5
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "PRIORITY: Focus on 'legacy' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ingested' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ace' patterns (appeared 9 times).",
+        "PRIORITY: Focus on 'sarah' patterns (appeared 6 times).",
+        "PRIORITY: Focus on 'protocol' patterns (appeared 5 times)."
+      ]
     }
   ],
   "patterns": [],

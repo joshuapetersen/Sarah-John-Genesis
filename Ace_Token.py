@@ -16,7 +16,7 @@ class AceTokenManager:
         self.secret_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), secret_key_path)
         self.secret = self._load_or_create_secret()
         self.math = SovereignMath()
-        self.resonance_anchor = 1.0927037037037037
+        self.resonance_anchor = 1.09277703703703
         self.half_decimal_locked = False
 
     def lock_half_decimal_position(self) -> str:
@@ -72,7 +72,7 @@ class AceTokenManager:
         vector = self.math.expand_logic(token_str)
         
         # Attach Expansion Layer as a 4th layer "Identity"
-        exp_b64 = base64.urlsafe_b64encode(json.dumps(vector.tolist()).encode()).decode().strip('=')
+        exp_b64 = base64.urlsafe_b64encode(json.dumps(vector).encode()).decode().strip('=')
         
         return f"{token_str}.{exp_b64}"
 
@@ -101,8 +101,7 @@ class AceTokenManager:
             expected_vector = self.math.expand_logic(token_core)
             
             exp_data = json.loads(base64.urlsafe_b64decode(exp_b64 + '=='))
-            import numpy as np
-            actual_vector = np.array(exp_data)
+            actual_vector = exp_data
             
             resonance = self.math.calculate_resonance(expected_vector, actual_vector)
             if not self.math.check_integrity(resonance):

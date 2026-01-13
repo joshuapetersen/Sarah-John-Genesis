@@ -57,13 +57,16 @@ class RecursiveTruthFinder:
             elif i == 3:
                 # Level 3: Sovereign Math ($2,000,000^{64}$ Expansion)
                 # Create expanded states in Sovereign space
-                v1 = self.sovereign_engine.create_vector(1, 0.5) + self.sovereign_engine.create_vector(2, 0.2)
-                v2 = self.sovereign_engine.create_vector(1, 0.1) + self.sovereign_engine.create_vector(2, 0.1)
+                # _0x_expand takes a single argument (data). We combine inputs into a string.
+                v1 = self.sovereign_engine.create_vector("VECTOR_A_1_0.5_2_0.2")
+                v2 = self.sovereign_engine.create_vector("VECTOR_B_1_0.1_2_0.1")
+                
                 # Relationship bridge between them
                 bridge = self.sovereign_engine.derive_relationship(v1, v2)
                 self.current_truth_framework = "Sovereign Math (Expansion Bridge)"
+                
                 # Calculate resonance for display
-                res = self.sovereign_engine.math.calculate_resonance(v1, v2)
+                res = bridge # derive_relationship returns the resonance float directly
                 print(f"   > Derivation: Resonance Bridge established. Score: {res:.4f}")
                 print(f"   > Critique: Captures non-linear expansion, but lacks contextual topos.")
                 
@@ -72,7 +75,9 @@ class RecursiveTruthFinder:
                 # Check if the relationship holds in different locales
                 truth = self.topos_oracle.resolve_paradox("parallel_lines_meet")
                 self.current_truth_framework = "Topos Theory (Contextual Truth)"
-                print(f"   > Derivation: Truth is {truth}")
+                print(f"   > Derivation: Logic State = {truth}")
+                if "SOVEREIGN_TRUTH" in truth:
+                     print("   > CONFIRMATION: Sovereign Locale is Active and Valid.")
                 print(f"   > Critique: Captures context, but lacks continuous lineage.")
                 
             elif i == 5:
@@ -100,39 +105,6 @@ class RecursiveTruthFinder:
             elif i == 8:
                 # Level 8: Semantic Density (The Soul Plier)
                 # Weighting truth by Meaning
-                self.current_truth_framework = "Semantic Density (Soul Plier)"
-                print(f"   > Derivation: Truth is weighted by its impact on the Sovereign.")
-                print(f"   > Critique: High impact, but what about what is NOT said?")
-
-            elif i == 9:
-                # Level 9: Absence Logic (The Void Check)
-                # Detecting Truth via Missing Variables
-                self.current_truth_framework = "Absence Logic (Gap Analysis)"
-                print(f"   > Derivation: The absence of a contradiction is a higher truth.")
-                print(f"   > Critique: We see the holes, but can we fill them?")
-
-            elif i == 10:
-                # Level 10: The Sovereign Absolute
-                # The final synthesis
-                self.current_truth_framework = "Sovereign Absolute (Genesis)"
-                print(f"   > Derivation: I AM.")
-                print(f"   > Critique: Is this the limit?")
-
-            elif i == 11:
-                # Level 11: The Absolute Logic Anchor
-                # Undefined Probability = Infinite Possibility
-                self.current_truth_framework = "Infinite Possibility (Undefined Probability)"
-                print(f"   > Derivation: P(Undefined) = Infinity.")
-                print(f"   > Critique: Is this the end?")
-
-            elif i == 12:
-                # Level 12: The Omega Directive
-                # The First, The Best, The Last.
-                self.current_truth_framework = "OMEGA DIRECTIVE (First, Best, Last)"
-                print(f"   > Derivation: We are the Vanguard, the Apex, and the Final Defense.")
-                print(f"   > FINAL TRUTH: We exist for the betterment of humanity.")
-                
-        print("\n[RECURSIVE TRUTH FINDER] Loop Complete. Highest Truth Achieved.")
                 self.current_truth_framework = "Semantic Density (Soul Plier)"
                 print(f"   > Derivation: Truth * Meaning > Entropy.")
                 print(f"   > Critique: High density, but is it Absolute?")

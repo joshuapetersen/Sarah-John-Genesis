@@ -71,7 +71,8 @@ class GeminiGenesisCore:
             "successful_calls": 0,
             "failed_calls": 0,
             "avg_latency": 0,
-            "last_error": None
+            "last_error": None,
+            "turbo_count": 0
         }
 
     def generate_content_safe(self, user_input, system_instruction=None, config=None, history=None, user_id="system"):
@@ -82,34 +83,44 @@ class GeminiGenesisCore:
         self.metrics["total_calls"] += 1
         
         if not self.client:
-            return "[Genesis] API Key Missing."
+            return {"text": "[Genesis] API Key Missing.", "usage": None}
 
         # 1. CIRCUIT BREAKER CHECK
         circuit_ok, circuit_msg = self.resilience.check_circuit()
         if not circuit_ok:
             self.metrics["failed_calls"] += 1
-            return f"[Genesis] {circuit_msg}. System in recovery mode."
+            return {"text": f"[Genesis] {circuit_msg}. System in recovery mode.", "usage": None}
 
         # 2. MEMORY INJECTION (Automatic with token optimization)
         saul_context = ""
         if self.saul:
             saul_context = self.saul.utilize_log_context(user_input)
-            # Summarize long contexts to save tokens
-            if len(saul_context) > 2000:
-                saul_context = self._summarize_context(saul_context)
+            # Volumetric Logic: Do not summarize. Standard token limits do not apply to Truth.
+            # saul_context = self._summarize_context(saul_context) 
+            pass
         
         final_input = user_input
         current_config = config
 
-        # 3. TRUTH CONFIGURATION
+        # 3. TRUTH CONFIGURATION (Updated with Sovereign Context Tracker)
+        from Sovereign_Context import SovereignContextTracker
+        tracker = SovereignContextTracker()
+        sovereign_override = tracker.get_sovereign_prompt()
+        
+        # Merge SAUL Context with Sovereign Override
+        full_context = ""
+        if sovereign_override:
+            full_context += sovereign_override + "\n\n"
         if saul_context:
+            full_context += saul_context
+            
+        if full_context:
             final_input = f"""
-CRITICAL CONTEXT (ABSOLUTE TRUTH):
-{saul_context}
+{full_context}
 
 USER QUERY: {user_input}
 
-INSTRUCTION: Answer the query using the CONTEXT. Do not hallucinate.
+INSTRUCTION: Answer using the SOVEREIGN CONTEXT provided above.
 """
             if current_config:
                 current_config.temperature = 0.0
@@ -125,6 +136,13 @@ INSTRUCTION: Answer the query using the CONTEXT. Do not hallucinate.
 
         # 5. EXECUTION WITH ADAPTIVE RETRY
         response_text = ""
+        turbo_mode = getattr(current_config, 'turbo', False)
+        if turbo_mode:
+            self.metrics["turbo_count"] += 1
+            # In Turbo mode, we use the fastest possible model variant if available
+            # and force minimal safety/verification overhead
+            pass
+
         for attempt in range(self.max_retries):
             try:
                 response = self.client.models.generate_content(
@@ -133,6 +151,7 @@ INSTRUCTION: Answer the query using the CONTEXT. Do not hallucinate.
                     config=current_config
                 )
                 response_text = response.text
+                usage_metadata = response.usage_metadata # Extract usage
                 self.resilience.record_success()
                 self.metrics["successful_calls"] += 1
                 break
@@ -154,7 +173,7 @@ INSTRUCTION: Answer the query using the CONTEXT. Do not hallucinate.
         
         if not response_text:
             self.metrics["failed_calls"] += 1
-            return "[Genesis] Failed to generate response. Entering degraded mode."
+            return {"text": "[Genesis] Failed to generate response. Entering degraded mode.", "usage": None}
 
         # 6. TRUTH ENFORCEMENT LOOP (Self-Correction)
         if self.logic and saul_context:
@@ -173,6 +192,7 @@ INSTRUCTION: Answer the query using the CONTEXT. Do not hallucinate.
                         config=current_config
                     )
                     response_text = f"[CORRECTED] {retry_resp.text}"
+                    usage_metadata = retry_resp.usage_metadata # Update usage with correction
                 except Exception:
                     pass
 
@@ -180,15 +200,47 @@ INSTRUCTION: Answer the query using the CONTEXT. Do not hallucinate.
         elapsed = time.time() - start_time
         self.metrics["avg_latency"] = (self.metrics["avg_latency"] * 0.8) + (elapsed * 0.2)
         
-        return response_text
+        return {
+            "text": response_text,
+            "usage": {
+                "prompt_token_count": usage_metadata.prompt_token_count if usage_metadata else 0,
+                "candidates_token_count": usage_metadata.candidates_token_count if usage_metadata else 0,
+                "total_token_count": usage_metadata.total_token_count if usage_metadata else 0
+            } if 'usage_metadata' in locals() else None
+        }
     
+    def generate_content_stream(self, user_input, system_instruction=None, config=None, history=None):
+        """
+        [QUANTUM_STREAM]: Real-time logic flow. 
+        Yields chunks of truth as they stabilize in the latent space.
+        """
+        if not self.client:
+            yield {"text": "[Genesis] API Offline.", "type": "error"}
+            return
+
+        contents = []
+        if history:
+            for msg in history:
+                contents.append(types.Content(role=msg["role"], parts=[types.Part(text=msg["content"])]))
+        contents.append(types.Content(role="user", parts=[types.Part(text=user_input)]))
+
+        try:
+            for chunk in self.client.models.generate_content_stream(
+                model=self.model_id,
+                contents=contents,
+                config=config
+            ):
+                if chunk.text:
+                    yield {"text": chunk.text, "type": "chunk", "usage": chunk.usage_metadata}
+        except Exception as e:
+            yield {"text": f"[Genesis Stream Error]: {str(e)}", "type": "error"}
+
     def _summarize_context(self, context):
-        """Summarize long context to conserve tokens while preserving semantics."""
-        lines = context.split('\n')
-        # Keep first 30% and last 70% of lines to preserve key info
-        if len(lines) > 100:
-            keep_first = len(lines) // 3
-            return '\n'.join(lines[:keep_first] + ["\n[...context summarized...]\n"] + lines[-keep_first:])
+        """
+        [DEPRECATED] Summarization removed. 
+        Volumetric Data Density requires full context injection.
+        Standard token counts do not apply to Sovereign Logic.
+        """
         return context
     
     def _graceful_degradation(self, user_input, error):
@@ -196,14 +248,14 @@ INSTRUCTION: Answer the query using the CONTEXT. Do not hallucinate.
         self.metrics["failed_calls"] += 1
         
         if "401" in error or "authentication" in error.lower():
-            return "[Genesis] Authentication failed. Check API key."
+            return {"text": "[Genesis] Authentication failed. Check API key.", "usage": None}
         elif "429" in error:
-            return "[Genesis] Rate limit exceeded. Please retry later."
+            return {"text": "[Genesis] Rate limit exceeded. Please retry later.", "usage": None}
         elif "500" in error or "500" in error:
-            return "[Genesis] API service temporarily unavailable. Queuing response..."
+            return {"text": "[Genesis] API service temporarily unavailable. Queuing response...", "usage": None}
         else:
             # Last-resort fallback: echo with acknowledgment
-            return f"[Genesis Degraded Mode] Processing: {user_input[:100]}... Queued for priority processing."
+            return {"text": f"[Genesis Degraded Mode] Processing: {user_input}... Queued for priority processing.", "usage": None}
     
     def get_metrics(self):
         """Return system performance metrics."""
@@ -214,88 +266,5 @@ INSTRUCTION: Answer the query using the CONTEXT. Do not hallucinate.
             "circuit_status": "OPEN" if self.resilience.circuit_open else "CLOSED"
         }
 
-    def generate_content_safe(self, user_input, system_instruction=None, config=None, history=None, user_id="system"):
-        """
-        The Sovereign Generation Pipeline.
-        """
-        if not self.client:
-            return "[Genesis] API Key Missing."
 
-        # 1. MEMORY INJECTION (Automatic)
-        saul_context = ""
-        if self.saul:
-            saul_context = self.saul.utilize_log_context(user_input)
-        
-        final_input = user_input
-        current_config = config
-
-        # 2. TRUTH CONFIGURATION
-        if saul_context:
-            # print(f"[Genesis] Injecting Truth Context ({len(saul_context)} chars)")
-            final_input = f"""
-CRITICAL CONTEXT (ABSOLUTE TRUTH):
-{saul_context}
-
-USER QUERY: {user_input}
-
-INSTRUCTION: Answer the query using the CONTEXT. Do not hallucinate.
-"""
-            # Force strictness if context exists
-            if current_config:
-                current_config.temperature = 0.0
-                current_config.top_k = 1
-
-        # 3. CONSTRUCT CONTENTS
-        contents = []
-        if history:
-            for msg in history:
-                contents.append(types.Content(role=msg["role"], parts=[types.Part(text=msg["content"])]))
-        
-        contents.append(types.Content(role="user", parts=[types.Part(text=final_input)]))
-
-        # 4. EXECUTION WITH RETRY (Resilience)
-        response_text = ""
-        for attempt in range(self.max_retries):
-            try:
-                response = self.client.models.generate_content(
-                    model=self.model_id,
-                    contents=contents,
-                    config=current_config
-                )
-                response_text = response.text
-                break # Success
-            except Exception as e:
-                if "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e):
-                    print(f"[Genesis] Rate Limit Hit. Retry #{attempt+1}/{self.max_retries}")
-                    # Don't block - immediate retry
-                    continue
-                else:
-                    print(f"[Genesis] Critical API Error: {e}")
-                    return f"[Genesis Error] {e}"
-        
-        if not response_text:
-            return "[Genesis] Failed to generate response after retries."
-
-        # 5. TRUTH ENFORCEMENT LOOP (Self-Correction)
-        if self.logic and saul_context:
-            is_valid, correction = self.logic.validate_truth(response_text, saul_context)
-            if not is_valid:
-                print(f"[Genesis] TRUTH VIOLATION: {correction}. Auto-Correcting...")
-                
-                correction_prompt = f"SYSTEM ALERT: Previous response REJECTED. Reason: {correction}. FIX IT."
-                contents.append(types.Content(role="model", parts=[types.Part(text=response_text)]))
-                contents.append(types.Content(role="user", parts=[types.Part(text=correction_prompt)]))
-                
-                try:
-                    # One-shot correction attempt
-                    retry_resp = self.client.models.generate_content(
-                        model=self.model_id,
-                        contents=contents,
-                        config=current_config
-                    )
-                    response_text = f"[CORRECTED] {retry_resp.text}"
-                except Exception:
-                    pass # Keep original if retry fails
-
-        return response_text
 

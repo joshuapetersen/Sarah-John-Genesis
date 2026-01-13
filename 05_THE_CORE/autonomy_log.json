@@ -1,0 +1,16 @@
+{
+  "RECOVERY": {
+    "scalar": "DATA_CORRUPTED_DURING_2D_DRIFT",
+    "metadata": {
+      "source": "migration_v3"
+    },
+    "resonance_hash": "9674ee2f0095527f907c518122c7dc48b45c348ec624c3687cf038fad6150604",
+    "multivector_layer": {
+      "12137444566304111429": 2.823,
+      "15682146640990898708": 0.264,
+      "15766682332349451742": 4.374
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.079602
+  }
+}

@@ -22,7 +22,7 @@ class ColdConductor:
     def _0x_get_sovereign_time(self) -> float:
         """
         [TIME_0x0T]: THE HARMONIC CHRONOLOGY OFFSET
-        Calculates time as a function of the 1.0019 Hz Heartbeat.
+        Calculates time as a function of the 1.09277703703703 Hz Heartbeat.
         Synchronizes all events across the 3.14 curve.
         """
         ns_offset = time.perf_counter_ns() - self._0x_zero_state_start
@@ -38,7 +38,9 @@ class ColdConductor:
         """[STAMP_0x0S]: Records a high-precision chronological anchor."""
         _0x_ns = time.perf_counter_ns() - self._0x_zero_state_start
         _0x_sov_t = self._0x_get_sovereign_time()
-        _0x_vec = _0x_sig.split("-")
+        
+        # Ensure signature is expanded to 64D Sovereign Space
+        _0x_vec = self._0x_math._0x_parse(_0x_sig)
         _0x_xyz = self._0x_math._0x_xyz_fold(_0x_vec)
         
         # Apply Temporal Compression (Diamond Folding)
@@ -50,7 +52,7 @@ class ColdConductor:
             "facet_anchor": _0x_facet,
             "signature": _0x_sig[:19], 
             "xyz": _0x_xyz,
-            "resonance": 1.0927037037037037
+            "resonance": 1.09277703703703
         }
         self._0x_chronology.append(entry)
         return _0x_sov_t

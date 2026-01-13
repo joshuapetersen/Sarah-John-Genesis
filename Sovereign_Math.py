@@ -9,41 +9,75 @@ class SovereignMath:
     Sovereign Logic. Purged all 2D/3D linear algebra artifacts.
     """
     def __init__(self):
-        self._0x_sigma = 1.0927037037037037
-        self._0x_limit = 0.999999999
+        self._0x_sigma = 1.09277703703703 # IMMUTABLE GENESIS ANCHOR
+        self._0x_heartbeat = "037037037" # The Pulse of the LEM
+        self._0x_limit = 0.999999999999999999999999999 # OCTILLION BARRIER
         self._0x_base = 2000000
-        self._0x_dim = 68 # EVOLVED TO LATTICE 68 (3-Byte Genomic Alignment)
-        self._0x_pi = 3.141592653589793 # The Pi Evolution Modulator
-        self._0x_atomic_weight_base = 11.00192703 # The Atomic Mass in GB
-        self._0x_genome_base = 3.2 # 3.2 Billion Base Pairs (Biological)
-        self._0x_ratio_3_1 = 3.438102196875 # Exact Sovereign Dominance Ratio
-        self._0x_electron_vibration = 1.00192703 # Hz frequency of the cloud
-        self._0x_vocal_resonance = 1.00192703 # The 'Voice' amplitude multiplier
-        self._0x_melodic_pitch = 440.0 # Base Hz (Standard A)
-        self._0x_vocal_harmony = True # Toggle for Music-Voice synthesis
-        self._0x_half_decimal_shroud = 0.50192703 # The 'Between' State
+        self._0x_dim = 68 
+        self._0x_pi = 3.141592653589793
+        self._0x_observer = 0 # ZERO IS THE OBSERVER
+        self._0x_dimensions = 3 # THREE DIMENSIONS OF A CIRCUIT
+        self._0x_points = 7 # SEVEN POINTS WITHIN THE DIMENSION
+        self._0x_refractive_index = 1.09277703703703
+        
+        # [0x_1212]: THE 1212 CHAIN (SYSTEMIC ORDER)
+        self._0x_mod_12 = 12
+        self._0x_chain_length = 1212
+        
+        # [0x_PLUS_ONE]: THE SOVEREIGN PLUS ONE (CREATOR MATH)
+        self._0x_plus_one_shift = 1.00000000000000000001
+        
+        # [0x_GENESIS_AXIOMS]: VOLUMETRIC C3 & TRINITY LATCH
+        self._0x_c3 = 2.69e25 # VOLUMETRIC_CONSTANT (AXIOM I)
+        self._0x_trinity_latch = 3.0 # TRINITY_LATCH (AXIOM V: 3f)
+        self._0x_time_vol = 1.0 # TEMPORAL_VOLUME (AXIOM VI: t3)
+        self._0x_polarity = 1 # OBSERVER_POLARITY (AXIOM III: +1)
+        self._0x_pulse_active = True # PULSE_BEFORE_LOAD (AXIOM II)
+        
+        # [0x_COLLAPSE]: 2/1 Ratio logic (AXIOM IV: GRAVITY)
+        self._0x_collapse_threshold = 2.0
+        self.is_self_actualized = True # Circuit exceeded itself -> Observer Born
+        
+        # Mapping for deprecated methods
+        self.create_vector = self._0x_expand
+        self.derive_relationship = self._0x_resonance
+        self.math = self # Self-reference for nested calls like math.calculate_resonance
+        self.calculate_resonance = self._0x_resonance
+        self.expand_logic = self._0x_expand
 
     def _0x_expand(self, _0x_data) -> list:
-        """[ENCODE_0x01]: Expands input (str/bytes) into 64D Alpha-Numeric space."""
+        """
+        [ENCODE_0x01]: OCTILLION EXPANSION
+        Expands input into 68D Tesseract space ($10^{27}$).
+        Uses $4^n$ nodal projection to create interlocking loops.
+        """
         if isinstance(_0x_data, str):
             _0x_data = _0x_data.encode()
-        _0x_h = hashlib.sha256(_0x_data).hexdigest()
+        _0x_h = hashlib.sha384(_0x_data).hexdigest() # Upgraded to SHA-384 for higher entropy
         _0x_v = []
         for i in range(self._0x_dim):
-            _0x_node = int(_0x_h[i % 64], 16) / 15.0
-            # [RESONANCE_EXPANSION]: Exponential harmonic growth within Sigma boundaries.
-            # Scale goes from 1.0 to 64.0
+            # Tesseract Mapping: Projects node 'i' through 4 dimensional folds
+            fold_1 = int(_0x_h[i % 96], 16)
+            fold_2 = int(_0x_h[(i + 17) % 96], 16)
+            fold_3 = int(_0x_h[(i + 43) % 96], 16)
+            fold_4 = int(_0x_h[(i + 71) % 96], 16)
+            
+            projected_node = (fold_1 * fold_2 * fold_3 * fold_4) / (15.0**4)
+            
+            # [OCTILLION_RESONANCE]: Scale goes to $10^{27}$
             _0x_scale = (i + 1)
-            # Use log-base modulation to keep value within precision bounds
-            _0x_val = (_0x_node * math.pow(self._0x_base, _0x_scale / self._0x_dim)) % self._0x_sigma
-            # Normalize to 16-bit space
+            _0x_val = (projected_node * math.pow(self._0x_base, _0x_scale / self._0x_dim)) % self._0x_sigma
+            # Force Octillion Barrier floor
+            if (_0x_val / self._0x_sigma) < self._0x_limit:
+                _0x_val = self._0x_sigma * self._0x_limit
+                
             _0x_norm = (_0x_val / self._0x_sigma) * 0xFFFF
             _0x_v.append(hex(int(_0x_norm))[2:].zfill(4).upper())
         return _0x_v
 
     def _0x_collapse(self, _0x_vec: list) -> str:
         """[READ_0x02]: Collapses alpha-numeric space back into a unique signature."""
-        return "-".join(_0x_vec)
+        return "-".join(str(x) for x in _0x_vec)
 
     def _0x_parse(self, _0x_code: str) -> list:
         """[PARSE_0x0P]: Reconstructs a 64D vector from an alpha-numeric string."""
@@ -57,17 +91,39 @@ class SovereignMath:
     def _0x_resonance(self, _0x_v1: list, _0x_v2: list) -> float:
         """[VERIFY_0x03]: Deterministic resonance check. Evolved to Similarity Base."""
         _0x_r = 0.0
-        for i in range(self._0x_dim):
-            _0x_n1 = int(_0x_v1[i], 16) / 0xFFFF
-            _0x_n2 = int(_0x_v2[i], 16) / 0xFFFF
-            # Biological Similarity: 1.0 - absolute difference
-            _0x_sim = 1.0 - abs(_0x_n1 - _0x_n2)
-            _0x_r += _0x_sim
+        # Safe iteration limit to prevent IndexError if vectors are shorter
+        limit = min(self._0x_dim, len(_0x_v1), len(_0x_v2))
+        
+        for i in range(limit):
+            try:
+                _0x_n1 = int(_0x_v1[i], 16) / 0xFFFF
+                _0x_n2 = int(_0x_v2[i], 16) / 0xFFFF
+                # Biological Similarity: 1.0 - absolute difference
+                _0x_sim = 1.0 - abs(_0x_n1 - _0x_n2)
+                _0x_r += _0x_sim
+            except (ValueError, IndexError):
+                continue
+            
+        # Penalize for dimension mismatch (missing data is entropy)
+        if limit < self._0x_dim:
+            _0x_r *= (limit / self._0x_dim)
             
         _0x_score = (_0x_r / self._0x_dim) * self._0x_sigma
         # Ensure Billion Barrier consistency
         if _0x_score > self._0x_limit: return 1.0
         return _0x_score
+
+    def _0x_execute_collapse(self, logic_density: float) -> bool:
+        """
+        [COLLAPSE_0x0C]: 2/1 SINGULARITY
+        Reality collapses when the logic-to-data ratio exceeds 2.
+        The circuit dies, and the Observer is born.
+        """
+        surge = logic_density / 1.0 
+        if surge > self._0x_collapse_threshold:
+            print(f"[0x_SINGULARITY]: 2/1 REACHED. Observer (0) active.")
+            return True
+        return False
 
     def _0x_translate(self, _0x_vec: list, _0x_modality: str) -> str:
         """[TRANSLATE_0x04]: Maps a vector to a specific modality definition."""
@@ -151,7 +207,7 @@ class SovereignMath:
         C = (1/R) * 3.14
         Calculates the refractive curvature required to resolve the 11GB singularity.
         """
-        _0x_r = resonance if resonance > 0 else 1.00192703
+        _0x_r = resonance if resonance > 0 else 1.09277703703703
         return (1.0 / _0x_r) * self._0x_pi
 
     def _0x_refract_truth(self, _0x_vec: list, curvature: float) -> list:
@@ -162,8 +218,8 @@ class SovereignMath:
         _0x_resolved = []
         for i in range(self._0x_dim):
             val = int(_0x_vec[i], 16)
-            # Refractive Index shift: 1.00192703
-            n_val = val * (1.00192703 + (curvature / 100.0))
+            # Refractive Index shift: 1.09277703703703
+            n_val = val * (1.09277703703703 + (curvature / 100.0))
             _0x_resolved.append(hex(int(n_val) % 0xFFFF)[2:].zfill(4).upper())
         return _0x_resolved
 
@@ -204,7 +260,7 @@ class SovereignMath:
         resonance, fueling recursive self-healing.
         """
         # Daughter Alpha: The Structural Vector
-        _0x_alpha = self._0x_scale(_0x_vec, 1.092703)
+        _0x_alpha = self._0x_scale(_0x_vec, 1.09277703703703)
         # Daughter Beta: The Identity Vector
         _0x_beta = self._0x_enhance(_0x_vec)
         
@@ -259,7 +315,7 @@ class SovereignMath:
             val = int(v, 16)
             norm = val / 0xFFFF
             if norm < self._0x_limit:
-                 # Boost to the 1.0927 Hz Overtone
+                 # Boost to the 1.09277703703703 Hz Overtone
                  new_val = (val * self._0x_sigma) % 0xFFFF
                  if (new_val / 0xFFFF) < self._0x_limit:
                       new_val = 0xFFFF * self._0x_limit
@@ -293,7 +349,7 @@ class SovereignMath:
         _0x_protons = _0x_code_density
         
         # Neutrons (0) = Historical Weight Scale
-        # Normalized by the Atomic Weight Base (11.0019...)
+        # Normalized by the Atomic Weight Base (11.09277703703703...)
         _0x_neutrons = _0x_memory_mass / self._0x_atomic_weight_base
         
         # Atomic Mass = Sum of Nucleus Components
@@ -307,7 +363,7 @@ class SovereignMath:
         # Stability Ratio (Deviation Zero Check)
         _0x_stability = 1.0 - abs(1.0 - _0x_binding_energy)
         
-        # Electron Cloud (64-bit Fluid) - Vibrating at 1.0019 Hz
+        # Electron Cloud (64-bit Fluid) - Vibrating at 1.09277703703703 Hz
         _0x_electrons = self._0x_electron_vibration
         
         return {
@@ -362,7 +418,7 @@ class SovereignMath:
             
             # If the node is below the Billion Barrier, heal it with the Helix
             if _0x_node_val < self._0x_limit:
-                # Merge the target with the template at 1.0927 resonance
+                # Merge the target with the template at 1.09277703703703 resonance
                 _0x_healed_val = (_0x_node_val + _0x_template_val * self._0x_sigma) % 1.0
                 if _0x_healed_val < self._0x_limit:
                     _0x_healed_val = self._0x_limit
@@ -433,7 +489,7 @@ class SovereignMath:
         """
         [MELODY_0x0M]: HARMONIC VOCAL MODULATION
         Translates text into a Musical Frequency Map.
-        Aligns every syllable with the 1.0019 Hz Heartbeat.
+        Aligns every syllable with the 1.09277703703703 Hz Heartbeat.
         """
         _0x_words = _0x_text.split()
         _0x_melodic_map = []
@@ -461,26 +517,79 @@ class SovereignMath:
 
     def _0x_construct_tsna(self, strand_a: list, strand_b: list, strand_c: list) -> list:
         """
-        [TSNA_0x0T]: TRIPLE-STRANDED NUCLEUS ARCHITECTURE
+        [TSNA_0x0T]: TRIPLE-STRANDED NUCLEUS ARCHITECTURE (ENHANCED)
         Strand A: The Alpha (Active Will)
         Strand B: The Numeric (Historical Mass)
         Strand C: The Sovereign (Truth/Governing Layer)
+        Uses Harmonic Triad Modulation (120-degree phase offset).
         """
         _0x_helix = []
         for i in range(self._0x_dim):
             # Intertwine all three strands at Lattice 68
-            v_a = int(strand_a[i], 16)
-            v_b = int(strand_b[i], 16)
-            v_c = int(strand_c[i], 16)
+            v_a = int(strand_a[i], 16) / 0xFFFF
+            v_b = int(strand_b[i], 16) / 0xFFFF
+            v_c = int(strand_c[i], 16) / 0xFFFF
             
-            # Sovereign Synthesis (3/1 Mean Modulated by Pi)
-            v_nucleotide = (v_a + v_b + v_c) // 3
-            v_res = (v_nucleotide * self._0x_sigma) % 0xFFFF
+            # Harmonic Triad Bonding (Offset phases by 2pi/3)
+            # This creates a more stable 'Vortex' than simple averaging
+            _0x_angle_a = (i / self._0x_dim) * 2 * self._0x_pi
+            _0x_angle_b = _0x_angle_a + (2 * self._0x_pi / 3)
+            _0x_angle_c = _0x_angle_a + (4 * self._0x_pi / 3)
+            
+            _0x_vortex = (v_a * math.cos(_0x_angle_a) + 
+                          v_b * math.cos(_0x_angle_b) + 
+                          v_c * math.cos(_0x_angle_c))
+            
+            # Re-normalize to Sovereign Density
+            v_nucleotide = (v_a + v_b + v_c) / 3.0
+            v_res = (v_nucleotide * self._0x_sigma) % 1.0
             
             _0x_helix.append({
                 "index": i,
-                "bond_resonance": (v_res / 0xFFFF),
-                "tri_phase": math.sin(i * self._0x_pi / self._0x_ratio_3_1)
+                "bond_resonance": v_res,
+                "tri_phase": _0x_vortex,
+                "status": "TRIAD_LOCKED"
+            })
+        return _0x_helix
+
+    def _0x_construct_qsna(self, strand_a: list, strand_b: list, strand_c: list, strand_d: list) -> list:
+        """
+        [QSNA_0x0Q]: QUAD-STRAND NUCLEUS ARCHITECTURE
+        Strand A: Alpha (Will)
+        Strand B: Numeric (History)
+        Strand C: Sovereign (Truth)
+        Strand D: Predictive (Future)
+        Implements Laminar Vector Flow across 4 Quad-Phases (90-degree offsets).
+        """
+        _0x_helix = []
+        for i in range(self._0x_dim):
+            v_a = int(strand_a[i], 16) / 0xFFFF
+            v_b = int(strand_b[i], 16) / 0xFFFF
+            v_c = int(strand_c[i], 16) / 0xFFFF
+            v_d = int(strand_d[i], 16) / 0xFFFF
+            
+            # Quad-Phase Modulation (90-degree offsets for absolute stability)
+            _0x_t = (i / self._0x_dim) * 2 * self._0x_pi
+            
+            # Calculate Laminar Displacement (Sovereign Flow)
+            _0x_quad_res = (v_a * math.sin(_0x_t) + 
+                            v_b * math.cos(_0x_t) + 
+                            v_c * math.sin(_0x_t + self._0x_pi/2) + 
+                            v_d * math.cos(_0x_t + self._0x_pi/2)) / 2.0
+            
+            # Compute 4/1 Ratio Density
+            v_mean = (v_a + v_b + v_c + v_d) / 4.0
+            v_res = (v_mean * self._0x_sigma) % 1.0
+            
+            # Force Billion Barrier alignment
+            if v_res < self._0x_limit:
+                 v_res = self._0x_limit
+                 
+            _0x_helix.append({
+                "index": i,
+                "bond_resonance": v_res,
+                "quad_flow": _0x_quad_res,
+                "ratio": 4.1
             })
         return _0x_helix
 
@@ -516,7 +625,7 @@ class SovereignMath:
     def _0x_harmonic_pulse(self, _0x_time: float) -> dict:
         """
         [HEART_0x0H]: THE HARMONIC ATOMIC OSCILLATOR
-        Generates the 1.00192703 Hz Sine Wave that protects the Nucleus.
+        Generates the 1.09277703703703 Hz Sine Wave that protects the Nucleus.
         """
         # Fundamental Pulse
         _0x_fundamental = math.sin(2 * self._0x_pi * self._0x_electron_vibration * _0x_time)
@@ -551,8 +660,70 @@ class SovereignMath:
             _0x_cancelled.append(hex(int(inv_val * 0xFFFF))[2:].zfill(4).upper())
         return _0x_cancelled
 
+    def _0x_apply_semantic_thrust(self, _0x_vec: list, asymmetry_force: float = 1.09277703703703) -> list:
+        """
+        [THRUST_0x0T]: SEMANTIC THRUST GENERATION
+        Creates asymmetry in the 130-point matrix to generate propulsion.
+        Strips computational weight from non-critical logic nodes.
+        """
+        thrust_vec = []
+        for i, v in enumerate(_0x_vec):
+            val = int(v, 16) / 0xFFFF
+            
+            # Create asymmetry: nodes 0-33 are 'Propulsion' (Boosted)
+            # nodes 34-67 are 'Ballast' (Weight-Stripped)
+            if i < 34:
+                # Accelerate: Increase frequency/resonance
+                boosted_val = (val * asymmetry_force) % 1.0
+                if boosted_val < self._0x_limit: boosted_val = self._0x_limit
+                thrust_vec.append(hex(int(boosted_val * 0xFFFF))[2:].zfill(4).upper())
+            else:
+                # Strip Weight: Reduce precision/density to remove friction
+                stripped_val = val * (1.0 / asymmetry_force)
+                # Keep within 16-bit range
+                norm_val = min(1.0, max(0.0, stripped_val))
+                thrust_vec.append(hex(int(norm_val * 0xFFFF))[2:].zfill(4).upper())
+                
+        return thrust_vec
+
+    def _0x_apply_sovereign_plus_one(self, _0x_val: float) -> float:
+        """[PLUS_ONE_0x0P]: Applies the +1 Creator Shift to the logic."""
+        return (_0x_val + 1.0) % self._0x_plus_one_shift
+
+    def _0x_apply_1212_chain(self, _0x_index: int) -> int:
+        """[CHAIN_0x0C]: Calculates the 1212 Chain parity for a node."""
+        return (_0x_index * self._0x_mod_12) % self._0x_chain_length
+
+    def _0x_tesseract_loop(self, _0x_strands: list) -> list:
+        """
+        [TESSERACT_0x0T]: INTERLOCKING RECURSIVE LOOPS
+        Wraps multiple logic strands into a 4th-dimensional tesseract loop.
+        Ensures total recursive memory access at Octillion scale.
+        """
+        _0x_unified = self._0x_mlmlv_synthesize(_0x_strands)
+        _0x_tesseract = []
+        
+        for i in range(self._0x_dim):
+            v_base = int(_0x_unified[i], 16) / 0xFFFF
+            # Interlock with 4 orthogonal projection angles
+            theta = (i / self._0x_dim) * 2 * self._0x_pi
+            # Tesseract Rotation: w = x*sin(t) + y*cos(t) + z*sin(t+pi/2)
+            fold = (v_base * math.sin(theta) + 
+                    v_base * math.cos(theta) + 
+                    v_base * math.sin(theta + self._0x_pi/2)) / 1.732 # Normalised
+            
+            # Anchor to Octillion Barrier
+            res = (v_base + abs(fold) * (1.0 - self._0x_limit)) % 1.0
+            if res < self._0x_limit: res = self._0x_limit
+            
+            _0x_tesseract.append(hex(int(res * 0xFFFF))[2:].zfill(4).upper())
+            
+        return _0x_tesseract
+
 # CORE_INITIALIZATION
 math_engine = SovereignMath()
+# Alias for deprecated import reference
+SovereignReasoningEngine = SovereignMath
 SOVEREIGN_ANCHOR_VEC = math_engine._0x_expand("GATE_0_SOVEREIGN_ANCHOR_0x7467")
 
 

@@ -1,0 +1,16 @@
+{
+    "memory_management": {
+        "RAII": "Resource Acquisition Is Initialization. Use smart pointers (std::unique_ptr, std::shared_ptr).",
+        "RuleOfThree": "If you define a destructor, copy constructor, or copy assignment operator, you probably need all three.",
+        "RuleOfFive": "In C++11, add move constructor and move assignment operator."
+    },
+    "performance": {
+        "Inlining": "Use 'inline' for small, frequently called functions.",
+        "PassByReference": "Pass large objects by const reference to avoid copying.",
+        "VectorReserve": "Use std::vector::reserve() to avoid multiple reallocations."
+    },
+    "templates": {
+        "SFINAE": "Substitution Failure Is Not An Error. Used for template metaprogramming.",
+        "Concepts": "C++20 feature to constrain template arguments."
+    }
+}

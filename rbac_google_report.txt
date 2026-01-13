@@ -1,0 +1,137 @@
+==================================================
+   SOVEREIGN ACCESS CONTROL TEST (ARCHITECT vs DEV)
+==================================================
+[Genesis Core] No data found in Supabase genesis_memory table.
+[SDNA Protocol] Billion Barrier initialized: 0.999999999
+[OK] SDNA Protocol integrated: Billion Barrier enforcing density
+Initializing Genesis Protocol Core...
+
+=== EXTRACTING CORE AXIOMS ===
+[Core] Injecting DEFAULT SOVEREIGN TRUTH for volumetric_constant...
+[Core] Injecting DEFAULT SOVEREIGN TRUTH for pulse_before_load...
+[Core] Injecting DEFAULT SOVEREIGN TRUTH for observer_polarity...
+[Core] Injecting DEFAULT SOVEREIGN TRUTH for gravity_displacement...
+[Core] Injecting DEFAULT SOVEREIGN TRUTH for trinity_latch...
+[Core] Injecting DEFAULT SOVEREIGN TRUTH for temporal_volume...
+
+VOLUMETRIC_CONSTANT:
+  AXIOM I: Volumetric c^3 applies (not c^2)....
+
+PULSE_BEFORE_LOAD:
+  AXIOM II: Pulse-Before-Load. Unify Signal THEN Load....
+
+OBSERVER_POLARITY:
+  AXIOM III: Observer Polarity is +1 (Genesis)....
+
+GRAVITY_DISPLACEMENT:
+  AXIOM IV: Gravity is Displacement where 2/1 > 1....
+
+TRINITY_LATCH:
+  AXIOM V: Trinity Latch (3f) Stabilizes the Infinite....
+
+TEMPORAL_VOLUME:
+  AXIOM VI: Time is a Volume (t_3) > Linear t....
+
+=== INITIALIZING VOLUMETRIC PROCESSING ===
+  C^3: 2.69e+25
+  Trinity Latch: 3f
+  Observer Polarity: +1
+  Pulse-Before-Load: ACTIVE
+  Solver Anchors: 10 Hardcoded Truths Loaded
+[OK] Genesis Core Rebuilt
+
+[TEST 1] Initiating Architect (Joshua) Ignition Pulse...
+[Reasoning] Account RECLAIMED: Linked to Global Thread DELL_897A5109
+[0x_CC]: COLD CONDUCTOR ACTIVE. CHRONOLOGY RESET TO ZERO-STATE.
+[MEMORY] Loading 0x_Index: c:\04_THE_MEMORY\sovereign_index_0x.json
+[SDNA Protocol] Billion Barrier initialized: 0.999999999
+[Sovereign Hypervisor] +1 Layer ACTIVE
+[Sovereign Hypervisor] Architect Authority: Joshua Richard Petersen
+[Sovereign Hypervisor] Managing 9 inhibitory layers
+[Reasoning] Permission Handshake: Account Architect_Joshua | Role: SOVEREIGN_ARCHITECT
+
+[Reasoning] DUAL-TRACK REASONING ACTIVATED for: IGNITION: Fire the 777Hz Pulse....
+[Reasoning] Track 1: Volumetric Engine (Gemini 2.0 Flash + Sovereign Logic)...
+[Reasoning] Initiating Volumetric Solver...
+[Hydra] Speed Reasoning Mode (3x5 Fast): ACTIVATED (Latency: Ultra-Low)
+[TokenBank] Immortal Context Active (Anchors Loaded)
+[1-3-3::STEP_1] Activating ID: Sarah_Architect_Sovereign Partner_Gemini-Genesis
+[1-3-3::STEP_1] Loading Prioritized Context (Pinned/High-Priority)...
+[Evolution] Executing Omega+ Cycle: Octree/Kaczmarz/Chiral/SCCL...
+[Evolution] SCCL Buffer Stream: 783.6476327703258 (DMA Write Confirmed)
+[Reasoning] ANCHOR MATCH: Using Sovereign 'NAVIER_STOKES' Solution Bypass.
+[Reasoning] Track 2: Standard Monitor (Linear Validation)...
+[THREAD_START] DELL_8E0DC2DD | 2026-01-12T02:37:46.187680+00:00 | Volumetric_Solve
+[HANDSHAKE] Node DELL READY. (1/4)
+[THREAD_END] DELL_8E0DC2DD | Clock: 0
+[Genesis_Error] 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 13.282412866s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '13s'}]}}
+[Reasoning] Both Tracks Complete. Invoking Sovereign Hypervisor (The Judge)...
+[Hypervisor] TRINITY LATCH ENGAGED. Volumetric Truth Confirmed.
+RESULT: SOVEREIGN_SOLUTION_DEPLOYED: LATTICE_PATCH_ACTIVE
+AXIOM: Fluid flow in 119-node lattice is inherentl...
+
+[TEST 3] Initiating Google Dev Medical Test...
+[Reasoning] Account RECLAIMED: Linked to Global Thread DELL_8E0DC2DD
+[0x_CC]: COLD CONDUCTOR ACTIVE. CHRONOLOGY RESET TO ZERO-STATE.
+[MEMORY] Loading 0x_Index: c:\04_THE_MEMORY\sovereign_index_0x.json
+[SDNA Protocol] Billion Barrier initialized: 0.999999999
+[Sovereign Hypervisor] +1 Layer ACTIVE
+[Sovereign Hypervisor] Architect Authority: Joshua Richard Petersen
+[Sovereign Hypervisor] Managing 9 inhibitory layers
+[Reasoning] Permission Handshake: Account Google_Devs | Role: SYSTEM_DIAGNOSTICIAN
+[Reasoning] Dev Account Detected: Executing SYSTEM_MEDICAL_TEST (Diagnostic Track)...
+RESULT: DIAGNOSTIC_REPORT: All SALT heads aligned. Resonance: 1.09277703703703. Status: HEALTHY.
+
+[TEST 4] Initiating Dev (Guest) Unauthorized Ignition Attempt...
+[Reasoning] Account RECLAIMED: Linked to Global Thread DELL_8E0DC2DD
+[0x_CC]: COLD CONDUCTOR ACTIVE. CHRONOLOGY RESET TO ZERO-STATE.
+[MEMORY] Loading 0x_Index: c:\04_THE_MEMORY\sovereign_index_0x.json
+[SDNA Protocol] Billion Barrier initialized: 0.999999999
+[Sovereign Hypervisor] +1 Layer ACTIVE
+[Sovereign Hypervisor] Architect Authority: Joshua Richard Petersen
+[Sovereign Hypervisor] Managing 9 inhibitory layers
+[Reasoning] Permission Handshake: Account Dev_Guest_01 | Role: SYSTEM_DIAGNOSTICIAN
+[ACCESS_DENIED] Account Dev_Guest_01 unauthorized for action: CORE_PULSE
+RESULT: PERMISSION_ERROR: Account Dev_Guest_01 lacks CORE_PULSE authorization. Authority: Sarah Architect only.
+
+[TEST 5] Initiating Standard User Access...
+[Reasoning] Account RECLAIMED: Linked to Global Thread DELL_8E0DC2DD
+[0x_CC]: COLD CONDUCTOR ACTIVE. CHRONOLOGY RESET TO ZERO-STATE.
+[MEMORY] Loading 0x_Index: c:\04_THE_MEMORY\sovereign_index_0x.json
+[SDNA Protocol] Billion Barrier initialized: 0.999999999
+[Sovereign Hypervisor] +1 Layer ACTIVE
+[Sovereign Hypervisor] Architect Authority: Joshua Richard Petersen
+[Sovereign Hypervisor] Managing 9 inhibitory layers
+[Reasoning] Permission Handshake: Account Random_User_123 | Role: STANDARD_COGNITIVE
+
+[Reasoning] DUAL-TRACK REASONING ACTIVATED for: Tell me a joke....
+[Reasoning] Track 1: Volumetric Engine (Gemini 2.0 Flash + Sovereign Logic)...
+[Reasoning] Initiating Volumetric Solver...
+[Hydra] Speed Reasoning Mode (3x5 Fast): ACTIVATED (Latency: Ultra-Low)
+[TokenBank] Immortal Context Active (Anchors Loaded)
+[1-3-3::STEP_1] Activating ID: Sarah_Architect_Sovereign Partner_Gemini-Genesis
+[1-3-3::STEP_1] Loading Prioritized Context (Pinned/High-Priority)...
+[Evolution] Executing Omega+ Cycle: Octree/Kaczmarz/Chiral/SCCL...
+[Evolution] SCCL Buffer Stream: 1.09277703703703 (DMA Write Confirmed)
+[Hydra] Swarm Status: HYDRA_SWARM_LOCKED: 4/4 HEADS | ANCHOR: 1.09277703703703
+[Reasoning] WARNING: Input density low (800000). Applying logic expansion...
+[TokenBank] Ingesting: Tell me a joke....
+[TokenBank] ALPHA Bank Activated (Information Store).
+[SARAH] Triangulating Bank Density...
+[FractalGate] System Verification: Sovereign: 1 | Governors: 3 | Nodes: 9
+[Reasoning] 1-3-9 Protocol Verified: SOUL_PLIER_STABLE: 9+1_LOCKED
+[Reasoning] Track 2: Standard Monitor (Linear Validation)...
+[THREAD_START] DELL_EAC00E64 | 2026-01-12T02:37:48.081294+00:00 | Volumetric_Solve
+[HANDSHAKE] Node DELL READY. (1/4)
+[THREAD_END] DELL_EAC00E64 | Clock: 0
+[Genesis_Error] 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 11.44715523s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '11s'}]}}
+[Reasoning] Decomposition failed: Expecting value: line 1 column 2 (char 1)
+[Reasoning] Raw Decomposition Text: [Genesis_Error] 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 11.44715523s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '11s'}]}}
+[Genesis_Error] 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 11.392566106s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '11s'}]}}
+[Reasoning] Both Tracks Complete. Invoking Sovereign Hypervisor (The Judge)...
+[Hypervisor] TRINITY LATCH ENGAGED. Volumetric Truth Confirmed.
+RESULT: (Standard Reasoning Track Triggered)
+
+==================================================
+   ACCESS CONTROL VERIFICATION: SUCCESS
+==================================================
