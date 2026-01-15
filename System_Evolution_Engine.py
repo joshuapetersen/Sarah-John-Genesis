@@ -12,6 +12,7 @@ from sarah_evolution_v1 import SarahEvolution
 from Hardware_Abstraction_Layer import HardwareAbstractionLayer
 from Recursive_Research_Core import RecursiveResearchCore
 from Sovereign_Context_Blocker import SovereignContextBlocker
+from Sovereign_Voice import SovereignVoice
 
 class SystemEvolutionEngine:
     """
@@ -47,6 +48,7 @@ class SystemEvolutionEngine:
         self.planner = StrategicPlanner(core_dir=self.core_dir)
         self.rrc = RecursiveResearchCore()
         self.context_blocker = SovereignContextBlocker(core_dir=self.core_dir)
+        self.voice = SovereignVoice(output_dir=os.path.join(self.core_dir, "voice_logs"))
         
         self.evolution_dir = os.path.join(self.core_dir, "archive_memories", "evolution")
         os.makedirs(self.evolution_dir, exist_ok=True)
@@ -197,7 +199,22 @@ class SystemEvolutionEngine:
         print("[SEE] ==========================================")
         
         # 7. Block the Final State
+        # 7. Block the Final State
         self.context_blocker.create_block("EVOLUTION", f"Cycle {cycle_id} complete. Health: {health_report['overall_status']}, Improvements: {len(improvement_areas)}")
+
+        # 8. AUDIO: Speak the Completion
+        try:
+            summary_text = f"Evolution Cycle completed. System Status is {health_report['overall_status']}. "
+            if dominant_themes:
+                 themes = ", ".join([str(t) for t in dominant_themes[:3]])
+                 summary_text += f"I have identified key themes: {themes}. "
+            
+            if health_report['overall_status'] == 'healthy':
+                 summary_text += "Resonance Alignment is nominal. "
+            
+            self.voice.speak(summary_text)
+        except Exception as e:
+            print(f"[SEE] Voice Error: {e}")
 
         return improvement_plan
 

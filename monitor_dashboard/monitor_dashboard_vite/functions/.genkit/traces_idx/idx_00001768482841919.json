@@ -1,0 +1,4 @@
+{"id":"5e6c4e66920bdb6a05c1339382d76e2a","type":"embedder","start":1768482893077,"name":"googleai/embedding-001","status":0}
+{"id":"5e6c4e66920bdb6a05c1339382d76e2a","type":"embedder","start":1768482893077,"name":"googleai/embedding-001","end":1768482893082.3943,"status":0}
+{"id":"ae348a66dc18880b8fe929fbae78d3fb","type":"flow","start":1768482900974,"name":"sarahReasoning","status":0}
+{"id":"ae348a66dc18880b8fe929fbae78d3fb","type":"flow","start":1768482900974,"name":"sarahReasoning","end":1768482901327.9192,"status":2}
