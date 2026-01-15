@@ -33,15 +33,16 @@ class SovereignContextBlocker:
         with open(self.lock_file, 'w') as f:
             json.dump(self.blocks, f, indent=2)
 
-    def create_block(self, domain, content, density=None):
+    def create_block(self, domain, content, density=None, foldable=False):
         """
         Creates a 'Context Block' - a high-density primitive that represents a domain state.
+        If foldable=True, blocks accumulate instead of being replaced (allowing for folding logic).
         """
         if density is None:
             density = self.math.calculate_theory_density(content)
             
         block = {
-            "block_id": f"BLK_{domain}_{int(time.time())}",
+            "block_id": f"BLK_{domain}_{int(time.time()*1000)}",
             "timestamp": datetime.now().isoformat(),
             "domain": domain,
             "density": f"{density:.4f}",
@@ -49,18 +50,42 @@ class SovereignContextBlocker:
             "resonance_anchor": 1.09277703703703
         }
         
-        # Upsert: If a block for this domain exists, replace it (Hierarchical Blocking)
-        self.blocks["blocks"] = [b for b in self.blocks.get("blocks", []) if b["domain"] != domain]
+        # If NOT foldable, replace existing block for this domain (Hierarchical Upsert)
+        if not foldable:
+            self.blocks["blocks"] = [b for b in self.blocks.get("blocks", []) if b["domain"] != domain]
+        
         self.blocks["blocks"].append(block)
         
-        print(f"[SCB] Context Block Created: {domain} (Density: {block['density']})")
+        print(f"[SCB] Context Block Created: {domain}{' (Foldable)' if foldable else ''} (Density: {block['density']})")
         self._save_blocks()
         return block
+
+    def fold_blocks(self, domain, max_blocks=5):
+        """
+        Implements Volumetric Folding: Compresses multiple blocks of a domain 
+        into a single high-density chronic summary.
+        """
+        domain_blocks = [b for b in self.blocks.get("blocks", []) if b["domain"] == domain]
+        if len(domain_blocks) <= max_blocks:
+            return
+            
+        print(f"[SCB] Folding Volume: {len(domain_blocks)} blocks in '{domain}' into Chronic State.")
+        chronic_summary = f"Chronic State for {domain}: "
+        chronic_summary += " | ".join([f"[{b['timestamp']}] {b['content']}" for b in domain_blocks])
+        
+        # Calculate new density for the folded block
+        avg_density = sum(float(b['density']) for b in domain_blocks) / len(domain_blocks)
+        
+        # Replace all with one Chronic Block
+        self.blocks["blocks"] = [b for b in self.blocks.get("blocks", []) if b["domain"] != domain]
+        self.create_block(f"CHRONIC_{domain}", chronic_summary, density=avg_density)
 
     def get_context_summary(self):
         """Returns a string summary of all active 'Blocks' for injection into LLM context."""
         summary = "*** SOVEREIGN CONTEXT BLOCKS ***\n"
-        for block in self.blocks.get("blocks", []):
+        # Always prioritize Chronic blocks
+        sorted_blocks = sorted(self.blocks.get("blocks", []), key=lambda x: "CHRONIC" in x["domain"], reverse=True)
+        for block in sorted_blocks:
             summary += f"[{block['domain']}] D:{block['density']}: {block['content']}\n"
         return summary
 
