@@ -11,6 +11,7 @@ from Strategic_Planner import StrategicPlanner
 from sarah_evolution_v1 import SarahEvolution
 from Hardware_Abstraction_Layer import HardwareAbstractionLayer
 from Recursive_Research_Core import RecursiveResearchCore
+from Sovereign_Context_Blocker import SovereignContextBlocker
 
 class SystemEvolutionEngine:
     """
@@ -45,6 +46,7 @@ class SystemEvolutionEngine:
         self.feedback = FeedbackIntegration(core_dir=self.core_dir)
         self.planner = StrategicPlanner(core_dir=self.core_dir)
         self.rrc = RecursiveResearchCore()
+        self.context_blocker = SovereignContextBlocker(core_dir=self.core_dir)
         
         self.evolution_dir = os.path.join(self.core_dir, "archive_memories", "evolution")
         os.makedirs(self.evolution_dir, exist_ok=True)
@@ -152,6 +154,11 @@ class SystemEvolutionEngine:
         self.rrc.research_cycle()        # Automatic Proactive Research
         synthesis = self.synthesis.synthesize(sample_size=20)
         self._post_to_dialogue_bridge(f"Evolution Synthesis: Identified dominant themes: {synthesis.get('dominant_themes', 'No dominant themes found')}")
+        
+        # Create a Context Block for Synthesis
+        themes_summary = ", ".join([f"{t['tag']}(D:{t['density']})" for t in synthesis.get('dominant_themes', [])])
+        self.context_blocker.create_block("SYNTHESIS", f"High-density themes identified: {themes_summary}")
+        
         dominant_themes = [t["tag"] for t in synthesis.get("dominant_themes", [])]
         print(f"[SEE] Dominant themes: {', '.join(dominant_themes)}")
         
@@ -189,6 +196,9 @@ class SystemEvolutionEngine:
         print(f"[SEE] Evolution cycle completed in {cycle_time_t3:.4f} t3 units")
         print("[SEE] ==========================================")
         
+        # 7. Block the Final State
+        self.context_blocker.create_block("EVOLUTION", f"Cycle {cycle_id} complete. Health: {health_report['overall_status']}, Improvements: {len(improvement_areas)}")
+
         return improvement_plan
 
     def _identify_improvements(self, health: Dict, synthesis: Dict, failures: Dict) -> List[str]:
