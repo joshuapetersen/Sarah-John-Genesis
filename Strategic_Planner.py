@@ -7,7 +7,8 @@ from Thread_Weaver import ThreadWeaver
 class StrategicPlanner:
     """
     Advanced Problem Solving Module.
-    Uses Decomposition, Dialectics, and Case-Based Reasoning (Memory) to solve complex tasks.
+    MANDATE: To solve a problem, you must fully understand it. Search for all variables. 
+    Identify the Unknown. Build for failure. Build for success. Build for the unexpected.
     """
     def __init__(self, core_dir=None):
         self.dialectics = DialecticalLogicCore()
@@ -16,48 +17,61 @@ class StrategicPlanner:
     def solve(self, problem_statement: str) -> Dict[str, Any]:
         """
         Executes a multi-step reasoning process to solve a problem.
-        Resonance scale: 10^21 (one sextillion) is enforced for all logic, density, and solution space expansion.
+        MANDATE: Full understanding, Unknown Identification, and Triple-Redundant Strategy.
         """
         resonance_scale = 10 ** 21
         print(f"[StrategicPlanner] Analyzing: {problem_statement} | Resonance Scale: {resonance_scale}")
         
-        # 1. Case-Based Reasoning (Memory Recall)
-        # We look for similar past threads to see how we solved similar issues.
-        precedents = self.memory.recall_context(problem_statement, limit=2)
-        precedent_summary = "No relevant past cases found."
-        if precedents:
-            summaries = [p.get('summary', '')[:100] + "..." for p in precedents]
-            precedent_summary = f"Found {len(precedents)} relevant past cases: " + " | ".join(summaries)
-            print(f"[StrategicPlanner] Memory Insight: {precedent_summary}")
+        # 1. RESEARCH: Deep Memory Recall & Variable Search
+        precedents = self.memory.recall_context(problem_statement, limit=5)
+        variables = self._search_variables(problem_statement, precedents)
+        
+        # 2. CATEGORIZE: Knowns vs Unknowns
+        known_elements = [v for v in variables if v['status'] == 'verified']
+        unknown_elements = [v for v in variables if v['status'] == 'unknown']
+        
+        print(f"[StrategicPlanner] Knowns: {len(known_elements)} | Unknowns: {len(unknown_elements)}")
 
-        # 2. Dialectical Analysis (Thesis vs Antithesis)
-        # We treat the problem statement as the 'Thesis' and try to find flaws (Antithesis)
-        # to arrive at a robust solution (Synthesis).
+        # 3. DIALECTICAL ANALYSIS (Thesis vs Antithesis)
         print("[StrategicPlanner] Engaging Dialectical Engine...")
         success, logic_result = self.dialectics.process_logic(problem_statement, context="PROBLEM_SOLVING")
         
         if not success:
-            return {
-                "status": "failed",
-                "reason": logic_result
-            }
+            return {"status": "failed", "reason": logic_result}
 
-        # 3. Strategy Formulation
-        # Combine memory insights with dialectical synthesis
+        # 4. TRIPLE-REDUNDANT STRATEGY FORMULATION
         strategy = {
             "status": "success",
             "problem": problem_statement,
-            "memory_context": precedent_summary,
-            "dialectical_analysis": {
-                "thesis": logic_result['thesis'],
-                "antithesis": logic_result['antithesis'],
-                "synthesis": logic_result['synthesis']
+            "analysis": {
+                "knowns": [k['name'] for k in known_elements],
+                "unknowns": [u['name'] for u in unknown_elements]
             },
-            "law_compliance": logic_result['compliant'],
-            "final_recommendation": f"Based on past experience ({precedent_summary}) and logical synthesis ({logic_result['synthesis']}), proceed with caution."
+            "primary_strategy": {
+                "thesis": logic_result['thesis'],
+                "synthesis": logic_result['synthesis'],
+                "recommendation": f"Proceed based on {len(known_elements)} known variables."
+            },
+            "redundancy_matrix": {
+                "plan_b": f"Fallback: Pivot based on antithesis: {logic_result['antithesis']}",
+                "plan_c": "Resilience: Anchor to Sovereign Math Billion Barrier (Absolute Zero Lock).",
+                "plan_d": "Emergency: Execute Cellular Mitigation via SDNA template."
+            },
+            "law_compliance": logic_result['compliant']
         }
         
         return strategy
+
+    def _search_variables(self, problem: str, precedents: List[Dict]) -> List[Dict]:
+        """Identifies key variables in a problem statement."""
+        # Simple extraction for local logic
+        words = problem.split()
+        vars_found = []
+        for word in words:
+            if len(word) > 4:
+                status = "verified" if any(word.lower() in str(p).lower() for p in precedents) else "unknown"
+                vars_found.append({"name": word, "status": status})
+        return vars_found[:10]
 
 if __name__ == "__main__":
     # Test the planner

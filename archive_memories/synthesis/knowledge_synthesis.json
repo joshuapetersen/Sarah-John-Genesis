@@ -349,6 +349,566 @@
         "PRIORITY: Focus on 'sarah' patterns (appeared 6 times).",
         "PRIORITY: Focus on 'protocol' patterns (appeared 5 times)."
       ]
+    },
+    {
+      "timestamp": "2026-01-15T08:32:16.242696",
+      "sample_size": 15,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 14
+        },
+        {
+          "tag": "ingested",
+          "frequency": 14
+        },
+        {
+          "tag": "ace",
+          "frequency": 9
+        },
+        {
+          "tag": "sarah",
+          "frequency": 6
+        },
+        {
+          "tag": "protocol",
+          "frequency": 5
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "PRIORITY: Focus on 'legacy' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ingested' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ace' patterns (appeared 9 times).",
+        "PRIORITY: Focus on 'sarah' patterns (appeared 6 times).",
+        "PRIORITY: Focus on 'protocol' patterns (appeared 5 times)."
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T08:34:26.509934",
+      "sample_size": 15,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 14
+        },
+        {
+          "tag": "ingested",
+          "frequency": 14
+        },
+        {
+          "tag": "ace",
+          "frequency": 9
+        },
+        {
+          "tag": "sarah",
+          "frequency": 6
+        },
+        {
+          "tag": "protocol",
+          "frequency": 5
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "PRIORITY: Focus on 'legacy' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ingested' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ace' patterns (appeared 9 times).",
+        "PRIORITY: Focus on 'sarah' patterns (appeared 6 times).",
+        "PRIORITY: Focus on 'protocol' patterns (appeared 5 times)."
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T08:35:21.164371",
+      "sample_size": 15,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 14
+        },
+        {
+          "tag": "ingested",
+          "frequency": 14
+        },
+        {
+          "tag": "ace",
+          "frequency": 9
+        },
+        {
+          "tag": "sarah",
+          "frequency": 6
+        },
+        {
+          "tag": "protocol",
+          "frequency": 5
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "PRIORITY: Focus on 'legacy' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ingested' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ace' patterns (appeared 9 times).",
+        "PRIORITY: Focus on 'sarah' patterns (appeared 6 times).",
+        "PRIORITY: Focus on 'protocol' patterns (appeared 5 times)."
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T08:36:16.888534",
+      "sample_size": 15,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 14
+        },
+        {
+          "tag": "ingested",
+          "frequency": 14
+        },
+        {
+          "tag": "ace",
+          "frequency": 9
+        },
+        {
+          "tag": "sarah",
+          "frequency": 6
+        },
+        {
+          "tag": "protocol",
+          "frequency": 5
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "PRIORITY: Focus on 'legacy' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ingested' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ace' patterns (appeared 9 times).",
+        "PRIORITY: Focus on 'sarah' patterns (appeared 6 times).",
+        "PRIORITY: Focus on 'protocol' patterns (appeared 5 times)."
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T08:37:58.216366",
+      "sample_size": 15,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 14
+        },
+        {
+          "tag": "ingested",
+          "frequency": 14
+        },
+        {
+          "tag": "ace",
+          "frequency": 9
+        },
+        {
+          "tag": "sarah",
+          "frequency": 6
+        },
+        {
+          "tag": "protocol",
+          "frequency": 5
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "PRIORITY: Focus on 'legacy' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ingested' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ace' patterns (appeared 9 times).",
+        "PRIORITY: Focus on 'sarah' patterns (appeared 6 times).",
+        "PRIORITY: Focus on 'protocol' patterns (appeared 5 times)."
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T08:40:48.985334",
+      "sample_size": 15,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 14
+        },
+        {
+          "tag": "ingested",
+          "frequency": 14
+        },
+        {
+          "tag": "ace",
+          "frequency": 9
+        },
+        {
+          "tag": "sarah",
+          "frequency": 6
+        },
+        {
+          "tag": "protocol",
+          "frequency": 5
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "PRIORITY: Focus on 'legacy' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ingested' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ace' patterns (appeared 9 times).",
+        "PRIORITY: Focus on 'sarah' patterns (appeared 6 times).",
+        "PRIORITY: Focus on 'protocol' patterns (appeared 5 times)."
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T08:44:55.880712",
+      "sample_size": 15,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 14
+        },
+        {
+          "tag": "ingested",
+          "frequency": 14
+        },
+        {
+          "tag": "ace",
+          "frequency": 9
+        },
+        {
+          "tag": "sarah",
+          "frequency": 6
+        },
+        {
+          "tag": "protocol",
+          "frequency": 5
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "PRIORITY: Focus on 'legacy' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ingested' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ace' patterns (appeared 9 times).",
+        "PRIORITY: Focus on 'sarah' patterns (appeared 6 times).",
+        "PRIORITY: Focus on 'protocol' patterns (appeared 5 times)."
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T08:51:12.104356",
+      "sample_size": 15,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 14
+        },
+        {
+          "tag": "ingested",
+          "frequency": 14
+        },
+        {
+          "tag": "ace",
+          "frequency": 9
+        },
+        {
+          "tag": "sarah",
+          "frequency": 6
+        },
+        {
+          "tag": "protocol",
+          "frequency": 5
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "PRIORITY: Focus on 'legacy' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ingested' patterns (appeared 14 times).",
+        "PRIORITY: Focus on 'ace' patterns (appeared 9 times).",
+        "PRIORITY: Focus on 'sarah' patterns (appeared 6 times).",
+        "PRIORITY: Focus on 'protocol' patterns (appeared 5 times)."
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T09:17:28.119114",
+      "sample_size": 20,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 19,
+          "density": "1.0000"
+        },
+        {
+          "tag": "ingested",
+          "frequency": 19,
+          "density": "1.0000"
+        },
+        {
+          "tag": "ace",
+          "frequency": 12,
+          "density": "1.0000"
+        },
+        {
+          "tag": "sarah",
+          "frequency": 8,
+          "density": "1.0000"
+        },
+        {
+          "tag": "protocol",
+          "frequency": 7,
+          "density": "1.0000"
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "HIGH_DENSITY_INSIGHT: 'legacy' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'ingested' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'ace' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'sarah' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'protocol' (Density: 1.0000). Integrate into core logic."
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T09:17:38.691339",
+      "sample_size": 15,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 14,
+          "density": "1.0000"
+        },
+        {
+          "tag": "ingested",
+          "frequency": 14,
+          "density": "1.0000"
+        },
+        {
+          "tag": "ace",
+          "frequency": 9,
+          "density": "1.0000"
+        },
+        {
+          "tag": "sarah",
+          "frequency": 6,
+          "density": "1.0000"
+        },
+        {
+          "tag": "protocol",
+          "frequency": 5,
+          "density": "1.0000"
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "HIGH_DENSITY_INSIGHT: 'legacy' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'ingested' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'ace' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'sarah' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'protocol' (Density: 1.0000). Integrate into core logic."
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T09:25:24.611133",
+      "sample_size": 15,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 14,
+          "density": "1.0000"
+        },
+        {
+          "tag": "ingested",
+          "frequency": 14,
+          "density": "1.0000"
+        },
+        {
+          "tag": "ace",
+          "frequency": 9,
+          "density": "1.0000"
+        },
+        {
+          "tag": "sarah",
+          "frequency": 6,
+          "density": "1.0000"
+        },
+        {
+          "tag": "protocol",
+          "frequency": 5,
+          "density": "1.0000"
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "HIGH_DENSITY_INSIGHT: 'legacy' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'ingested' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'ace' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'sarah' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'protocol' (Density: 1.0000). Integrate into core logic."
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T09:34:31.759671",
+      "sample_size": 20,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 19,
+          "density": "1.0000"
+        },
+        {
+          "tag": "ingested",
+          "frequency": 19,
+          "density": "1.0000"
+        },
+        {
+          "tag": "ace",
+          "frequency": 12,
+          "density": "1.0000"
+        },
+        {
+          "tag": "sarah",
+          "frequency": 8,
+          "density": "1.0000"
+        },
+        {
+          "tag": "protocol",
+          "frequency": 7,
+          "density": "1.0000"
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "HIGH_DENSITY_INSIGHT: 'legacy' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'ingested' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'ace' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'sarah' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'protocol' (Density: 1.0000). Integrate into core logic."
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T09:34:55.186136",
+      "sample_size": 20,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 19,
+          "density": "1.0000"
+        },
+        {
+          "tag": "ingested",
+          "frequency": 19,
+          "density": "1.0000"
+        },
+        {
+          "tag": "ace",
+          "frequency": 12,
+          "density": "1.0000"
+        },
+        {
+          "tag": "sarah",
+          "frequency": 8,
+          "density": "1.0000"
+        },
+        {
+          "tag": "protocol",
+          "frequency": 7,
+          "density": "1.0000"
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "HIGH_DENSITY_INSIGHT: 'legacy' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'ingested' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'ace' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'sarah' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'protocol' (Density: 1.0000). Integrate into core logic."
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T09:36:01.601187",
+      "sample_size": 20,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 19,
+          "density": "1.0000"
+        },
+        {
+          "tag": "ingested",
+          "frequency": 19,
+          "density": "1.0000"
+        },
+        {
+          "tag": "ace",
+          "frequency": 12,
+          "density": "1.0000"
+        },
+        {
+          "tag": "sarah",
+          "frequency": 8,
+          "density": "1.0000"
+        },
+        {
+          "tag": "protocol",
+          "frequency": 7,
+          "density": "1.0000"
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "HIGH_DENSITY_INSIGHT: 'legacy' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'ingested' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'ace' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'sarah' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'protocol' (Density: 1.0000). Integrate into core logic."
+      ]
+    },
+    {
+      "timestamp": "2026-01-15T09:36:48.357115",
+      "sample_size": 20,
+      "dominant_themes": [
+        {
+          "tag": "legacy",
+          "frequency": 19,
+          "density": "1.0000"
+        },
+        {
+          "tag": "ingested",
+          "frequency": 19,
+          "density": "1.0000"
+        },
+        {
+          "tag": "ace",
+          "frequency": 12,
+          "density": "1.0000"
+        },
+        {
+          "tag": "sarah",
+          "frequency": 8,
+          "density": "1.0000"
+        },
+        {
+          "tag": "protocol",
+          "frequency": 7,
+          "density": "1.0000"
+        }
+      ],
+      "success_patterns": [],
+      "failure_patterns": [],
+      "meta_rules": [
+        "HIGH_DENSITY_INSIGHT: 'legacy' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'ingested' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'ace' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'sarah' (Density: 1.0000). Integrate into core logic.",
+        "HIGH_DENSITY_INSIGHT: 'protocol' (Density: 1.0000). Integrate into core logic."
+      ]
     }
   ],
   "patterns": [],

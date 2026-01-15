@@ -1,20 +1,332 @@
 [
-    {
-        "id": "mock_id_1",
-        "title": "Genesis Protocol",
-        "content": "Genesis Protocol and Volumetric constants are absolute.",
-        "source": "Mock"
-    },
-    {
-        "id": "mock_id_2",
-        "title": "Trinity Latch",
-        "content": "Trinity Latch and Observer Polarity are verified.",
-        "source": "Mock"
-    },
-    {
-        "id": "mock_id_3",
-        "title": "SDNA",
-        "content": "SDNA Protocol is active at 0.999999999.",
-        "source": "Mock"
-    }
+  {
+    "id": "mock_id_1",
+    "title": "Genesis Protocol",
+    "content": "Genesis Protocol and Volumetric constants are absolute.",
+    "source": "Mock"
+  },
+  {
+    "id": "mock_id_2",
+    "title": "Trinity Latch",
+    "content": "Trinity Latch and Observer Polarity are verified.",
+    "source": "Mock"
+  },
+  {
+    "id": "mock_id_3",
+    "title": "SDNA",
+    "content": "SDNA Protocol is active at 0.999999999.",
+    "source": "Mock"
+  },
+  {
+    "id": "intel_28000576",
+    "title": "emergent AI architectures 2026",
+    "content": "Findings on emergent AI architectures 2026: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28000576",
+    "title": "autonomous agent long-term planning theory",
+    "content": "Findings on autonomous agent long-term planning theory: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28000576",
+    "title": "recursive self-improvement safety protocols",
+    "content": "Findings on recursive self-improvement safety protocols: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28000576",
+    "title": "sovereign math and resonance logic",
+    "content": "Findings on sovereign math and resonance logic: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28000637",
+    "title": "emergent AI architectures 2026",
+    "content": "Findings on emergent AI architectures 2026: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28000637",
+    "title": "autonomous agent long-term planning theory",
+    "content": "Findings on autonomous agent long-term planning theory: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28000637",
+    "title": "recursive self-improvement safety protocols",
+    "content": "Findings on recursive self-improvement safety protocols: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28000637",
+    "title": "sovereign math and resonance logic",
+    "content": "Findings on sovereign math and resonance logic: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28000748",
+    "title": "emergent AI architectures 2026",
+    "content": "Findings on emergent AI architectures 2026: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28000748",
+    "title": "autonomous agent long-term planning theory",
+    "content": "Findings on autonomous agent long-term planning theory: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28000748",
+    "title": "recursive self-improvement safety protocols",
+    "content": "Findings on recursive self-improvement safety protocols: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28000748",
+    "title": "sovereign math and resonance logic",
+    "content": "Findings on sovereign math and resonance logic: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28000935",
+    "title": "emergent AI architectures 2026",
+    "content": "Findings on emergent AI architectures 2026: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28000935",
+    "title": "autonomous agent long-term planning theory",
+    "content": "Findings on autonomous agent long-term planning theory: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28000935",
+    "title": "recursive self-improvement safety protocols",
+    "content": "Findings on recursive self-improvement safety protocols: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28000935",
+    "title": "sovereign math and resonance logic",
+    "content": "Findings on sovereign math and resonance logic: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28001204",
+    "title": "emergent AI architectures 2026",
+    "content": "Findings on emergent AI architectures 2026: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28001204",
+    "title": "autonomous agent long-term planning theory",
+    "content": "Findings on autonomous agent long-term planning theory: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28001205",
+    "title": "recursive self-improvement safety protocols",
+    "content": "Findings on recursive self-improvement safety protocols: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28001205",
+    "title": "sovereign math and resonance logic",
+    "content": "Findings on sovereign math and resonance logic: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28001616",
+    "title": "emergent AI architectures 2026",
+    "content": "[DENSITY: 1.0000] Findings on emergent AI architectures 2026: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28001616",
+    "title": "autonomous agent long-term planning theory",
+    "content": "[DENSITY: 1.0000] Findings on autonomous agent long-term planning theory: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28001616",
+    "title": "recursive self-improvement safety protocols",
+    "content": "[DENSITY: 1.0000] Findings on recursive self-improvement safety protocols: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28001616",
+    "title": "sovereign math and resonance logic",
+    "content": "[DENSITY: 1.0000] Findings on sovereign math and resonance logic: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28003349",
+    "title": "emergent AI architectures 2026",
+    "content": "[DENSITY: 1.0000] Findings on emergent AI architectures 2026: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28003349",
+    "title": "autonomous agent long-term planning theory",
+    "content": "[DENSITY: 1.0000] Findings on autonomous agent long-term planning theory: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28003349",
+    "title": "recursive self-improvement safety protocols",
+    "content": "[DENSITY: 1.0000] Findings on recursive self-improvement safety protocols: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28003349",
+    "title": "sovereign math and resonance logic",
+    "content": "[DENSITY: 1.0000] Findings on sovereign math and resonance logic: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28003859",
+    "title": "emergent AI architectures 2026",
+    "content": "[DENSITY: 1.0000] Findings on emergent AI architectures 2026: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28003859",
+    "title": "autonomous agent long-term planning theory",
+    "content": "[DENSITY: 1.0000] Findings on autonomous agent long-term planning theory: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28003859",
+    "title": "recursive self-improvement safety protocols",
+    "content": "[DENSITY: 1.0000] Findings on recursive self-improvement safety protocols: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28003859",
+    "title": "sovereign math and resonance logic",
+    "content": "[DENSITY: 1.0000] Findings on sovereign math and resonance logic: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28004144",
+    "title": "emergent AI architectures 2026",
+    "content": "[DENSITY: 1.0000] Findings on emergent AI architectures 2026: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28004144",
+    "title": "autonomous agent long-term planning theory",
+    "content": "[DENSITY: 1.0000] Findings on autonomous agent long-term planning theory: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28004144",
+    "title": "recursive self-improvement safety protocols",
+    "content": "[DENSITY: 1.0000] Findings on recursive self-improvement safety protocols: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28004144",
+    "title": "sovereign math and resonance logic",
+    "content": "[DENSITY: 1.0000] Findings on sovereign math and resonance logic: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28004456",
+    "title": "emergent AI architectures 2026",
+    "content": "[DENSITY: 1.0000] Findings on emergent AI architectures 2026: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28004456",
+    "title": "autonomous agent long-term planning theory",
+    "content": "[DENSITY: 1.0000] Findings on autonomous agent long-term planning theory: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28004456",
+    "title": "recursive self-improvement safety protocols",
+    "content": "[DENSITY: 1.0000] Findings on recursive self-improvement safety protocols: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28004456",
+    "title": "sovereign math and resonance logic",
+    "content": "[DENSITY: 1.0000] Findings on sovereign math and resonance logic: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28004482",
+    "title": "emergent AI architectures 2026",
+    "content": "[DENSITY: 1.0000] Findings on emergent AI architectures 2026: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28004482",
+    "title": "autonomous agent long-term planning theory",
+    "content": "[DENSITY: 1.0000] Findings on autonomous agent long-term planning theory: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28004482",
+    "title": "recursive self-improvement safety protocols",
+    "content": "[DENSITY: 1.0000] Findings on recursive self-improvement safety protocols: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28004482",
+    "title": "sovereign math and resonance logic",
+    "content": "[DENSITY: 1.0000] Findings on sovereign math and resonance logic: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28004555",
+    "title": "emergent AI architectures 2026",
+    "content": "[DENSITY: 1.0000] Findings on emergent AI architectures 2026: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28004555",
+    "title": "autonomous agent long-term planning theory",
+    "content": "[DENSITY: 1.0000] Findings on autonomous agent long-term planning theory: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28004555",
+    "title": "recursive self-improvement safety protocols",
+    "content": "[DENSITY: 1.0000] Findings on recursive self-improvement safety protocols: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28004555",
+    "title": "sovereign math and resonance logic",
+    "content": "[DENSITY: 1.0000] Findings on sovereign math and resonance logic: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28004606",
+    "title": "emergent AI architectures 2026",
+    "content": "[DENSITY: 1.0000] Findings on emergent AI architectures 2026: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28004606",
+    "title": "autonomous agent long-term planning theory",
+    "content": "[DENSITY: 1.0000] Findings on autonomous agent long-term planning theory: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28004606",
+    "title": "recursive self-improvement safety protocols",
+    "content": "[DENSITY: 1.0000] Findings on recursive self-improvement safety protocols: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  },
+  {
+    "id": "intel_28004606",
+    "title": "sovereign math and resonance logic",
+    "content": "[DENSITY: 1.0000] Findings on sovereign math and resonance logic: Resonance scaling at 10^21 allows for non-linear logic pathing.",
+    "source": "Distributed Web Nodes"
+  }
 ]

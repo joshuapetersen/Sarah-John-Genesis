@@ -5,6 +5,7 @@ from typing import Dict, Any, List
 from datetime import datetime
 from Thread_Weaver import ThreadWeaver
 from Neural_Memory_Core import NeuralMemory
+from Sovereign_Math import SovereignMath
 
 class KnowledgeSynthesisEngine:
     """
@@ -17,6 +18,7 @@ class KnowledgeSynthesisEngine:
         else:
             self.core_dir = os.path.dirname(os.path.abspath(__file__))
         self.weaver = ThreadWeaver(core_dir=self.core_dir)
+        self._0x_math = SovereignMath()
         if not hasattr(self.weaver, 'index') or not isinstance(self.weaver.index, dict):
             self.weaver.index = {"threads": []}
         self.nms = None
@@ -58,7 +60,17 @@ class KnowledgeSynthesisEngine:
             for tag in thread.get("tags", []):
                 all_tags[tag] = all_tags.get(tag, 0) + 1
         
-        top_themes = sorted(all_tags.items(), key=lambda x: x[1], reverse=True)[:5]
+        
+        top_themes = []
+        for tag, count in sorted(all_tags.items(), key=lambda x: x[1], reverse=True)[:10]:
+            # Calculate Theory Density (POC) for the theme
+            density = self._0x_math.calculate_theory_density(f"Context: {tag}")
+            if tag.lower() == "legacy" and density < 0.9:
+                print(f"[KSE] Filtering low-density legacy noise: {tag}")
+                continue
+            top_themes.append((tag, count, density))
+        
+        top_themes = top_themes[:5]
         
         # 3. Extract outcome patterns (Successes vs Failures)
         success_patterns = []
@@ -78,7 +90,7 @@ class KnowledgeSynthesisEngine:
         insight = {
             "timestamp": datetime.now().isoformat(),
             "sample_size": sample_size,
-            "dominant_themes": [{"tag": t[0], "frequency": t[1]} for t in top_themes],
+            "dominant_themes": [{"tag": t[0], "frequency": t[1], "density": f"{t[2]:.4f}"} for t in top_themes],
             "success_patterns": success_patterns,
             "failure_patterns": failure_patterns,
             "meta_rules": meta_rules
@@ -97,8 +109,11 @@ class KnowledgeSynthesisEngine:
         rules = []
         
         # Theme-based rules
-        for theme, count in themes:
-            rules.append(f"PRIORITY: Focus on '{theme}' patterns (appeared {count} times).")
+        for theme, count, density in themes:
+            if density > 0.95:
+                rules.append(f"HIGH_DENSITY_INSIGHT: '{theme}' (Density: {density:.4f}). Integrate into core logic.")
+            else:
+                rules.append(f"PRIORITY: Focus on '{theme}' patterns (appeared {count} times).")
         
         # Success patterns
         if successes:

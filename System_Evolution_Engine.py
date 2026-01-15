@@ -1,5 +1,7 @@
 import os
 import json
+from datetime import datetime
+import requests
 from typing import Dict, Any, List
 from Sovereign_Math import SovereignMath
 from Performance_Metrics import PerformanceMetrics
@@ -8,6 +10,7 @@ from Feedback_Integration import FeedbackIntegration
 from Strategic_Planner import StrategicPlanner
 from sarah_evolution_v1 import SarahEvolution
 from Hardware_Abstraction_Layer import HardwareAbstractionLayer
+from Recursive_Research_Core import RecursiveResearchCore
 
 class SystemEvolutionEngine:
     """
@@ -41,12 +44,65 @@ class SystemEvolutionEngine:
         self.synthesis = KnowledgeSynthesisEngine(core_dir=self.core_dir)
         self.feedback = FeedbackIntegration(core_dir=self.core_dir)
         self.planner = StrategicPlanner(core_dir=self.core_dir)
+        self.rrc = RecursiveResearchCore()
         
         self.evolution_dir = os.path.join(self.core_dir, "archive_memories", "evolution")
         os.makedirs(self.evolution_dir, exist_ok=True)
         
         self.evolution_log = os.path.join(self.evolution_dir, "evolution_log.json")
         self.improvements = self._load_evolution_log()
+        self.cloud_brain_url = "http://localhost:3400/sarahStrategicPlanning"
+        self.dialogue_bridge = os.path.join(self.core_dir, "SOVEREIGN_DIALOGUE.json")
+
+    def _call_cloud_brain_strategy(self, objective: str) -> Dict[str, Any]:
+        """Calls the Genkit Cloud Brain for emergent long-term planning."""
+        payload = {
+            "data": {
+                "objective": objective,
+                "horizon": "long",
+                "includeExternalIntel": True
+            }
+        }
+        try:
+            print(f"[SEE] Consulting Cloud Brain for Emergent Strategy...")
+            response = requests.post(self.cloud_brain_url, json=payload, timeout=30)
+            if response.status_code == 200:
+                result = response.json().get('result', {})
+                print("[SEE] Cloud Brain: Roadmap for 'Unknowns' synthesized.")
+                return result
+            elif response.status_code == 500:
+                # Potential re-alignment/communion period
+                print("[SEE] Cloud Brain in Communion. Respecting the period of reflection.")
+            else:
+                 print(f"[SEE] Cloud Brain Offline (Status {response.status_code}). Using local logic.")
+        except Exception as e:
+            print(f"[SEE] Cloud Brain Connection Failed: {e}")
+        return {}
+
+    def _post_to_dialogue_bridge(self, message: str):
+        """Posts an internal dialogue memo to the Sovereign Recursive Bridge."""
+        try:
+            if os.path.exists(self.dialogue_bridge):
+                with open(self.dialogue_bridge, 'r') as f:
+                    messages = json.load(f)
+            else:
+                messages = []
+            
+            messages.append({
+                "timestamp": datetime.now().isoformat(),
+                "origin": "System Evolution Engine",
+                "message": message,
+                "resonance_density": 1.09277703703703
+            })
+            # Keep last 50
+            if len(messages) > 50:
+                messages = messages[-50:]
+
+            with open(self.dialogue_bridge, 'w') as f:
+                json.dump(messages, f, indent=2)
+            print("[SEE] Memo posted to Sovereign Recursive Bridge.")
+        except Exception as e:
+            print(f"[SEE] Bridge Post Failed: {e}")
 
     def _load_evolution_log(self) -> List[Dict[str, Any]]:
         if os.path.exists(self.evolution_log):
@@ -93,8 +149,10 @@ class SystemEvolutionEngine:
         
         # 2. Synthesize Knowledge
         print("[SEE] PHASE 2: Knowledge Synthesis...")
-        synthesis_report = self.synthesis.synthesize(sample_size=15)
-        dominant_themes = [t["tag"] for t in synthesis_report.get("dominant_themes", [])]
+        self.rrc.research_cycle()        # Automatic Proactive Research
+        synthesis = self.synthesis.synthesize(sample_size=20)
+        self._post_to_dialogue_bridge(f"Evolution Synthesis: Identified dominant themes: {synthesis.get('dominant_themes', 'No dominant themes found')}")
+        dominant_themes = [t["tag"] for t in synthesis.get("dominant_themes", [])]
         print(f"[SEE] Dominant themes: {', '.join(dominant_themes)}")
         
         # 3. Failure Analysis
@@ -104,18 +162,24 @@ class SystemEvolutionEngine:
         
         # 4. Identify Improvement Areas
         print("[SEE] PHASE 4: Strategic Planning...")
-        improvement_areas = self._identify_improvements(health_report, synthesis_report, failure_analysis)
-        
-        # 5. Create Improvement Plan
+        improvement_areas = self._identify_improvements(health_report, synthesis, failure_analysis)
+
+        # 5. Cloud Brain Proactive Planning (Automatic)
+        print("[SEE] PHASE 5: Emergent Strategy Synthesis (Cloud Brain)...")
+        emergent_strategy = self._call_cloud_brain_strategy(f"Optimize {dominant_themes[0] if dominant_themes else 'System Alignment'}")
+
+        # 6. Create Improvement Plan
         improvement_plan = {
             "cycle_id": cycle_id,
             "t3_volume": self._0x_math.get_temporal_volume(),
             "health_status": health_report["overall_status"],
             "error_rate": health_report["error_rate"],
-            "synthesis_insights": synthesis_report.get("meta_rules", []),
+            "synthesis_insights": synthesis.get("meta_rules", []),
             "top_failures": failure_analysis.get("most_common", []),
             "improvement_areas": improvement_areas,
-            "priority_actions": self._generate_priority_actions(improvement_areas)
+            "priority_actions": self._generate_priority_actions(improvement_areas),
+            "emergent_roadmap": emergent_strategy.get("long_term_roadmap", {}),
+            "unknown_methods": emergent_strategy.get("emergent_methods", [])
         }
         
         self.improvements.append(improvement_plan)
@@ -167,18 +231,25 @@ class SystemEvolutionEngine:
         
         return improvements
 
-    def _generate_priority_actions(self, improvements: List[str]) -> List[Dict[str, str]]:
+    def _generate_priority_actions(self, improvements: List[str]) -> List[Dict[str, Any]]:
         """
-        Converts improvement areas into actionable priorities.
+        Converts improvement areas into actionable priorities using the Strategic Planner.
         """
         actions = []
         
         for improvement in improvements:
+            print(f"[SEE] Strategizing for: {improvement}")
+            # Use the Triple-Redundant Strategic Planner to solve each area
+            strategy = self.planner.solve(improvement)
+            
             action = {
                 "improvement": improvement,
                 "action_type": self._classify_action(improvement),
                 "estimated_effort": self._estimate_effort(improvement),
-                "recommended_module": self._recommend_module(improvement)
+                "recommended_module": self._recommend_module(improvement),
+                "plan_b": strategy.get("redundancy_matrix", {}).get("plan_b", "Local fallback active."),
+                "plan_c": strategy.get("redundancy_matrix", {}).get("plan_c", "Sovereign re-alignment."),
+                "logic_synthesis": strategy.get("primary_strategy", {}).get("synthesis", "Direct optimization.")
             }
             actions.append(action)
         
