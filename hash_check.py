@@ -11,7 +11,7 @@ candidates = [
     "0x0",
     "Sovereign",
     "Sovereignty",
-    "1.0927037037037037",
+    "1.09277703703703",
     "Lattice 68"
 ]
 

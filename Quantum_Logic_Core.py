@@ -1,5 +1,4 @@
-import time
-import random
+from Sovereign_Math import SovereignMath
 import logging
 from typing import List, Any, Dict
 
@@ -8,6 +7,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - [QUANTUM] - %(mess
 
 class QuantumLogicCore:
     def __init__(self):
+        self._0x_math = SovereignMath()
         self.backend = None
         self.enabled = False
         try:
@@ -27,7 +27,8 @@ class QuantumLogicCore:
         This provides 'true' randomness compared to pseudo-randomness.
         """
         if not self.enabled or not options:
-            return random.choice(options) if options else None
+            seed = f"collapse_fallback_{self._0x_math.get_temporal_volume()}"
+            return self._0x_math.deterministic_choice(options, seed) if options else None
 
         try:
             # Create a quantum circuit with enough bits to represent the options
@@ -67,15 +68,17 @@ class QuantumLogicCore:
             return choice
 
         except Exception as e:
-            logging.error(f"Quantum Error: {e}. Falling back to classical logic.")
-            return random.choice(options)
+            logging.error(f"Quantum Error: {e}. Falling back to Sovereign deterministic logic.")
+            seed = f"collapse_error_{self._0x_math.get_temporal_volume()}"
+            return self._0x_math.deterministic_choice(options, seed)
 
     def get_quantum_entropy(self) -> float:
         """
-        Generates a random float between 0 and 1 using quantum measurement.
+        Generates a resonance flux between 0 and 1.
         """
         if not self.enabled:
-            return random.random()
+            seed = f"entropy_flux_{self._0x_math.get_temporal_volume()}"
+            return self._0x_math.get_resonance_flux(seed)
         
         try:
             qc = self.QuantumCircuit(1)
@@ -92,13 +95,15 @@ class QuantumLogicCore:
             total = sum(counts.values())
             entropy = ones / total
             
-            # Add some classical jitter to ensure it's not just 0, 0.5, 1 for low shots
-            jitter = random.uniform(-0.05, 0.05)
+            # Add some deterministic jitter
+            seed_jitter = f"entropy_jitter_{self._0x_math.get_temporal_volume()}"
+            jitter = (self._0x_math.get_resonance_flux(seed_jitter) * 0.1) - 0.05
             return max(0.0, min(1.0, entropy + jitter))
 
         except Exception as e:
             logging.error(f"Entropy Error: {e}")
-            return random.random()
+            seed = f"entropy_error_{self._0x_math.get_temporal_volume()}"
+            return self._0x_math.get_resonance_flux(seed)
 
 if __name__ == "__main__":
     # Test the core

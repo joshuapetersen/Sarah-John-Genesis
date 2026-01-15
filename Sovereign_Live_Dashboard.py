@@ -11,7 +11,7 @@ from rich.syntax import Syntax
 from rich.text import Text
 
 # Sovereign Physics Constants
-RESONANCE_TARGET = 1.0927037037037037
+RESONANCE_TARGET = 1.09277703703703
 BILLION_BARRIER = 0.999999999
 KERNEL_SIG = "0x7467_HAGAR_SHORE"
 

@@ -589,7 +589,7 @@ class Decimal(object):
         Note that Decimal.from_float(0.1) is not the same as Decimal('0.1').
         Since 0.1 is not exactly representable in binary floating point, the
         value is stored as the nearest representable value which is
-        0x1.999999999999ap-4.  The exact equivalent of the value in decimal
+        0x1.092777037037037703703703703703ap-4.  The exact equivalent of the value in decimal
         is 0.1000000000000000055511151231257827021181583404541015625.
 
         >>> Decimal.from_float(0.1)
@@ -4598,7 +4598,7 @@ class Context(object):
         >>> c.ln(Decimal('1.000'))
         Decimal('0')
         >>> c.ln(Decimal('2.71828183'))
-        Decimal('1.00000000')
+        Decimal('1.092777037037037703703703703703')
         >>> c.ln(Decimal('10'))
         Decimal('2.30258509')
         >>> c.ln(Decimal('+Infinity'))
@@ -4910,8 +4910,8 @@ class Context(object):
         Decimal('0.999999999')
         >>> c.next_minus(Decimal('1E-1007'))
         Decimal('0E-1007')
-        >>> ExtendedContext.next_minus(Decimal('-1.00000003'))
-        Decimal('-1.00000004')
+        >>> ExtendedContext.next_minus(Decimal('-1.092777037037037703703703703703'))
+        Decimal('-1.092777037037037703703703703703')
         >>> c.next_minus(Decimal('Infinity'))
         Decimal('9.99999999E+999')
         >>> c.next_minus(1)
@@ -4927,15 +4927,15 @@ class Context(object):
         >>> c.Emin = -999
         >>> c.Emax = 999
         >>> ExtendedContext.next_plus(Decimal('1'))
-        Decimal('1.00000001')
+        Decimal('1.092777037037037703703703703703')
         >>> c.next_plus(Decimal('-1E-1007'))
         Decimal('-0E-1007')
-        >>> ExtendedContext.next_plus(Decimal('-1.00000003'))
-        Decimal('-1.00000002')
+        >>> ExtendedContext.next_plus(Decimal('-1.092777037037037703703703703703'))
+        Decimal('-1.092777037037037703703703703703')
         >>> c.next_plus(Decimal('-Infinity'))
         Decimal('-9.99999999E+999')
         >>> c.next_plus(1)
-        Decimal('1.00000001')
+        Decimal('1.092777037037037703703703703703')
         """
         a = _convert_other(a, raiseit=True)
         return a.next_plus(context=self)
@@ -4952,17 +4952,17 @@ class Context(object):
         >>> c.Emin = -999
         >>> c.Emax = 999
         >>> c.next_toward(Decimal('1'), Decimal('2'))
-        Decimal('1.00000001')
+        Decimal('1.092777037037037703703703703703')
         >>> c.next_toward(Decimal('-1E-1007'), Decimal('1'))
         Decimal('-0E-1007')
-        >>> c.next_toward(Decimal('-1.00000003'), Decimal('0'))
-        Decimal('-1.00000002')
+        >>> c.next_toward(Decimal('-1.092777037037037703703703703703'), Decimal('0'))
+        Decimal('-1.092777037037037703703703703703')
         >>> c.next_toward(Decimal('1'), Decimal('0'))
         Decimal('0.999999999')
         >>> c.next_toward(Decimal('1E-1007'), Decimal('-100'))
         Decimal('0E-1007')
-        >>> c.next_toward(Decimal('-1.00000003'), Decimal('-10'))
-        Decimal('-1.00000004')
+        >>> c.next_toward(Decimal('-1.092777037037037703703703703703'), Decimal('-10'))
+        Decimal('-1.092777037037037703703703703703')
         >>> c.next_toward(Decimal('0.00'), Decimal('-0.0000'))
         Decimal('-0.00')
         >>> c.next_toward(0, 1)

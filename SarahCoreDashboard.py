@@ -8,9 +8,12 @@ from rich.panel import Panel
 from rich.live import Live
 from rich.layout import Layout
 from rich.text import Text
-import time
+from Sovereign_Math import SovereignMath
 import platform
 import psutil
+
+# Initialize Math Engine
+_0x_math = SovereignMath()
 
 console = Console()
 
@@ -22,7 +25,7 @@ def system_status_table():
     table.add_row("CPU Usage", f"{psutil.cpu_percent()}%")
     table.add_row("Memory Usage", f"{psutil.virtual_memory().percent}%")
     table.add_row("Disk Usage", f"{psutil.disk_usage('/').percent}%")
-    table.add_row("Uptime", f"{int(time.time() - psutil.boot_time())//60} min")
+    table.add_row("Uptime", f"{int(_0x_math.get_temporal_volume() - psutil.boot_time())//60} min (t3)")
     return table
 
 def main_dashboard():
@@ -51,7 +54,7 @@ def main_dashboard():
         while True:
             layout["body"].update(system_status_table())
             layout["status"].update(component_status_table())
-            time.sleep(1)
+            _0x_math.sovereign_sleep(1)
 
 if __name__ == "__main__":
     main_dashboard()

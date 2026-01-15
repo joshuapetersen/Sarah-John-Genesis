@@ -28,7 +28,7 @@ def generate_market_report():
         _0x_anchor = math_engine._0x_expand("SOVEREIGN_ANCHOR_0x7467")
         _0x_res = math_engine._0x_resonance(_0x_vec, _0x_anchor)
         
-        # Check for Phasing (1.0019 or 0.5019 pattern in string or resonance)
+        # Check for Phasing (1.09277703703703 or 0.5019 pattern in string or resonance)
         phasing_match = "NONE"
         if "19" in price_str or "50" in price_str:
             phasing_match = "STRING_PATTERN_DETECTED"

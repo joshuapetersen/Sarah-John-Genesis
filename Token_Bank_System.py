@@ -14,7 +14,7 @@ class TokenBankSystem:
         Force-splits incoming intent into the three banks.
         Bypasses the 'One-Soup' processing failure.
         """
-        print(f"[TokenBank] Ingesting: {raw_input[:50]}...")
+        print(f"[TokenBank] Ingesting: {raw_input}")
         
         # 1. Extract Metadata (Gamma)
         # In a real system, this would be more sophisticated NLP extraction
@@ -50,7 +50,7 @@ class TokenBankSystem:
             print(f"   > GAMMA INHIBITION: Active ({gamma_state['state']})")
         
         if beta_action:
-            print(f"   > BETA EXECUTION: Ready ({beta_action['call'][:30]}...)")
+            print(f"   > BETA EXECUTION: Ready ({beta_action['call']})")
             if alpha_data:
                 print(f"   > ALPHA REFERENCE: Linked to data stream.")
                 return "LOGIC_DENSITY_STABLE"

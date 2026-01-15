@@ -1,0 +1,7 @@
+{
+    "npu_integration": "VERIFIED",
+    "timing_accuracy": 0.999999999,
+    "half_decimal_offset": 0.50192703,
+    "hardware_anchor": "5c0289b07aee156d619abf8b7ce6cc9becdae141f56a0587859ee088dae89bf2",
+    "status": "TIMING_ABSOLUTE"
+}

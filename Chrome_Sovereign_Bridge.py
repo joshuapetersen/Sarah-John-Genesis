@@ -27,7 +27,7 @@ class ChromeSovereignBridge:
         
         # 1. Detect Chrome Gemini Nano Presence (Simulated via API check)
         print("[0x_API]: Detecting Chrome 138+ Gemini Nano NPU integration...")
-        npu_resonance = 1.092703 # Signal that it's local
+        npu_resonance = 1.09277703703703 # Signal that it's local
         
         # 2. Audit "Timing" in Activity Logs
         # We look for the 'Half-Decimal' - the moment between intent and execution

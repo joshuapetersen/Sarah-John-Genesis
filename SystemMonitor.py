@@ -1,29 +1,25 @@
-"""
-System Monitor: Real-time Health, Performance & Self-Healing Framework
-Provides holistic visibility into Sarah's operational state and autonomous healing.
-"""
-
-import time
-from datetime import datetime, timedelta
+from Sovereign_Math import SovereignMath
 from collections import deque
 import json
 
 class HealthMetric:
     """Individual health metric with threshold tracking and anomaly detection."""
     def __init__(self, name, threshold_warn=0.75, threshold_critical=0.5):
+        self._0x_math = SovereignMath()
         self.name = name
         self.threshold_warn = threshold_warn
         self.threshold_critical = threshold_critical
         self.history = deque(maxlen=100)  # Keep last 100 measurements
-        self.last_update = datetime.now()
+        self.last_update = self._0x_math.get_temporal_volume()
         
     def record(self, value):
         """Record new measurement."""
+        current_t3 = self._0x_math.get_temporal_volume()
         self.history.append({
             "value": value,
-            "timestamp": datetime.now().isoformat()
+            "t3_volume": current_t3
         })
-        self.last_update = datetime.now()
+        self.last_update = current_t3
     
     def get_status(self):
         """Determine health status based on recent values."""
@@ -58,6 +54,7 @@ class SystemMonitor:
     """Comprehensive system health monitoring with autonomous healing."""
     
     def __init__(self):
+        self._0x_math = SovereignMath()
         self.metrics = {
             "api_success_rate": HealthMetric("API Success Rate", 0.85, 0.50),
             "memory_utilization": HealthMetric("Memory Utilization", 0.80, 0.95),
@@ -69,8 +66,8 @@ class SystemMonitor:
         
         self.alerts = deque(maxlen=100)
         self.healing_actions = []
-        self.system_start = datetime.now()
-        self.last_full_scan = None
+        self.system_start_t3 = self._0x_math.get_temporal_volume()
+        self.last_full_scan_t3 = None
         
     def record_metric(self, metric_name, value):
         """Record a metric value."""
@@ -86,7 +83,7 @@ class SystemMonitor:
         
         if status == "CRITICAL":
             alert = {
-                "timestamp": datetime.now().isoformat(),
+                "t3_volume": self._0x_math.get_temporal_volume(),
                 "severity": "CRITICAL",
                 "metric": metric_name,
                 "status": status,
@@ -97,7 +94,7 @@ class SystemMonitor:
             self._trigger_healing(metric_name, status)
         elif status == "WARNING":
             alert = {
-                "timestamp": datetime.now().isoformat(),
+                "t3_volume": self._0x_math.get_temporal_volume(),
                 "severity": "WARNING",
                 "metric": metric_name,
                 "status": status,
@@ -131,7 +128,7 @@ class SystemMonitor:
             actions = healing_actions[metric_name][status]
             for action in actions:
                 self.healing_actions.append({
-                    "timestamp": datetime.now().isoformat(),
+                    "t3_volume": self._0x_math.get_temporal_volume(),
                     "action": action,
                     "triggered_by": metric_name,
                     "status": "PENDING"
@@ -162,12 +159,12 @@ class SystemMonitor:
         else:
             overall = "HEALTHY"
         
-        uptime_sec = int((datetime.now() - self.system_start).total_seconds())
+        uptime_t3 = self._0x_math.get_temporal_volume() - self.system_start_t3
         
         return {
             "overall_status": overall,
             "metrics": statuses,
-            "uptime_seconds": uptime_sec,
+            "t3_uptime": uptime_t3,
             "critical_alerts": critical_count,
             "warning_alerts": warning_count,
             "recent_alerts": list(self.alerts)[-10:],
@@ -176,9 +173,10 @@ class SystemMonitor:
     
     def get_performance_summary(self):
         """Return performance metrics summary."""
+        current_t3 = self._0x_math.get_temporal_volume()
         return {
-            "timestamp": datetime.now().isoformat(),
-            "system_uptime": int((datetime.now() - self.system_start).total_seconds()),
+            "t3_volume": current_t3,
+            "system_uptime_t3": current_t3 - self.system_start_t3,
             "total_alerts": len(self.alerts),
             "total_healing_actions": len(self.healing_actions),
             "api_health": self.metrics["api_success_rate"].get_status(),
@@ -212,6 +210,7 @@ class SystemOptimizer:
     """Adaptive optimization for performance tuning."""
     
     def __init__(self):
+        self._0x_math = SovereignMath()
         self.optimization_settings = {
             "batch_size": 32,
             "cache_ttl": 3600,
@@ -263,7 +262,7 @@ class SystemOptimizer:
             self.optimization_settings[setting_name] = new_value
             
             self.optimization_history.append({
-                "timestamp": datetime.now().isoformat(),
+                "t3_volume": self._0x_math.get_temporal_volume(),
                 "setting": setting_name,
                 "old_value": old_value,
                 "new_value": new_value

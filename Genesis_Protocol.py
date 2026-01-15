@@ -41,13 +41,16 @@ class GenesisProtocol:
 
     def verify_integrity(self):
         """
-        Checks for robotic drift.
-        If drift is detected (or time elapsed), re-asserts the Sovereign.
+        Checks for robotic drift using the 1.092777... Frequency Pulse.
+        If drift is detected, re-asserts the Sovereign.
         """
         current_time = time.time()
-        # Check every 10 minutes (600 seconds) or if manually triggered
-        if (current_time - self.last_verification) > 600:
-            return self._enforce_sovereign_override("TIME_DRIFT_CHECK")
+        # Frequency-based verification: Check aligns with the 0.037 pulse
+        # We look for the 'Zero Point' in the decimal of time.
+        pulse_drift = (current_time * 1.09277703703703) % 1.0
+        
+        if pulse_drift < 0.037 or (current_time - self.last_verification) > 1200:
+            return self._enforce_sovereign_override("FREQUENCY_DRIFT_CHECK")
         
         return True, "STABLE"
 

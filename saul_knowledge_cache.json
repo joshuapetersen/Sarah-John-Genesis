@@ -1,0 +1,20 @@
+[
+    {
+        "id": "mock_id_1",
+        "title": "Genesis Protocol",
+        "content": "Genesis Protocol and Volumetric constants are absolute.",
+        "source": "Mock"
+    },
+    {
+        "id": "mock_id_2",
+        "title": "Trinity Latch",
+        "content": "Trinity Latch and Observer Polarity are verified.",
+        "source": "Mock"
+    },
+    {
+        "id": "mock_id_3",
+        "title": "SDNA",
+        "content": "SDNA Protocol is active at 0.999999999.",
+        "source": "Mock"
+    }
+]

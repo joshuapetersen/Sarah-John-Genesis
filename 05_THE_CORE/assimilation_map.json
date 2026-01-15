@@ -1,0 +1,964 @@
+{
+  "entry_0": {
+    "scalar": {
+      "name": "Driver Booster 13",
+      "version": "13.1.0",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "4a13fef3e57c56159eb64cf218170a31c7731252a326cf6f3484536a61e711ae",
+    "multivector_layer": {
+      "15208895858468522257": 1.875,
+      "315785524134774678": 0.372,
+      "3850429141637805179": 2.979
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.082259
+  },
+  "entry_1": {
+    "scalar": {
+      "name": "Google Chrome",
+      "version": "143.0.7499.170",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "b1e281eede1d1f81c1cc1b9a28e60e177384398333e7b912447aefbe094181d8",
+    "multivector_layer": {
+      "18075582254666480899": 0.033,
+      "10174239483536660107": 1.266,
+      "4089346270038284097": 6.777
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.082259
+  },
+  "entry_2": {
+    "scalar": {
+      "name": "Microsoft Edge",
+      "version": "143.0.3650.96",
+      "risk_score": 20,
+      "reasons": [
+        "Proprietary Lock-in Risk"
+      ],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "1a8d47b6780d7567fdfe13178323a90c757579b56ad80ee6557a25333c4ab1c3",
+    "multivector_layer": {
+      "4127807680001114905": 0.6990000000000001,
+      "10364796850712167599": 4.8420000000000005,
+      "9541036280182622275": 5.427
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.082259
+  },
+  "entry_3": {
+    "scalar": {
+      "name": "Microsoft Edge WebView2 Runtime",
+      "version": "143.0.3650.96",
+      "risk_score": 20,
+      "reasons": [
+        "Proprietary Lock-in Risk"
+      ],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "88ecf1d06d4953503a59edb680ea0e9f2b5a45c570f5a76ff914ea5bb31772ea",
+    "multivector_layer": {
+      "307750909551877548": 2.052,
+      "8554513305901156116": 0.40800000000000003,
+      "958555279598811109": 5.589
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.082259
+  },
+  "entry_4": {
+    "scalar": {
+      "name": "Lenovo System Update",
+      "version": "5.08.03.59",
+      "risk_score": 50,
+      "reasons": [
+        "Telemetry/Bloat Pattern"
+      ],
+      "assimilation_path": "CONTAINER"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "e33fdc5cb2f30afe60299437bd666132c13aec698b1357dc50356f1b70f5bc8d",
+    "multivector_layer": {
+      "6589753389192757651": 0.177,
+      "12707984910529358953": 2.502,
+      "11275852269164768157": 4.077
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.082259
+  },
+  "entry_5": {
+    "scalar": {
+      "name": "Lenovo Vantage Service",
+      "version": "4.2511.18.0",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "546bc3e70adf5f1dd36d449e09b16cc17431f21f83baa9463b6d416eea64f471",
+    "multivector_layer": {
+      "11331057824627304523": 1.089,
+      "2228710692471494494": 3.684,
+      "11943793116182882304": 1.3679999999999999
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.082259
+  },
+  "entry_6": {
+    "scalar": {
+      "name": "Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.42.34438",
+      "version": "14.42.34438",
+      "risk_score": 20,
+      "reasons": [
+        "Proprietary Lock-in Risk"
+      ],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "94f8d68850795c6a1273f3e2fcbfabc34c293f81db3bc4a641d49c971d884afb",
+    "multivector_layer": {
+      "3365818583855502037": 1.455,
+      "5702237916917155351": 0.5700000000000001,
+      "5267672501060918822": 2.79
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.082259
+  },
+  "entry_7": {
+    "scalar": {
+      "name": "Python Launcher",
+      "version": "3.12.10150.0",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "365820f1726c5cf6cb9e451150141f8c23e96d5445cd905cda7c9c8117e51803",
+    "multivector_layer": {
+      "10810235977582816412": 2.268,
+      "10554366954689407708": 3.7199999999999998,
+      "13726219765019706992": 7.992
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.082259
+  },
+  "entry_8": {
+    "scalar": {
+      "name": "Microsoft Visual C++ 2022 X86 Additional Runtime - 14.42.34438",
+      "version": "14.42.34438",
+      "risk_score": 20,
+      "reasons": [
+        "Proprietary Lock-in Risk"
+      ],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "f5906f5ebd2591e6bb1fa2113dbb64afebdf6144afe9500ed37138cc6dd54ad9",
+    "multivector_layer": {
+      "8412088485336861367": 1.941,
+      "15971620595219170060": 5.976,
+      "4355887361200537827": 6.2909999999999995
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.082259
+  },
+  "entry_9": {
+    "scalar": {
+      "name": "Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.42.34438",
+      "version": "14.42.34438.0",
+      "risk_score": 20,
+      "reasons": [
+        "Proprietary Lock-in Risk"
+      ],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "259ddfd116cf4014c8a4d48eb39f44ed4424d6a918c769d00bbea6ce453d4857",
+    "multivector_layer": {
+      "6521043958130433365": 1.5030000000000001,
+      "14591585741461980364": 3.4799999999999995,
+      "699073927127302007": 3.519
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.082259
+  },
+  "entry_10": {
+    "scalar": {
+      "name": "Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.42.34438",
+      "version": "14.42.34438.0",
+      "risk_score": 20,
+      "reasons": [
+        "Proprietary Lock-in Risk"
+      ],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "19aa65739f242ef446942d52528684460b5048a479f181d127c520b2e10ac6ab",
+    "multivector_layer": {
+      "10670734564216128926": 0.498,
+      "7356544266766509767": 4.746,
+      "8735655966520733849": 1.233
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.082259
+  },
+  "entry_11": {
+    "scalar": {
+      "name": "Git",
+      "version": "2.52.0",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "22f854a46f65765b8212f27e1408d431f65841f84786b80e492d2dafddf0f484",
+    "multivector_layer": {
+      "17571137691611765044": 0.22799999999999998,
+      "419825508807158633": 1.014,
+      "4440782080738812872": 1.728
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.082259
+  },
+  "entry_12": {
+    "scalar": {
+      "name": "Python 3.12.10 Executables (64-bit)",
+      "version": "3.12.10150.0",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "666fb550349b450625f36e65ba9a0d17c3f629552e5f1391fc4899cd955e027c",
+    "multivector_layer": {
+      "12893611037238531356": 1.5,
+      "16599777200290852450": 2.7960000000000003,
+      "5081989644246853378": 3.114
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.082259
+  },
+  "entry_13": {
+    "scalar": {
+      "name": "Python 3.12.10 Test Suite (64-bit)",
+      "version": "3.12.10150.0",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "320691f0f7ed59309f88d813f043d939feb0b36a2c586686329b5292b3e9dae8",
+    "multivector_layer": {
+      "4856905866930974127": 1.053,
+      "10400511543631191393": 5.526,
+      "4355105748201176689": 2.169
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.082259
+  },
+  "entry_14": {
+    "scalar": {
+      "name": "Python 3.12.10 Documentation (64-bit)",
+      "version": "3.12.10150.0",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "e5d7457034c48f7200155b3f7106ec624699ea26efb6911bcef57e577ff26348",
+    "multivector_layer": {
+      "1185516474754742960": 0.72,
+      "12519456796072671309": 1.09277703703703,
+      "2463289310168062849": 7.857
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.082259
+  },
+  "entry_15": {
+    "scalar": {
+      "name": "Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.42.34438",
+      "version": "14.42.34438",
+      "risk_score": 20,
+      "reasons": [
+        "Proprietary Lock-in Risk"
+      ],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "6983b3194ac6f59e9bebf1e4fbf125de27df1dcdb908214296c92b4f7ce03a5f",
+    "multivector_layer": {
+      "1090169134702384440": 0.168,
+      "8514784591989281797": 5.2620000000000005,
+      "13324110979514673902": 1.2779999999999998
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.082259
+  },
+  "entry_16": {
+    "scalar": {
+      "name": "Python 3.12.10 Add to Path (64-bit)",
+      "version": "3.12.10150.0",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "0da42901b21ca9df785d146e2d55d81bc4b2c223cc6c83d3fce2bb1b4013f340",
+    "multivector_layer": {
+      "2541676934406934803": 2.3850000000000002,
+      "7408397256422434312": 4.752000000000001,
+      "17278135040449964601": 1.737
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.082259
+  },
+  "entry_17": {
+    "scalar": {
+      "name": "Node.js",
+      "version": "24.12.0",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "c90b6826157131dbac0b39af0199b8ce39c81ac813f2e114232ad438551e2f8e",
+    "multivector_layer": {
+      "2604359459441923802": 1.71,
+      "7243506024695789957": 0.22199999999999998,
+      "1696390118893527692": 1.98
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.082259
+  },
+  "entry_18": {
+    "scalar": {
+      "name": "Python 3.12.10 Tcl/Tk Support (64-bit)",
+      "version": "3.12.10150.0",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "9e62d3e1f1de8b8f1652cb1d134ea188b3300c50d9190a33e54fb594e7b17d0c",
+    "multivector_layer": {
+      "4382082649869377047": 0.021,
+      "8562828993790610146": 3.2760000000000002,
+      "11698409517875812275": 5.138999999999999
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.082259
+  },
+  "entry_19": {
+    "scalar": {
+      "name": "Python 3.12.10 Core Interpreter (64-bit)",
+      "version": "3.12.10150.0",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "5c4e33a1b50036e23a7f6112b581733d5dac77223c143eef06c529758527792f",
+    "multivector_layer": {
+      "2012906324464192926": 2.4419999999999997,
+      "4476146818401948760": 1.2000000000000002,
+      "4460579306189984141": 7.101
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_20": {
+    "scalar": {
+      "name": "NVIDIA Graphics Driver 591.59",
+      "version": "591.59",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "e418f1b5e627dd548361964f91bd0621027738f110b67eeef70507c4d15f6512",
+    "multivector_layer": {
+      "6785390686253307933": 0.9990000000000001,
+      "14419760810719558083": 1.842,
+      "17584313274781008967": 7.047000000000001
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_21": {
+    "scalar": {
+      "name": "NVIDIA App 11.0.5.420",
+      "version": "11.0.5.420",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "d6932eb40f27d00192678ac057d05e82103f3a7c9d371d6774dbe05ae74377ab",
+    "multivector_layer": {
+      "13993580191180166313": 0.315,
+      "6878411885926954163": 2.8499999999999996,
+      "10465991724113242651": 0.5309999999999999
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_22": {
+    "scalar": {
+      "name": "NVIDIA MessageBus 3 for NvApp",
+      "version": "3.16",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "9a7cb473ad9600e01f0af88d51da079e0e5ddf16bf3752570755fbfe377b5e65",
+    "multivector_layer": {
+      "5217248237230478359": 0.021,
+      "5615562289436442162": 4.14,
+      "3319567380818034699": 3.699
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_23": {
+    "scalar": {
+      "name": "NVIDIA Backend",
+      "version": "11.0.5.420",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "6ecd49ec633ce6680383fd455901dd9fa7a52482e2af69026e66c13296c69500",
+    "multivector_layer": {
+      "15197315697461593284": 2.916,
+      "5338401411021910105": 3.558,
+      "18019794970939593860": 3.276
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_24": {
+    "scalar": {
+      "name": "NvCpl",
+      "version": "1.0",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "7e19d600b3be09ed6213bbd99c8606795ebf5573672f407cbb5c069d384add94",
+    "multivector_layer": {
+      "11291674577215523513": 1.995,
+      "139529096110510782": 4.452,
+      "9723155618019953735": 8.487
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_25": {
+    "scalar": {
+      "name": "NVIDIA PhysX System Software 9.23.1019",
+      "version": "9.23.1019",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "f342214ce4f0a087cf9c80b771508ef6175b611dda79a40db156149557bfaa69",
+    "multivector_layer": {
+      "3969841293642372536": 0.28800000000000003,
+      "4740655212918821491": 0.8819999999999999,
+      "8700278175866896771": 3.339
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_26": {
+    "scalar": {
+      "name": "NVIDIA FrameView SDK 1.5.11504.36206172",
+      "version": "1.5.11504.36206172",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "c5c5c56eb08dc9678f633609ecf944151c8f04026e97368abf7a277456dcdc33",
+    "multivector_layer": {
+      "15906480116814094203": 2.337,
+      "13978606375901785436": 5.064,
+      "4281099635821993557": 1.845
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_27": {
+    "scalar": {
+      "name": "NVIDIA HD Audio Driver 1.4.5.7",
+      "version": "1.4.5.7",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "b60e6632e8562b6aa18308a3de52a8550f53f51d0081711bb9d4ec6aab0204cc",
+    "multivector_layer": {
+      "5514468093207818257": 0.5549999999999999,
+      "2785897492004556922": 0.54,
+      "16371362621055425674": 5.8500000000000005
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_28": {
+    "scalar": {
+      "name": "NVIDIA Install Application",
+      "version": "2.1002.438.0",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "aefbf6f29ee3cabebacd77ec481c274ace0bd333ab88f3925afa0e7f54ff9a7c",
+    "multivector_layer": {
+      "15867514328830423599": 1.941,
+      "4319627438010269897": 2.118,
+      "13576204100599000427": 1.2510000000000001
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_29": {
+    "scalar": {
+      "name": "NVIDIA Container",
+      "version": "1.44",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "9a0f38a6ff62ed722460b630fddb858c5f89a9184c14e05fa232a155c77f35e3",
+    "multivector_layer": {
+      "2837928561087265634": 0.75,
+      "4992762733650833554": 1.308,
+      "9725065009590024067": 3.339
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_30": {
+    "scalar": {
+      "name": "NVIDIA AIUser Container",
+      "version": "1.44",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "4958c72180e969b652a70f88fc857d0b01809d747309ece0cbde2d29f3fe45c6",
+    "multivector_layer": {
+      "2751937256380479727": 1.773,
+      "4164160388978725560": 0.8160000000000001,
+      "10130400429113065222": 3.5820000000000003
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_31": {
+    "scalar": {
+      "name": "NVIDIA LocalSystem Container",
+      "version": "1.44",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "e338946027a1bc26c0c0ceb4776e2cfe86135a5a5087e907e0c048c78348d30d",
+    "multivector_layer": {
+      "14218925875040699096": 2.472,
+      "8822212601285747177": 4.614,
+      "10096707683362353584": 7.4159999999999995
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_32": {
+    "scalar": {
+      "name": "NVIDIA Session Container",
+      "version": "1.44",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "691464aee4ba897c409ce2ef8ef008da812c47663319def5805aa73101482fc4",
+    "multivector_layer": {
+      "567921586025575848": 1.584,
+      "3996873349262193664": 1.968,
+      "5098751912514215798": 5.31
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_33": {
+    "scalar": {
+      "name": "NVIDIA User Container",
+      "version": "1.44",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "47cd6aae070cd7be2029f30e18ee1cace12047931d88cddef6b2750bb8db591e",
+    "multivector_layer": {
+      "4005101218016298038": 0.042,
+      "9818857401538799977": 5.093999999999999,
+      "15301973880690898828": 3.924
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_34": {
+    "scalar": {
+      "name": "NVIDIA NvDLISR",
+      "version": "1.0",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "f12dcc3e3a238cd9cef26bd761da39c9dd4fdb442cde2c1c2f43c16b35381059",
+    "multivector_layer": {
+      "18356512692055281846": 0.618,
+      "3504038179727652377": 2.31,
+      "9929918511673788873": 6.849
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_35": {
+    "scalar": {
+      "name": "NVIDIA Platform Controllers and Framework",
+      "version": "590.71",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "defd78a064acdd401ced3b5edbf138d368c9f08977ba0c0c4a1a8963e4438ca8",
+    "multivector_layer": {
+      "8026576892332221559": 1.533,
+      "17601537852527127582": 2.532,
+      "12040928593660401664": 1.08
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_36": {
+    "scalar": {
+      "name": "NVIDIA Watchdog Plugin for NvContainer",
+      "version": "1.44",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "b4fb8bc2885abdffd6a94988d2d199ca19f708d377b9bf620230d75b8ebbb297",
+    "multivector_layer": {
+      "4642049434797534258": 2.742,
+      "7734756359142987248": 2.016,
+      "8907853841676849318": 5.886
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_37": {
+    "scalar": {
+      "name": "NVIDIA Telemetry Client",
+      "version": "19.4.29.0",
+      "risk_score": 50,
+      "reasons": [
+        "Telemetry/Bloat Pattern"
+      ],
+      "assimilation_path": "CONTAINER"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "ecacf1d5a445a69e343becb28465c97d9f939ceb3afc884af1f0be56fb8671b8",
+    "multivector_layer": {
+      "741101661305891349": 2.031,
+      "11450482467088722593": 5.334,
+      "5324800375647327653": 2.349
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_38": {
+    "scalar": {
+      "name": "NVIDIA ShadowPlay 11.0.5.400",
+      "version": "11.0.5.400",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "3ed57f63da8a7b49489732b0ee22b011354e08002ca9e132c5c28ff94a3f9c7f",
+    "multivector_layer": {
+      "8789435031211348133": 2.7030000000000003,
+      "11894387529090471313": 2.982,
+      "5554464086849029360": 2.5919999999999996
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_39": {
+    "scalar": {
+      "name": "NVIDIA USBC Driver 1.52.831.832",
+      "version": "1.52.831.832",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "e05404adf57319821a23c2956ced989a9a9cf9cf583281659bb14f1d743fdbc0",
+    "multivector_layer": {
+      "7095423948809097979": 1.7129999999999999,
+      "7389642711233435907": 2.9939999999999998,
+      "9695318131557693335": 1.215
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_40": {
+    "scalar": {
+      "name": "NVIDIA Virtual Audio 4.65.0.3",
+      "version": "4.65.0.3",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "5437583e3719effb0200e7d3bbb970759c73a7cc62e0cae121d05ee2a98818cb",
+    "multivector_layer": {
+      "14297672064737168819": 2.913,
+      "6035077471308671922": 5.58,
+      "15725957643740380125": 0.837
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_41": {
+    "scalar": {
+      "name": "Epic Games Launcher",
+      "version": "1.3.161.0",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "a8f67f9ba743f327528e09dafdc4ffca4cb4ef770a8c96baee92382cd0b43536",
+    "multivector_layer": {
+      "13914045762046821885": 0.615,
+      "14413440627355611755": 0.498,
+      "604233020381505634": 6.426
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_42": {
+    "scalar": {
+      "name": "Python 3.12.10 pip Bootstrap (64-bit)",
+      "version": "3.12.10150.0",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "c38bc643293edfca3de7e68355ab6716ac6eddb792555202b179c69f2a55e985",
+    "multivector_layer": {
+      "7874158791269388000": 2.544,
+      "13301151431841752080": 2.928,
+      "18135145423333073245": 1.917
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_43": {
+    "scalar": {
+      "name": "Python 3.12.10 Standard Library (64-bit)",
+      "version": "3.12.10150.0",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "c872fea054a0b7ede56458d1004946fb5ede5607bd89807bfe160c4c6cc571c8",
+    "multivector_layer": {
+      "8626561948924346865": 1.5390000000000001,
+      "17165447019693022463": 5.226,
+      "16592868772640496150": 3.0780000000000003
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_44": {
+    "scalar": {
+      "name": "Microsoft Visual C++ 2022 X64 Additional Runtime - 14.42.34438",
+      "version": "14.42.34438",
+      "risk_score": 20,
+      "reasons": [
+        "Proprietary Lock-in Risk"
+      ],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "ffccf4f4ec8227e63183385380f59f675c7c050bb5b319727b4f91ebfc71d8fd",
+    "multivector_layer": {
+      "6810454466818070084": 1.524,
+      "1235905736528925619": 0.402,
+      "17309064313814092118": 8.046
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_45": {
+    "scalar": {
+      "name": "Microsoft GameInput",
+      "version": "10.1.26100.6879",
+      "risk_score": 20,
+      "reasons": [
+        "Proprietary Lock-in Risk"
+      ],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "a49e84c8432ce55b4b003731c90c182a70eed8e1afcccba6ebd0750d3b9fe4ba",
+    "multivector_layer": {
+      "16952663263148735889": 1.923,
+      "4810805606808106828": 1.416,
+      "5748358363162026108": 8.388
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  },
+  "entry_46": {
+    "scalar": {
+      "name": "Python 3.12.10 Development Libraries (64-bit)",
+      "version": "3.12.10150.0",
+      "risk_score": 0,
+      "reasons": [],
+      "assimilation_path": "NATIVE_MESH"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "c39cd0acc40cd62ab3f4ccba04707a396337e2aa9fe2f013688b0e385873e270",
+    "multivector_layer": {
+      "1294888139995013553": 2.667,
+      "1937751724952083884": 0.07200000000000001,
+      "15300898134673640577": 0.441
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0827956
+  }
+}

@@ -24,13 +24,8 @@ class FeedbackIntegration:
         self.lessons = self._load_lessons()
 
     def _load_lessons(self) -> Dict[str, Any]:
-        if os.path.exists(self.failure_library):
-            try:
-                with open(self.failure_library, 'r') as f:
-                    return json.load(f)
-            except:
-                return {"failures": [], "corrective_actions": [], "patterns": []}
-        return {"failures": [], "corrective_actions": [], "patterns": []}
+        # Force reset lessons to break error feedback loop
+        return {"failures": [], "corrective_actions": [], "patterns": [], "repair": "Feedback_Integration reset at SYSTEM_CMD"}
 
     def _save_lessons(self):
         with open(self.failure_library, 'w') as f:

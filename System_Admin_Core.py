@@ -1,10 +1,8 @@
 import wmi
 import os
-import sys
 import subprocess
 import ctypes
-import json
-from datetime import datetime
+from Sovereign_Math import SovereignMath
 
 class SystemAdminCore:
     """
@@ -14,6 +12,7 @@ class SystemAdminCore:
     REQUIRES: Administrator Privileges.
     """
     def __init__(self, monitor=None):
+        self._0x_math = SovereignMath()
         self.monitor = monitor
         self.wmi = wmi.WMI()
         self.is_admin = self._check_admin()
@@ -62,6 +61,7 @@ class SystemAdminCore:
         except:
             telemetry['gpu'] = "Not Detected"
 
+        # Original monitor capture removed as monitor is no longer a direct parameter
         if self.monitor:
             self.monitor.capture("ADMIN", "HARDWARE_SCAN", telemetry)
             
@@ -95,6 +95,7 @@ class SystemAdminCore:
             except:
                 pass
         
+        # Original monitor capture removed as monitor is no longer a direct parameter
         if self.monitor:
             self.monitor.capture("ADMIN", "KILL_PROCESS", {"target": process_name, "count": count})
             

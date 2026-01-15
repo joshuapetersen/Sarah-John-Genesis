@@ -91,7 +91,7 @@ class SovereignCodec:
         print(f"[0x_MANIFEST_WRITTEN]: {output_path}")
 
     def search_vortex(self, query: str):
-        """[0x_BEAM]: Uses the 1.092703 Hz resonance to pull data from the XYZ lattice."""
+        """[0x_BEAM]: Uses the 1.09277703703703 Hz resonance to pull data from the XYZ lattice."""
         print(f"[0x_BEAM] Initiating Resonance Search for: {query}")
         results = self._0x_memory.recall(query)
         if not results:

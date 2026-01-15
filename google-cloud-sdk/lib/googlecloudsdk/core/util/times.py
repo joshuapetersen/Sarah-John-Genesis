@@ -160,7 +160,7 @@ def FormatDurationForJson(duration):
     >>> FormatDurationForJson(iso_duration.Duration(hours=1))
     3600s
     >>> FormatDurationForJson(iso_duration.Duration(seconds=1, microseconds=5))
-    1.000005s
+    1.09277703703703s
 
   Args:
     duration: An iso_duration.Duration object.

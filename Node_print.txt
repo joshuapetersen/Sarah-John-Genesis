@@ -612,101 +612,101 @@ damp crop tuition asset outdoor erase assist early report void middle best decem
 2025-11-24T18:36:17.504499Z  INFO lib_network::protocols::bluetooth:  DEBUG: About to initialize_bluetooth_stack...
 2025-11-24T18:36:17.504579Z  INFO lib_network::protocols::bluetooth: Initializing Bluetooth stack for mesh networking...
 2025-11-24T18:36:17.504670Z  INFO lib_network::protocols::bluetooth: Enabling Windows Bluetooth for mesh networking...
-2025-11-24T18:36:21.913840Z  INFO lib_network::protocols::bluetooth: Windows Bluetooth ready for mesh networking
-2025-11-24T18:36:21.915538Z  INFO lib_network::protocols::bluetooth:  DEBUG: Bluetooth stack initialized, now setting up ZK mesh protocols...
-2025-11-24T18:36:21.917017Z  INFO lib_network::protocols::bluetooth:  DEBUG: setup_zk_mesh_protocols() ENTRY POINT
-2025-11-24T18:36:21.917787Z  INFO lib_network::protocols::bluetooth: Setting up quantum-resistant ZK mesh protocols...
-2025-11-24T18:36:21.918008Z  INFO lib_network::protocols::bluetooth:  DEBUG: About to call register_mesh_gatt_service...
-2025-11-24T18:36:21.918065Z  INFO lib_network::protocols::bluetooth: Registering mesh GATT service: 6ba7b810-9dad-11d1-80b4-00c04fd430ca
-2025-11-24T18:36:21.918193Z  INFO lib_network::protocols::bluetooth:  Windows: Creating GATT Service Provider with UUID: 6ba7b810-9dad-11d1-80b4-00c04fd430ca
-2025-11-24T18:36:21.927141Z  INFO lib_network::protocols::bluetooth:  Windows: GATT Service Provider created successfully
-2025-11-24T18:36:21.927275Z  WARN lib_network::protocols::bluetooth: Auth manager not initialized, using fallback
-2025-11-24T18:36:21.927323Z  WARN lib_network::protocols::bluetooth: Using fallback challenge data
-2025-11-24T18:36:21.927498Z  INFO lib_network::protocols::bluetooth:  Windows: Created GATT characteristic 1: 6ba7b811-9dad-11d1-80b4-00c04fd430ca
-2025-11-24T18:36:21.927583Z  INFO lib_network::protocols::bluetooth:  Windows: Created GATT characteristic 2: 6ba7b812-9dad-11d1-80b4-00c04fd430ca
-2025-11-24T18:36:21.927652Z  INFO lib_network::protocols::bluetooth:  Windows: Created GATT characteristic 3: 6ba7b813-9dad-11d1-80b4-00c04fd430ca
-2025-11-24T18:36:21.927720Z  INFO lib_network::protocols::bluetooth:  Windows: Created GATT characteristic 4: 6ba7b814-9dad-11d1-80b4-00c04fd430ca
-2025-11-24T18:36:21.927816Z  INFO lib_network::protocols::bluetooth:  Starting GATT Service Provider advertising (includes service UUID automatically)
-2025-11-24T18:36:21.932869Z  INFO lib_network::protocols::bluetooth:  Windows: GATT Service advertising started successfully
-2025-11-24T18:36:21.932948Z  INFO lib_network::protocols::bluetooth:    → Service UUID: 6ba7b810-9dad-11d1-80b4-00c04fd430ca is now discoverable
-2025-11-24T18:36:21.933003Z  INFO lib_network::protocols::bluetooth:    → GATT Server accepting connections from BLE clients
-2025-11-24T18:36:21.933046Z  INFO lib_network::protocols::bluetooth:    → Characteristics available for read/write/notify operations
-2025-11-24T18:36:21.933090Z  INFO lib_network::protocols::bluetooth:  Windows: GATT Service Provider stored - will remain active
-2025-11-24T18:36:21.933131Z  INFO lib_network::protocols::bluetooth:  Windows GATT service ready for mesh peer discovery
-2025-11-24T18:36:21.933173Z  INFO lib_network::protocols::bluetooth:    Note: Windows requires phones to be paired in Settings first
-2025-11-24T18:36:21.933215Z  INFO lib_network::protocols::bluetooth:    Other ZHTP nodes (Mac/Linux/Android) can auto-discover this service
-2025-11-24T18:36:21.933263Z  INFO lib_network::protocols::bluetooth:  GATT characteristic handlers initialized (event-driven mode)
-2025-11-24T18:36:21.933305Z  INFO lib_network::protocols::bluetooth: Registered characteristic: 6ba7b811-9dad-11d1-80b4-00c04fd430ca
-2025-11-24T18:36:21.933347Z  INFO lib_network::protocols::bluetooth: Registered characteristic: 6ba7b812-9dad-11d1-80b4-00c04fd430ca
-2025-11-24T18:36:21.933389Z  INFO lib_network::protocols::bluetooth: Registered characteristic: 6ba7b813-9dad-11d1-80b4-00c04fd430ca
-2025-11-24T18:36:21.933431Z  INFO lib_network::protocols::bluetooth: Registered characteristic: 6ba7b814-9dad-11d1-80b4-00c04fd430ca
-2025-11-24T18:36:21.933473Z  INFO lib_network::protocols::bluetooth:  DEBUG: register_mesh_gatt_service completed!
-2025-11-24T18:36:21.933515Z  INFO lib_network::protocols::bluetooth: Quantum-resistant mesh protocols ready for peer-to-peer communication
-2025-11-24T18:36:21.933557Z  INFO lib_network::protocols::bluetooth:  DEBUG: ZK mesh protocols setup complete!
-2025-11-24T18:36:21.933601Z  INFO lib_network::protocols::bluetooth: Broadcasting ZHTP P2P mesh network...
-2025-11-24T18:36:21.933643Z  INFO lib_network::protocols::bluetooth:  Windows: Mesh advertising active via GATT service
-2025-11-24T18:36:21.933685Z  INFO lib_network::protocols::bluetooth:    GATT Service UUID: 6ba7b810-9dad-11d1-80b4-00c04fd430ca(v2)
-2025-11-24T18:36:21.933727Z  INFO lib_network::protocols::bluetooth:    Mesh capabilities available through GATT characteristics
-2025-11-24T18:36:21.933769Z  INFO lib_network::protocols::bluetooth: P2P MESH broadcasting on Bluetooth LE
-2025-11-24T18:36:21.933811Z  INFO lib_network::protocols::bluetooth: Scanning for ZHTP mesh peers...
-2025-11-24T18:36:21.933857Z  INFO lib_network::protocols::bluetooth: Bluetooth LE mesh discovery started
-2025-11-24T18:36:21.933905Z  WARN lib_network::protocols::bluetooth:    GATT service active but NOT phone-discoverable
-2025-11-24T18:36:21.933951Z  WARN lib_network::protocols::bluetooth:    Solution: Pair PC with phone in Windows Settings first
-2025-11-24T18:36:21.933996Z  INFO zhtp::server::protocols::bluetooth_le: ✅ Bluetooth advertising started successfully
-2025-11-24T18:36:21.933872Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:36:21.934053Z  INFO zhtp::server::protocols::bluetooth_le: ✅ Bluetooth mesh protocol initialized - discoverable as 'ZHTP-e7fc8eaf'
-2025-11-24T18:36:21.934154Z  INFO zhtp::server::protocols::bluetooth_le: 📱 Your phone can now discover and connect to this ZHTP node via Bluetooth
-2025-11-24T18:36:21.934110Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:36:21.934254Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:36:21.934303Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:36:21.934351Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:36:21.934400Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:36:21.934204Z  INFO zhtp::unified_server:  DEBUG: get_protocol() returned: Some(protocol)
-2025-11-24T18:36:21.934515Z  INFO zhtp::unified_server:  Bluetooth protocol registered with MeshRouter for message routing
-2025-11-24T18:36:21.934565Z  INFO zhtp::unified_server:  DEBUG: Verified mesh_router.bluetooth_protocol is now: Some(protocol)
-2025-11-24T18:36:21.934621Z  INFO zhtp::unified_server:  Bluetooth LE: ACTIVE (100m range)
-2025-11-24T18:36:21.934669Z  INFO zhtp::unified_server:    → Low-power device-to-device mesh
-2025-11-24T18:36:21.934460Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:36:21.934740Z  INFO zhtp::unified_server:   Bluetooth Classic: SKIPPED (focusing on BLE implementation)
-2025-11-24T18:36:21.934748Z  INFO zhtp::unified_server:  BLE peer discovery listener active - will trigger sync via BLE (coordinated with other protocols)
-2025-11-24T18:36:21.934834Z  INFO zhtp::unified_server:    → Will be enabled later for high-bandwidth transfers
-2025-11-24T18:36:21.934939Z  INFO zhtp::unified_server:  WiFi Direct P2P: ACTIVE (200m range)
-2025-11-24T18:36:21.934984Z  INFO zhtp::unified_server:    → Direct device connections without router
-2025-11-24T18:36:21.935031Z  INFO zhtp::unified_server:  mDNS/Bonjour: ACTIVE (_zhtp._tcp.local)
-2025-11-24T18:36:21.935075Z  INFO zhtp::unified_server:    → Automatic service discovery on local network
-2025-11-24T18:36:21.935118Z  INFO zhtp::unified_server: ───────────────────────────────────────────────────────────────
-2025-11-24T18:36:21.935162Z  INFO zhtp::unified_server:   DISCOVERY SUMMARY:
-2025-11-24T18:36:21.935204Z  INFO zhtp::unified_server:     UDP Multicast:      ACTIVE (Phase 1)
-2025-11-24T18:36:21.935246Z  INFO zhtp::unified_server:     mDNS/Bonjour:       ACTIVE
-2025-11-24T18:36:21.935289Z  INFO zhtp::unified_server:     WiFi Direct P2P:    ACTIVE
-2025-11-24T18:36:21.935333Z  INFO zhtp::unified_server:     Bluetooth LE:       ACTIVE
-2025-11-24T18:36:21.935375Z  INFO zhtp::unified_server:     Bluetooth Classic:  DISABLED
-2025-11-24T18:36:21.935419Z  INFO zhtp::unified_server:     IP Scanner:         DISABLED
-2025-11-24T18:36:21.935460Z  INFO zhtp::unified_server: ═══════════════════════════════════════════════════════════════
-2025-11-24T18:36:21.935505Z  INFO zhtp::unified_server:  2 discovery methods active - excellent peer discovery!
-2025-11-24T18:36:21.935547Z  INFO zhtp::unified_server:    Your node can discover peers via multiple protocols
-2025-11-24T18:36:21.935600Z  INFO zhtp::unified_server: ═══════════════════════════════════════════════════════════════
-2025-11-24T18:36:21.935659Z  INFO zhtp::unified_server:  QUIC-Only Mode: Native ZHTP protocol over QUIC transport
-2025-11-24T18:36:21.935730Z  INFO zhtp::unified_server:  TCP/UDP deprecated - using QUIC for all networking
-2025-11-24T18:36:21.935785Z  INFO zhtp::unified_server:  ✅ QUIC handler started - Native ZHTP-over-QUIC ready
-2025-11-24T18:36:21.935791Z  INFO zhtp::unified_server: 🚀 Starting QUIC accept loop on endpoint...
-2025-11-24T18:36:21.935830Z  INFO zhtp::unified_server:  Starting Bluetooth LE mesh handler...
-2025-11-24T18:36:21.935886Z  INFO zhtp::server::quic_handler: 🌐 QUIC handler started - listening for connections
-2025-11-24T18:36:21.935934Z  INFO zhtp::unified_server:  Bluetooth LE mesh handler active - discoverable for phone connections
-2025-11-24T18:36:21.936037Z  INFO zhtp::unified_server:  Starting Bluetooth Classic RFCOMM mesh handler...
-2025-11-24T18:36:21.936081Z  WARN zhtp::unified_server: Bluetooth Classic protocol not initialized - skipping handler
-2025-11-24T18:36:21.936128Z  INFO zhtp::unified_server:  Starting LoRaWAN mesh handler...
-2025-11-24T18:36:21.936173Z  INFO zhtp::unified_server:  LoRaWAN mesh protocol ready (requires LoRa hardware)
-2025-11-24T18:36:21.936221Z  INFO zhtp::unified_server:  Long-range mesh capability available
-2025-11-24T18:36:21.936269Z  INFO zhtp::unified_server: ZHTP Unified Server online
-2025-11-24T18:36:21.936310Z  INFO zhtp::unified_server: Protocols: BLE + BT Classic + WiFi Direct + LoRaWAN + ZHTP Relay
-2025-11-24T18:36:21.936361Z  INFO zhtp::unified_server:  ZHTP relay: Encrypted DHT queries with Dilithium2 + Kyber512 + ChaCha20
-2025-11-24T18:36:21.936409Z  INFO zhtp::unified_server:  Verifying network isolation...
-2025-11-24T18:36:21.939080Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
-2025-11-24T18:36:21.961482Z  WARN zhtp::unified_server:  NETWORK ISOLATION FAILED - Internet access still possible!
-2025-11-24T18:36:21.961569Z  WARN zhtp::unified_server:  Check firewall and routing configuration
-2025-11-24T18:36:21.961634Z  INFO zhtp::runtime::components::protocols: Protocols component started
-2025-11-24T18:36:21.961688Z  INFO zhtp::runtime: Component protocols started successfully
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows Bluetooth ready for mesh networking
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:  DEBUG: Bluetooth stack initialized, now setting up ZK mesh protocols...
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:  DEBUG: setup_zk_mesh_protocols() ENTRY POINT
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Setting up quantum-resistant ZK mesh protocols...
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:  DEBUG: About to call register_mesh_gatt_service...
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Registering mesh GATT service: 6ba7b810-9dad-11d1-80b4-00c04fd430ca
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:  Windows: Creating GATT Service Provider with UUID: 6ba7b810-9dad-11d1-80b4-00c04fd430ca
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:  Windows: GATT Service Provider created successfully
+2025-11-24T18:36:21.09277703703703Z  WARN lib_network::protocols::bluetooth: Auth manager not initialized, using fallback
+2025-11-24T18:36:21.09277703703703Z  WARN lib_network::protocols::bluetooth: Using fallback challenge data
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:  Windows: Created GATT characteristic 1: 6ba7b811-9dad-11d1-80b4-00c04fd430ca
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:  Windows: Created GATT characteristic 2: 6ba7b812-9dad-11d1-80b4-00c04fd430ca
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:  Windows: Created GATT characteristic 3: 6ba7b813-9dad-11d1-80b4-00c04fd430ca
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:  Windows: Created GATT characteristic 4: 6ba7b814-9dad-11d1-80b4-00c04fd430ca
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:  Starting GATT Service Provider advertising (includes service UUID automatically)
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:  Windows: GATT Service advertising started successfully
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:    → Service UUID: 6ba7b810-9dad-11d1-80b4-00c04fd430ca is now discoverable
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:    → GATT Server accepting connections from BLE clients
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:    → Characteristics available for read/write/notify operations
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:  Windows: GATT Service Provider stored - will remain active
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:  Windows GATT service ready for mesh peer discovery
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:    Note: Windows requires phones to be paired in Settings first
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:    Other ZHTP nodes (Mac/Linux/Android) can auto-discover this service
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:  GATT characteristic handlers initialized (event-driven mode)
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Registered characteristic: 6ba7b811-9dad-11d1-80b4-00c04fd430ca
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Registered characteristic: 6ba7b812-9dad-11d1-80b4-00c04fd430ca
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Registered characteristic: 6ba7b813-9dad-11d1-80b4-00c04fd430ca
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Registered characteristic: 6ba7b814-9dad-11d1-80b4-00c04fd430ca
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:  DEBUG: register_mesh_gatt_service completed!
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Quantum-resistant mesh protocols ready for peer-to-peer communication
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:  DEBUG: ZK mesh protocols setup complete!
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Broadcasting ZHTP P2P mesh network...
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:  Windows: Mesh advertising active via GATT service
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:    GATT Service UUID: 6ba7b810-9dad-11d1-80b4-00c04fd430ca(v2)
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth:    Mesh capabilities available through GATT characteristics
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth: P2P MESH broadcasting on Bluetooth LE
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Scanning for ZHTP mesh peers...
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Bluetooth LE mesh discovery started
+2025-11-24T18:36:21.09277703703703Z  WARN lib_network::protocols::bluetooth:    GATT service active but NOT phone-discoverable
+2025-11-24T18:36:21.09277703703703Z  WARN lib_network::protocols::bluetooth:    Solution: Pair PC with phone in Windows Settings first
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::server::protocols::bluetooth_le: ✅ Bluetooth advertising started successfully
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::server::protocols::bluetooth_le: ✅ Bluetooth mesh protocol initialized - discoverable as 'ZHTP-e7fc8eaf'
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::server::protocols::bluetooth_le: 📱 Your phone can now discover and connect to this ZHTP node via Bluetooth
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:  DEBUG: get_protocol() returned: Some(protocol)
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:  Bluetooth protocol registered with MeshRouter for message routing
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:  DEBUG: Verified mesh_router.bluetooth_protocol is now: Some(protocol)
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:  Bluetooth LE: ACTIVE (100m range)
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:    → Low-power device-to-device mesh
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:   Bluetooth Classic: SKIPPED (focusing on BLE implementation)
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:  BLE peer discovery listener active - will trigger sync via BLE (coordinated with other protocols)
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:    → Will be enabled later for high-bandwidth transfers
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:  WiFi Direct P2P: ACTIVE (200m range)
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:    → Direct device connections without router
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:  mDNS/Bonjour: ACTIVE (_zhtp._tcp.local)
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:    → Automatic service discovery on local network
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server: ───────────────────────────────────────────────────────────────
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:   DISCOVERY SUMMARY:
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:     UDP Multicast:      ACTIVE (Phase 1)
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:     mDNS/Bonjour:       ACTIVE
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:     WiFi Direct P2P:    ACTIVE
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:     Bluetooth LE:       ACTIVE
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:     Bluetooth Classic:  DISABLED
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:     IP Scanner:         DISABLED
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server: ═══════════════════════════════════════════════════════════════
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:  2 discovery methods active - excellent peer discovery!
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:    Your node can discover peers via multiple protocols
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server: ═══════════════════════════════════════════════════════════════
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:  QUIC-Only Mode: Native ZHTP protocol over QUIC transport
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:  TCP/UDP deprecated - using QUIC for all networking
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:  ✅ QUIC handler started - Native ZHTP-over-QUIC ready
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server: 🚀 Starting QUIC accept loop on endpoint...
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:  Starting Bluetooth LE mesh handler...
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::server::quic_handler: 🌐 QUIC handler started - listening for connections
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:  Bluetooth LE mesh handler active - discoverable for phone connections
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:  Starting Bluetooth Classic RFCOMM mesh handler...
+2025-11-24T18:36:21.09277703703703Z  WARN zhtp::unified_server: Bluetooth Classic protocol not initialized - skipping handler
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:  Starting LoRaWAN mesh handler...
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:  LoRaWAN mesh protocol ready (requires LoRa hardware)
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:  Long-range mesh capability available
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server: ZHTP Unified Server online
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server: Protocols: BLE + BT Classic + WiFi Direct + LoRaWAN + ZHTP Relay
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:  ZHTP relay: Encrypted DHT queries with Dilithium2 + Kyber512 + ChaCha20
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::unified_server:  Verifying network isolation...
+2025-11-24T18:36:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:36:21.09277703703703Z  WARN zhtp::unified_server:  NETWORK ISOLATION FAILED - Internet access still possible!
+2025-11-24T18:36:21.09277703703703Z  WARN zhtp::unified_server:  Check firewall and routing configuration
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::runtime::components::protocols: Protocols component started
+2025-11-24T18:36:21.09277703703703Z  INFO zhtp::runtime: Component protocols started successfully
 2025-11-24T18:36:22.464217Z  INFO zhtp::runtime::reward_orchestrator: ═══════════════════════════════════════════════════════
 2025-11-24T18:36:22.464302Z  INFO zhtp::runtime::reward_orchestrator:  Starting Unified Reward Orchestrator
 2025-11-24T18:36:22.464366Z  INFO zhtp::runtime::reward_orchestrator: ═══════════════════════════════════════════════════════
@@ -764,266 +764,266 @@ Press Ctrl+C to stop the node
 2025-11-24T18:36:36.954928Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
 2025-11-24T18:36:36.958007Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:36:41.815221Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:36:51.968987Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
-2025-11-24T18:36:51.971541Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
-2025-11-24T18:36:51.971994Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
-2025-11-24T18:36:51.972054Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
-2025-11-24T18:36:51.972119Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:36:51.972323Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:36:51.972380Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:36:51.972441Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:36:51.972486Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:36:51.972523Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:36:51.972568Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:36:51.976958Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:36:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
+2025-11-24T18:36:51.09277703703703Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
+2025-11-24T18:36:51.09277703703703Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
+2025-11-24T18:36:51.09277703703703Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
+2025-11-24T18:36:51.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:36:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:36:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:36:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:36:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:36:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:36:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:36:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:37:06.991285Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:37:06.992025Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:37:06.992073Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:37:06.992098Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:37:11.807623Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:37:21.947787Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:37:21.947992Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:37:21.948091Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:37:21.948180Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:37:21.948259Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:37:21.948342Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:37:21.948428Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:37:21.953222Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:37:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:37:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:37:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:37:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:37:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:37:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:37:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:37:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:37:36.957801Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:37:36.958510Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:37:36.958560Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:37:36.958588Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:37:41.812187Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:37:51.937665Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:37:51.938153Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:37:51.938215Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:37:51.938265Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:37:51.938294Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:37:51.938322Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:37:51.938347Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:37:51.941199Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:37:51.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:37:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:37:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:37:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:37:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:37:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:37:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:37:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:38:06.948412Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:38:06.949225Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:38:06.949293Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:38:06.949351Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:38:11.806229Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:38:21.946167Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:38:21.946259Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:38:21.946319Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:38:21.946350Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:38:21.946380Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:38:21.946410Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:38:21.946436Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:38:21.949237Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:38:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:38:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:38:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:38:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:38:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:38:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:38:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:38:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:38:36.962560Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:38:36.962693Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:38:36.963160Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:38:36.963222Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:38:41.807655Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:38:51.942399Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:38:51.942754Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:38:51.942809Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:38:51.942842Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:38:51.943022Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:38:51.943075Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:38:51.943151Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:38:51.947377Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:38:51.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:38:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:38:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:38:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:38:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:38:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:38:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:38:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:39:06.963274Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:39:06.963787Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:39:06.963924Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:39:06.964033Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:39:11.817617Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:39:21.937872Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:39:21.938057Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:39:21.938340Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:39:21.938436Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:39:21.939233Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:39:21.939403Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:39:21.941456Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:39:21.944452Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:39:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:39:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:39:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:39:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:39:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:39:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:39:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:39:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:39:36.948978Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:39:36.949947Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:39:36.950351Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:39:36.950394Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:39:41.811231Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:39:51.939789Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:39:51.939928Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:39:51.939987Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:39:51.940016Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:39:51.940154Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:39:51.940186Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:39:51.940214Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:39:51.943051Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:39:51.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:39:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:39:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:39:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:39:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:39:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:39:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:39:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:40:06.954967Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:40:06.956436Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:40:06.956689Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:40:06.956732Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:40:11.817745Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:40:21.948855Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:40:21.949301Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:40:21.949362Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:40:21.949436Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:40:21.949473Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:40:21.949514Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:40:21.949556Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:40:21.952767Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:40:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:40:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:40:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:40:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:40:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:40:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:40:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:40:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:40:36.961993Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:40:36.962445Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:40:36.962615Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:40:36.962640Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:40:41.808423Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:40:51.946415Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:40:51.948227Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:40:51.948287Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:40:51.948368Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:40:51.948412Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:40:51.948480Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:40:51.948508Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:40:51.951163Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:40:51.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:40:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:40:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:40:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:40:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:40:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:40:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:40:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:41:06.960088Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:41:06.960238Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:41:06.960593Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:41:06.960649Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:41:11.814675Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:41:21.935610Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:41:21.938157Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:41:21.938893Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:41:21.938986Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:41:21.939210Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:41:21.939293Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:41:21.939372Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:41:21.942248Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:41:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:41:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:41:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:41:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:41:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:41:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:41:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:41:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:41:36.955858Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:41:36.956340Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:41:36.956528Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:41:36.956555Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:41:41.818159Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:41:51.935748Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:41:51.935917Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:41:51.935966Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:41:51.936018Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:41:51.936066Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:41:51.936121Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:41:51.936165Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:41:51.939176Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:41:51.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:41:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:41:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:41:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:41:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:41:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:41:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:41:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:42:06.956633Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:42:06.957145Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:42:06.957854Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:42:06.958091Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:42:11.813171Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:42:21.942896Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:42:21.943352Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:42:21.943597Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:42:21.943708Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:42:21.943762Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:42:21.943812Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:42:21.943851Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:42:21.948378Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:42:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:42:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:42:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:42:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:42:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:42:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:42:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:42:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:42:36.956864Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:42:36.957420Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:42:36.957464Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:42:36.957518Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:42:41.816587Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:42:51.938547Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:42:51.939077Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:42:51.939141Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:42:51.939261Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:42:51.939314Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:42:51.939385Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:42:51.939427Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:42:51.942233Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:42:51.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:42:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:42:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:42:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:42:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:42:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:42:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:42:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:43:06.960278Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:43:06.961228Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:43:06.961466Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:43:06.961650Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:43:11.811519Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:43:21.943241Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:43:21.944019Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:43:21.944551Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:43:21.944738Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:43:21.944909Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:43:21.945063Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:43:21.945204Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:43:21.951117Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:43:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:43:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:43:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:43:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:43:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:43:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:43:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:43:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:43:36.963449Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:43:36.963699Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:43:36.965441Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:43:36.965636Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:43:41.811442Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:43:51.942327Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:43:51.942522Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:43:51.942661Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:43:51.942763Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:43:51.942839Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:43:51.942895Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:43:51.943000Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:43:51.947896Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:43:51.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:43:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:43:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:43:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:43:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:43:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:43:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:43:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:43:57.445826Z  INFO lib_network::discovery::local_network:  Broadcasting announcement #10 to 224.0.1.75:37775
 2025-11-24T18:44:06.960714Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:44:06.961284Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:44:06.961345Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:44:06.961386Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:44:11.817581Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:44:21.941108Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:44:21.943353Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:44:21.943560Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:44:21.943610Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:44:21.943693Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:44:21.943751Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:44:21.943813Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:44:21.946964Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:44:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:44:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:44:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:44:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:44:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:44:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:44:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:44:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:44:36.956202Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:44:36.958299Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:44:36.958711Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:44:36.958873Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:44:41.815490Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:44:51.942529Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:44:51.943017Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:44:51.943075Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:44:51.943134Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:44:51.943180Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:44:51.943227Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:44:51.943270Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:44:51.947949Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:44:51.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:44:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:44:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:44:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:44:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:44:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:44:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:44:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:45:06.952308Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:45:06.952663Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:45:06.952726Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:45:06.952887Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:45:11.810539Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:45:21.941515Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:45:21.941640Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:45:21.941846Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:45:21.941904Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:45:21.941960Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:45:21.942004Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:45:21.942049Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:45:21.945353Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:45:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:45:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:45:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:45:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:45:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:45:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:45:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:45:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:45:36.953391Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:45:36.954174Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:45:36.954248Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:45:36.954284Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:45:41.813567Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:45:51.937126Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:45:51.937314Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:45:51.937445Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:45:51.937651Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:45:51.937752Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:45:51.937968Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:45:51.938010Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:45:51.940969Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:45:51.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:45:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:45:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:45:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:45:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:45:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:45:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:45:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:46:06.948973Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:46:06.949147Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:46:06.949246Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:46:06.949347Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:46:11.816462Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:46:21.944394Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:46:21.945100Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:46:21.945171Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:46:21.945209Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:46:21.945240Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:46:21.945270Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:46:21.945302Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:46:21.948348Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:46:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:46:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:46:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:46:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:46:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:46:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:46:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:46:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:46:22.469650Z  INFO zhtp::runtime::storage_rewards:  Checking storage rewards (cycle 2)...
 2025-11-24T18:46:22.469754Z  INFO zhtp::runtime::storage_rewards:     Stats:
 2025-11-24T18:46:22.469657Z  INFO zhtp::runtime::routing_rewards:  [ROUTING] Checking routing rewards (cycle 2)...
@@ -1041,105 +1041,105 @@ Press Ctrl+C to stop the node
 2025-11-24T18:46:36.954248Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:46:36.954290Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:46:41.806097Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:46:51.939069Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:46:51.942545Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:46:51.942608Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:46:51.942658Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:46:51.942706Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:46:51.942753Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:46:51.942799Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:46:51.947322Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:46:51.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:46:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:46:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:46:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:46:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:46:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:46:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:46:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:47:06.958904Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:47:06.959062Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:47:06.959564Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:47:06.959623Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:47:11.809176Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:47:21.943027Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:47:21.943362Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:47:21.943482Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:47:21.943578Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:47:21.943675Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:47:21.943766Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:47:21.943848Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:47:21.947839Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:47:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:47:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:47:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:47:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:47:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:47:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:47:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:47:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:47:36.956356Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:47:36.957009Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:47:36.957253Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:47:36.957375Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:47:41.814036Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:47:51.937162Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:47:51.937233Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:47:51.937267Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:47:51.937327Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:47:51.937368Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:47:51.937396Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:47:51.937421Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:47:51.940677Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:47:51.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:47:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:47:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:47:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:47:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:47:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:47:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:47:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:48:06.955828Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:48:06.956606Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:48:06.956659Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:48:06.956707Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:48:11.807397Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:48:21.941437Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:48:21.942649Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:48:21.942712Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:48:21.942744Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:48:21.942773Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:48:21.942800Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:48:21.942830Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:48:21.946853Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:48:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:48:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:48:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:48:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:48:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:48:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:48:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:48:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:48:36.954795Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:48:36.954953Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:48:36.955036Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:48:36.955111Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:48:41.806204Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:48:51.943096Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:48:51.943244Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:48:51.943613Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:48:51.943644Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:48:51.943669Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:48:51.943719Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:48:51.943780Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:48:51.946683Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:48:51.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:48:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:48:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:48:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:48:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:48:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:48:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:48:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:49:06.957157Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:49:06.957616Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:49:06.957667Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:49:06.957691Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:49:11.813303Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:49:21.935572Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:49:21.936777Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:49:21.936842Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:49:21.936921Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:49:21.936965Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:49:21.937275Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:49:21.937316Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:49:21.940747Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:49:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:49:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:49:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:49:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:49:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:49:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:49:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:49:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:49:36.950067Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:49:36.950834Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:49:36.950911Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:49:36.950948Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:49:41.805064Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:49:51.940630Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:49:51.940761Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:49:51.940812Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:49:51.940860Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:49:51.940895Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:49:51.940924Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:49:51.940956Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:49:51.943933Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:49:51.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:49:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:49:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:49:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:49:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:49:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:49:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:49:51.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:50:06.953094Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:50:06.953905Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:50:06.953942Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers
 2025-11-24T18:50:06.953963Z  INFO lib_network::protocols::bluetooth:  DEBUG: Currently 0 active connections
 2025-11-24T18:50:11.809263Z  INFO zhtp::runtime::components::blockchain: Mining check #2 - Height: 1, Pending: 0, UTXOs: 5, Identities: 1
-2025-11-24T18:50:21.942723Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
-2025-11-24T18:50:21.942940Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
-2025-11-24T18:50:21.943008Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
-2025-11-24T18:50:21.943060Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
-2025-11-24T18:50:21.943111Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
-2025-11-24T18:50:21.943160Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
-2025-11-24T18:50:21.943204Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
-2025-11-24T18:50:21.946615Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
+2025-11-24T18:50:21.09277703703703Z  INFO lib_network::protocols::bluetooth: Windows: Scanning for ZHTP mesh peers using native GATT...
+2025-11-24T18:50:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows GATT Manager
+2025-11-24T18:50:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Initializing Windows Bluetooth stack
+2025-11-24T18:50:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT manager initialized - radio state will be checked during operation
+2025-11-24T18:50:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows Bluetooth stack initialized
+2025-11-24T18:50:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows GATT event channel configured
+2025-11-24T18:50:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Starting Windows BLE device discovery
+2025-11-24T18:50:21.09277703703703Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery started
 2025-11-24T18:50:36.951227Z  INFO lib_network::protocols::bluetooth::windows_gatt:  Windows BLE discovery stopped
 2025-11-24T18:50:36.951911Z  INFO lib_network::protocols::bluetooth:  Found 0 ZHTP mesh peers on Windows
 2025-11-24T18:50:36.951958Z  INFO lib_network::protocols::bluetooth:  DEBUG: Background scan found 0 peers

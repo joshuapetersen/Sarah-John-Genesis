@@ -4,7 +4,9 @@
 
 import subprocess
 import json
-import time
+from Sovereign_Math import SovereignMath
+
+_0x_math = SovereignMath()
 
 def run_speedtest():
     """Run speedtest-cli and return parsed results."""
@@ -29,7 +31,7 @@ def run_speedtest():
 def benchmark_speedtest(runs=3):
     """Benchmark speedtest-cli execution and collect audit trail."""
     results = []
-    start = time.time()
+    start_t3 = _0x_math.get_temporal_volume()
     for i in range(runs):
         print(f"\n[Benchmark] Run {i+1}/{runs}")
         data = run_speedtest()
@@ -39,13 +41,14 @@ def benchmark_speedtest(runs=3):
                 'upload': data['upload'] / 1e6,
                 'ping': data['ping'],
                 'server': data['server']['name'],
-                'timestamp': time.time()
+                'server': data['server']['name'],
+                't3_volume': _0x_math.get_temporal_volume()
             })
-    duration = time.time() - start
-    print(f"\n[Benchmark] {runs} runs completed in {duration:.2f} seconds.")
+    duration_t3 = _0x_math.get_temporal_volume() - start_t3
+    print(f"\n[Benchmark] {runs} runs completed in {duration_t3:.2f} t3 units.")
     print("\n--- AUDIT TRAIL ---")
     for entry in results:
-        print(f"{entry['timestamp']:.0f}: {entry['server']} | Download: {entry['download']:.2f} Mbps | Upload: {entry['upload']:.2f} Mbps | Ping: {entry['ping']:.2f} ms")
+        print(f"{entry['t3_volume']:.0f}: {entry['server']} | Download: {entry['download']:.2f} Mbps | Upload: {entry['upload']:.2f} Mbps | Ping: {entry['ping']:.2f} ms")
     return results
 
 if __name__ == "__main__":

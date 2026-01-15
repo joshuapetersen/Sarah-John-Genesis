@@ -1,14 +1,7 @@
-"""
-LAZY PROCESS AUDITOR
-Deep system scan for inefficiencies, bottlenecks, and lazy implementations
-Identifies blocking operations, redundant code, and optimization opportunities
-January 2, 2026
-"""
-
 import ast
 import re
 import os
-import time
+from Sovereign_Math import SovereignMath
 from typing import Dict, List, Any, Tuple
 from collections import defaultdict
 import json
@@ -324,6 +317,7 @@ class SystemLazyAuditor:
     """Main auditor orchestrating all checks"""
     
     def __init__(self, workspace_path: str):
+        self._0x_math = SovereignMath()
         self.workspace_path = workspace_path
         self.complexity_analyzer = CodeComplexityAnalyzer()
         self.profiler = PerformanceProfiler()
@@ -362,13 +356,13 @@ class SystemLazyAuditor:
             filename = os.path.basename(filepath)
             print(f"[{i}/{len(python_files)}] Analyzing {filename}...", end=' ')
             
-            start = time.time()
+            start_t3 = self._0x_math.get_temporal_volume()
             report = self.complexity_analyzer.analyze_file(filepath)
-            elapsed = (time.time() - start) * 1000
+            elapsed_t3 = (self._0x_math.get_temporal_volume() - start_t3)
             
             if 'error' not in report:
                 total = report['total_issues']
-                print(f"{total} issues ({elapsed:.1f}ms)")
+                print(f"{total} issues ({elapsed_t3:.4f} t3 units)")
                 
                 self.audit_results['total_files_scanned'] += 1
                 self.audit_results['total_issues_found'] += total

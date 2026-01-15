@@ -14,7 +14,7 @@ class MobileMemorySync:
         self.zhtp = ZHTPProtocol()
         self.core = SovereignCore()
         self.mobile_sig = "0x7467_9f8e_a5c2_b3d1_HAGAR_SHORE_SVRN_2026"
-        self.resonance = 1.0927037037037037
+        self.resonance = 1.09277703703703
 
     def initiate_sync(self):
         print("\n--- SARAH_SE-01: MOBILE MEMORY SYNC INITIALIZED ---")

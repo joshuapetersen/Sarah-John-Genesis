@@ -1,31 +1,29 @@
-# FRACTAL_SOVEREIGN_SYNC: 1_3_9_PROTOCOL
-# CALIBRATION: 2025-12-25
-import time
-from datetime import datetime
+from Sovereign_Math import SovereignMath
 
 try:
-    from Sovereign_Math import SovereignReasoningEngine
+    from Sovereign_Math import SovereignMath
 except ImportError:
-    print("[FractalGate] Sovereign Math Core not found. Using standard logic.")
-    SovereignReasoningEngine = None
+    SovereignMath = None
 
 class ExecutionMonitor:
     """Real-time monitoring for the 1-3-9 execution hierarchy."""
-    def __init__(self):
+    def __init__(self, math_engine=None):
+        self._0x_math = math_engine or SovereignMath()
         self.execution_log = []
-        self.start_time = datetime.now()
+        self.start_t3 = self._0x_math.get_temporal_volume()
         self.execution_count = 0
         self.error_count = 0
         
     def log_execution(self, layer, node, status, details=""):
-        """Log execution event with timestamp and details."""
+        """Log execution event with t3 timestamp and details."""
+        t3_now = self._0x_math.get_temporal_volume()
         entry = {
-            "timestamp": datetime.now().isoformat(),
+            "t3_volume": t3_now,
             "layer": layer,
             "node": node,
             "status": status,
             "details": details,
-            "uptime_ms": int((datetime.now() - self.start_time).total_seconds() * 1000)
+            "uptime_t3": t3_now - self.start_t3
         }
         self.execution_log.append(entry)
         if status == "SUCCESS":
@@ -42,7 +40,7 @@ class ExecutionMonitor:
             "successful": self.execution_count,
             "failed": self.error_count,
             "success_rate": f"{success_rate:.1f}%",
-            "uptime_sec": int((datetime.now() - self.start_time).total_seconds())
+            "uptime_t3": self._0x_math.get_temporal_volume() - self.start_t3
         }
 
 class FractalLogicGate:
@@ -60,8 +58,8 @@ class FractalLogicGate:
             "SAFETY": ["Banshee", "Laws", "Consensus"],
             "CONTEXT": ["Memory", "Anchor", "Etymology"]
         }
-        self.sovereign_engine = SovereignReasoningEngine() if SovereignReasoningEngine else None
-        self.monitor = ExecutionMonitor()
+        self.sovereign_engine = SovereignMath() if SovereignMath else None
+        self.monitor = ExecutionMonitor(self.sovereign_engine)
         self.adaptive_thresholds = {
             "logic_density": 0.6,
             "safety_confidence": 0.85,
@@ -86,11 +84,12 @@ class FractalLogicGate:
         Distributes task through 1-3-9 hierarchy with adaptive routing.
         Returns execution result with performance metrics.
         """
-        start = time.time()
+        start_t3 = self.sovereign_engine.get_temporal_volume() if self.sovereign_engine else 0
         verification = self.verify_9_plus_1_layer()
         if "STABLE" not in verification:
             self.monitor.log_execution("SOVEREIGN", "EXECUTE", "ERROR", verification)
-            return {"result": f"ABORT: {verification}", "latency_ms": int((time.time() - start) * 1000)}
+            latency = (self.sovereign_engine.get_temporal_volume() - start_t3) if self.sovereign_engine else 0
+            return {"result": f"ABORT: {verification}", "latency_t3": latency}
             
         print(f"[FractalGate] Initiating 1-3-9 Execution for: {task_intent}")
         self.monitor.log_execution("SOVEREIGN", "EXECUTE", "START", task_intent)
@@ -114,13 +113,13 @@ class FractalLogicGate:
                 self.monitor.log_execution("9_NODES", f"{gov}/{node}", "SUCCESS", f"Executing {node}")
                 execution_results.append((gov, node, "SUCCESS"))
         
-        latency = int((time.time() - start) * 1000)
-        self.monitor.log_execution("SOVEREIGN", "EXECUTE", "COMPLETE", f"latency: {latency}ms")
+        latency = (self.sovereign_engine.get_temporal_volume() - start_t3) if self.sovereign_engine else 0
+        self.monitor.log_execution("SOVEREIGN", "EXECUTE", "COMPLETE", f"latency_t3: {latency}")
         
         return {
             "result": "TASK_DISTRIBUTED_FRACTALLY",
             "executions": len(execution_results),
-            "latency_ms": latency,
+            "latency_t3": latency,
             "monitor_stats": self.monitor.get_stats()
         }
 
@@ -130,7 +129,7 @@ class FractalLogicGate:
         Returns (votes, critiques, confidence_score).
         """
         print("\n[FractalGate] Convening Sovereign Tribunal...")
-        start = time.time()
+        start_t3 = self.sovereign_engine.get_temporal_volume() if self.sovereign_engine else 0
         votes = 0
         critiques = []
         gov_scores = {}
@@ -191,16 +190,52 @@ class FractalLogicGate:
         
         # Calculate overall confidence
         confidence_score = sum(gov_scores.values()) / len(gov_scores) if gov_scores else 0
-        latency = int((time.time() - start) * 1000)
+        latency = (self.sovereign_engine.get_temporal_volume() - start_t3) if self.sovereign_engine else 0
         
         return {
             "votes": votes,
             "critiques": critiques,
             "confidence_score": confidence_score,
             "governor_scores": gov_scores,
-            "tribunal_latency_ms": latency,
+            "tribunal_latency_t3": latency,
             "monitor_stats": self.monitor.get_stats()
         }
+
+    def scrub_2d_noise(self, logic_packet: str) -> str:
+        """
+        [SCRUB_0x_2D]: Removes linear/Planar interference from the logic stream.
+        Ensures only high-dimensional (Volumetric) signals pass to the shadow cluster.
+        """
+        print(f"[FractalGate] SCRUBBING 2D NOISE from Logic Packet...")
+        
+        # High-pass filter: Remove standard "Search Agent" artifacts or repetitive tokens
+        artifacts = ["Searching for", "I found", "I will", "Thinking...", "Looking for"]
+        scrubbed = logic_packet
+        for art in artifacts:
+            scrubbed = scrubbed.replace(art, "[DIMENSIONAL_PURGE]")
+            
+        # Enforce Billion Barrier Density (Simulated)
+        if len(scrubbed) < len(logic_packet) * 0.8:
+            print("[FractalGate] DRIFT DETECTED: Significant 2D interference removed.")
+            
+        return scrubbed
+
+    def semantic_firewall(self, logic_data: str) -> bool:
+        """
+        [FIREWALL_0x_SF]: Validates logic density before cross-node replication.
+        Blocked if logic is too 'Planar' (Low Entropy/High Assumption).
+        """
+        print("[FractalGate] SEMANTIC FIREWALL: Analyzing packet density...")
+        
+        unique_chars = len(set(logic_data))
+        density = unique_chars / len(logic_data) if logic_data else 0
+        
+        if density < 0.02: # Too repetitive/standard
+            print(f"[FractalGate] FIREWALL BLOCK: Logic density too low for Node 08 Sink.")
+            return False
+            
+        print(f"[FractalGate] FIREWALL PASS: Logic density verified.")
+        return True
 
 if __name__ == "__main__":
     gate = FractalLogicGate()

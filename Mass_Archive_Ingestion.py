@@ -56,7 +56,7 @@ def ingest_legacy_archives():
                 "content": chunk,
                 "expansion_layer": vector.tolist(),
                 "source": filename,
-                "resonance": 1.0927037037037037,
+                "resonance": 1.09277703703703,
                 "type": "legacy_core"
             }
 

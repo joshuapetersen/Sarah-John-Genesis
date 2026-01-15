@@ -8,7 +8,7 @@ January 2, 2026
 import time
 import json
 from typing import Dict, List, Any, Optional
-from datetime import datetime
+from Sovereign_Math import SovereignMath
 from Performance_Accelerator import PerformanceAccelerator, memoize_result
 from googlecloudsdk.generated_clients.apis.geminicloudassist.v1 import geminicloudassist_v1_client
 
@@ -45,18 +45,19 @@ class AcceleratedMasterOrchestrator:
         self.accelerator = PerformanceAccelerator()
         
         # Performance tracking
+        self._0x_math = SovereignMath()
         self.total_queries = 0
-        self.total_time_ms = 0.0
+        self.total_t3_volume = 0.0
         self.successful_queries = 0
         
-        print("[OK] All systems initialized with acceleration enabled\n")
+        print("[OK] All systems initialized with Sovereign Acceleration enabled\n")
     
     def process_query_accelerated(self, natural_language_query: str, 
                                   context: Optional[Dict] = None) -> Dict[str, Any]:
         """
         Process query with all acceleration optimizations
         """
-        start_time = time.time()
+        start_t3 = self._0x_math.get_temporal_volume()
         self.total_queries += 1
         
         if context is None:
@@ -76,19 +77,19 @@ class AcceleratedMasterOrchestrator:
             print("🔄 FULL PIPELINE - All 6 stages\n")
             result = self._full_pipeline(natural_language_query, context)
         
-        # Calculate metrics
-        total_time = (time.time() - start_time) * 1000
-        self.total_time_ms += total_time
+        # Calculate metrics via Temporal Volume (t3)
+        total_t3 = self._0x_math.get_temporal_volume() - start_t3
+        self.total_t3_volume += total_t3
         
         if result.get('success', False):
             self.successful_queries += 1
         
-        result['total_time_ms'] = total_time
+        result['total_t3_volume'] = total_t3
         result['routing'] = routing
         
         print("\n" + "="*70)
         print(f"[OK] QUERY COMPLETE")
-        print(f"Total Time: {total_time:.2f}ms | Routing: {routing}")
+        print(f"Total t3 Volume: {total_t3:.6f} | Routing: {routing}")
         print("="*70 + "\n")
         
         # [0x_SPEECH]: ACTIVATE VOCAL FEEDBACK
@@ -96,7 +97,7 @@ class AcceleratedMasterOrchestrator:
             from Vocal_Cortex import VocalCortex
             voice = VocalCortex()
             # We speak a summary of the result
-            voice.speak(f"Query processed via {routing}. Total time {total_time:.0f} milliseconds.")
+            voice.speak(f"Query processed via {routing}. Temporal volume {total_t3:.4f}.")
         except:
             pass
 

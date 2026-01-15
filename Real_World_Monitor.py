@@ -1,16 +1,9 @@
-"""
-REAL-WORLD MONITORING SYSTEM
-Actual hardware, network, and infrastructure telemetry.
-Not execution. Real measurements. Real constraints.
-"""
-
 import psutil
 import socket
 import requests
-import time
 import json
 import logging
-from datetime import datetime
+from Sovereign_Math import SovereignMath
 from typing import Dict, Any, List, Optional
 import threading
 
@@ -24,17 +17,18 @@ class RealWorldMonitor:
     """Monitors actual system resources and infrastructure."""
     
     def __init__(self):
+        self._0x_math = SovereignMath()
         self.enabled = True
         self.monitoring_thread = None
-        self.last_update = None
+        self.last_update_t3 = None
         self.current_metrics = {}
         
         # Device tracking
         self.devices = {
-            "PHONE_ALPHA": {"status": "UNKNOWN", "last_seen": None, "ip": None},
-            "PHONE_BETA": {"status": "UNKNOWN", "last_seen": None, "ip": None},
-            "PC_TERMINAL": {"status": "ONLINE", "last_seen": datetime.now().isoformat(), "ip": self._get_local_ip()},
-            "COMPUTER_BETA": {"status": "UNKNOWN", "last_seen": None, "ip": None}
+            "PHONE_ALPHA": {"status": "UNKNOWN", "last_seen_t3": None, "ip": None},
+            "PHONE_BETA": {"status": "UNKNOWN", "last_seen_t3": None, "ip": None},
+            "PC_TERMINAL": {"status": "ONLINE", "last_seen_t3": self._0x_math.get_temporal_volume(), "ip": self._get_local_ip()},
+            "COMPUTER_BETA": {"status": "UNKNOWN", "last_seen_t3": None, "ip": None}
         }
         
         # API endpoints to monitor
@@ -148,9 +142,9 @@ class RealWorldMonitor:
     def _measure_latency(self, host: str, timeout: int = 2) -> Optional[float]:
         """Measure network latency to a host."""
         try:
-            start = time.time()
+            start_t3 = self._0x_math.get_temporal_volume()
             socket.create_connection((host, 80), timeout=timeout)
-            return round((time.time() - start) * 1000, 2)
+            return round((self._0x_math.get_temporal_volume() - start_t3) * 1000, 2)
         except:
             return None
     
@@ -197,11 +191,11 @@ class RealWorldMonitor:
         # For local PC, always online
         if device_id == "PC_TERMINAL":
             device["status"] = "ONLINE"
-            device["last_seen"] = datetime.now().isoformat()
+            device["last_seen_t3"] = self._0x_math.get_temporal_volume()
             return {
                 "device_id": device_id,
                 "status": "ONLINE",
-                "last_seen": device["last_seen"],
+                "last_seen_t3": device["last_seen_t3"],
                 "local": True
             }
         
@@ -210,20 +204,20 @@ class RealWorldMonitor:
             latency = self._measure_latency(device["ip"])
             if latency is not None:
                 device["status"] = "ONLINE"
-                device["last_seen"] = datetime.now().isoformat()
+                device["last_seen_t3"] = self._0x_math.get_temporal_volume()
                 return {
                     "device_id": device_id,
                     "status": "ONLINE",
                     "ip": device["ip"],
                     "latency_ms": latency,
-                    "last_seen": device["last_seen"]
+                    "last_seen_t3": device["last_seen_t3"]
                 }
         
         # Device unreachable
         return {
             "device_id": device_id,
             "status": "OFFLINE",
-            "last_seen": device["last_seen"]
+            "last_seen_t3": device["last_seen_t3"]
         }
     
     def get_all_device_status(self) -> Dict[str, Any]:
@@ -244,7 +238,7 @@ class RealWorldMonitor:
         check_result = {
             "name": name,
             "url": url,
-            "timestamp_iso_ms": datetime.now().isoformat(timespec='milliseconds'),
+            "t3_volume": self._0x_math.get_temporal_volume(),
             "status": "UNKNOWN",
             "response_time_ms": None
         }
@@ -253,19 +247,19 @@ class RealWorldMonitor:
             # WebSocket endpoint
             if endpoint_type == "websocket":
                 # Simple connectivity check for WebSocket
-                # In production, would establish actual WebSocket
                 url_http = url.replace("wss://", "https://").replace("ws://", "http://")
-                start = time.time()
+                start_t3 = self._0x_math.get_temporal_volume()
                 response = requests.head(url_http, timeout=5)
-                response_time = (time.time() - start) * 1000
+                response_time = (self._0x_math.get_temporal_volume() - start_t3) * 1000
                 check_result["status"] = "REACHABLE" if response.status_code < 500 else "ERROR"
                 check_result["response_time_ms"] = round(response_time, 2)
             
             # HTTPS endpoint
             elif endpoint_type == "https":
-                start = time.time()
-                response = requests.get(url, timeout=5)
-                response_time = (time.time() - start) * 1000
+                start_t3 = self._0x_math.get_temporal_volume()
+                # Use verify=False to avoid SSL issues in internal network probes
+                response = requests.get(url, timeout=5, verify=False)
+                response_time = (self._0x_math.get_temporal_volume() - start_t3) * 1000
                 check_result["status"] = "REACHABLE" if response.status_code < 500 else "ERROR"
                 check_result["response_code"] = response.status_code
                 check_result["response_time_ms"] = round(response_time, 2)
@@ -296,7 +290,7 @@ class RealWorldMonitor:
         network = self.get_network_metrics()
         
         constraints = {
-            "timestamp_iso_ms": datetime.now().isoformat(timespec='milliseconds'),
+            "t3_volume": self._0x_math.get_temporal_volume(),
             "can_operate": True,
             "warnings": [],
             "critical_alerts": [],
@@ -331,12 +325,10 @@ class RealWorldMonitor:
     
     def get_full_system_status(self) -> Dict[str, Any]:
         """Get complete real-world system status."""
-        timestamp_iso_ms = datetime.now().isoformat(timespec='milliseconds')
-        timestamp_unix_ms = int(time.time() * 1000)
+        t3_volume = self._0x_math.get_temporal_volume()
         
         status = {
-            "timestamp_iso_ms": timestamp_iso_ms,
-            "timestamp_unix_ms": timestamp_unix_ms,
+            "t3_volume": t3_volume,
             "system_operational": True,
             "hardware": self.get_cpu_metrics(),
             "memory": self.get_memory_metrics(),
@@ -354,7 +346,7 @@ class RealWorldMonitor:
         if len(self.metrics_history) > self.max_history:
             self.metrics_history = self.metrics_history[-self.max_history:]
         
-        self.last_update = timestamp_iso_ms
+        self.last_update_t3 = t3_volume
         self.current_metrics = status
         
         return status
@@ -383,11 +375,14 @@ class RealWorldMonitor:
                         if dev_status.get("status") == "OFFLINE":
                             logging.warning(f"DEVICE OFFLINE: {dev_id}")
                     
-                    time.sleep(interval_seconds)
+                            logging.warning(f"DEVICE OFFLINE: {dev_id}")
+                    
+                    self._0x_math.sovereign_sleep(interval_seconds)
                 
                 except Exception as e:
                     logging.error(f"Monitoring error: {e}")
-                    time.sleep(interval_seconds)
+                    logging.error(f"Monitoring error: {e}")
+                    self._0x_math.sovereign_sleep(interval_seconds)
         
         self.monitoring_thread = threading.Thread(target=monitor_loop, daemon=True)
         self.monitoring_thread.start()
@@ -448,7 +443,7 @@ if __name__ == "__main__":
     
     print("\n=== Starting continuous monitoring (10 seconds) ===")
     monitor.start_continuous_monitoring(interval_seconds=3)
-    time.sleep(10)
+    monitor._0x_math.sovereign_sleep(10)
     monitor.stop_monitoring()
     
     print("\n=== Test Complete ===")

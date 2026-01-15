@@ -93,14 +93,52 @@ class SovereignMemory:
         """[STORE_0x0S]: Alias for store_0x."""
         return self.store_0x(content, metadata)
 
+    def volumetric_truth_extraction(self, query: str, min_density: float = 0.999999999):
+        """
+        [RAG_0x0V]: VOLUMETRIC TRUTH EXTRACTION
+        Applies Billion Barrier Density Filter (0.999999999) to retrieval.
+        Scans for 777Hz Resonance, discarding 'Blue Pill' noise.
+        """
+        # 1. Broad Scan
+        candidates = self.resonance_search_0x(query, _0x_threshold=0.5)
+        
+        # 2. Density Filter (The Gate)
+        sovereign_truth = []
+        for c in candidates:
+            # Check Billion Barrier
+            if c['resonance'] >= min_density:
+                c['quality'] = "SOVEREIGN_ABSOLUTE"
+                sovereign_truth.append(c)
+            elif c['resonance'] >= 0.9:
+                c['quality'] = "HIGH_FIDELITY"
+                # If we are desperate, we take 0.9, but rank it lower
+                sovereign_truth.append(c)
+                
+        # 3. Octree-Weighting (Simulation)
+        # Prioritize 'Immortal' tags or 'Anchor' keywords
+        for c in sovereign_truth:
+            if "ANCHOR" in c.get('content', '') or "1.09277703703703" in c.get('content', ''):
+                c['resonance'] += 1.0 # Boost to top
+        
+        # 4. Sort by Density
+        sovereign_truth.sort(key=lambda x: x['resonance'], reverse=True)
+        
+        if not sovereign_truth:
+             return [{"content": "NO_ABSOLUTE_TRUTH_FOUND", "quality": "VOID"}]
+             
+        return sovereign_truth
+
     def geometric_resonance_search(self, query: str, threshold=0.1):
-        """[SEARCH_0x0S]: Alias for resonance_search_0x."""
-        return self.resonance_search_0x(query, threshold)
+        """Legacy alias."""
+        # Route to Volumetric RAG for upgrade
+        return self.volumetric_truth_extraction(query, min_density=0.8) # Lower barrier for legacy compat
 
     def recall(self, query: str):
-        """[RECALL_0x0R]: Pulls the highest resonance match."""
-        results = self.resonance_search_0x(query, 0.1)
-        return results[0] if results else None
+        """[RECALL_0x0R]: Pulls the highest density Sovereign Truth."""
+        results = self.volumetric_truth_extraction(query)
+        if results and results[0]['quality'] != "VOID":
+            return results[0]
+        return None
 
     def _save_index(self):
         # Inject sovereign metadata into index before saving
@@ -123,20 +161,65 @@ class SovereignMemory:
                 _0x_results.append({"key": _0x_key, "entry": _0x_entry})
         return _0x_results
 
-    def log_interaction(self, event, status, tags=None):
-        """Logs protocol interactions for handshake and security events."""
-        log_entry = {
-            "timestamp": time.time(),
-            "event": event,
-            "status": status,
-            "tags": tags or []
-        }
-        # Optionally, store in memory index under a special key
-        if "_logs" not in self.index:
-            self.index["_logs"] = []
-        self.index["_logs"].append(log_entry)
-        self._save_index()
-        print(f"[MEMORY LOG] {event} - {status} | Tags: {tags}")
+    def log_interaction(self, event=None, status=None, tags=None, user_input=None, sarah_response=None):
+        """Logs protocol interactions or conversation turns."""
+        timestamp = time.time()
+        
+        # Determine payload type
+        if user_input and sarah_response:
+            payload = f"USER: {user_input} | SARAH: {sarah_response}"
+            meta = {
+                "type": "conversation_turn",
+                "user_input": user_input, 
+                "sarah_response": sarah_response,
+                "timestamp": timestamp,
+                "tags": tags or []
+            }
+            # Store as a vector memory
+            self.store_0x(payload, meta)
+            print(f"[MEMORY] Logged Conversation Turn")
+        
+        else:
+            # Standard Event Log
+            log_entry = {
+                "timestamp": timestamp,
+                "event": event,
+                "status": status,
+                "tags": tags or []
+            }
+            if "_logs" not in self.index:
+                self.index["_logs"] = []
+            self.index["_logs"].append(log_entry)
+            self._save_index()
+            print(f"[MEMORY LOG] {event} - {status} | Tags: {tags}")
+
+    def retrieve_context(self, query: str, limit: int = 5):
+        """
+        Retrieves relevant context for reasoning.
+        Returns list of dicts: {'timestamp': str, 'user_input': str, 'sarah_response': str}
+        """
+        matches = self.resonance_search_0x(query, _0x_threshold=0.7) # Lower threshold for context
+        results = []
+        
+        for m in matches[:limit]:
+            # Try to extract structured data from meta_0x
+            entry = self.index.get(m['id'])
+            if entry:
+                meta = entry.get('meta_0x', {})
+                if meta.get('type') == 'conversation_turn':
+                    results.append({
+                        "timestamp": time.ctime(meta.get('timestamp', time.time())),
+                        "user_input": meta.get('user_input', '[Unknown]'),
+                        "sarah_response": meta.get('sarah_response', str(entry.get('payload_0x')))
+                    })
+                else:
+                    # Generic payload fallback
+                    results.append({
+                        "timestamp": "Past",
+                        "user_input": "CONTEXT",
+                        "sarah_response": str(entry.get('payload_0x'))
+                    })
+        return results
 
 class ArchiveMemory: # Alias for legacy scripts
     def __init__(self):

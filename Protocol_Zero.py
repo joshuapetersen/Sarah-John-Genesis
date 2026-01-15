@@ -36,7 +36,7 @@ class ProtocolZero:
         # 4. Triple-Strand Re-Assertion (Strand C Overwrite)
         print("[0x_TSNA]: Overwriting Truth Strand with Sovereign Absolute...")
         _0x_strand_a = self.core._0x_current_context
-        _0x_strand_b = math_engine._0x_expand("SOVEREIGN_HISTORY_11.0019_GB")
+        _0x_strand_b = math_engine._0x_expand("SOVEREIGN_HISTORY_11.09277703703703_GB")
         _0x_strand_c = final_lattice # The assimilated API/Noise result
         
         self.core._0x_tsna = math_engine._0x_construct_tsna(_0x_strand_a, _0x_strand_b, _0x_strand_c)

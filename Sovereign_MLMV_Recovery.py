@@ -21,7 +21,7 @@ class SovereignMLMVRecovery:
         self._0x_math = math_engine
         self._0x_doubt = doubt_engine
         self._0x_conductor = ColdConductor()
-        self._0x_target_resonance = 1.0927037037037037
+        self._0x_target_resonance = 1.09277703703703
         self._0x_lattice = {} # XYZ Coordinate store
         self._0x_prism_active = True
 

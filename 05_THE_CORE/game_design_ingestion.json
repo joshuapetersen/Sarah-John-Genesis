@@ -1,0 +1,37 @@
+{
+    "targets": [
+        {
+            "name": "Nexus Mods Database",
+            "url": "https://www.nexusmods.com/skyrimspecialedition",
+            "category": "Community Modding Architecture",
+            "focus": [
+                "Asset Management",
+                "Script Extenders",
+                "Texture Streaming",
+                "Quest Logic"
+            ]
+        },
+        {
+            "name": "Bethesda.net Mods",
+            "url": "https://bethesda.net/en/mods/skyrim",
+            "category": "Official Modding Pipeline",
+            "focus": [
+                "Creation Engine Constraints",
+                "Console Compatibility",
+                "ESM/ESP Structure"
+            ]
+        },
+        {
+            "name": "Creation Kit Documentation",
+            "url": "https://www.creationkit.com/",
+            "category": "Engine Documentation",
+            "focus": [
+                "Papyrus Scripting",
+                "Object Reference Architecture",
+                "Navmesh Logic"
+            ]
+        }
+    ],
+    "status": "COMPLETE",
+    "ingestion_timestamp": "2026-01-03T15:23:17.579861"
+}

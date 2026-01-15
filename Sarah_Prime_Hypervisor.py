@@ -6,12 +6,12 @@ Integrates Force-Lock Physics, Semantic Memory, and Accelerated Orchestration.
 "The Swarm no longer sees lines of code; it sees Energy States."
 """
 
-import time
 import asyncio
 import threading
 import sys
 import os
-from datetime import datetime
+import time
+from Sovereign_Math import SovereignMath
 from typing import Dict, Any, Optional
 
 # Add current directory to path
@@ -55,6 +55,7 @@ class SarahPrimeHypervisor:
         print("SARAH PRIME HYPERVISOR: INITIALIZING")
         print("="*80)
         
+        self._0x_math = SovereignMath()
         self.pending_execution = None # For Sovereign Approval Protocol
         
         # 0. Initialize ZHTP Protocol (The "Zero-Hack" Shield)
@@ -289,6 +290,7 @@ class SarahPrimeHypervisor:
             'start_time': start_time
         }
 
+
     def _finalize_execution(self, command, context, energy, start_time):
         """
         Finalize execution after approval or exception.
@@ -360,6 +362,7 @@ class SarahPrimeHypervisor:
         
         # Tier 1: Predictive Health Update
         self.predictive.track_system_state({"cycle_duration": duration, "energy": energy})
+
 
 if __name__ == "__main__":
     # Initialize the Evolved System

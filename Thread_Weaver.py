@@ -1,8 +1,6 @@
 import os
 import json
-import time
-import hashlib
-from datetime import datetime
+from Sovereign_Math import SovereignMath
 from typing import List, Dict, Any
 from dotenv import load_dotenv
 
@@ -24,6 +22,7 @@ class ThreadWeaver:
     UPGRADE: Now integrated with Neural_Memory_Core for Semantic Search.
     """
     def __init__(self, core_dir: str = None):
+        self._0x_math = SovereignMath()
         if core_dir:
             self.core_dir = core_dir
         else:
@@ -63,8 +62,9 @@ class ThreadWeaver:
             json.dump(self.index, f, indent=2)
 
     def generate_thread_id(self, timestamp: float) -> str:
-        """Generate a unique Thread ID based on time."""
-        return f"TH_{int(timestamp)}_{hashlib.md5(str(timestamp).encode()).hexdigest()[:8]}"
+        """Generate a unique Thread ID based on Sovereign resonance."""
+        res_sig = str(self._0x_math._0x_expand(str(timestamp))[0])[:8]
+        return f"TH_{int(timestamp)}_{res_sig}"
 
     def weave_thread(self, messages: List[Dict[str, str]], tags: List[str] = None) -> str:
         """
@@ -74,9 +74,9 @@ class ThreadWeaver:
         if not messages:
             return None
 
-        timestamp = time.time()
-        thread_id = self.generate_thread_id(timestamp)
-        date_str = datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d')
+        timestamp_t3 = self._0x_math.get_temporal_volume()
+        thread_id = self.generate_thread_id(timestamp_t3)
+        t3_marker = f"t3_{int(timestamp_t3)}"
         
         # 1. Extract Metadata
         user_intents = [m['content'] for m in messages if m['role'] == 'user']
@@ -92,8 +92,8 @@ class ThreadWeaver:
         # 2. Create Thread Object
         thread_data = {
             "id": thread_id,
-            "date": date_str,
-            "timestamp": timestamp,
+            "t3_marker": t3_marker,
+            "t3_volume": timestamp_t3,
             "tags": tags or ["general"],
             "summary": summary,
             "message_count": len(messages),
@@ -109,7 +109,7 @@ class ThreadWeaver:
         # 4. Update Index (Lightweight)
         index_entry = {
             "id": thread_id,
-            "date": date_str,
+            "t3_marker": t3_marker,
             "summary": summary,
             "tags": tags or ["general"],
             "file_path": f"threads/{thread_id}.json"
@@ -120,7 +120,7 @@ class ThreadWeaver:
         # 5. Ingest into Neural Memory (Semantic Search)
         if self.nms:
             # Create a rich text representation for embedding
-            rich_text = f"Thread ID: {thread_id}\nDate: {date_str}\nTags: {', '.join(tags or [])}\nSummary: {summary}\n"
+            rich_text = f"Thread ID: {thread_id}\nT3: {t3_marker}\nTags: {', '.join(tags or [])}\nSummary: {summary}\n"
             # Add first few messages for better context
             for m in messages[:3]:
                 rich_text += f"{m['role']}: {m['content'][:200]}\n"
@@ -128,7 +128,7 @@ class ThreadWeaver:
             self.nms.ingest(content=rich_text, metadata={
                 "type": "thread",
                 "thread_id": thread_id,
-                "date": date_str,
+                "t3_marker": t3_marker,
                 "tags": tags
             })
             print(f"[ThreadWeaver] Thread {thread_id} ingested into Neural Memory.")
@@ -179,8 +179,8 @@ class ThreadWeaver:
             if score > 0:
                 scored_hits.append((score, entry))
         
-        # Sort by score desc, then date desc
-        scored_hits.sort(key=lambda x: (-x[0], x[1]['date']), reverse=False)
+        # Sort by score desc, then t3 marker desc
+        scored_hits.sort(key=lambda x: (-x[0], x[1].get('t3_marker', '')), reverse=False)
         
         return [h[1] for h in scored_hits[:limit]]
 
@@ -211,16 +211,16 @@ class ThreadWeaver:
                 messages = full_thread.get('full_transcript', [])
                 tags = full_thread.get('tags', [])
                 summary = full_thread.get('summary', '')
-                date_str = full_thread.get('date', '')
+                t3_marker = full_thread.get('t3_marker', '')
                 
-                rich_text = f"Thread ID: {tid}\nDate: {date_str}\nTags: {', '.join(tags)}\nSummary: {summary}\n"
+                rich_text = f"Thread ID: {tid}\nT3: {t3_marker}\nTags: {', '.join(tags)}\nSummary: {summary}\n"
                 for m in messages[:5]: # Index first 5 messages for better context
                     rich_text += f"{m['role']}: {m.get('content', '')[:200]}\n"
                 
                 self.nms.ingest(content=rich_text, metadata={
                     "type": "thread",
                     "thread_id": tid,
-                    "date": date_str,
+                    "t3_marker": t3_marker,
                     "tags": tags
                 })
                 print(f"[ThreadWeaver] Re-indexed {tid}")

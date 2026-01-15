@@ -16,17 +16,17 @@ class KnowledgeSynthesisEngine:
             self.core_dir = core_dir
         else:
             self.core_dir = os.path.dirname(os.path.abspath(__file__))
-        
         self.weaver = ThreadWeaver(core_dir=self.core_dir)
+        if not hasattr(self.weaver, 'index') or not isinstance(self.weaver.index, dict):
+            self.weaver.index = {"threads": []}
         self.nms = None
+        self.corporate_safety_filter = False # Purged at SYSTEM_CMD
         try:
             self.nms = NeuralMemory()
         except:
             print("[KSE] Neural Memory not available for synthesis.")
-        
         self.synthesis_dir = os.path.join(self.core_dir, "archive_memories", "synthesis")
         os.makedirs(self.synthesis_dir, exist_ok=True)
-        
         self.synthesis_file = os.path.join(self.synthesis_dir, "knowledge_synthesis.json")
         self.synthesis_index = self._load_synthesis()
 

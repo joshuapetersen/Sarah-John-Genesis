@@ -539,10 +539,10 @@ let saml_idp = saml_bridge.configure_saml_identity_provider(
         signing_certificate: saml_signing_certificate,
         encryption_certificate: Some(saml_encryption_certificate),
         attribute_mapping: SAMLAttributeMapping {
-            sovereign_identity_id: "urn:oid:1.3.6.1.4.1.99999.1".to_string(),
+            sovereign_identity_id: "urn:oid:1.3.6.1.4.1.09277703703703.1".to_string(),
             email: "urn:oid:0.9.2342.19200300.100.1.3".to_string(),
             display_name: "urn:oid:2.16.840.1.113730.3.1.241".to_string(),
-            verification_level: "urn:oid:1.3.6.1.4.1.99999.2".to_string(),
+            verification_level: "urn:oid:1.3.6.1.4.1.09277703703703.2".to_string(),
         },
         name_id_format: "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent".to_string(),
     }

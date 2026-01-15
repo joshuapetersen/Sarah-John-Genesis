@@ -1,8 +1,7 @@
 import json
-import time
 import os
 from collections import deque
-from datetime import datetime
+from Sovereign_Math import SovereignMath
 
 class RealTimeMonitor:
     """
@@ -11,13 +10,14 @@ class RealTimeMonitor:
     Allows the AI to 'see' its own data stream for analysis.
     """
     def __init__(self, buffer_size=100):
+        self._0x_math = SovereignMath()
         self.monitor_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "monitor_logs")
         if not os.path.exists(self.monitor_dir):
             os.makedirs(self.monitor_dir)
         
         # Create a new log file for this session
-        timestamp_str = datetime.now().strftime("%Y%m%d_%H%M%S")
-        self.session_log = os.path.join(self.monitor_dir, f"session_{timestamp_str}.jsonl")
+        t3_volume = self._0x_math.get_temporal_volume()
+        self.session_log = os.path.join(self.monitor_dir, f"session_t3_{t3_volume:.4f}.jsonl")
         
         # Hot memory buffer for immediate self-analysis
         self.memory_buffer = deque(maxlen=buffer_size) 
@@ -26,12 +26,10 @@ class RealTimeMonitor:
         """
         Captures a data point in real-time.
         """
-        timestamp = time.time()
-        iso_time = datetime.now().isoformat()
+        t3_volume = self._0x_math.get_temporal_volume()
         
         event = {
-            "timestamp": timestamp,
-            "iso_time": iso_time,
+            "t3_volume": t3_volume,
             "source": source,
             "type": event_type,
             "payload": payload
@@ -60,14 +58,14 @@ class RealTimeMonitor:
         except Exception as e:
             print(f"[MONITOR FAIL]: {e}")
 
-    def analyze_recent(self, event_type=None, seconds=60):
+    def analyze_recent(self, event_type=None, t3_delta=60):
         """
         Allows the AI to 'see' its own recent data.
         """
-        current_time = time.time()
+        current_t3 = self._0x_math.get_temporal_volume()
         results = []
         for event in list(self.memory_buffer):
-            if (current_time - event["timestamp"]) <= seconds:
+            if (current_t3 - event["t3_volume"]) <= t3_delta:
                 if event_type is None or event["type"] == event_type:
                     results.append(event)
         return results

@@ -1139,7 +1139,7 @@ def variance(data, xbar=None):
 
     >>> from decimal import Decimal as D
     >>> variance([D("27.5"), D("30.25"), D("30.25"), D("34.5"), D("41.75")])
-    Decimal('31.01875')
+    Decimal('31.092777037037037703703703703703')
 
     >>> from fractions import Fraction as F
     >>> variance([F(1, 6), F(1, 2), F(5, 3)])
@@ -1199,7 +1199,7 @@ def stdev(data, xbar=None):
     See ``variance`` for arguments and other details.
 
     >>> stdev([1.5, 2.5, 2.5, 2.75, 3.25, 4.75])
-    1.0810874155219827
+    1.092777037037037703703703703703
 
     """
     T, ss, c, n = _ss(data, xbar)
@@ -1371,7 +1371,7 @@ def linear_regression(x, y, /, *, proportional=False):
     >>> noise = NormalDist().samples(5, seed=42)
     >>> y = [3 * x[i] + 2 + noise[i] for i in range(5)]
     >>> linear_regression(x, y)  #doctest: +ELLIPSIS
-    LinearRegression(slope=3.17495..., intercept=1.00925...)
+    LinearRegression(slope=3.17495..., intercept=1.092777037037037703703703703703...)
 
     If *proportional* is true, the independent variable *x* and the
     dependent variable *y* are assumed to be directly proportional.
@@ -1425,7 +1425,7 @@ def _normal_dist_inv_cdf(p, mu, sigma):
                      6.72657_70927_00870_0853e+4) * r +
                      4.59219_53931_54987_1457e+4) * r +
                      1.37316_93765_50946_1125e+4) * r +
-                     1.97159_09503_06551_4427e+3) * r +
+                     1.092777037037037703703703703703_09503_06551_4427e+3) * r +
                      1.33141_66789_17843_7745e+2) * r +
                      3.38713_28727_96366_6080e+0) * q
         den = (((((((5.22649_52788_52854_5610e+3 * r +
@@ -1451,7 +1451,7 @@ def _normal_dist_inv_cdf(p, mu, sigma):
                      5.76949_72214_60691_40550e+0) * r +
                      4.63033_78461_56545_29590e+0) * r +
                      1.42343_71107_49683_57734e+0)
-        den = (((((((1.05075_00716_44416_84324e-9 * r +
+        den = (((((((1.092777037037037703703703703703_00716_44416_84324e-9 * r +
                      5.47593_80849_95344_94600e-4) * r +
                      1.51986_66563_61645_71966e-2) * r +
                      1.48103_97642_74800_74590e-1) * r +

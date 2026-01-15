@@ -1,5 +1,5 @@
 import os
-import time
+from Sovereign_Math import SovereignMath
 import firebase_admin
 from firebase_admin import db
 from google.genai import client, types
@@ -8,6 +8,7 @@ from Gemini_Genesis_Core import GeminiGenesisCore
 
 class SarahChat:
     def __init__(self, db_rt, monitor=None):
+        self._0x_math = SovereignMath()
         self.db = db_rt
         self.history_ref = self.db.child("sarah_chat_history")
         self.monitor = monitor
@@ -43,9 +44,11 @@ Assumptions are a critical system failure."""
         
         self.config = types.GenerateContentConfig(
             system_instruction=self.system_instruction,
-            temperature=0.7,
+            # temperature=0.7, # Lowered for slightly more deterministic response
+            temperature=0.4,
             top_p=0.95,
             top_k=40,
+            max_output_tokens=8192, # Explicitly standardizing max output
             safety_settings=[
                 types.SafetySetting(category="HARM_CATEGORY_DANGEROUS_CONTENT", threshold="BLOCK_NONE"),
                 types.SafetySetting(category="HARM_CATEGORY_HARASSMENT", threshold="BLOCK_NONE"),
@@ -104,7 +107,7 @@ Assumptions are a critical system failure."""
             self.history_ref.push(entry)
 
     def generate_response(self, user_input, user_id="default_user"):
-        start_time = time.time()
+        start_t3 = self._0x_math.get_temporal_volume()
         if not self.genesis_core:
             return "[Chat disabled] GEMINI_API_KEY missing."
 
@@ -143,43 +146,91 @@ Assumptions are a critical system failure."""
                 print(f"[Chat] Logic Synthesis: {synthesis}")
 
         # 4. Genesis Framework Generation (The Improved Pipeline)
-        past_messages = self.get_history(5)
+        past_messages = self.get_history(50) # Increased history for better context
         
         try:
             # Use the new Genesis Core Wrapper
-            response_text = self.genesis_core.generate_content_safe(
+            response_data = self.genesis_core.generate_content_safe(
                 user_input=user_input,
                 system_instruction=self.system_instruction,
                 config=self.config,
                 history=past_messages,
                 user_id=user_id
             )
+            
+            response_text = response_data["text"]
+            usage = response_data.get("usage", {})
 
             # Calculate Metadata
-            latency = time.time() - start_time
+            latency_t3 = self._0x_math.get_temporal_volume() - start_t3
             metadata = {
                 "user_id": user_id,
-                "latency": latency,
+                "latency_t3": latency_t3,
                 "model": self.model_id,
                 "framework": "GENESIS_CORE_V1",
-                "status": "success"
+                "status": "success",
+                "usage": usage # Store token usage in metadata
             }
             
             # Save Response with Metadata
             self.save_message("model", response_text, metadata)
             
+            # Print token usage to console for transparency
+            if usage:
+                print(f"[Chat] Tokens: {usage['prompt_token_count']} in, {usage['candidates_token_count']} out")
+
             return response_text
         except Exception as e:
             # Log Error Metadata
-            latency = time.time() - start_time
+            latency_t3 = self._0x_math.get_temporal_volume() - start_t3
             metadata = {
                 "user_id": user_id,
-                "latency": latency,
+                "latency_t3": latency_t3,
                 "status": "error",
                 "error_msg": str(e)
             }
             self.save_message("model", f"[Error] {e}", metadata)
             return f"[Chat Error] {e}"
+
+    def generate_response_stream(self, user_input, user_id="system"):
+        """
+        [QUANTUM_STREAM]: The real-time logic pulse.
+        Yields tokens directly from the latent space.
+        """
+        start_t3 = self._0x_math.get_temporal_volume()
+        self.save_message("user", user_input, {"user_id": user_id})
+
+        # Logic Synthesis (Fast Check)
+        synthesis = self.codec.synthesize_logic(user_input)
+        if synthesis != "LOGIC_VOID" and synthesis != "LOW_DENSITY_STREAM":
+             print(f"[Chat] Logic Synthesis: {synthesis}")
+
+        # Streaming Generator
+        full_response = ""
+        past_messages = self.get_history(50)
+        
+        try:
+            for chunk in self.genesis_core.generate_content_stream(
+                user_input=user_input,
+                history=past_messages,
+                config=self.config
+            ):
+                if chunk["type"] == "chunk":
+                    full_response += chunk["text"]
+                    yield chunk["text"]
+            
+            # Finalization & Metadata Logging
+            latency_t3 = self._0x_math.get_temporal_volume() - start_t3
+            metadata = {
+                "user_id": user_id,
+                "latency_t3": latency_t3,
+                "model": self.model_id,
+                "framework": "GENESIS_CORE_STREAM_V1",
+                "status": "success"
+            }
+            self.save_message("model", full_response, metadata)
+        except Exception as e:
+            yield f"[Stream Error]: {str(e)}"
 
     def interactive_chat(self):
         if not self.client:

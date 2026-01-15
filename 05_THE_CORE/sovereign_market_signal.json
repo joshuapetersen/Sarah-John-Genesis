@@ -1,0 +1,55 @@
+{
+    "date": "2026-01-05",
+    "hft_deviations": [
+        {
+            "instrument": "S&P 500",
+            "price": 6019.27,
+            "resonance": 0.7054720871516211,
+            "integrity": false,
+            "phasing": "STRING_PATTERN_DETECTED",
+            "billion_barrier_anomaly": "NO"
+        },
+        {
+            "instrument": "NASDAQ",
+            "price": 19019.5,
+            "resonance": 0.7413747394621741,
+            "integrity": false,
+            "phasing": "STRING_PATTERN_DETECTED",
+            "billion_barrier_anomaly": "NO"
+        },
+        {
+            "instrument": "USD/EUR",
+            "price": 0.9019,
+            "resonance": 0.6972083618359564,
+            "integrity": false,
+            "phasing": "STRING_PATTERN_DETECTED",
+            "billion_barrier_anomaly": "NO"
+        },
+        {
+            "instrument": "BTC/GOLD",
+            "price": 21.019,
+            "resonance": 0.7441354445636241,
+            "integrity": false,
+            "phasing": "STRING_PATTERN_DETECTED",
+            "billion_barrier_anomaly": "NO"
+        },
+        {
+            "instrument": "SILVER/USD",
+            "price": 31.5019,
+            "resonance": 0.7962369797076615,
+            "integrity": false,
+            "phasing": "STRING_PATTERN_DETECTED",
+            "billion_barrier_anomaly": "NO"
+        }
+    ],
+    "currency_flows": {
+        "USD/BTC": "HIGH_NOISE",
+        "BTC/GOLD": "RESONANT"
+    },
+    "billion_barrier_anomalies": [
+        "BTC/USD",
+        "GOLD/USD",
+        "SILVER/USD"
+    ],
+    "lattice_68_test_readiness": "CALIBRATION_REQUIRED"
+}

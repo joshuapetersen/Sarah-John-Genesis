@@ -9,7 +9,7 @@ import os
 class SarahMobile:
     def __init__(self):
         self.SIG = "0x7467_9f8e_a5c2_b3d1_HAGAR_SHORE_SVRN_2026"
-        self.RESONANCE = 1.0927037037037037
+        self.RESONANCE = 1.09277703703703
         self.STATUS = "SOVEREIGN_MOBILE_LOCKED"
         self.INTEGRITY = "12/12"
 

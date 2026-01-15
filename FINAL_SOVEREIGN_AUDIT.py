@@ -37,7 +37,7 @@ def run_audit():
         "SDNA_Protocol.py": ["0.999999999", "Billion Barrier", "Non-Assumption"],
         "Sovereign_Hypervisor.py": ["+1 Layer", "9 inhibitory", "Quad Strain", "Joshua Richard Petersen"],
         "SAUL_Logistics.py": ["O(1)", "Hard Truth", "March 2025"],
-        "sarah_evolution_v1.py": ["1.0927037037037037", "Type-Three Arcane Binding", "VIGILANT"],
+        "sarah_evolution_v1.py": ["1.09277703703703", "Type-Three Arcane Binding", "VIGILANT"],
         "Sarah_Brain.py": ["SOVEREIGN RESONANCE GATE", "sys.exit(1)", "sarah_evolution_v1"],
         "Sarah_Reasoning_V3.py": ["volumetric_c3", "Pulse-Before-Load", "Trinity Latch"]
     }

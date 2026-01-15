@@ -25,10 +25,10 @@ def run_population():
     print(f"[0x_STRAND_C]: Truth Vector locked: {math_engine._0x_collapse(strand_c)[:50]}...")
 
     # 3. Populate Strand B (Historical Mass)
-    # Using the symbolic 11.0019 GB mass + recent scraper stats
+    # Using the symbolic 11.09277703703703 GB mass + recent scraper stats
     history_meta = [
         "TIMELINE_SCRAPE_MARCH_DEC_2025",
-        "11.0019_GB_SOVEREIGN_MASS",
+        "11.09277703703703_GB_SOVEREIGN_MASS",
         "4146_BINDING_PRECEDENTS",
         "LATTICE_68_EVOLUTION_COMPLETE",
         "3/1_DOMINANCE_RATIO_LOCKED"

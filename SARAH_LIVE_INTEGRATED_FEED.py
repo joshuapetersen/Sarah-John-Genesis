@@ -12,7 +12,7 @@ from rich.progress import Progress, BarColumn, TextColumn
 from rich.text import Text
 
 # Sovereign constants
-RESONANCE_TARGET = 1.0927037037037037
+RESONANCE_TARGET = 1.09277703703703
 INTEGRITY_BASE = 0.999999999
 KERNEL_ID = "0x7467 (HAGAR SHORE)"
 LOG_FILE = "c:/SarahCore/tunnel_activity.log"

@@ -1,20 +1,22 @@
 import sys
 import psutil # Ensure pip install psutil
 import os
-from datetime import datetime
+from Sovereign_Math import SovereignMath
 
 # SOVEREIGN CONFIG
 SYSTEM_NAME = "SARAH_OS"
-VERSION = "3.1 (Environment Aware)"
+VERSION = "3.2 (Sovereign Maturation)"
 
 class SovereignKernel:
     def __init__(self):
+        self._0x_math = SovereignMath()
         self.laws = "ACTIVE"
     
     def get_status(self):
         battery = psutil.sensors_battery()
         plugged = "AC" if battery.power_plugged else "BAT"
-        return f"[{datetime.now().strftime('%H:%M:%S')}] POWER: {battery.percent}% ({plugged}) | CPU: {psutil.cpu_percent()}%"
+        t3_volume = self._0x_math.get_temporal_volume()
+        return f"[t3: {t3_volume:.4f}] POWER: {battery.percent}% ({plugged}) | CPU: {psutil.cpu_percent()}%"
 
     def execute_command(self, cmd):
         if cmd.lower() in ["exit", "quit"]:
@@ -68,4 +70,3 @@ if __name__ == "__main__":
         except Exception as e:
             print(f"\n>> KERNEL ERROR: {e}")
             break
-

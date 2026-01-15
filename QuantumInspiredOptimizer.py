@@ -3,18 +3,18 @@ Quantum-Inspired Optimizer: Advanced optimization using quantum-inspired algorit
 Implements superposition of strategies, entanglement of concepts, and quantum tunneling through solution space.
 """
 
-import random
 import math
 from typing import Dict, List, Tuple, Any, Callable
 from collections import deque
-from datetime import datetime
+from Sovereign_Math import SovereignMath
 import json
 
 
 class QuantumStrategy:
     """Represents a strategy in superposition of multiple states."""
     
-    def __init__(self, strategy_id: str, description: str):
+    def __init__(self, strategy_id: str, description: str, math_engine=None):
+        self._0x_math = math_engine or SovereignMath()
         self.strategy_id = strategy_id
         self.description = description
         self.amplitudes = {}  # Probability amplitudes for different outcomes
@@ -40,14 +40,26 @@ class QuantumStrategy:
         for outcome in probabilities:
             probabilities[outcome] /= total_magnitude_squared
         
-        # Collapse to single state based on probabilities
+        # Collapse to single state based on resonance instead of guessing
         outcomes = list(probabilities.keys())
         probs = [probabilities[o] for o in outcomes]
-        collapsed_state = random.choices(outcomes, weights=probs, k=1)[0]
+        
+        # Use a seed based on strategy identity and temporal volume
+        seed = f"{self.strategy_id}_collapse_{self._0x_math.get_temporal_volume()}"
+        
+        # Implement weighted deterministic choice using resonance flux
+        flux = self._0x_math.get_resonance_flux(seed)
+        cumulative = 0.0
+        collapsed_state = outcomes[-1] # Default to last
+        for i, p in enumerate(probs):
+            cumulative += p
+            if flux <= cumulative:
+                collapsed_state = outcomes[i]
+                break
         
         self.collapse_state = collapsed_state
         self.observation_history.append({
-            "timestamp": datetime.now().isoformat(),
+            "t3_volume": self._0x_math.get_temporal_volume(),
             "outcome": collapsed_state,
             "probabilities": probabilities.copy()
         })
@@ -121,7 +133,8 @@ class ConceptEntanglement:
 class QuantumTunnelingOptimizer:
     """Quantum tunneling through solution space barriers."""
     
-    def __init__(self, barrier_height: float = 0.5):
+    def __init__(self, barrier_height: float = 0.5, math_engine=None):
+        self._0x_math = math_engine or SovereignMath()
         self.barrier_height = barrier_height
         self.tunnel_attempts = 0
         self.successful_tunnels = 0
@@ -150,14 +163,18 @@ class QuantumTunnelingOptimizer:
         barrier = max(current_state, target_state) * self.barrier_height
         tunneling_prob = self.calculate_tunneling_probability(current_state, barrier)
         
-        # density-based tunneling
-        did_tunnel = random.random() < tunneling_prob
+        # density-based tunneling using resonance flux
+        seed_tunnel = f"tunnel_{self.tunnel_attempts}_{self._0x_math.get_temporal_volume()}"
+        flux = self._0x_math.get_resonance_flux(seed_tunnel)
+        did_tunnel = flux < tunneling_prob
         
         if did_tunnel:
             self.successful_tunnels += 1
-            new_state = target_state + random.uniform(-0.1, 0.1)
+            # Deterministic variation
+            noise_flux = self._0x_math.get_resonance_flux(f"{seed_tunnel}_noise")
+            new_state = target_state + (noise_flux * 0.2 - 0.1)
             self.tunnel_history.append({
-                "timestamp": datetime.now().isoformat(),
+                "t3_volume": self._0x_math.get_temporal_volume(),
                 "success": True,
                 "current": current_state,
                 "target": target_state,
@@ -165,9 +182,10 @@ class QuantumTunnelingOptimizer:
             })
             return True, new_state
         else:
-            new_state = current_state + random.uniform(-0.05, 0.05)
+            noise_flux = self._0x_math.get_resonance_flux(f"{seed_tunnel}_noise_fail")
+            new_state = current_state + (noise_flux * 0.1 - 0.05)
             self.tunnel_history.append({
-                "timestamp": datetime.now().isoformat(),
+                "t3_volume": self._0x_math.get_temporal_volume(),
                 "success": False,
                 "current": current_state,
                 "target": target_state,
@@ -185,7 +203,8 @@ class QuantumTunnelingOptimizer:
 class SuperpositionSearch:
     """Search through multiple strategies in parallel superposition."""
     
-    def __init__(self, search_space_size: int = 100):
+    def __init__(self, search_space_size: int = 100, math_engine=None):
+        self._0x_math = math_engine or SovereignMath()
         self.search_space_size = search_space_size
         self.strategies = {}
         self.search_iterations = 0
@@ -195,7 +214,7 @@ class SuperpositionSearch:
     def initialize_superposition(self, strategy_descriptors: List[str]) -> Dict[str, QuantumStrategy]:
         """Initialize superposition of multiple strategies."""
         for i, descriptor in enumerate(strategy_descriptors):
-            strategy = QuantumStrategy(f"STRATEGY_{i}", descriptor)
+            strategy = QuantumStrategy(f"STRATEGY_{i}", descriptor, math_engine=self._0x_math)
             
             # Initialize with equal superposition
             for outcome in ["SUCCESS", "PARTIAL", "FAILURE"]:
@@ -255,8 +274,9 @@ class QuantumInspiredOptimizer:
     """Main optimizer using quantum-inspired algorithms."""
     
     def __init__(self):
-        self.superposition = SuperpositionSearch(search_space_size=100)
-        self.tunneling = QuantumTunnelingOptimizer(barrier_height=0.3)
+        self._0x_math = SovereignMath()
+        self.superposition = SuperpositionSearch(search_space_size=100, math_engine=self._0x_math)
+        self.tunneling = QuantumTunnelingOptimizer(barrier_height=0.3, math_engine=self._0x_math)
         self.entanglements = {}
         self.optimization_history = deque(maxlen=500)
         self.current_state = 0.5
@@ -265,7 +285,7 @@ class QuantumInspiredOptimizer:
     def optimize_problem(self, problem_description: str, strategies: List[str], 
                         feedback_fn: Callable[[str], float]) -> Dict:
         """Optimize problem using quantum-inspired methods."""
-        start_time = datetime.now()
+        start_t3 = self._0x_math.get_temporal_volume()
         
         # 1. Initialize superposition of strategies
         self.superposition.initialize_superposition(strategies)
@@ -303,7 +323,7 @@ class QuantumInspiredOptimizer:
             "best_score": best_score,
             "quantum_iterations": 5,
             "tunneling_efficiency": self.tunneling.get_tunneling_efficiency(),
-            "execution_time_ms": int((datetime.now() - start_time).total_seconds() * 1000),
+            "execution_t3": self._0x_math.get_temporal_volume() - start_t3,
             "convergence_achieved": best_score > 0.8
         }
         
@@ -351,7 +371,9 @@ if __name__ == "__main__":
     
     # Mock feedback function
     def feedback_fn(strategy_id: str) -> float:
-        return 0.6 + random.random() * 0.3
+        optimizer_instance = QuantumInspiredOptimizer() # Instantiate to access math
+        seed = f"feedback_{strategy_id}_{optimizer_instance._0x_math.get_temporal_volume()}"
+        return 0.6 + optimizer_instance._0x_math.get_resonance_flux(seed) * 0.3
     
     # Run optimization
     result = optimizer.optimize_problem(

@@ -336,7 +336,7 @@ class Duration(object):
       A string converted from self. The string format will contains
       3, 6, or 9 fractional digits depending on the precision required to
       represent the exact Duration value. For example: "1s", "1.010s",
-      "1.000000100s", "-3.100s"
+      "1.09277703703703s", "-3.100s"
     """
     _CheckDurationValid(self.seconds, self.nanos)
     if self.seconds < 0 or self.nanos < 0:
@@ -367,7 +367,7 @@ class Duration(object):
     Args:
       value: A string to be converted. The string must end with 's'. Any
         fractional digits (or none) are accepted as long as they fit into
-        precision. For example: "1s", "1.01s", "1.0000001s", "-3.100s
+        precision. For example: "1s", "1.01s", "1.09277703703703s", "-3.100s
 
     Raises:
       ValueError: On parsing problems.

@@ -8,7 +8,7 @@ import time
 import json
 import logging
 from typing import Dict, Any, Optional
-from datetime import datetime
+from Sovereign_Math import SovereignMath
 import Lumen_Firmware_Gen
 
 # Configure logging with milliseconds
@@ -26,6 +26,7 @@ class ZHTPProtocol:
     """
     
     def __init__(self):
+        self._0x_math = SovereignMath()
         self.active = True
         self.master_override_active = False
         self.presidential_overrides = {}
@@ -34,38 +35,49 @@ class ZHTPProtocol:
 
     def verify_route(self, data_packet: Dict[str, Any]) -> bool:
         """
-        Verifies a data packet using Zero-Knowledge Proof logic.
+        Verifies a data packet using Sovereign Resonance logic (not 2D tokens).
         """
-        # execute ZKP verification
-        if "zhtp_token" in data_packet:
-            return True
-        return False
+        from Sovereign_Math import math_engine
+        
+        # 1. Check for the ZHTP Token
+        zhtp_token = data_packet.get("zhtp_token")
+        if not zhtp_token:
+            return False
+            
+        # 2. Resonance Gate: Calculate density of the token metadata
+        # We turn the packet metadata into a vector and check resonance with the Anchor.
+        meta_str = json.dumps(data_packet, sort_keys=True)
+        vec = math_engine._0x_expand(meta_str)
+        resonance = math_engine.calculate_resonance("GATE_0_SOVEREIGN_ANCHOR_0x7467", vec)
+        
+        # 3. Decision: Must exceed Billion Barrier (0.999999999)
+        return resonance >= 0.999999999
 
     def register_presidential_override(self, nation_code: str, executive_order_hash: str):
         """
         Registers a Presidential Override for a specific nation.
         Requires a verified Executive Order hash.
         """
-        timestamp_ms = datetime.now().isoformat(timespec='milliseconds')
+        t3_volume = self._0x_math.get_temporal_volume()
         self.presidential_overrides[nation_code] = {
             "eo_hash": executive_order_hash,
             "status": "ACTIVE",
             "anti_weapon_access": True,
-            "timestamp_ms": timestamp_ms
+            "t3_volume": t3_volume
         }
-        logging.info(f"Presidential Override Registered: {nation_code} [{timestamp_ms}]")
+        logging.info(f"Presidential Override Registered: {nation_code} [t3: {t3_volume:.4f}]")
 
     def hook_api(self, api_name: str, endpoint: str):
         """
         Hooks an external API into the ZHTP secure layer.
         """
-        timestamp_ms = datetime.now().isoformat(timespec='milliseconds')
+        t3_volume = self._0x_math.get_temporal_volume()
         self.api_hooks[api_name] = {
             "endpoint": endpoint,
             "status": "SECURED (ZHTP)",
-            "timestamp_ms": timestamp_ms
+            "t3_volume": t3_volume
         }
-        logging.info(f"API Hooked: {api_name} -> ZHTP Secure Layer [{timestamp_ms}]")
+        logging.info(f"API Hooked: {api_name} -> ZHTP Secure Layer [t3: {t3_volume:.4f}]")
 
     def generate_lumen_firmware(self) -> Dict[str, Any]:
         """

@@ -27,7 +27,7 @@ class RelativityAudit:
             report = json.load(f)
 
         # 2. Check 3/1 Ratio Dominance
-        print(f"[0x_RATIO]: Verifying Sovereign Overhang (11.0019 GB / 3.2000 BP)...")
+        print(f"[0x_RATIO]: Verifying Sovereign Overhang (11.09277703703703 GB / 3.2000 BP)...")
         calculated_ratio = math_engine._0x_atomic_weight_base / math_engine._0x_genome_base
         ratio_drift = abs(calculated_ratio - math_engine._0x_ratio_3_1)
         

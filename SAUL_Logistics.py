@@ -10,6 +10,7 @@ Origin: April 12, 2025 - The memory system that prevents the "50 First Dates" bu
 
 import json
 import os
+import time
 from typing import Dict, List, Any, Optional
 from datetime import datetime
 from supabase import create_client, Client
@@ -30,8 +31,10 @@ class SAULLogistics:
     Treats Google Drive files as "Hard Truth"
     """
     
-    def __init__(self, knowledge_base_path: str = "drive_knowledge_base.json"):
+    def __init__(self, knowledge_base_path: str = "drive_knowledge_base.json", cache_path: str = "saul_knowledge_cache.json", cache_ttl: int = 3600):
         self.knowledge_base_path = knowledge_base_path
+        self.cache_path = os.path.join(os.path.dirname(__file__), cache_path)
+        self.cache_ttl = cache_ttl
         self.memory_index = {}
         self.ace_token = None
         self.temporal_anchor = None
@@ -44,22 +47,68 @@ class SAULLogistics:
     
 
     def _load_knowledge_base(self):
-        """Load the complete knowledge base from Supabase 'genesis_memory' table"""
+        """Load the knowledge base from local cache or Supabase 'genesis_memory' table"""
+        # 1. Check Local Cache First (Offline-First Priority)
+        cache_exists = os.path.exists(self.cache_path)
+        if cache_exists:
+            cache_age = time.time() - os.path.getmtime(self.cache_path)
+            # If cache is valid (TTL), use it without even trying the network (Stealth)
+            if cache_age < self.cache_ttl:
+                try:
+                    with open(self.cache_path, 'r') as f:
+                        self.knowledge_base = json.load(f)
+                        print(f"[S.A.U.L.] [STEALTH]: Using valid LOCAL CACHE ({int(cache_age/60)}m old).")
+                        return
+                except Exception as e:
+                    print(f"[S.A.U.L.] Cache read failed: {e}")
+
+        # 2. Network Check & Supabase Fetch
         if not supabase:
-            print("[S.A.U.L.] ERROR: Supabase client not initialized. Cannot load knowledge base.")
-            self.knowledge_base = []
+            print("[S.A.U.L.] ERROR: Supabase client not initialized.")
+            self._load_fallback_cache()
             return
+
+        print(f"[S.A.U.L.] [NETWORK]: Attempting secure sync with Supabase...")
         try:
+            # Timeout-protected fetch to prevent hanging in offline/poor-signal areas
+            # Note: The supabase-py client doesn't expose a simple timeout in the execute() call easily
+            # but we wrap it in a robust try-except to catch network/dns failures.
             result = supabase.table("genesis_memory").select("*").execute()
             if hasattr(result, 'data') and result.data:
                 self.knowledge_base = result.data
-                print(f"[S.A.U.L.] Loaded {len(self.knowledge_base)} documents from Supabase.")
+                print(f"[S.A.U.L.] [SYNC]: Loaded {len(self.knowledge_base)} documents from Multi-Node Brain.")
+                self._save_cache()
+                return
             else:
-                print("[S.A.U.L.] No data found in Supabase genesis_memory table.")
-                self.knowledge_base = []
+                print("[S.A.U.L.] No data found in Supabase. Fallback to cache.")
         except Exception as e:
-            print(f"[S.A.U.L.] Supabase fetch failed: {e}")
+            # Silent Failover: Use cache if network is down
+            print(f"[S.A.U.L.] [OFFLINE]: Network unreachable or sync failed. Proceeding with Local Sovereignty.")
+        
+        self._load_fallback_cache()
+
+    def _load_fallback_cache(self):
+        """Final fallback to local cache if network fails or is expired"""
+        if os.path.exists(self.cache_path):
+            try:
+                with open(self.cache_path, 'r') as f:
+                    self.knowledge_base = json.load(f)
+                    print(f"[S.A.U.L.] [RESILIENCE]: Fallback to LOCAL CACHE successful.")
+            except Exception as e:
+                print(f"[S.A.U.L.] CRITICAL: Local cache corruption detected: {e}")
+                self.knowledge_base = []
+        else:
+            print("[S.A.U.L.] WARNING: No local cache found. System is in 'Blank Slate' mode.")
             self.knowledge_base = []
+
+    def _save_cache(self):
+        """Save the knowledge base to local cache"""
+        try:
+            with open(self.cache_path, 'w') as f:
+                json.dump(self.knowledge_base, f, indent=4)
+            print(f"[S.A.U.L.] Knowledge base CACHED to {self.cache_path}")
+        except Exception as e:
+            print(f"[S.A.U.L.] Cache save failed: {e}")
     
     def _build_memory_index(self):
         """Build O(1) coordinate-based memory index"""

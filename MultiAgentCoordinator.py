@@ -3,7 +3,7 @@ Multi-Agent Coordination Framework: Distributed decision-making with consensus p
 Enables collaborative reasoning across multiple specialized logic agents.
 """
 
-from datetime import datetime
+from Sovereign_Math import SovereignMath
 from typing import Dict, List, Tuple, Any
 from collections import deque
 import json
@@ -13,6 +13,7 @@ class LogicAgent:
     """Individual specialized logic agent with expertise domain."""
     
     def __init__(self, agent_id: str, expertise: str, confidence_base: float = 0.7):
+        self._0x_math = SovereignMath()
         self.agent_id = agent_id
         self.expertise = expertise
         self.confidence_base = confidence_base
@@ -25,7 +26,7 @@ class LogicAgent:
         decision = {
             "agent_id": self.agent_id,
             "expertise": self.expertise,
-            "timestamp": datetime.now().isoformat(),
+            "t3_volume": self._0x_math.get_temporal_volume(),
             "problem": problem,
             "confidence": min(1.0, self.confidence_base * (1 + self.accuracy_score)),
             "reasoning": self._generate_reasoning(problem, context),
@@ -172,6 +173,7 @@ class MultiAgentCoordinator:
     """Orchestrates multi-agent collaboration and consensus."""
     
     def __init__(self, agent_count: int = 6):
+        self._0x_math = SovereignMath()
         self.agents: Dict[str, LogicAgent] = {}
         self.consensus = ConsensusMechanism(quorum_size=max(3, agent_count // 2))
         self.collaboration_log = deque(maxlen=200)
@@ -190,9 +192,9 @@ class MultiAgentCoordinator:
             self.agents[agent_id] = LogicAgent(agent_id, expertise)
     
     def coordinate_reasoning(self, problem: str, context: str = "") -> Dict:
-        """Coordinate multi-agent reasoning for complex problem."""
+        """Coordinate multi_agent reasoning for complex problem."""
         collaboration_id = f"COLLAB_{self.collaboration_log.__len__()}"
-        start_time = datetime.now()
+        start_t3 = self._0x_math.get_temporal_volume()
         
         # 1. Gather individual decisions
         decisions = []
@@ -208,13 +210,13 @@ class MultiAgentCoordinator:
         
         result = {
             "collaboration_id": collaboration_id,
-            "timestamp": datetime.now().isoformat(),
+            "t3_volume": self._0x_math.get_temporal_volume(),
             "problem": problem,
             "agent_count": len(self.agents),
             "individual_decisions": decisions,
             "consensus": consensus_result,
             "final_recommendation": final_recommendation,
-            "execution_time_ms": int((datetime.now() - start_time).total_seconds() * 1000),
+            "t3_delta": self._0x_math.get_temporal_volume() - start_t3,
             "quality_score": self._calculate_quality_score(decisions, consensus_result)
         }
         

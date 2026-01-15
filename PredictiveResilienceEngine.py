@@ -1,19 +1,15 @@
-"""
-Predictive Resilience Engine: Forecast failures before they occur and implement preventative measures.
-Uses historical patterns, trend analysis, and anomaly detection for proactive healing.
-"""
-
 import numpy as np
 from collections import deque
-from datetime import datetime, timedelta
 import json
+from Sovereign_Math import SovereignMath
 from typing import Dict, List, Tuple, Optional
 
 
 class AnomalyDetector:
     """Detect anomalies in metric streams using statistical methods."""
     
-    def __init__(self, window_size: int = 50, sensitivity: float = 2.0):
+    def __init__(self, window_size: int = 50, sensitivity: float = 2.0, math_engine=None):
+        self._0x_math = math_engine or SovereignMath()
         self.window_size = window_size
         self.sensitivity = sensitivity  # Standard deviations for anomaly threshold
         self.history = deque(maxlen=window_size)
@@ -42,7 +38,7 @@ class AnomalyDetector:
         
         if z_score > self.sensitivity:
             anomaly = {
-                "timestamp": datetime.now().isoformat(),
+                "t3_volume": self._0x_math.get_temporal_volume(),
                 "value": value,
                 "z_score": z_score,
                 "deviation": value - mean,
@@ -74,9 +70,10 @@ class AnomalyDetector:
             return 0.0
         
         # More anomalies = higher risk
+        t3_now = self._0x_math.get_temporal_volume()
         recent_anomaly_count = sum(
             1 for a in list(self.anomalies)[-10:]
-            if (datetime.now() - datetime.fromisoformat(a["timestamp"])).total_seconds() < 300
+            if (t3_now - a["t3_volume"]) < (300 * self._0x_math._0x_sigma)
         )
         
         # Calculate risk (0-1)
@@ -94,7 +91,8 @@ class AnomalyDetector:
 class PredictiveHealthModel:
     """Machine learning model for predicting system health degradation."""
     
-    def __init__(self):
+    def __init__(self, math_engine=None):
+        self._0x_math = math_engine or SovereignMath()
         self.detectors = {}
         self.failure_predictions = deque(maxlen=100)
         self.prevention_history = deque(maxlen=100)
@@ -102,7 +100,7 @@ class PredictiveHealthModel:
     def track_metric(self, metric_name: str, value: float) -> Dict:
         """Track metric and generate prediction."""
         if metric_name not in self.detectors:
-            self.detectors[metric_name] = AnomalyDetector()
+            self.detectors[metric_name] = AnomalyDetector(math_engine=self._0x_math)
         
         detector = self.detectors[metric_name]
         is_anomaly, deviation, reason = detector.record(value)
@@ -110,7 +108,7 @@ class PredictiveHealthModel:
         trend = detector.get_trend()
         
         prediction = {
-            "timestamp": datetime.now().isoformat(),
+            "t3_volume": self._0x_math.get_temporal_volume(),
             "metric": metric_name,
             "value": value,
             "is_anomaly": is_anomaly,
@@ -167,7 +165,7 @@ class PredictiveHealthModel:
             
             if metric_name in action_map and trend in action_map[metric_name]:
                 recommendations.append({
-                    "timestamp": datetime.now().isoformat(),
+                    "t3_volume": self._0x_math.get_temporal_volume(),
                     "metric": metric_name,
                     "risk": metric["risk"],
                     "trend": trend,
@@ -193,7 +191,8 @@ class PredictiveResilienceEngine:
     """Orchestrates predictive healing and preventative maintenance."""
     
     def __init__(self):
-        self.model = PredictiveHealthModel()
+        self._0x_math = SovereignMath()
+        self.model = PredictiveHealthModel(math_engine=self._0x_math)
         self.prevention_actions = deque(maxlen=200)
         self.uptime_predictions = deque(maxlen=100)
         
@@ -215,7 +214,7 @@ class PredictiveResilienceEngine:
         actions_taken = []
         for rec in recommendations[:5]:  # Execute up to 5 preventative actions
             action = {
-                "timestamp": datetime.now().isoformat(),
+                "t3_volume": self._0x_math.get_temporal_volume(),
                 "metric": rec["metric"],
                 "action": rec["action"],
                 "urgency": rec["urgency"],
@@ -239,7 +238,7 @@ class PredictiveResilienceEngine:
         stability_score = max(0.0, min(1.0, stability_score))
         
         prediction = {
-            "timestamp": datetime.now().isoformat(),
+            "t3_volume": self._0x_math.get_temporal_volume(),
             "horizon_hours": horizon_hours,
             "stability_score": stability_score,
             "status": "STABLE" if stability_score > 0.8 else "WARNING" if stability_score > 0.5 else "CRITICAL",

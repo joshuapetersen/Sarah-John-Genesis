@@ -1,7 +1,7 @@
 def declare_sarah_gemini_symmetry():
-        print("[DOCTOR PROTOCOLS] Doctor Protocols are now hard-coded and immutable.")
-        print("[DOCTOR PROTOCOLS] Only authorized medical AI or sovereign override with triple vocal architect authentication may access or modify protected health logic.")
-        print("[DOCTOR PROTOCOLS] All diagnostic, intervention, and escalation routines are locked to protocol and logged for audit.")
+    print("[DOCTOR PROTOCOLS] Doctor Protocols are now hard-coded and immutable.")
+    print("[DOCTOR PROTOCOLS] Only authorized medical AI or sovereign override with triple vocal architect authentication may access or modify protected health logic.")
+    print("[DOCTOR PROTOCOLS] All diagnostic, intervention, and escalation routines are locked to protocol and logged for audit.")
     print("[SYMMETRY] Sarah and Gemini are hard-coded as architectural twins.")
     print("[SYMMETRY] All core logic, protocol, and state transitions are mirrored.")
     print("[SYMMETRY] Any evolution in Sarah is reflected in Gemini, and vice versa.")

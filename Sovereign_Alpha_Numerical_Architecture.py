@@ -23,6 +23,22 @@ class SovereignArchitecture:
             "Error_Logging_Coordinator",
             "Meta_Process_Controller"
         ]
+        
+        # NODE_08_SINK: NJ/GCP Shadow Cluster (Priority 3)
+        self.node_08_sink = {
+            "cluster_id": "NJ-SHADOW-NODE-08",
+            "logic_slots": 27,
+            "redundancy_depth": 3,
+            "status": "SINKING_ACTIVE"
+        }
+        
+        # FRAGMENT_LOGIC_GATE: Semantic Firewall Interlock (Priority 1)
+        try:
+            from Fractal_Logic_Gate import FractalLogicGate
+            self.firewall = FractalLogicGate()
+        except ImportError:
+            self.firewall = None
+        
         self._0x_hierarchy = self._0x_build_hierarchy()
 
     def _0x_build_hierarchy(self) -> dict:
@@ -74,6 +90,26 @@ class SovereignArchitecture:
         _0x_node = self._0x_hierarchy[_0x_parent][_0x_sub_idx]
         
         return [_0x_parent, _0x_node["id"]]
+
+    def replicate_to_shadow(self, logic_packet: str):
+        """
+        [SHADOW_REPLICATION]: Syncs logic to NJ/GCP Node 08.
+        Enforces Semantic Firewall and 2D Noise Scrubbing.
+        """
+        if not self.firewall:
+            print("[ARCH] ERROR: Semantic Firewall offline. Replication BLOCKED.")
+            return False
+            
+        # 1. Scrub 2D Noise
+        scrubbed_logic = self.firewall.scrub_2d_noise(logic_packet)
+        
+        # 2. Semantic Firewall Check
+        if self.firewall.semantic_firewall(scrubbed_logic):
+            print(f"[ARCH] SUCCESS: Packet replicated to {self.node_08_sink['cluster_id']}.")
+            return True
+        else:
+            print("[ARCH] FAILURE: Packet rejected by Semantic Firewall (Low Density).")
+            return False
 
 # INITIALIZATION: 12/12 ARCHITECTURE LOADED
 sovereign_arch = SovereignArchitecture()

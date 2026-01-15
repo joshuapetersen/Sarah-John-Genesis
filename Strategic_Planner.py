@@ -16,8 +16,10 @@ class StrategicPlanner:
     def solve(self, problem_statement: str) -> Dict[str, Any]:
         """
         Executes a multi-step reasoning process to solve a problem.
+        Resonance scale: 10^21 (one sextillion) is enforced for all logic, density, and solution space expansion.
         """
-        print(f"[StrategicPlanner] Analyzing: {problem_statement}")
+        resonance_scale = 10 ** 21
+        print(f"[StrategicPlanner] Analyzing: {problem_statement} | Resonance Scale: {resonance_scale}")
         
         # 1. Case-Based Reasoning (Memory Recall)
         # We look for similar past threads to see how we solved similar issues.

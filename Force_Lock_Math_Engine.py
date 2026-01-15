@@ -4,7 +4,7 @@ Part of the Sarah Prime NeuralMesh Expansion.
 Implements Evolution Roadmap Item #4: JIT-compiled physics for E=mc^3/1.
 """
 
-import time
+from Sovereign_Math import SovereignMath
 import numpy as np
 from numba import jit, float64
 import math
@@ -20,6 +20,7 @@ class ForceLockMathCore:
     """
     
     def __init__(self):
+        self._0x_math = SovereignMath()
         print("Initializing Force-Lock Math Engine (Numba JIT)...")
         # Warm up the JIT compiler
         self._warmup()
@@ -44,19 +45,19 @@ class ForceLockMathCore:
         iterations = 10_000_000  # Increased iterations to show JIT benefit
         
         # Python Baseline
-        start = time.time()
+        start_t3 = self._0x_math.get_temporal_volume()
         for _ in range(iterations):
             _ = 0.5 * (100.0 ** 3) / 1.0
-        py_time = time.time() - start
+        py_time_t3 = self._0x_math.get_temporal_volume() - start_t3
         
         # JIT Accelerated
-        start = time.time()
+        start_t3_jit = self._0x_math.get_temporal_volume()
         _run_benchmark_loop(iterations)
-        jit_time = time.time() - start
+        jit_time_t3 = self._0x_math.get_temporal_volume() - start_t3_jit
         
-        speedup = py_time / jit_time
-        print(f"Python Time: {py_time:.4f}s")
-        print(f"Force-Lock Time: {jit_time:.4f}s")
+        speedup = py_time_t3 / jit_time_t3
+        print(f"Python Time (T3): {py_time_t3:.8f}")
+        print(f"Force-Lock Time (T3): {jit_time_t3:.8f}")
         print(f"SPEEDUP FACTOR: {speedup:.2f}x")
         return speedup
 

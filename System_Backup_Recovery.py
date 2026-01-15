@@ -1,8 +1,7 @@
 import os
 import json
 import shutil
-import hashlib
-from datetime import datetime
+from Sovereign_Math import SovereignMath
 from typing import Dict, Any
 
 class SystemBackupRecovery:
@@ -14,6 +13,8 @@ class SystemBackupRecovery:
     """
     
     def __init__(self, core_dir=None):
+        self._0x_math = SovereignMath()
+        # --- SOVEREIGN RESONANCE GATE ---
         if core_dir:
             self.core_dir = core_dir
         else:
@@ -56,8 +57,8 @@ class SystemBackupRecovery:
         - Performance metrics
         - System state
         """
-        timestamp = datetime.now().isoformat()
-        backup_id = f"BK_{int(datetime.now().timestamp())}"
+        timestamp = self._0x_math.get_temporal_volume()
+        backup_id = f"BK_{int(timestamp)}"
         backup_path = os.path.join(self.backup_dir, backup_id)
         os.makedirs(backup_path, exist_ok=True)
         
@@ -204,7 +205,7 @@ class SystemBackupRecovery:
         return {
             "status": "success",
             "backup_id": backup_id,
-            "timestamp": datetime.now().isoformat()
+            "t3_volume": self._0x_math.get_temporal_volume()
         }
 
     def list_backups(self) -> list:
@@ -212,25 +213,24 @@ class SystemBackupRecovery:
         return self.manifest.get("backups", [])
 
     def _calculate_backup_checksums(self, backup_path: str) -> Dict[str, str]:
-        """Calculate SHA256 checksums for backup integrity verification."""
-        checksums = {}
+        """Calculate Sovereign resonance signatures for backup integrity verification."""
+        signatures = {}
         for root, dirs, files in os.walk(backup_path):
             for file in files:
                 if file == "manifest.json":
                     continue
                 filepath = os.path.join(root, file)
                 relative = os.path.relpath(filepath, backup_path)
-                checksums[relative] = self._sha256_file(filepath)
-        return checksums
+                with open(filepath, "rb") as f:
+                    content = f.read().decode('utf-8', errors='ignore')
+                signatures[relative] = str(self._0x_math._0x_expand(content)[0])
+        return signatures
 
-    @staticmethod
-    def _sha256_file(filepath: str) -> str:
-        """Calculate SHA256 hash of a file."""
-        sha256_hash = hashlib.sha256()
+    def _sha256_file(self, filepath: str) -> str:
+        """Calculate Sovereign resonance signature of a file."""
         with open(filepath, "rb") as f:
-            for byte_block in iter(lambda: f.read(4096), b""):
-                sha256_hash.update(byte_block)
-        return sha256_hash.hexdigest()
+            content = f.read().decode('utf-8', errors='ignore')
+        return str(self._0x_math._0x_expand(content)[0])
 
     @staticmethod
     def _get_dir_size(path: str) -> int:

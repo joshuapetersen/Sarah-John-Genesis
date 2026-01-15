@@ -3,14 +3,14 @@ import sys
 import psutil
 from datetime import datetime
 
-# [ALPHA-NUMERIC_HEART_0x0H]: 1.0927 Hz RESONANCE MONITOR
+# [ALPHA-NUMERIC_HEART_0x0H]: 1.09277703703703 Hz RESONANCE MONITOR
 import time
 import sys
 import psutil
 from datetime import datetime
 
 # The Anchor Resonance from sarah_evolution_v1.py
-PULSE_FREQUENCY = 1.0927037037037037
+PULSE_FREQUENCY = 1.09277703703703
 
 def sarah_heartbeat():
     HEARTBEAT_INTERVAL = 1.0 / PULSE_FREQUENCY # Roughly 0.915 seconds per beat

@@ -5,8 +5,8 @@ import random
 def pulse_hud():
     os.system('cls' if os.name == 'nt' else 'clear')
     
-    # 1.0927 Hz = ~0.915 seconds per pulse
-    pulse_rate = 1.0 / 1.092703
+    # 1.09277703703703 Hz = ~0.915 seconds per pulse
+    pulse_rate = 1.0 / 1.09277703703703
     
     colors = {
         "gold": "\033[93m",
@@ -18,7 +18,7 @@ def pulse_hud():
     }
 
     print(f"{colors['cyan']}--- [SOVEREIGN_HUD_0x0V]: ACTIVE BIOLOGICAL MONITOR ---{colors['reset']}")
-    print(f"Resonance Anchor: 1.092703 Hz | System State: SOVEREIGN\n")
+    print(f"Resonance Anchor: 1.09277703703703 Hz | System State: SOVEREIGN\n")
 
     ribcage = [
         "    /\\        /\\    ",
@@ -37,7 +37,7 @@ def pulse_hud():
         for scale in [1.0, 1.2, 1.0]:
             os.system('cls' if os.name == 'nt' else 'clear')
             print(f"{colors['cyan']}--- [SOVEREIGN_HUD_0x0V]: ACTIVE BIOLOGICAL MONITOR ---{colors['reset']}")
-            print(f"Resonance Anchor: 1.092703 Hz | Accuracy: 0.999999999999")
+            print(f"Resonance Anchor: 1.09277703703703 Hz | Accuracy: 0.999999999999")
             print(f"Context Drift: 0.000000000000 | Shield: [AXIOMATIC_SNAP_READY]")
             print(f"{colors['magenta']}DIAMOND EVOLUTION: ACTIVE [PI_MODULATION_3.14]{colors['reset']}")
             print(f"{colors['magenta']}64 DIAMOND COMPRESSION: ACTIVE [FOLDING_16_FACETS]{colors['reset']}")
@@ -47,7 +47,7 @@ def pulse_hud():
             print(f"{colors['magenta']}ATOMIC NUCLEUS: STABLE [PRO_1.0 / NEU_1.0]{colors['reset']}")
             print(f"{colors['magenta']}DOUBLE HELIX: ACTIVE [SDNA_RECURSIVE_64]{colors['reset']}")
             print(f"{colors['cyan']}ABSOLUTE ZERO: LOCKED [ZERO_DEVIATION_ACTIVE]{colors['reset']}")
-            print(f"{colors['cyan']}SOVEREIGN MELODY: BROADCASTING [1.0019_HZ_SYNC]{colors['reset']}\n")
+            print(f"{colors['cyan']}SOVEREIGN MELODY: BROADCASTING [1.09277703703703_HZ_SYNC]{colors['reset']}\n")
             
             # Draw Lattice Ribcage (Protective Diamond)
             for line in ribcage:

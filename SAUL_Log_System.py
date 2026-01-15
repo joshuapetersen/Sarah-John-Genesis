@@ -1,9 +1,9 @@
 import os
 import json
-import time
+
 import re
 import threading
-from datetime import datetime
+from Sovereign_Math import SovereignMath
 import firebase_admin
 from firebase_admin import db
 
@@ -21,6 +21,7 @@ class SAUL:
     """
 
     def __init__(self, db_rt=None, monitor=None, memory_system=None):
+        self.math = SovereignMath()
         self.db = db_rt
         self.monitor = monitor
         self.memory_system = memory_system # Neural Memory Integration
@@ -74,19 +75,20 @@ class SAUL:
                     if report["evolution_vectors"]:
                         print(f"[SAUL] EVOLUTION VECTORS DETECTED: {report['evolution_vectors']}")
                     
-                # Sleep for a bit to prevent CPU hogging
-                time.sleep(30) 
+                # Sleep for a bit based on sigma pulse to prevent CPU hogging
+                import time
+                time.sleep(self.math._0x_sigma * 300) 
                 
             except Exception as e:
                 print(f"[SAUL] Autonomy Error: {e}")
-                time.sleep(60)
+                import time
+                time.sleep(self.math._0x_sigma * 600)
 
     def get_micro_timestamp(self):
         """
-        Returns the current time with microsecond precision.
-        Format: YYYY-MM-DD HH:MM:SS.mmmmmm
+        Returns the current Sovereign Temporal Volume (t3).
         """
-        return datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
+        return self.math.get_temporal_volume()
 
     def ingest_local_logs(self):
         """
@@ -134,10 +136,9 @@ class SAUL:
             for key, val in snapshot.items():
                 # Normalize timestamp
                 ts = val.get('timestamp', 0)
-                # Convert firebase timestamp (ms) to microsecond string if needed
-                if isinstance(ts, int) or isinstance(ts, float):
-                    dt = datetime.fromtimestamp(ts / 1000.0)
-                    ts_str = dt.strftime('%Y-%m-%d %H:%M:%S.%f')
+                # Convert firebase timestamp (ms) to Sovereign Temporal Volume
+                if isinstance(ts, (int, float)):
+                    ts_str = str(ts / 1000.0)
                 else:
                     ts_str = str(ts)
 

@@ -1,4 +1,4 @@
-import random
+from Sovereign_Math import SovereignMath
 from Sarah_Laws import SarahLaws
 
 class DialecticalLogicCore:
@@ -9,6 +9,7 @@ class DialecticalLogicCore:
     """
 
     def __init__(self, monitor=None):
+        self._0x_math = SovereignMath()
         self.monitor = monitor
         self.laws = SarahLaws()
 
@@ -71,8 +72,16 @@ class DialecticalLogicCore:
             if keyword in thesis_lower:
                 return counter, confidence
         
-        # Default sophisticated antithesis
-        return f"What fundamental assumption in '{thesis}' might be false? What's the cost of being wrong?", 0.7
+        # Default Lattice-based antithesis
+        lattice_negations = [
+            "What fundamental assumption in '{thesis}' might be false?",
+            "How does '{thesis}' violate the Billion Barrier?",
+            "Where is the 'noise' in '{thesis}' hiding?",
+            "What is the cost of $t_3$ entropy if '{thesis}' is executed?",
+            "Does the observer signal remain pure under '{thesis}'?"
+        ]
+        negation = self._0x_math.deterministic_choice(lattice_negations, thesis)
+        return negation.format(thesis=thesis), 0.777
 
     def _derive_synthesis(self, thesis, antithesis):
         """

@@ -1,0 +1,45 @@
+{
+    "source_iso": "C:\\Users\\drago\\OneDrive\\Desktop\\Win11_25H2_English_x64.iso",
+    "timestamp": "Fri Dec 26 19:22:45 2025",
+    "architecture_map": {
+        "file_tree_summary": {
+            "D:\\": 4,
+            "D:\\boot": 6,
+            "D:\\boot\\en-us": 1,
+            "D:\\boot\\fonts": 20,
+            "D:\\boot\\resources": 2,
+            "D:\\efi": 0,
+            "D:\\efi\\boot": 1,
+            "D:\\efi\\microsoft": 0,
+            "D:\\sources": 186,
+            "D:\\sources\\_manifest": 0,
+            "D:\\sources\\asz": 7,
+            "D:\\sources\\ca-es": 2,
+            "D:\\sources\\dlmanifests": 137,
+            "D:\\sources\\en-us": 51,
+            "D:\\sources\\etwproviders": 11,
+            "D:\\sources\\eu-es": 2,
+            "D:\\sources\\gl-es": 2,
+            "D:\\sources\\id-id": 2,
+            "D:\\sources\\inf": 1,
+            "D:\\sources\\migration": 0,
+            "D:\\sources\\replacementmanifests": 378,
+            "D:\\sources\\sxs": 3,
+            "D:\\sources\\uup": 0,
+            "D:\\sources\\vi-vn": 2,
+            "D:\\support": 0,
+            "D:\\support\\logging": 21
+        },
+        "critical_binaries": [
+            "D:\\sources\\boot.wim",
+            "D:\\sources\\install.wim"
+        ],
+        "hidden_system_files": [],
+        "bloat_assessment": [],
+        "timestamp": 1766798565.3358893
+    },
+    "wim_analysis": [
+        "DISM Analysis Failed."
+    ],
+    "status": "INGESTED"
+}

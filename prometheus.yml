@@ -7,4 +7,4 @@ scrape_configs:
       username: service_role
       password: 'sb_secret_XOXE1Wb3peAWJqdSDgVLCw_CZj2AlJn'
     static_configs:
-      - targets: ['duuycxgqbhrqwapnjhk.supabase.co:443']
+      - targets: ['duuycxgqbhrqmwapnjhk.supabase.co:443']

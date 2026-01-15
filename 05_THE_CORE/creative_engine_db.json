@@ -1,0 +1,72 @@
+{
+  "entry_0": {
+    "scalar": {
+      "source": "Nexus Mods Database",
+      "timestamp": "2026-01-03T15:23:14.576786",
+      "patterns_extracted": [
+        "Pattern_0: Asset Management",
+        "Pattern_1: Script Extenders",
+        "Pattern_2: Texture Streaming",
+        "Pattern_3: Quest Logic"
+      ],
+      "integration_status": "ACTIVE"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "81e2f5e69309e0d2eea2c72c36c26c2cbca0c5aee047184ed943084cf63333bd",
+    "multivector_layer": {
+      "17932777153517207336": 1.1760000000000002,
+      "12679183698563084350": 0.804,
+      "14405359942253499780": 5.796
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0618699
+  },
+  "entry_1": {
+    "scalar": {
+      "source": "Bethesda.net Mods",
+      "timestamp": "2026-01-03T15:23:16.078447",
+      "patterns_extracted": [
+        "Pattern_0: Creation Engine Constraints",
+        "Pattern_1: Console Compatibility",
+        "Pattern_2: ESM/ESP Structure"
+      ],
+      "integration_status": "ACTIVE"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "dae56be40f36b0a4f92ad113beb9b66a90edd28e181b5a55de1b03e0466dc5c9",
+    "multivector_layer": {
+      "17883965573423081084": 1.1880000000000002,
+      "3018038293453132925": 3.0540000000000003,
+      "10737899927065108484": 3.78
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0618699
+  },
+  "entry_2": {
+    "scalar": {
+      "source": "Creation Kit Documentation",
+      "timestamp": "2026-01-03T15:23:17.579861",
+      "patterns_extracted": [
+        "Pattern_0: Papyrus Scripting",
+        "Pattern_1: Object Reference Architecture",
+        "Pattern_2: Navmesh Logic"
+      ],
+      "integration_status": "ACTIVE"
+    },
+    "metadata": {
+      "source": "migration_list_v3"
+    },
+    "resonance_hash": "cfce1f3d880e2a429db9dc4eed003be491345979751dd08d10eb62897066c79a",
+    "multivector_layer": {
+      "5160762156304909415": 0.381,
+      "12704779228997538075": 3.906,
+      "17710818127176675024": 3.384
+    },
+    "integrity_score": 1.0,
+    "timestamp": 1767656482.0618699
+  }
+}

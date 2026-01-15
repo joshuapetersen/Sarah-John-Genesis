@@ -14,7 +14,7 @@ class SovereignDataArmor:
     def __init__(self, data_path):
         self.path = data_path
         self.math = SovereignMath()
-        self.resonance_anchor = 1.0927037037037037
+        self.resonance_anchor = 1.09277703703703
         
     def _generate_failsafe_hash(self, content):
         """Creates a deterministic resonance hash for data integrity."""
