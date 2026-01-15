@@ -1,0 +1,74 @@
+name: Sovereign Deployment
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # --- PHASE 1: BRAIN BUILD (TypeScript/Genkit) ---
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install & Build Cloud Brain
+        working-directory: ./monitor_dashboard/monitor_dashboard_vite/functions
+        run: |
+          npm ci
+          npm run build
+
+      # --- PHASE 2: CORE INTEGRITY (Python) ---
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python Dependencies
+        run: |
+          pip install -r requirements.txt || echo "No requirements.txt found, skipping pip install"
+
+      - name: Verify Sovereign Logic (Health Check)
+        run: |
+          # We run the context blocker or a math check to ensure syntax is valid
+          python Sovereign_Context_Blocker.py
+          echo "Sovereign Logic Integrity: PASSED"
+
+      # --- PHASE 3: DEPLOYMENT (SCP/SSH) ---
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to Production
+        run: |
+          # create remote directory
+          ssh -i ~/.ssh/deploy_key ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "mkdir -p /opt/sarah-sovereign"
+          
+          # Deploy Python Core
+          scp -i ~/.ssh/deploy_key *.py ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/opt/sarah-sovereign/
+          scp -i ~/.ssh/deploy_key *.json ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/opt/sarah-sovereign/
+          scp -i ~/.ssh/deploy_key SOVEREIGN_IMMUTABLE_DNA.md ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/opt/sarah-sovereign/
+          
+          # Deploy Compiled Brain (JavaScript)
+          ssh -i ~/.ssh/deploy_key ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "mkdir -p /opt/sarah-sovereign/brain/lib"
+          scp -r -i ~/.ssh/deploy_key monitor_dashboard/monitor_dashboard_vite/functions/lib/* ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/opt/sarah-sovereign/brain/lib/
+          scp -i ~/.ssh/deploy_key monitor_dashboard/monitor_dashboard_vite/functions/package.json ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/opt/sarah-sovereign/brain/
+          
+          # Restart Service (Assuming systemd service named 'sarah-core')
+          ssh -i ~/.ssh/deploy_key ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} "
+            cd /opt/sarah-sovereign &&
+            if systemctl is-active --quiet sarah-core; then
+              sudo systemctl restart sarah-core
+            else
+              echo 'Service sarah-core not found or not active. Please configure systemd.'
+            fi
+          "
